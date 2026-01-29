@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | SHURI PORTFOLIO</title>
+
+  <!-- デバイス判定・自動リダイレクト -->
+  <script src="/js/device-redirect.js"></script>
+
+  <!-- PC版への関連づけ（SEO対策） -->
+  <link rel="canonical" href="/works.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/sp/sp-style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="sp-works">
+
+<!-- ヘッダー -->
+<header class="sp-header">
+  <div class="sp-header-inner">
+    <a href="/sp/index.html" class="sp-logo-text">HIDAKA SHURI</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- メニューオーバーレイ -->
+<nav class="menu-overlay" id="menuOverlay">
+  <ul class="menu-list">
+    <li><a href="/sp/index.html">TOP</a></li>
+    <li><a href="/sp/works.html">WORKS</a></li>
+    <li><a href="/sp/about.html">ABOUT</a></li>
+    <li><a href="/sp/contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/s.iroirodesign?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+    class="menu-instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+  <!-- 右下装飾（模様） -->
+  <img
+    src="/assets/deco/deco_f5f5f5.svg"
+    alt=""
+    class="menu-pattern"
+    aria-hidden="true"
+  >
+</nav>
+
+<!-- メインコンテンツ -->
+<main class="sp-main">
+
+  <!-- メインビジュアル -->
+  <section class="sp-hero sp-works-hero">
+    <div class="sp-hero-content">
+      <img src="/assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="sp-hero-logo">
+      <p class="sp-hero-title">HIDAKA SHURI</p>
+    </div>
+    <img src="/assets/deco/deco_f5f5f5.svg" alt="" class="sp-hero-deco" aria-hidden="true">
+  </section>
+
+  <!-- ページタイトル -->
+  <section class="sp-page-header sp-works-page-header">
+    <h1 class="sp-page-title" id="categoryTitle">WEB</h1>
+    <p class="sp-page-subtitle" id="categorySubtitle">HP / LP / TOPページ</p>
+  </section>
+
+  <!-- 作品一覧 -->
+  <section class="sp-works-list-section">
+    <div class="sp-works-list" id="worksList"></div>
+  </section>
+
+  <!-- カテゴリ切り替え -->
+  <section class="sp-category-nav">
+    <button class="sp-cat-btn active" data-cat="web"># WEB</button>
+    <button class="sp-cat-btn" data-cat="dtp"># DTP</button>
+    <button class="sp-cat-btn" data-cat="graphic"># GRAPHIC</button>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="sp-footer">
+  <p class="sp-copyright">© 2026 Hidaka Syuri</p>
+</footer>
+
+<!-- モーダル -->
+<div class="sp-modal-overlay" id="worksModal">
+  <div class="sp-modal-wrapper">
+    
+    <!-- モーダルヘッダー -->
+    <header class="sp-modal-header">
+      <p class="sp-modal-category" id="modalCategory">WEB</p>
+      <button class="sp-modal-close" id="modalClose">×</button>
+    </header>
+
+    <!-- モーダルコンテンツ -->
+    <div class="sp-modal-content">
+      
+      <!-- タイトル -->
+      <div class="sp-modal-title-block">
+        <h2 class="sp-modal-title" id="modalTitle">作品タイトル</h2>
+        <p class="sp-modal-tag" id="modalTag">タグ</p>
+      </div>
+
+      <!-- メイン画像 -->
+      <div class="sp-modal-image">
+        <img id="modalThumb" src="" alt="">
+      </div>
+
+      <!-- 概要 -->
+      <section class="sp-modal-section">
+        <h3 class="sp-modal-section-title">OUTLINE</h3>
+        <p class="sp-modal-section-sub">制作概要</p>
+        <p class="sp-modal-text" id="modalOutline"></p>
+
+        <ul class="sp-modal-meta">
+          <li>
+            <span class="sp-meta-label">ターゲット</span>
+            <span class="sp-meta-text" id="modalTarget"></span>
+          </li>
+          <li>
+            <span class="sp-meta-label">制作期間</span>
+            <span class="sp-meta-text" id="modalPeriod"></span>
+          </li>
+          <li>
+            <span class="sp-meta-label">目的</span>
+            <span class="sp-meta-text" id="modalPurpose"></span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 詳細 -->
+      <section class="sp-modal-section">
+        <h3 class="sp-modal-section-title">DETAIL</h3>
+        <p class="sp-modal-section-sub">内容詳細</p>
+        <p class="sp-modal-text" id="modalDetail"></p>
+
+        <div class="sp-modal-detail-image" id="modalDetailImageWrap" style="display: none;">
+          <img id="modalDetailImg" src="" alt="">
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+// WORKSデータ（完全版）
+const WORKS_DATA = {
+  web: [
+    {
+      id: "01",
+      title: "PORTFOLIO SITE",
+      tag: "ポートフォリオ / 個人制作",
+      thumb: "/assets/works/web/01/hero.jpg",
+      modalThumb: "/assets/works/web/01/thumb.jpg",
+      detailImg: "/assets/works/web/01/detail.png",
+      outline: "デザインからコーディングまで一貫して行い、「必要な情報だけが自然に伝わる構成」を意識して制作しました。",
+      target: "企業担当者・採用担当者",
+      period: "約3ヶ月",
+      purpose: "スキルや制作姿勢を、構成と実装の両面から伝えるため",
+      detailText: "デザインからコーディングまでを一貫して担当しました。ファーストビューでは情報量を抑え、視線が迷わない構成を意識しています。また、作品一覧では比較しやすさを重視し、余白と情報の優先度を整理しました。"
+    },
+    {
+      id: "02",
+      title: "ビジネスホテルHP",
+      tag: "TOPページ / コンペ制作",
+      thumb: "/assets/works/web/02/hero.jpg",
+      modalThumb: "/assets/works/web/02/thumb.jpg",
+      detailImg: "/assets/works/web/02/detail.png",
+      outline: "ランサーズのコンペにて、沖縄・那覇市内にあるビジネスホテルの公式サイトTOPページを制作しました。",
+      target: "40代男性を中心とした、ビジネス・ファミリー・団体利用者",
+      period: "3日",
+      purpose: "宿泊予約までの導線を分かりやすく設計し、新たな利用層への訴求を強化するため",
+      detailText: "那覇の都心に立地するビジネスホテルを想定し、落ち着いた配色と余白を活かしたデザインで信頼感を表現しました。\n\n従来のビジネス利用に加え、ファミリー層やスポーツ団体など複数人での利用シーンも想起できるよう、写真構成や情報の見せ方を工夫しています。\n\n初めて訪れる利用者でも直感的に内容を把握でき、迷わず宿泊予約へ進める導線設計を意識しました。"
+    },
+    {
+      id: "03",
+      title: "ヘッドスパLP",
+      tag: "TOPページ / コンペ制作",
+      thumb: "/assets/works/web/03/hero.jpg",
+      modalThumb: "/assets/works/web/03/thumb.jpg",
+      detailImg: "/assets/works/web/03/detail.png",
+      outline: "ランサーズコンペにて、海外向けヘッドスパ専門店のLPを制作し、参加賞を受賞しました。",
+      target: "30代後半〜40代後半の女性（海外在住）",
+      period: "3日",
+      purpose: "日本の癒し文化を伝え、予約につなげるため",
+      detailText: "アメリカ在住の女性をターゲットに、日本の伝統的な癒しや指圧文化が伝わる世界観設計を意識しました。LPに馴染みのないユーザーでも直感的に理解できるよう、情報量を抑えたコンパクトな構成にしています。"
+    },
+    {
+      id: "04",
+      title: "老舗焼肉店サイト",
+      tag: "TOPページ / コンペ制作",
+      thumb: "/assets/works/web/04/hero.jpg",
+      modalThumb: "/assets/works/web/04/thumb.jpg",
+      detailImg: "/assets/works/web/04/detail.png",
+      outline: "飲食店のコーポレートサイトリニューアルを想定し、TOPページを制作しました。",
+      target: "来店を検討する幅広い年齢層のユーザー",
+      period: "5日",
+      purpose: "高級感と親しみやすさを両立したブランディングのため",
+      detailText: "神戸牛専門店のリニューアル案件を想定し、高級感がありながらも来店しやすい印象を与えるトーン設計を意識しました。昼夜それぞれの利用シーンを想定し、情報の優先度と視線の流れを整理しています。"
+    },
+    {
+      id: "05",
+      title: "整形外科医院サイト",
+      tag: "TOPページ / コンペ制作",
+      thumb: "/assets/works/web/05/hero.jpg",
+      modalThumb: "/assets/works/web/05/thumb.jpg",
+      detailImg: "/assets/works/web/05/detail.png",
+      outline: "ランサーズコンペにて、整形外科医院サイトのTOPページリニューアルデザインを制作しました。",
+      target: "通院を検討する幅広い年齢層のユーザー",
+      period: "3日",
+      purpose: "既存イメージを刷新し、信頼感と先進性を伝えるため",
+      detailText: "既存サイトの印象にとらわれず、ファーストビューで世界観を伝える構成を意識しました。ロゴ表示から大きなメインビジュアルへと展開し、医療サイトでありながらも先進性と格好良さが伝わるデザインを目指しています。"
+    },
+    {
+      id: "06",
+      title: "団体ポータルサイト",
+      tag: "TOPページ / コンペ制作",
+      thumb: "/assets/works/web/06/hero.jpg",
+      modalThumb: "/assets/works/web/06/thumb.jpg",
+      detailImg: "/assets/works/web/06/detail.png",
+      outline: "ランサーズコンペにて、自治体の消防団ポータルサイトを想定したトップページデザインを制作しました。",
+      target: "県内在住の幅広い年齢層の男女",
+      period: "5日",
+      purpose: "消防団の活動内容を分かりやすく伝えるため",
+      detailText: "親しみやすく分かりやすい印象を重視し、初めて訪れるユーザーでも活動内容が把握できる構成を意識しました。スライドショーやお知らせを用いて、情報が自然に目に入る導線を設計しています。"
+    }
+  ],
+
+  dtp: [
+    {
+      id: "01",
+      title: "名刺デザイン",
+      tag: "名刺 / 個人制作",
+      thumb: "/assets/works/dtp/01/hero.jpg",
+      modalThumb: "/assets/works/dtp/01/thumb.jpg",
+      detailImg: "/assets/works/dtp/01/detail.png",
+      outline: "個人用名刺として制作しました。",
+      target: "取引先・クライアント",
+      period: "1日",
+      purpose: "第一印象の向上",
+      detailText: "余白と文字組を意識し、シンプルで上品なデザインにしています。"
+    },
+    {
+      id: "02",
+      title: "フライヤーデザイン",
+      tag: "チラシ / 個人制作",
+      thumb: "/assets/works/dtp/02/hero.jpg",
+      modalThumb: "/assets/works/dtp/02/thumb.jpg",
+      detailImg: "/assets/works/dtp/02/detail.png",
+      outline: "イベント告知用フライヤーを制作しました。",
+      target: "一般来場者",
+      period: "2日",
+      purpose: "視認性と情報整理",
+      detailText: "情報の優先度を整理し、遠目でも伝わる構成を意識しました。"
+    },
+    {
+      id: "03",
+      title: "パンフレット",
+      tag: "冊子 / 個人制作",
+      thumb: "/assets/works/dtp/03/hero.jpg",
+      modalThumb: "/assets/works/dtp/03/thumb.jpg",
+      detailImg: "/assets/works/dtp/03/detail.png",
+      outline: "企業パンフレットを想定して制作しました。",
+      target: "企業担当者",
+      period: "3日",
+      purpose: "ブランド理解促進",
+      detailText: "トーンを統一し、読みやすい紙面設計を心がけました。"
+    }
+  ],
+
+  graphic: [
+    {
+      id: "01",
+      title: "ロゴデザイン",
+      tag: "ロゴ / コンペ",
+      thumb: "/assets/works/graphic/01/hero.jpg",
+      modalThumb: "/assets/works/graphic/01/thumb.jpg",
+      detailImg: "/assets/works/graphic/01/detail.png",
+      outline: "企業ロゴの提案として制作しました。",
+      target: "企業",
+      period: "2日",
+      purpose: "ブランドイメージ構築",
+      detailText: "シンプルで記憶に残る形を意識しました。"
+    },
+    {
+      id: "02",
+      title: "ビジュアルデザイン",
+      tag: "KV / 個人制作",
+      thumb: "/assets/works/graphic/02/hero.jpg",
+      modalThumb: "/assets/works/graphic/02/thumb.jpg",
+      detailImg: "/assets/works/graphic/02/detail.png",
+      outline: "ビジュアル表現の習作として制作しました。",
+      target: "閲覧者",
+      period: "1日",
+      purpose: "表現力の強化",
+      detailText: "配色と余白のバランスを意識して制作しました。"
+    }
+  ]
+};
+
+// カテゴリごとのタイトル
+const CATEGORY_INFO = {
+  web: { title: "WEB", subtitle: "HP / LP / TOPページ" },
+  dtp: { title: "DTP", subtitle: "名刺 / チラシ / パンフレット" },
+  graphic: { title: "GRAPHIC", subtitle: "ロゴ / ビジュアル" }
+};
+
+// 作品一覧を描画
+function renderWorks(category) {
+  const worksList = document.getElementById('worksList');
+  const categoryTitle = document.getElementById('categoryTitle');
+  const categorySubtitle = document.getElementById('categorySubtitle');
+  
+  if (!worksList) return;
+  
+  // タイトル更新
+  const info = CATEGORY_INFO[category];
+  if (categoryTitle) categoryTitle.textContent = info.title;
+  if (categorySubtitle) categorySubtitle.textContent = info.subtitle;
+  
+  // 作品リストをクリア
+  worksList.innerHTML = '';
+  
+  // 作品を描画
+  const works = WORKS_DATA[category] || [];
+  works.forEach(work => {
+    const [tagEn, tagJa] = work.tag.split('/').map(t => t?.trim());
+    
+    const workItem = document.createElement('div');
+    workItem.className = 'sp-work-item';
+    workItem.dataset.category = category;
+    workItem.dataset.id = work.id;
+    workItem.innerHTML = `
+      <img src="${work.thumb}" alt="${work.title}" class="sp-work-thumb" loading="lazy">
+      <p class="sp-work-title">${work.title}</p>
+      <p class="sp-work-label">
+        <span class="sp-tag-en"># ${tagEn}</span>
+        ${tagJa ? `<span class="sp-tag-ja"> / ${tagJa}</span>` : ''}
+      </p>
+    `;
+    
+    // クリックイベント
+    workItem.addEventListener('click', () => {
+      openModal(work, category);
+    });
+    
+    worksList.appendChild(workItem);
+  });
+}
+
+// モーダルを開く
+function openModal(work, category) {
+  const modal = document.getElementById('worksModal');
+  
+  // データを設定
+  document.getElementById('modalCategory').textContent = category.toUpperCase();
+  document.getElementById('modalTitle').textContent = work.title;
+  document.getElementById('modalTag').textContent = work.tag;
+  document.getElementById('modalThumb').src = work.modalThumb;
+  document.getElementById('modalOutline').textContent = work.outline;
+  document.getElementById('modalTarget').textContent = work.target;
+  document.getElementById('modalPeriod').textContent = work.period;
+  document.getElementById('modalPurpose').textContent = work.purpose;
+  document.getElementById('modalDetail').textContent = work.detailText;
+  
+  // 詳細画像
+  const detailImgWrap = document.getElementById('modalDetailImageWrap');
+  const detailImg = document.getElementById('modalDetailImg');
+  if (work.detailImg) {
+    detailImg.src = work.detailImg;
+    detailImgWrap.style.display = 'block';
+  } else {
+    detailImgWrap.style.display = 'none';
+  }
+  
+  // モーダル表示
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  
+  // 先頭にスクロール
+  setTimeout(() => {
+    modal.querySelector('.sp-modal-wrapper').scrollTop = 0;
+  }, 50);
+}
+
+// モーダルを閉じる
+function closeModal() {
+  const modal = document.getElementById('worksModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// 初期化
+document.addEventListener('DOMContentLoaded', () => {
+  const catButtons = document.querySelectorAll('.sp-cat-btn');
+  const modalClose = document.getElementById('modalClose');
+  const modal = document.getElementById('worksModal');
+  
+  // 初期表示（WEB）
+  renderWorks('web');
+  
+  // カテゴリボタンクリック
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.cat;
+      
+      // アクティブ状態を切り替え
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // 作品を再描画
+      renderWorks(category);
+      
+      // ページ上部にスクロール// ページタイトルの位置にスクロール
+const pageHeader = document.querySelector('.sp-works-page-header');
+if (pageHeader) {
+  const headerHeight = 60; // SPヘッダーの高さ
+  const targetPosition = pageHeader.offsetTop - headerHeight;
+  window.scrollTo({ 
+    top: targetPosition, 
+    behavior: 'smooth' 
+  });
+}
+    });
+  });
+
+  // モーダルを閉じる
+  modalClose.addEventListener('click', closeModal);
+  
+  // オーバーレイクリック
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // ヘッダーロゴの表示制御
+  const headerLogo = document.querySelector('.sp-logo-text');
+  const heroSection = document.querySelector('.sp-works-hero');
+  
+  function handleScroll() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 60;
+    
+    if (scrollPosition > heroBottom) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+    } else {
+      headerLogo.style.opacity = '0';
+      headerLogo.style.visibility = 'hidden';
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // メニューリンククリックで閉じる
+  document.querySelectorAll('.menu-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+});
+</script>
+
+<!-- SP ヘッダースクロール効果 -->
+<script src="/js/sp-header-scroll.js"></script>
+
+</body>
+</html>

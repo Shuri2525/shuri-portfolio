@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT | SHURI PORTFOLIO</title>
+
+  <!-- デバイス判定・自動リダイレクト -->
+  <script src="/js/device-redirect.js"></script>
+
+  <!-- PC版への関連づけ（SEO対策） -->
+  <link rel="canonical" href="/contact.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/sp/sp-style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="sp-contact">
+
+<!-- ヘッダー -->
+<header class="sp-header">
+  <div class="sp-header-inner">
+    <a href="/sp/index.html" class="sp-logo-text">HIDAKA SHURI</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- メニューオーバーレイ -->
+<nav class="menu-overlay" id="menuOverlay">
+  <ul class="menu-list">
+    <li><a href="/sp/index.html">TOP</a></li>
+    <li><a href="/sp/works.html">WORKS</a></li>
+    <li><a href="/sp/about.html">ABOUT</a></li>
+    <li><a href="/sp/contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/s.iroirodesign?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+    class="menu-instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+  <!-- 右下装飾（模様） -->
+  <img
+    src="/assets/deco/deco_f5f5f5.svg"
+    alt=""
+    class="menu-pattern"
+    aria-hidden="true"
+  >
+</nav>
+
+<!-- メインコンテンツ -->
+<main class="sp-main">
+
+  <!-- メインビジュアル -->
+  <section class="sp-hero sp-contact-hero">
+    <div class="sp-hero-content">
+      <img src="/assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
+      <p class="sp-hero-title sp-contact-hero-title">HIDAKA SHURI</p>
+    </div>
+    <img src="/assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
+  </section>
+
+  <!-- ページタイトル -->
+  <section class="sp-page-header sp-contact-page-header">
+    <h1 class="sp-page-title">CONTACT</h1>
+    <p class="sp-page-subtitle">お問い合わせ</p>
+  </section>
+
+  <!-- フォーム -->
+  <section class="sp-contact-form-section">
+
+    <form class="sp-contact-form">
+
+      <p class="sp-contact-lead">
+        制作の依頼・ご相談などお気軽にお問い合わせください。<br>
+        下記フォームよりわかる範囲でご記入ください。
+      </p>
+    
+      <div class="sp-form-group">
+        <label for="company">貴社名</label>
+        <input type="text" id="company" name="company">
+      </div>
+
+      <div class="sp-form-group">
+        <label for="name">お名前 <span class="sp-required">必須</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="sp-form-group">
+        <label for="email">メールアドレス <span class="sp-required">必須</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="sp-form-group">
+        <label for="tel">電話番号</label>
+        <input type="tel" id="tel" name="tel">
+      </div>
+
+      <div class="sp-form-group">
+        <label for="message">お問い合わせ内容 <span class="sp-required">必須</span></label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <div class="sp-form-submit">
+        <button type="submit">送信する</button>
+      </div>
+
+    </form>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="sp-footer">
+  <p class="sp-copyright">© 2026 Hidaka Syuri</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // ヘッダーロゴの表示制御
+  const headerLogo = document.querySelector('.sp-logo-text');
+  const heroSection = document.querySelector('.sp-contact-hero');
+  
+  function handleScroll() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 60;
+    
+    if (scrollPosition > heroBottom) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+    } else {
+      headerLogo.style.opacity = '0';
+      headerLogo.style.visibility = 'hidden';
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // メニューリンククリックで閉じる
+  document.querySelectorAll('.menu-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+<script src="/js/sp-header-scroll.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHURI PORTFOLIO</title>
+
+  <!-- デバイス判定・自動リダイレクト -->
+  <script src="/js/device-redirect.js"></script>
+
+  <!-- PC版への関連づけ（SEO対策） -->
+  <link rel="canonical" href="/index.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/sp/sp-style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="sp-top">
+
+<!-- スプラッシュ画面 -->
+<div class="splash-screen" id="splashScreen">
+  <div class="splash-content">
+    <img src="/assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="splash-logo">
+    <p class="splash-title">SHURI PORTFOLIO SITE</p>
+  </div>
+  <img src="/assets/deco/deco_f5f5f5.svg" alt="" class="splash-deco" aria-hidden="true">
+</div>
+
+<!-- ヘッダー -->
+<header class="sp-header" id="spHeader">
+  <div class="sp-header-inner">
+    <a href="/sp/index.html" class="sp-logo-text" id="headerLogo">HIDAKA SHURI</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- メニューオーバーレイ -->
+<nav class="menu-overlay" id="menuOverlay">
+  <ul class="menu-list">
+    <li><a href="/sp/index.html">TOP</a></li>
+    <li><a href="/sp/works.html">WORKS</a></li>
+    <li><a href="/sp/about.html">ABOUT</a></li>
+    <li><a href="/sp/contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/s.iroirodesign?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+    class="menu-instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+  <!-- 右下装飾（模様） -->
+  <img
+    src="/assets/deco/deco_f5f5f5.svg"
+    alt=""
+    class="menu-pattern"
+    aria-hidden="true"
+  >
+</nav>
+
+<!-- メインコンテンツ -->
+<main class="sp-main">
+
+  <!-- メインビジュアル -->
+  <section class="sp-hero">
+    <div class="sp-hero-content">
+      <img src="/assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="sp-hero-logo">
+      <p class="sp-hero-title">HIDAKA SHURI</p>
+    </div>
+
+  </section>
+
+  <!-- WORKSセクション -->
+  <section class="sp-section sp-works-section">
+    <button class="works-toggle" id="worksToggle" type="button">
+      <div class="works-title-wrap">
+        <h2 class="sp-section-title">WORKS</h2>
+        <p class="sp-section-sub">制作したもの</p>
+      </div>
+      <span class="works-icon">+</span>
+    </button>
+
+    <!-- 開閉される中身 -->
+    <div class="category-body" id="categoryBody">
+      <div class="category-buttons">
+        <a href="/sp/works.html?cat=web" class="category-btn btn-web"># WEB</a>
+        <a href="/sp/works.html?cat=dtp" class="category-btn btn-dtp"># DTP</a>
+        <a href="/sp/works.html?cat=graphic" class="category-btn btn-graphic"># GRAPHIC</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUTセクション -->
+  <section class="sp-section sp-about-section">
+    <h2 class="sp-section-title">ABOUT</h2>
+    <p class="sp-section-sub">わたしについて</p>
+
+    <!-- 名刺カード -->
+<div class="card-container">
+  <a href="/sp/about.html" class="card-link-top">
+    <div class="card-wrapper-sp">
+      <div class="card-flip-sp">
+        <img src="/assets/about/img_nemu_top_omote-.png" alt="名刺 表面" class="card-face card-front">
+      </div>
+    </div>
+  </a>
+</div>
+  </section>
+
+  <!-- CONTACTセクション -->
+  <section class="sp-section sp-contact-section">
+    <a href="/sp/contact.html" class="contact-button">
+      <span class="contact-button-en">CONTACT</span>
+      <span class="contact-button-ja">お問い合わせ</span>
+      <span class="contact-arrow">→</span>
+    </a>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="sp-footer">
+  <p class="sp-copyright">© 2026 Hidaka Syuri</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // スプラッシュ画面制御
+  window.addEventListener('load', () => {
+    const splashScreen = document.getElementById('splashScreen');
+    
+    setTimeout(() => {
+      splashScreen.classList.add('fade-out');
+      
+      setTimeout(() => {
+        splashScreen.style.display = 'none';
+      }, 800);
+    }, 2000);
+  });
+
+  // ヘッダーロゴの表示制御
+  const headerLogo = document.getElementById('headerLogo');
+  const heroSection = document.querySelector('.sp-hero');
+  
+  function handleScroll() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 60;
+    
+    if (scrollPosition > heroBottom) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+    } else {
+      headerLogo.style.opacity = '0';
+      headerLogo.style.visibility = 'hidden';
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // メニューリンククリックで閉じる
+  document.querySelectorAll('.menu-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // カテゴリアコーディオン
+  const worksToggle = document.getElementById('worksToggle');
+  const categoryBody = document.getElementById('categoryBody');
+  const icon = worksToggle.querySelector('.works-icon');
+
+  worksToggle.addEventListener('click', () => {
+    const isOpen = categoryBody.classList.contains('active');
+
+    if (isOpen) {
+      categoryBody.classList.remove('active');
+      icon.textContent = '+';
+
+      setTimeout(() => {
+        worksToggle.classList.remove('is-open');
+      }, 400);
+    } else {
+      worksToggle.classList.add('is-open');
+      categoryBody.classList.add('active');
+      icon.textContent = '−';
+    }
+  });
+</script>
+<script src="/js/sp-header-scroll.js"></script>
+
+</body>
+</html>

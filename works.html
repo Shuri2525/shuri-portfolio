@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | SHURI PORTFOLIO</title>
+
+  <!-- デバイス判定・自動リダイレクト -->
+  <script src="/js/device-redirect.js"></script>
+
+  <!-- SP版への関連づけ（SEO対策） -->
+  <link rel="alternate" media="only screen and (max-width: 1024px)" href="/sp/works.html">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/works.css">
+  <link rel="stylesheet" href="/css/modal.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body id="top" class="page-works">
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="/index.html">TOP</a></li>
+      <li><a href="/works.html" class="active">WORKS</a></li>
+      <li><a href="/about.html">ABOUT</a></li>
+      <li><a href="/contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 左カラム -->
+<aside class="works-left">
+  <div class="works-left-inner">
+    <img
+      src="/assets/common/logo_f5f5f5.svg"
+      alt="SHURI LOGO"
+      class="works-left-logo"
+    >
+    <p class="works-left-title">HIDAKA SHURI</p>
+  </div>
+</aside>
+
+<!-- 右カラム（メインコンテンツ） -->
+<main class="works-main page-main">
+
+  <!-- ページタイトル -->
+  <h1 class="works-title">WORKS</h1>
+  <p class="works-subtitle">制作したもの</p>
+
+  <!-- カテゴリ -->
+  <div class="works-category">
+    <button class="cat-btn btn-web active"># WEB</button>
+    <button class="cat-btn btn-dtp"># DTP</button>
+    <button class="cat-btn btn-graphic"># GRAPHIC</button>
+  </div>
+
+  <!-- スクロールインジケーター -->
+  <div class="scroll-slider">
+    <span class="scroll-label">scroll</span>
+    <div class="scroll-line">
+      <div class="scroll-knob"></div>
+    </div>
+  </div>
+
+  <!-- 作品リスト -->
+  <section class="works-list-section">
+    <div class="works-list" id="worksList"></div>
+  </section>
+
+  <!-- 装飾 -->
+  <img src="/assets/deco/deco_3f3b3a.svg" class="page-deco" alt="">
+
+</main>
+
+<!-- モーダル（詳細UI） -->
+<div class="modal-overlay" id="worksModal" aria-hidden="true">
+
+  <div class="modal-wrapper" role="dialog" aria-modal="true">
+
+    <!-- モーダルヘッダー -->
+    <header class="modal-header">
+      <p class="modal-main-title"></p>
+      <button class="modal-close" id="modal-close" aria-label="モーダルを閉じる">×</button>
+    </header>
+
+    <!-- モーダルボディ -->
+    <div class="modal-body">
+
+      <!-- タイトルブロック -->
+      <div class="modal-title-block">
+        <p class="modal-sub-title"></p>
+      </div>
+
+      <!-- ヒーロー画像 -->
+      <div class="modal-hero">
+        <img class="hero-img" src="" alt="">
+      </div>
+
+      <!-- 概要セクション -->
+      <section class="modal-section modal-outline-section">
+        <h2 class="modal-section-title">OUTLINE</h2>
+        <p class="modal-section-sub">制作概要</p>
+
+        <p class="modal-text modal-outline"></p>
+
+        <ul class="modal-meta">
+          <li class="modal-meta-item">
+            <span class="meta-label">ターゲット</span>
+            <span class="meta-text modal-target"></span>
+          </li>
+
+          <li class="modal-meta-item">
+            <span class="meta-label">制作期間</span>
+            <span class="meta-text modal-period"></span>
+          </li>
+
+          <li class="modal-meta-item">
+            <span class="meta-label">目的</span>
+            <span class="meta-text modal-purpose"></span>
+          </li>
+        </ul>
+
+        <div class="modal-section-divider"></div>
+      </section>
+
+      <!-- 詳細セクション -->
+      <section class="modal-section">
+        <h2 class="modal-section-title">DETAIL</h2>
+        <p class="modal-section-sub">内容詳細</p>
+
+        <p class="modal-text modal-detail"></p>
+
+        <div class="modal-image">
+          <img class="detail-img" src="" alt="">
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="copyright-fixed">
+  © 2026 Hidaka Syuri
+</div>
+
+<!-- JavaScript（読み込み順厳守） -->
+<script src="/js/works.js"></script>
+<script src="/js/modal.js"></script>
+<script src="/js/header-scroll.js"></script>
+
+
+</body>
+</html>

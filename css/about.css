@@ -1,0 +1,410 @@
+/* ================================
+   ABOUT ページ設定
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body.page-about {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--color-dark);
+  background: var(--color-light);
+}
+
+/* リンク */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* UI系リンクのトラッキング */
+.nav a,
+.ui-text {
+  letter-spacing: var(--ls-ui);
+}
+
+/* ================================
+   左カラム（固定30%）
+================================ */
+.about-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--left-width);
+  height: 100vh;
+  background: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.about-left-inner {
+  text-align: center;
+}
+
+.about-left-logo {
+  width: 67px;
+  height: 99px;
+  object-fit: contain;
+}
+
+.about-left-title {
+  margin-top: 24px;
+  font-size: 20px;
+  letter-spacing: var(--ls-brand);
+  font-weight: 400;
+}
+
+/* ================================
+   メインコンテンツ
+================================ */
+.about-main {
+  margin-left: var(--left-width);
+  width: var(--right-width);
+  min-height: 100vh;
+  background: var(--color-white);
+  padding-top: 160px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================
+   ヘッダー（右側のみ）
+================================ */
+.page-about .site-header {
+  background: var(--color-light);
+  border-bottom: 1px solid var(--color-dark);
+}
+
+.page-about .site-header.scrolled {
+  background: rgba(245, 245, 245, 0.9);
+}
+
+.page-about .site-header .nav a {
+  color: var(--color-dark);
+}
+
+.page-about .site-header .nav a::after {
+  background: var(--color-dark);
+}
+
+/* ================================
+   装飾
+================================ */
+.page-deco {
+  position: absolute;
+  right: 30px;
+  top: 377px;
+  width: 210px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* ================================
+   名刺 + ABOUTテキスト
+================================ */
+.about-intro {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto 19px;
+  padding-left: 20px;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* テキストブロック */
+.about-text-block {
+  max-width: 470px;
+}
+
+.about-heading {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+.about-sub {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+  margin-bottom: 40px;
+}
+
+.about-description {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.85;
+  color: var(--color-dark);
+}
+
+.about-description p {
+  margin: 0 0 20px;
+}
+
+.about-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================
+   名刺カード（ホバー強化）
+================================ */
+.card-link {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card-wrapper {
+  width: clamp(160px, 20vw, 250px);
+  aspect-ratio: 320 / 520;
+  perspective: 1000px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+}
+
+.card-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-wrapper:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* フォーカス時 */
+.card-link:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ================================
+   WHAT I DO / FAVORITES
+================================ */
+.about-abilities {
+  width: 100%;
+  margin: 70px 0 0;
+  padding: 0;
+}
+
+.abilities-container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: stretch;
+  border-top: 1px solid var(--color-dark);
+}
+
+/* 左ボックス（テキスト） */
+.abilities-left {
+  width: 50%;
+  height: 266px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 右ボックス（写真） */
+.abilities-right {
+  width: 50%;
+  overflow: hidden;
+}
+
+.about-picture {
+  width: 100%;
+  height: 266px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   アコーディオンブロック
+================================ */
+.ability-block {
+  height: 133px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  transition: background 0.3s ease;
+}
+
+.ability-block + .ability-block {
+  border-top: 1px solid var(--color-dark);
+}
+
+/* ヘッダー */
+.ability-header {
+  height: 133px;
+  padding-left: 30px;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.ability-header:hover {
+  background: #fafafa;
+}
+
+.ability-header:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: -2px;
+}
+
+.ability-title {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+}
+
+.ability-sub {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin: 0;
+  color: var(--color-gray);
+}
+
+/* トグルアイコン */
+.ability-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 400;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.ability-block.is-open .ability-toggle {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ボディ（高さ固定で内部スクロール） */
+.ability-body {
+  height: 0;
+  padding: 0 30px;
+  overflow-y: auto;
+  flex-grow: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ================================
+   WHAT I DO コンテンツ
+================================ */
+.ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ability-list li + li {
+  margin-top: 18px;
+}
+
+.ability-list h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  margin: 0 0 4px;
+}
+
+.ability-list p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* 資格 */
+.qualification-item {
+  margin-bottom: 18px;
+}
+
+.qualification-item:last-child {
+  margin-bottom: 0;
+}
+
+.qualification-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.qualification-level {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: #8a8a8a;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ================================
+   FAVORITES コンテンツ
+================================ */
+.favorites-text {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ================================
+   開いた状態
+================================ */
+.ability-block.is-open {
+  background: #fafafa;
+}
+
+.ability-block.is-open .ability-body {
+  height: auto;
+  padding: 20px 30px;
+  overflow-y: auto;
+  opacity: 1;
+}
+
+.ability-block.is-open .ability-header {
+  display: none;
+}
