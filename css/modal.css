@@ -64,8 +64,13 @@
 ================================ */
 .modal-header {
   position: relative;
-  padding: 15px 40px 0;
+  height: 60px;
+  padding: 0 32px;
   background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 .modal-main-title {
@@ -74,12 +79,36 @@
   letter-spacing: var(--ls-brand);
   color: var(--color-dark);
   margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.modal-header-left,
+.modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-nav-btn {
+  border: none;
+  background: none;
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+
+.modal-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
 
 .modal-close {
-  position: absolute;
-  top: 20px;
-  right: 24px;
   border: none;
   background: none;
   font-size: 22px;
@@ -92,7 +121,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
 }
 
 .modal-close:hover {
