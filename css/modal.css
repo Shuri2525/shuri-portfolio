@@ -65,12 +65,11 @@
 .modal-header {
   position: relative;
   height: 100px;
-  padding: 0 32px;
   background: var(--color-white);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #d8d8d8;
+  padding: 0 32px;
 }
 
 .modal-main-title {
@@ -79,9 +78,6 @@
   letter-spacing: var(--ls-brand);
   color: var(--color-dark);
   margin: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
 }
 
