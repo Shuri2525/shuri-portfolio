@@ -38,7 +38,7 @@ const WORKS_DATA = {
   "thumb": "/assets/works/web/03/hero.jpg",
   "modalThumb": "/assets/works/web/03/thumb.jpg",
   "detailImg": "/assets/works/web/03/detail.jpg",
-  "outline": "海外在住の女性をターゲットにしたヘッドスパ専門店のLPを、ランサーズのコンペにて制作。日本の癒し文化を感じられる構成とデザインが評価され、参加賞を受賞しました。",
+  "outline": "海外在住の女性をターゲットにしたヘッドスパ専門店のLPを、ランサーズのコンペにて制作。",
   "target": "30代後半〜40代後半の女性（海外在住）",
   "period": "3日",
   "purpose": "日本の癒し文化を伝え、予約につなげるため",
@@ -250,5 +250,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
 
