@@ -855,19 +855,6 @@ a {
 }
 
 /* モーダルナビ */
-.sp-modal-nav {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 0 8px;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 10002;
-  pointer-events: none;
-}
-
 .sp-modal-nav-btn {
   width: 44px;
   height: 44px;
@@ -902,9 +889,16 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 16px;
   border-bottom: 1px solid var(--color-dark);
   z-index: 10001;
+}
+
+.sp-modal-header-left,
+.sp-modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .sp-modal-category {
@@ -913,6 +907,10 @@ a {
   letter-spacing: 0.12em;
   color: var(--color-dark);
   margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 .sp-modal-close {
