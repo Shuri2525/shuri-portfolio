@@ -64,7 +64,7 @@
 ================================ */
 .modal-header {
   position: relative;
-  height: 60px;
+  height: 80px;
   padding: 0 32px;
   background: var(--color-white);
   display: flex;
@@ -278,7 +278,7 @@
    モーダル - 画像
 ================================ */
 .modal-image {
-  margin-top: 40px;
+  margin-top: 48px;
   overflow: hidden;
   border-radius: 4px;
 }
