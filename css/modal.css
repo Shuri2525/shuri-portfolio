@@ -66,10 +66,10 @@
   position: relative;
   height: 100px;
   background: var(--color-white);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  padding: 0 32px;
+  justify-content: space-between;
+  padding: 0 16px;
 }
 
 .modal-main-title {
@@ -78,7 +78,12 @@
   letter-spacing: var(--ls-brand);
   color: var(--color-dark);
   margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  line-height: 1;
 }
 
 .modal-header-left,
