@@ -1230,7 +1230,7 @@ a {
 }
 
 .sp-ability-body.active {
-  max-height: 400px;
+  max-height: none;
   background: var(--color-white); /* グレーから白に変更 */
 }
 
@@ -1246,7 +1246,7 @@ a {
 }
 
 .sp-ability-list li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 24px;
 }
 
 .sp-ability-list h3 {
@@ -1356,10 +1356,9 @@ a {
 
 /* スクロールコンテナ */
 .sp-ability-scroll-container {
-  max-height: 360px;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   padding: 20px;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* スクロールバーのスタイリング（Webkit） */
@@ -1779,16 +1778,15 @@ a {
 }
 
 .sp-ability-body.active {
-  max-height: 400px;
+  max-height: none;
   background: var(--color-white);
 }
 
 /* スクロールコンテナ */
 .sp-ability-scroll-container {
-  max-height: 360px;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   padding: 20px;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* リスト */
@@ -1803,7 +1801,7 @@ a {
 }
 
 .sp-ability-list li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 24px;
 }
 
 .sp-ability-list h3 {

@@ -429,8 +429,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = document.getElementById('modalClose');
   const modal = document.getElementById('worksModal');
   
-  // 初期表示（WEB）
-  renderWorks('web');
+  // クエリ指定カテゴリを初期表示
+  const params = new URLSearchParams(window.location.search);
+  const initialCat = params.get('cat');
+  const validCats = new Set(['web', 'dtp', 'graphic']);
+  const startCat = validCats.has(initialCat) ? initialCat : 'web';
+
+  catButtons.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.cat === startCat);
+  });
+  renderWorks(startCat);
   
   // カテゴリボタンクリック
   catButtons.forEach(btn => {
