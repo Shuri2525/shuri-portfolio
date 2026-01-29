@@ -85,6 +85,7 @@
 
   <!-- カテゴリ切り替え -->
   <section class="sp-category-nav">
+    <a class="sp-cat-btn sp-cat-top" href="/sp/index.html"># TOP</a>
     <button class="sp-cat-btn active" data-cat="web"># WEB</button>
     <button class="sp-cat-btn" data-cat="dtp"># DTP</button>
     <button class="sp-cat-btn" data-cat="graphic"># GRAPHIC</button>
@@ -464,7 +465,7 @@ function closeModal() {
 
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
-  const catButtons = document.querySelectorAll('.sp-cat-btn');
+  const catButtons = document.querySelectorAll('.sp-category-nav .sp-cat-btn[data-cat]');
   const modalClose = document.getElementById('modalClose');
   const modal = document.getElementById('worksModal');
   const modalPrev = document.getElementById('modalPrev');
