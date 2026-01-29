@@ -100,6 +100,12 @@
 <!-- モーダル -->
 <div class="sp-modal-overlay" id="worksModal">
   <div class="sp-modal-wrapper">
+
+    <!-- モーダルナビ -->
+    <div class="sp-modal-nav">
+      <button class="sp-modal-nav-btn sp-modal-prev" id="modalPrev" aria-label="前の作品">‹</button>
+      <button class="sp-modal-nav-btn sp-modal-next" id="modalNext" aria-label="次の作品">›</button>
+    </div>
     
     <!-- モーダルヘッダー -->
     <header class="sp-modal-header">
@@ -330,6 +336,9 @@ const WORKS_DATA = {
   ]
 };
 
+let currentCategory = null;
+let currentIndex = -1;
+
 // カテゴリごとのタイトル
 const CATEGORY_INFO = {
   web: { title: "WEB", subtitle: "HP / LP / TOPページ" },
@@ -383,12 +392,37 @@ function renderWorks(category) {
 // モーダルを開く
 function openModal(work, category) {
   const modal = document.getElementById('worksModal');
+  const works = WORKS_DATA[category] || [];
+  const index = works.findIndex(item => item.id === work.id);
+
+  currentCategory = category;
+  currentIndex = index >= 0 ? index : 0;
+
+  // 作品を表示
+  showWork(currentCategory, currentIndex);
+
+  // モーダル表示
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
   
+  // 先頭にスクロール
+  modal.scrollTop = 0;
+  requestAnimationFrame(() => {
+    modal.scrollTop = 0;
+  });
+}
+
+function showWork(category, index) {
+  const works = WORKS_DATA[category] || [];
+  const work = works[index];
+  if (!work) return;
+
   // データを設定
   document.getElementById('modalCategory').textContent = category.toUpperCase();
   document.getElementById('modalTitle').textContent = work.title;
   document.getElementById('modalTag').textContent = work.tag;
   document.getElementById('modalThumb').src = work.modalThumb;
+  document.getElementById('modalThumb').alt = work.title;
   document.getElementById('modalOutline').textContent = work.outline;
   document.getElementById('modalTarget').textContent = work.target;
   document.getElementById('modalPeriod').textContent = work.period;
@@ -400,20 +434,25 @@ function openModal(work, category) {
   const detailImg = document.getElementById('modalDetailImg');
   if (work.detailImg) {
     detailImg.src = work.detailImg;
+    detailImg.alt = work.title;
     detailImgWrap.style.display = 'block';
   } else {
     detailImgWrap.style.display = 'none';
   }
-  
-  // モーダル表示
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  
+
+  // ナビ状態
+  if (typeof window.updateModalNav === 'function') {
+    window.updateModalNav(works.length);
+  }
+
   // 先頭にスクロール
-  modal.scrollTop = 0;
-  requestAnimationFrame(() => {
+  const modal = document.getElementById('worksModal');
+  if (modal) {
     modal.scrollTop = 0;
-  });
+    requestAnimationFrame(() => {
+      modal.scrollTop = 0;
+    });
+  }
 }
 
 // モーダルを閉じる
@@ -428,6 +467,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const catButtons = document.querySelectorAll('.sp-cat-btn');
   const modalClose = document.getElementById('modalClose');
   const modal = document.getElementById('worksModal');
+  const modalPrev = document.getElementById('modalPrev');
+  const modalNext = document.getElementById('modalNext');
+  const modalWrapper = modal.querySelector('.sp-modal-wrapper');
+
+  // モーダルナビの状態管理
+  function updateModalNav(total) {
+    if (!total || total <= 1) {
+      modalPrev.style.visibility = 'hidden';
+      modalNext.style.visibility = 'hidden';
+      modalPrev.disabled = true;
+      modalNext.disabled = true;
+      return;
+    }
+    modalPrev.style.visibility = 'visible';
+    modalNext.style.visibility = 'visible';
+    modalPrev.disabled = currentIndex <= 0;
+    modalNext.disabled = currentIndex >= total - 1;
+  }
+
+  // グローバル参照用
+  window.updateModalNav = updateModalNav;
+
+  // 前後移動
+  function goPrev() {
+    const works = WORKS_DATA[currentCategory] || [];
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      showWork(currentCategory, currentIndex);
+    }
+  }
+
+  function goNext() {
+    const works = WORKS_DATA[currentCategory] || [];
+    if (currentIndex < works.length - 1) {
+      currentIndex += 1;
+      showWork(currentCategory, currentIndex);
+    }
+  }
+
+  modalPrev.addEventListener('click', goPrev);
+  modalNext.addEventListener('click', goNext);
+
+  // スワイプで前後移動
+  let touchStartX = 0;
+  let touchStartY = 0;
+  modalWrapper.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
+
+  modalWrapper.addEventListener('touchend', (e) => {
+    const touch = e.changedTouches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx > 0) {
+        goPrev();
+      } else {
+        goNext();
+      }
+    }
+  }, { passive: true });
   
   // クエリ指定カテゴリを初期表示
   const params = new URLSearchParams(window.location.search);
