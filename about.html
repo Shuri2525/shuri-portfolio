@@ -99,86 +99,51 @@
       <!-- 左:アコーディオン -->
       <div class="abilities-left">
 
-        <!-- WHAT I DO -->
-        <div class="ability-block">
+        <!-- SKILL & PROFILE -->
+        <div class="ability-block ability-accordion">
           <button class="ability-header" type="button">
-            <span class="ability-title">WHAT I DO</span>
-            <span class="ability-sub">できること</span>
+            <span class="ability-title">SKILL & PROFILE</span>
+            <span class="ability-sub">スキル・自己紹介</span>
             <span class="ability-toggle">+</span>
           </button>
 
           <div class="ability-body">
             <ul class="ability-list">
+              <!-- PROFILE -->
+              <li class="ability-section">
+                <h3 class="ability-section-title">PROFILE</h3>
+              </li>
+              <li>
+                <h3>自己紹介</h3>
+                <p>日高 朱璃｜デザイナー｜大分市在住｜2000年2月生まれ</p>
+              </li>
+              <!-- SKILL -->
+              <li class="ability-section">
+                <h3 class="ability-section-title">SKILL</h3>
+              </li>
               <li>
                 <h3>Adobe Photoshop</h3>
                 <p>写真加工・Webデザイン</p>
               </li>
               <li>
                 <h3>Adobe Illustrator</h3>
-                <p>Webデザイン・DTPデザイン<br>
-                  名刺・チラシ・パンフレット等</p>
+                <p>Webデザイン・DTPデザイン（名刺・チラシ等）</p>
               </li>
               <li>
-                <h3>Figma</h3>
-                <p>Webデザイン・バナー等</p>
-              </li>
-              <li>
-                <h3>STUDIO</h3>
-                <p>Web制作</p>
-              </li>
-              <li>
-                <h3>その他</h3>
-                <p>SNSリール動画編集・LINEスタンプ</p>
-              </li>
-              <li>
-                <h3>資格</h3>
-
-                <div class="qualification-item">
-                  <p class="qualification-name">
-                    Illustratorクリエイター能力認定試験
-                  </p>
-                  <p class="qualification-level">
-                    〈エキスパート〉
-                  </p>
-                </div>
-
-                <div class="qualification-item">
-                  <p class="qualification-name">
-                    Photoshopクリエイター能力認定試験
-                  </p>
-                  <p class="qualification-level">
-                    〈エキスパート〉
-                  </p>
-                </div>
-
-                <div class="qualification-item">
-                  <p class="qualification-name">
-                    Webクリエイター能力認定試験
-                  </p>
-                  <p class="qualification-level">
-                    〈エキスパート〉
-                  </p>
-                </div>
+                <h3>HTML / CSS</h3>
+                <p>コーディング・Webサイト制作</p>
               </li>
             </ul>
           </div>
         </div>
 
-        <!-- FAVORITES -->
-        <div class="ability-block">
-          <button class="ability-header" type="button">
-            <span class="ability-title">FAVORITES</span>
-            <span class="ability-sub">すきなもの</span>
-            <span class="ability-toggle">+</span>
-          </button>
-
-          <div class="ability-body">
-            <p class="favorites-text">
-              絵や雑貨、インテリアなど、<br>
-              日常の中でいいなと思ったものを集めるのが好きです。<br>
-              気分で変わるところも含めて、楽しんでいます。
-            </p>
-          </div>
+        <!-- CONTACT -->
+        <div class="ability-block ability-contact-block">
+          <a href="/contact.html" class="ability-header ability-contact-link">
+            <span class="ability-title">CONTACT</span>
+            <span class="ability-sub">お問い合わせ</span>
+            <span class="ability-toggle">→</span>
+          </a>
         </div>
 
       </div><!-- abilities-left -->
@@ -196,7 +161,7 @@
 
 <!-- アコーディオンJS -->
 <script>
-  document.querySelectorAll('.ability-block').forEach(function (block) {
+  document.querySelectorAll('.ability-block.ability-accordion').forEach(function (block) {
     const header = block.querySelector('.ability-header');
     const toggle = block.querySelector('.ability-toggle');
 
@@ -204,7 +169,7 @@
       block.classList.toggle('is-open');
       
       if (block.classList.contains('is-open')) {
-        toggle.textContent = '−';
+        toggle.textContent = '-';
       } else {
         toggle.textContent = '+';
       }

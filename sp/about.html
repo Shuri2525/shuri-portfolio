@@ -124,12 +124,12 @@
     <img src="/assets/about/about_picture.png" alt="プロフィール写真">
   </div>
 
-  <!-- WHAT I DO -->
+  <!-- SKILL & PROFILE -->
   <section class="sp-about-ability">
     <button class="sp-ability-header" id="whatIDoToggle" type="button">
       <div class="sp-ability-title-wrap">
-        <span class="sp-ability-title">WHAT I DO</span>
-        <span class="sp-ability-sub">できること</span>
+        <span class="sp-ability-title">SKILL & PROFILE</span>
+        <span class="sp-ability-sub">スキル・自己紹介</span>
       </div>
       <span class="sp-ability-toggle">+</span>
     </button>
@@ -137,79 +137,43 @@
     <div class="sp-ability-body" id="whatIDoBody">
       <div class="sp-ability-scroll-container">
         <ul class="sp-ability-list">
+          <!-- PROFILE -->
+          <li class="ability-section">
+            <h3 class="ability-section-title">PROFILE</h3>
+          </li>
+          <li>
+            <h3>自己紹介</h3>
+            <p>日高 朱璃｜デザイナー｜大分市在住｜2000年2月生まれ</p>
+          </li>
+          <!-- SKILL -->
+          <li class="ability-section">
+            <h3 class="ability-section-title">SKILL</h3>
+          </li>
           <li>
             <h3>Adobe Photoshop</h3>
             <p>写真加工・Webデザイン</p>
           </li>
           <li>
             <h3>Adobe Illustrator</h3>
-            <p>Webデザイン・DTPデザイン<br>
-              名刺・チラシ・パンフレット等</p>
+            <p>Webデザイン・DTPデザイン（名刺・チラシ等）</p>
           </li>
           <li>
-            <h3>Figma</h3>
-            <p>Webデザイン・バナー等</p>
-          </li>
-          <li>
-            <h3>STUDIO</h3>
-            <p>Web制作</p>
-          </li>
-          <li>
-            <h3>その他</h3>
-            <p>SNSリール動画編集・LINEスタンプ</p>
-          </li>
-          <li>
-            <h3>資格</h3>
-            <div class="sp-qualification-item">
-              <p class="sp-qualification-name">
-                Illustratorクリエイター能力認定試験
-              </p>
-              <p class="sp-qualification-level">
-                〈エキスパート〉
-              </p>
-            </div>
-            <div class="sp-qualification-item">
-              <p class="sp-qualification-name">
-                Photoshopクリエイター能力認定試験
-              </p>
-              <p class="sp-qualification-level">
-                〈エキスパート〉
-              </p>
-            </div>
-            <div class="sp-qualification-item">
-              <p class="sp-qualification-name">
-                Webクリエイター能力認定試験
-              </p>
-              <p class="sp-qualification-level">
-                〈エキスパート〉
-              </p>
-            </div>
+            <h3>HTML / CSS</h3>
+            <p>コーディング・Webサイト制作</p>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- FAVORITES -->
-  <section class="sp-about-ability">
-    <button class="sp-ability-header" id="favoritesToggle" type="button">
-      <div class="sp-ability-title-wrap">
-        <span class="sp-ability-title">FAVORITES</span>
-        <span class="sp-ability-sub">すきなもの</span>
-      </div>
-      <span class="sp-ability-toggle">+</span>
-    </button>
-
-    <div class="sp-ability-body" id="favoritesBody">
-      <div class="sp-ability-scroll-container">
-        <p class="sp-favorites-text">
-          絵や雑貨、インテリアなど、<br>
-          日常の中でいいなと思ったものを集めるのが好きです。<br>
-          気分で変わるところも含めて、楽しんでいます。
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- CONTACT -->
+<section class="sp-section sp-contact-section">
+  <a href="/contact.html" class="contact-button">
+    <p class="contact-button-en">CONTACT</p>
+    <p class="contact-button-ja">お問い合わせ</p>
+    <span class="contact-arrow">→</span>
+  </a>
+</section>
 
 </main>
 
@@ -290,7 +254,6 @@
   }
 
   setupAccordion('whatIDoToggle', 'whatIDoBody');
-  setupAccordion('favoritesToggle', 'favoritesBody');
 
   // ファーストビューロゴクリック
   document.querySelector('.sp-hero-logo').addEventListener('click', () => {

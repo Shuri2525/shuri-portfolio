@@ -86,10 +86,6 @@ a {
   color: var(--color-dark);
 }
 
-.page-about .site-header .nav a::after {
-  background: var(--color-dark);
-}
-
 /* ================================
    装飾
 ================================ */
@@ -205,7 +201,7 @@ a {
 }
 
 /* ================================
-   WHAT I DO / FAVORITES
+   SKILL & PROFILE / CONTACT
 ================================ */
 .about-abilities {
   width: 100%;
@@ -221,7 +217,7 @@ a {
   border-top: 1px solid var(--color-dark);
 }
 
-/* 左ボックス（テキスト） */
+/* 左ボックス（テキスト） - 高さ固定 */
 .abilities-left {
   width: 50%;
   height: 266px;
@@ -229,9 +225,10 @@ a {
   flex-direction: column;
 }
 
-/* 右ボックス（写真） */
+/* 右ボックス（写真） - 高さ固定 */
 .abilities-right {
   width: 50%;
+  height: 266px;
   overflow: hidden;
 }
 
@@ -243,7 +240,7 @@ a {
 }
 
 /* ================================
-   アコーディオンブロック
+   アコーディオンブロック - 高さ固定
 ================================ */
 .ability-block {
   height: 133px;
@@ -260,7 +257,15 @@ a {
   border-top: 1px solid var(--color-dark);
 }
 
-/* ヘッダー */
+/* 開いた状態でも高さは133pxのまま */
+.ability-block.is-open {
+  height: 133px;
+  background: #fafafa;
+}
+
+/* ================================
+   ヘッダー
+================================ */
 .ability-header {
   height: 133px;
   padding-left: 30px;
@@ -285,49 +290,72 @@ a {
   outline-offset: -2px;
 }
 
+/* 開いた状態ではヘッダーを非表示 */
+.ability-block.is-open .ability-header {
+  display: none;
+}
+
+/* ================================
+   統一テキストスタイル
+================================ */
 .ability-title {
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   margin: 0 0 6px;
 }
 
 .ability-sub {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.12em;
   margin: 0;
   color: var(--color-gray);
-}
-
-/* トグルアイコン */
-.ability-toggle {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 28px;
-  font-weight: 400;
-  pointer-events: none;
-  transition: transform 0.3s ease;
-}
-
-.ability-block.is-open .ability-toggle {
-  transform: translateY(-50%) rotate(45deg);
-}
-
-/* ボディ（高さ固定で内部スクロール） */
-.ability-body {
-  height: 0;
-  padding: 0 30px;
-  overflow-y: auto;
-  flex-grow: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 0.85;
 }
 
 /* ================================
-   WHAT I DO コンテンツ
+   統一アイコンスタイル
+================================ */
+.ability-toggle {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ability-block.is-open .ability-toggle {
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+/* ================================
+   アコーディオンボディ - スクロール対応
+================================ */
+.ability-body {
+  height: 0;
+  padding: 0 30px;
+  overflow-y: hidden;
+  flex-grow: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+/* 開いた状態 - 高さ133px内でスクロール */
+.ability-block.is-open .ability-body {
+  height: 133px;
+  padding: 16px 30px;
+  overflow-y: auto;
+  opacity: 1;
+}
+
+/* ================================
+   スキル・自己紹介コンテンツ
 ================================ */
 .ability-list {
   list-style: none;
@@ -354,57 +382,43 @@ a {
   margin: 0;
 }
 
-/* 資格 */
-.qualification-item {
-  margin-bottom: 18px;
+/* セクション見出し */
+.ability-section {
+  margin-top: 22px;
 }
 
-.qualification-item:last-child {
-  margin-bottom: 0;
+.ability-section:first-child {
+  margin-top: 0;
 }
 
-.qualification-name {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.qualification-level {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  color: #8a8a8a;
-  margin: 0;
-  line-height: 1.1;
-}
-
-/* ================================
-   FAVORITES コンテンツ
-================================ */
-.favorites-text {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  line-height: 1.85;
+.ability-section-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--color-gray);
   margin: 0;
 }
 
 /* ================================
-   開いた状態
+   CONTACTリンク（特別スタイル）
 ================================ */
-.ability-block.is-open {
-  background: #fafafa;
+.ability-contact-link .ability-title {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
 }
 
-.ability-block.is-open .ability-body {
-  height: auto;
-  padding: 20px 30px;
-  overflow-y: auto;
-  opacity: 1;
+.ability-contact-link .ability-sub {
+  font-size: 13px;
+  opacity: 0.8;
 }
 
-.ability-block.is-open .ability-header {
-  display: none;
+.ability-contact-link .ability-toggle {
+  right: 28px;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+.ability-contact-link:hover {
+  background: #f6f6f6;
 }

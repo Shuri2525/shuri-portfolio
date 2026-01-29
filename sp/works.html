@@ -410,9 +410,10 @@ function openModal(work, category) {
   document.body.style.overflow = 'hidden';
   
   // 先頭にスクロール
-  setTimeout(() => {
-    modal.querySelector('.sp-modal-wrapper').scrollTop = 0;
-  }, 50);
+  modal.scrollTop = 0;
+  requestAnimationFrame(() => {
+    modal.scrollTop = 0;
+  });
 }
 
 // モーダルを閉じる

@@ -1151,6 +1151,8 @@ a {
   display: block;
 }
 
+
+
 /* ================================
    アコーディオンセクション
 ================================ */
@@ -1254,6 +1256,23 @@ a {
   margin: 0;
 }
 
+/* セクション見出し */
+.sp-ability-list .ability-section {
+  margin-top: 22px;
+}
+
+.sp-ability-list .ability-section:first-child {
+  margin-top: 0;
+}
+
+.sp-ability-list .ability-section-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
 /* 資格 */
 .sp-qualification-item {
   margin-bottom: 16px;
@@ -1298,6 +1317,30 @@ a {
 
 .sp-about .sp-copyright {
   color: rgba(63, 59, 58, 0.5);
+}
+
+/* ABOUT内のCONTACTはアコーディオンと同トーンに */
+.sp-about .sp-contact-section {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-dark);
+}
+
+.sp-about .contact-button {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.sp-about .contact-button-ja {
+  color: var(--color-gray);
+}
+
+.sp-about .contact-arrow {
+  color: var(--color-dark);
+  opacity: 1;
+}
+
+.sp-about .contact-button:active .contact-arrow {
+  transform: translateY(-50%);
 }
 
 
@@ -1665,4 +1708,219 @@ a {
   color: rgba(245, 245, 245, 0.7);
   text-align: center;
   margin: 0;
+}
+
+
+
+/* アコーディオンセクション全体 */
+.sp-about-ability {
+  border-top: 1px solid var(--color-dark);
+  background: var(--color-white);
+}
+
+/* アコーディオンヘッダー */
+.sp-ability-header {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.sp-ability-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sp-ability-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* トグルアイコン */
+.sp-ability-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 200;
+  color: var(--color-dark);
+}
+
+/* アコーディオンボディ */
+.sp-ability-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
+  background: var(--color-white);
+}
+
+.sp-ability-body.active {
+  max-height: 400px;
+  background: var(--color-white);
+}
+
+/* スクロールコンテナ */
+.sp-ability-scroll-container {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* リスト */
+.sp-ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-ability-list li {
+  margin-bottom: 20px;
+}
+
+.sp-ability-list li:last-child {
+  margin-bottom: 0;
+}
+
+.sp-ability-list h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color: var(--color-dark);
+  margin: 0 0 6px;
+}
+
+.sp-ability-list p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* セクション見出し */
+.sp-ability-list .ability-section {
+  margin-top: 22px;
+}
+
+.sp-ability-list .ability-section:first-child {
+  margin-top: 0;
+}
+
+.sp-ability-list .ability-section-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* ================================
+   SP ABOUT CONTACT
+================================ */
+.sp-about .sp-contact-section {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-dark);
+  padding: 0;
+  margin: 0;
+}
+
+.sp-about .contact-button {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-white);
+  border: none;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+/* CONTACTは元の表示方法を使用 */
+.sp-about .contact-button-en {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 8px;
+  color: var(--color-dark);
+}
+
+.sp-about .contact-button-ja {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 0;
+  color: var(--color-gray);
+}
+
+.sp-about .contact-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 200;
+  color: var(--color-dark);
+  opacity: 1;
+}
+
+.sp-about .contact-button:active .contact-arrow {
+  transform: translateY(-50%);
+}
+
+.contact-arrow{
+  right: 10;
+}
+
+
+.sp-ability-title,
+.sp-about .contact-button-en {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+
+.sp-ability-sub,
+.sp-about .contact-button-ja {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+}
+
+
+/* アイコン共通 */
+.sp-ability-toggle,
+.sp-about .contact-arrow {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  display: block;
+  color: var(--color-dark);
 }
