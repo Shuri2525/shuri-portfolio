@@ -165,11 +165,19 @@
 
     </div>
 
+    <!-- モーダル終点導線（最終作品のみ表示） -->
+    <div class="sp-modal-end-actions modal-close-area" id="modalEndActions" aria-hidden="true">
+      <button class="sp-modal-end-close modal-close" id="modalEndClose" type="button">CLOSE</button>
+    </div>
+
     <!-- モーダル下部ナビゲーション -->
     <nav class="sp-modal-footer-nav">
       <button class="sp-modal-footer-nav-btn prev" id="sp-modal-footer-prev" aria-label="前の作品">
         <span class="arrow">←</span>
         <span>PREV</span>
+      </button>
+      <button class="sp-modal-footer-nav-btn close" id="sp-modal-footer-close" aria-label="閉じる">
+        <span>×</span>
       </button>
       <button class="sp-modal-footer-nav-btn next" id="sp-modal-footer-next" aria-label="次の作品">
         <span>NEXT</span>
@@ -431,6 +439,19 @@ function showWork(category, index) {
   document.getElementById('modalPeriod').textContent = work.period;
   document.getElementById('modalPurpose').textContent = work.purpose;
   document.getElementById('modalDetail').textContent = work.detailText;
+
+  // 終点導線（最終作品のみ表示）
+  const endActions = document.getElementById('modalEndActions');
+  if (endActions) {
+    const isLast = index >= works.length - 1;
+    endActions.style.display = isLast ? 'flex' : 'none';
+    endActions.setAttribute('aria-hidden', isLast ? 'false' : 'true');
+  }
+  const footerNav = document.querySelector('.sp-modal-footer-nav');
+  if (footerNav) {
+    const isLast = index >= works.length - 1;
+    footerNav.style.display = isLast ? 'none' : 'flex';
+  }
   
   // 詳細画像
   const detailImgWrap = document.getElementById('modalDetailImageWrap');
@@ -469,6 +490,7 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', () => {
   const catButtons = document.querySelectorAll('.sp-category-nav .sp-cat-btn[data-cat]');
   const modalClose = document.getElementById('modalClose');
+  const modalEndClose = document.getElementById('modalEndClose');
   const modal = document.getElementById('worksModal');
   const modalPrev = document.getElementById('modalPrev');
   const modalNext = document.getElementById('modalNext');
@@ -588,6 +610,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // モーダルを閉じる
   modalClose.addEventListener('click', closeModal);
+  if (modalEndClose) modalEndClose.addEventListener('click', closeModal);
+  
+  // フッタークローズボタン
+  const footerCloseBtn = document.getElementById('sp-modal-footer-close');
+  if (footerCloseBtn) footerCloseBtn.addEventListener('click', closeModal);
   
   // オーバーレイクリック
   modal.addEventListener('click', (e) => {
