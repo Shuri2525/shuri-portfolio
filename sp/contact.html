@@ -6,13 +6,13 @@
   <title>CONTACT | SHURI PORTFOLIO</title>
 
   <!-- デバイス判定・自動リダイレクト -->
-  <script src="/js/device-redirect.js"></script>
+  <script src="../js/device-redirect.js"></script>
 
   <!-- PC版への関連づけ（SEO対策） -->
-  <link rel="canonical" href="/contact.html">
+  <link rel="canonical" href="../contact.html">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/sp/sp-style.css">
+  <link rel="stylesheet" href="./sp-style.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 <!-- ヘッダー -->
 <header class="sp-header">
   <div class="sp-header-inner">
-    <a href="/sp/index.html" class="sp-logo-text">HIDAKA SHURI</a>
+    <a href="./index.html" class="sp-logo-text">HIDAKA SHURI</a>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span>
       <span></span>
@@ -35,10 +35,10 @@
 <!-- メニューオーバーレイ -->
 <nav class="menu-overlay" id="menuOverlay">
   <ul class="menu-list">
-    <li><a href="/sp/index.html">TOP</a></li>
-    <li><a href="/sp/works.html">WORKS</a></li>
-    <li><a href="/sp/about.html">ABOUT</a></li>
-    <li><a href="/sp/contact.html">CONTACT</a></li>
+    <li><a href="./index.html">TOP</a></li>
+    <li><a href="./works.html">WORKS</a></li>
+    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./contact.html">CONTACT</a></li>
   </ul>
 
   <!-- Instagram -->
@@ -53,7 +53,7 @@
 
   <!-- 右下装飾（模様） -->
   <img
-    src="/assets/deco/deco_f5f5f5.svg"
+    src="../assets/deco/deco_f5f5f5.svg"
     alt=""
     class="menu-pattern"
     aria-hidden="true"
@@ -64,13 +64,15 @@
 <main class="sp-main">
 
   <!-- メインビジュアル -->
-  <section class="sp-hero sp-contact-hero">
-    <div class="sp-hero-content">
-      <img src="/assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
-      <p class="sp-hero-title sp-contact-hero-title">HIDAKA SHURI</p>
-    </div>
-    <img src="/assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
-  </section>
+  <a href="./index.html" class="sp-hero-link" aria-label="TOPへ戻る">
+    <section class="sp-hero sp-contact-hero">
+      <div class="sp-hero-content">
+        <img src="../assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
+        <p class="sp-hero-title sp-contact-hero-title">HIDAKA SHURI</p>
+      </div>
+      <img src="../assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
+    </section>
+  </a>
 
   <!-- ページタイトル -->
   <section class="sp-page-header sp-contact-page-header">
@@ -168,7 +170,7 @@
     });
   });
 </script>
-<script src="/js/sp-header-scroll.js"></script>
+<script src="../js/sp-header-scroll.js"></script>
 
 </body>
 </html>

@@ -61,7 +61,7 @@
     if (isMobileOrTablet()) {
       // モバイル・タブレットデバイス → SP版へリダイレクト
       if (!currentPath.includes('/sp/')) {
-        const targetUrl = `/sp/${currentPage}.html`;
+        const targetUrl = `./sp/${currentPage}.html`;
         log('Redirecting to SP:', targetUrl);
         window.location.href = targetUrl;
       }
@@ -69,7 +69,7 @@
       // PCデバイス → PC版へリダイレクト
       if (currentPath.includes('/sp/')) {
         const pcPage = currentPage;
-        const targetUrl = `/${pcPage}.html`;
+        const targetUrl = `../${pcPage}.html`;
         log('Redirecting to PC:', targetUrl);
         window.location.href = targetUrl;
       }

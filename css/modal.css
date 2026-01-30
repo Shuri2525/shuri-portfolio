@@ -65,11 +65,12 @@
 .modal-header {
   position: relative;
   height: 100px;
+  padding: 0 0px;
   background: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 .modal-main-title {
@@ -80,10 +81,8 @@
   margin: 0;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
-  line-height: 1;
 }
 
 .modal-header-left,
