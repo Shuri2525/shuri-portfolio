@@ -165,12 +165,24 @@
 
     </div>
 
+    <!-- モーダル下部ナビゲーション -->
+    <nav class="sp-modal-footer-nav">
+      <button class="sp-modal-footer-nav-btn prev" id="sp-modal-footer-prev" aria-label="前の作品">
+        <span class="arrow">←</span>
+        <span>PREV</span>
+      </button>
+      <button class="sp-modal-footer-nav-btn next" id="sp-modal-footer-next" aria-label="次の作品">
+        <span>NEXT</span>
+        <span class="arrow">→</span>
+      </button>
+    </nav>
+
   </div>
 </div>
 
 <!-- JavaScript -->
 <script>
-// WORKSデータ（完全版）
+// WORKSデータ（完全版・修正済み）
 const WORKS_DATA = {
   web: [
    {
@@ -185,8 +197,7 @@ const WORKS_DATA = {
   "period": "約3ヶ月",
   "purpose": "スキルや制作姿勢を、構成と実装の両面から伝えるため",
   "detailText": "ファーストビューでは情報量を絞り、視線が迷わないようミニマルな構成を採用。作品一覧ページでは比較しやすさを重視し、情報の優先度や余白の使い方を工夫しています。全体を通して、「伝える」ことを第一に設計・実装しました。"
-}
-,
+},
     {
   "id": "02",
   "title": "ビジネスホテルHP",
@@ -199,8 +210,7 @@ const WORKS_DATA = {
   "period": "3日",
   "purpose": "宿泊予約までの導線を分かりやすく設計し、新たな利用層への訴求を強化するため",
   "detailText": "那覇市中心部に立地するホテルを想定し、信頼感のある落ち着いた配色と余白を活かしたデザインを採用。ビジネス利用だけでなく、ファミリーや団体旅行といった複数人の利用もイメージできるよう、写真や情報配置を工夫しました。\n\nまた、初めて訪れるユーザーでも迷わず目的の情報に辿り着けるよう、ナビゲーションと宿泊予約導線を明確に設計。短期間でありながら、視認性・利便性・印象の三要素をバランス良くまとめた提案です。"
-}
-,
+},
     {
   "id": "03",
   "title": "ヘッドスパLP",
@@ -213,25 +223,7 @@ const WORKS_DATA = {
   "period": "3日",
   "purpose": "日本の癒し文化を伝え、予約につなげるため",
   "detailText": "アメリカ在住の女性を想定し、日本特有の「おもてなし」や指圧・癒し文化が伝わるよう、全体のビジュアルや語り口を設計しました。\n\n海外ユーザーにとっても直感的でわかりやすい構成を重視し、情報過多にならないよう要点を整理。静かで落ち着いた印象を与えるデザインにより、安心感と信頼感を演出しています。"
-}
-,
-
-/*
-{
-  id: "04",
-  title: "老舗焼肉店サイト",
-  tag: "TOPページ / コンペ制作",
-  thumb: "../assets/works/web/04/hero.jpg",
-  modalThumb: "../assets/works/web/04/thumb.jpg",
-  detailImg: "../assets/works/web/04/detail.png",
-  outline: "飲食店のコーポレートサイトリニューアルを想定し、TOPページを制作しました。",
-  target: "来店を検討する幅広い年齢層のユーザー",
-  period: "5日",
-  purpose: "高級感と親しみやすさを両立したブランディングのため",
-  detailText: "神戸牛専門店のリニューアル案件を想定し、高級感がありながらも来店しやすい印象を与えるトーン設計を意識しました。昼夜それぞれの利用シーンを想定し、情報の優先度と視線の流れを整理しています。"
 },
-*/
-
 {
   "id": "05",
   "title": "整形外科医院サイト",
@@ -244,8 +236,7 @@ const WORKS_DATA = {
   "period": "3日",
   "purpose": "既存イメージを刷新し、信頼感と先進性を伝えるため",
   "detailText": "旧サイトの印象にとらわれず、ファーストビューから印象的な世界観を伝える構成を意識しました。ロゴからメインビジュアルへの視線誘導をスムーズに設計し、整形外科らしい安心感を残しながらも、洗練された先進的な印象を持たせています。\n\nまた、サイト全体の配色や余白設計にも配慮し、どの年代のユーザーにも親しみやすく、視認性の高いUIを目指しました。"
-}
-,
+},
 {
   "id": "06",
   "title": "団体ポータルサイト",
@@ -267,37 +258,35 @@ const WORKS_DATA = {
   "id": "01",
   "title": "名刺デザイン",
   "tag": "名刺 / 個人制作",
-  "thumb": "../assets/works/dtp/01/hero.jpg",
-  "modalThumb": "../assets/works/dtp/01/thumb.jpg",
-  "detailImg": "../assets/works/dtp/01/detail.jpg",
+  "thumb": "../assets/works/dtp/01/hero.webp",
+  "modalThumb": "../assets/works/dtp/01/thumb.webp",
+  "detailImg": "../assets/works/dtp/01/detail.webp",
   "outline": "自身のブランディングを意識して制作した個人用の名刺デザインです。シンプルながら印象に残る構成を目指しました。",
   "target": "取引先・クライアント",
   "period": "1日",
   "purpose": "第一印象をより良くし、信頼感を与えるため",
   "detailText": "余白やタイポグラフィに配慮し、視認性と品の良さを両立させたデザインを意識しました。表面にはロゴと基本情報を簡潔にまとめ、裏面にはQRコードやSNS情報を配置することで、機能性とブランド性を高めています。"
-}
-,
+},
   {
   "id": "02",
   "title": "リーフレットデザイン",
   "tag": "チラシ / 実案件",
-  "thumb": "../assets/works/dtp/02/hero.jpg",
-  "modalThumb": "../assets/works/dtp/02/thumb.jpg",
-  "detailImg": "../assets/works/dtp/02/detail.jpg",
+  "thumb": "../assets/works/dtp/02/hero.webp",
+  "modalThumb": "../assets/works/dtp/02/thumb.webp",
+  "detailImg": "../assets/works/dtp/02/detail.webp",
   "outline": "建築会社にて、外壁塗装サービスの営業用三つ折りリーフレットを制作しました。実際の営業シーンを想定し、話の流れに沿って構成しています。",
   "target": "戸建住宅を検討する施主・住民",
   "period": "2日",
   "purpose": "営業担当者が対面で説明する際に使いやすく、視覚的に信頼感を与えるため",
-  "detailText": "観音開きの三つ折りリーフレットとして、営業担当者が話しやすい順序と情報の展開を意識しながら制作しました。\n\n配色やビジュアルには“塗装のプロらしさ”と“安心感”を両立させ、専門的な内容でも読みやすく整理。価格・工法・メリットなどを簡潔に伝えつつ、デザイン性も損なわないよう構成しています。"
-}
-,
+  "detailText": "観音開きの三つ折りリーフレットとして、営業担当者が話しやすい順序と情報の展開を意識しながら制作しました。\n\n配色やビジュアルには"塗装のプロらしさ"と"安心感"を両立させ、専門的な内容でも読みやすく整理。価格・工法・メリットなどを簡潔に伝えつつ、デザイン性も損なわないよう構成しています。"
+},
     {
   "id": "03",
   "title": "戸建て販売チラシ",
   "tag": "チラシ / 実案件",
-  "thumb": "../assets/works/dtp/03/hero.jpg",
-  "modalThumb": "../assets/works/dtp/03/thumb.jpg",
-  "detailImg": "../assets/works/dtp/03/detail.jpg",
+  "thumb": "../assets/works/dtp/03/hero.webp",
+  "modalThumb": "../assets/works/dtp/03/thumb.webp",
+  "detailImg": "../assets/works/dtp/03/detail.webp",
   "outline": "新築分譲住宅の販売促進を目的とした、A4サイズの物件チラシを実務で制作しました。視認性と汎用性を重視した設計です。",
   "target": "住宅購入を検討するファミリー層・地域住民",
   "period": "3日",
@@ -312,28 +301,27 @@ const WORKS_DATA = {
   "id": "01",
   "title": "ロゴデザイン",
   "tag": "ロゴ / コンペ",
-  "thumb": "../assets/works/graphic/01/hero.jpg",
-  "modalThumb": "../assets/works/graphic/01/thumb.jpg",
-  "detailImg": "../assets/works/graphic/01/detail.jpg",
+  "thumb": "../assets/works/graphic/01/hero.webp",
+  "modalThumb": "../assets/works/graphic/01/thumb.webp",
+  "detailImg": "../assets/works/graphic/01/detail.webp",
   "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
   "target": "美容室（40代女性中心）",
   "period": "2日",
   "purpose": "ブランドイメージ構築と店舗の印象強化",
   "detailText": "「まっすぐに続く美しさ」をテーマに、縦ラインと余白を活かした静けさのあるレイアウトを採用。縦組みの文字配置は上品で視認性が高く、シンプルながら記憶に残る印象を与えるよう設計しました。\n\nフォントの丸みやアーチ状の処理によって、髪のしなやかさや居心地の良さを視覚的に表現。視線誘導とブランド性の両立を目指したロゴ提案です。"
-}
-,
+},
    {
   "id": "02",
   "title": "ロゴデザイン",
   "tag": "ロゴ / コンペ",
-  "thumb": "../assets/works/graphic/02/hero.jpg",
-  "modalThumb": "../assets/works/graphic/02/thumb.jpg",
-  "detailImg": "../assets/works/graphic/02/detail.jpg",
-  "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
+  "thumb": "../assets/works/graphic/02/hero.webp",
+  "modalThumb": "../assets/works/graphic/02/thumb.webp",
+  "detailImg": "../assets/works/graphic/02/detail.webp",
+  "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを"むすぶ"というテーマに落とし込みました。",
   "target": "食品メーカー・生活者",
   "period": "1日",
   "purpose": "ブランドの価値観（つながり・誠実さ・温かさ）を象徴するロゴを提案するため",
-  "detailText": "箸袋を結んだ動きをモチーフに、“むすぶ”という行為を抽象化し、ロゴ全体で温かい人間関係やご縁を表現しました。\n\n背景の3本線は水引をイメージし、「心を結ぶ」「縁をつなぐ」という想いを込めています。配色は深みのある赤と金で、品格・誠実さ・ぬくもりを表現。結び目の形がMのシルエットを形成し、ブランド名との一体感を持たせたデザインです。"
+  "detailText": "箸袋を結んだ動きをモチーフに、"むすぶ"という行為を抽象化し、ロゴ全体で温かい人間関係やご縁を表現しました。\n\n背景の3本線は水引をイメージし、「心を結ぶ」「縁をつなぐ」という想いを込めています。配色は深みのある赤と金で、品格・誠実さ・ぬくもりを表現。結び目の形がMのシルエットを形成し、ブランド名との一体感を持たせたデザインです。"
 }
 
   ]
@@ -351,11 +339,18 @@ const CATEGORY_INFO = {
 
 // 作品一覧を描画
 function renderWorks(category) {
+  console.log('renderWorks called with category:', category);
+  
   const worksList = document.getElementById('worksList');
   const categoryTitle = document.getElementById('categoryTitle');
   const categorySubtitle = document.getElementById('categorySubtitle');
   
-  if (!worksList) return;
+  console.log('worksList element:', worksList);
+  
+  if (!worksList) {
+    console.error('worksList element not found!');
+    return;
+  }
   
   // タイトル更新
   const info = CATEGORY_INFO[category];
@@ -367,7 +362,11 @@ function renderWorks(category) {
   
   // 作品を描画
   const works = WORKS_DATA[category] || [];
-  works.forEach(work => {
+  console.log('Number of works:', works.length);
+  
+  works.forEach((work, index) => {
+    console.log(`Rendering work ${index + 1}:`, work.title);
+    
     const [tagEn, tagJa] = work.tag.split('/').map(t => t?.trim());
     
     const workItem = document.createElement('div');
@@ -390,6 +389,8 @@ function renderWorks(category) {
     
     worksList.appendChild(workItem);
   });
+  
+  console.log('renderWorks completed. Items in DOM:', worksList.children.length);
 }
 
 // モーダルを開く
@@ -472,21 +473,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('worksModal');
   const modalPrev = document.getElementById('modalPrev');
   const modalNext = document.getElementById('modalNext');
+  const footerPrevBtn = document.getElementById('sp-modal-footer-prev');
+  const footerNextBtn = document.getElementById('sp-modal-footer-next');
   const modalWrapper = modal.querySelector('.sp-modal-wrapper');
 
   // モーダルナビの状態管理
   function updateModalNav(total) {
-    if (!total || total <= 1) {
-      modalPrev.style.visibility = 'hidden';
-      modalNext.style.visibility = 'hidden';
-      modalPrev.disabled = true;
-      modalNext.disabled = true;
-      return;
+    // ヘッダーナビは非表示のまま（CSSで制御済み）
+    
+    // 下部ナビの更新
+    if (footerPrevBtn) {
+      if (currentIndex <= 0) {
+        footerPrevBtn.classList.add('hidden');
+      } else {
+        footerPrevBtn.classList.remove('hidden');
+      }
     }
-    modalPrev.style.visibility = 'visible';
-    modalNext.style.visibility = 'visible';
-    modalPrev.disabled = currentIndex <= 0;
-    modalNext.disabled = currentIndex >= total - 1;
+
+    if (footerNextBtn) {
+      const works = WORKS_DATA[currentCategory] || [];
+      if (currentIndex >= works.length - 1) {
+        footerNextBtn.classList.add('hidden');
+      } else {
+        footerNextBtn.classList.remove('hidden');
+      }
+    }
   }
 
   // グローバル参照用
@@ -509,8 +520,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  modalPrev.addEventListener('click', goPrev);
-  modalNext.addEventListener('click', goNext);
+  // ヘッダーナビ（残しておくが使わない）
+  if (modalPrev) modalPrev.addEventListener('click', goPrev);
+  if (modalNext) modalNext.addEventListener('click', goNext);
+
+  // 下部ナビ
+  if (footerPrevBtn) footerPrevBtn.addEventListener('click', goPrev);
+  if (footerNextBtn) footerNextBtn.addEventListener('click', goNext);
 
   // スワイプで前後移動
   let touchStartX = 0;
@@ -558,16 +574,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // 作品を再描画
       renderWorks(category);
       
-      // ページ上部にスクロール// ページタイトルの位置にスクロール
-const pageHeader = document.querySelector('.sp-works-page-header');
-if (pageHeader) {
-  const headerHeight = 60; // SPヘッダーの高さ
-  const targetPosition = pageHeader.offsetTop - headerHeight;
-  window.scrollTo({ 
-    top: targetPosition, 
-    behavior: 'smooth' 
-  });
-}
+      // ページタイトルの位置にスクロール
+      const pageHeader = document.querySelector('.sp-works-page-header');
+      if (pageHeader) {
+        const headerHeight = 60;
+        const targetPosition = pageHeader.offsetTop - headerHeight;
+        window.scrollTo({ 
+          top: targetPosition, 
+          behavior: 'smooth' 
+        });
+      }
     });
   });
 

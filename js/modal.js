@@ -1,14 +1,15 @@
 /* ================================
    WORKS モーダル制御
    - 閉じるアニメーション
-   - Prev/Next ナビ
+   - 下部ナビゲーション
 ================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("worksModal");
   const closeBtn = document.getElementById("modal-close");
-  const prevBtn = document.getElementById("modal-prev");
-  const nextBtn = document.getElementById("modal-next");
+  const footerPrevBtn = document.getElementById("modal-footer-prev");
+  const footerNextBtn = document.getElementById("modal-footer-next");
+  const modalBody = document.querySelector(".modal-body");
 
   if (!modal || !closeBtn) {
     console.error("モーダル要素が見つかりません");
@@ -25,14 +26,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateNav(total) {
-    if (!prevBtn || !nextBtn) return;
-    if (!total || total <= 1) {
-      prevBtn.disabled = true;
-      nextBtn.disabled = true;
-      return;
+    // 下部ナビの更新（非表示/表示）
+    if (footerPrevBtn) {
+      if (currentIndex <= 0) {
+        footerPrevBtn.classList.add('hidden');
+      } else {
+        footerPrevBtn.classList.remove('hidden');
+      }
     }
-    prevBtn.disabled = currentIndex <= 0;
-    nextBtn.disabled = currentIndex >= total - 1;
+
+    if (footerNextBtn) {
+      const works = getWorks(currentCategory);
+      if (currentIndex >= works.length - 1) {
+        footerNextBtn.classList.add('hidden');
+      } else {
+        footerNextBtn.classList.remove('hidden');
+      }
+    }
   }
 
   function showWork(category, index) {
@@ -70,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateNav(works.length);
 
-    const body = modal.querySelector('.modal-body');
-    if (body) {
-      body.scrollTop = 0;
+    // スクロール位置をリセット
+    if (modalBody) {
+      modalBody.scrollTop = 0;
     }
   }
 
@@ -125,8 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeBtn.addEventListener("click", closeModal);
 
-  if (prevBtn) prevBtn.addEventListener('click', goPrev);
-  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  // 下部ナビ
+  if (footerPrevBtn) footerPrevBtn.addEventListener('click', goPrev);
+  if (footerNextBtn) footerNextBtn.addEventListener('click', goNext);
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {

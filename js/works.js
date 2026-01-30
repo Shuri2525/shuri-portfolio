@@ -144,7 +144,7 @@ const WORKS_DATA = {
   "tag": "ロゴ / コンペ",
   "thumb": "./assets/works/graphic/01/hero.webp",
   "modalThumb": "./assets/works/graphic/01/thumb.webp",
-  "detailImg": "./assets/works/graphic/01/detail.webp",
+  /*"detailImg": "./assets/works/graphic/01/detail.jpg",*/
   "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
   "target": "美容室（40代女性中心）",
   "period": "2日",
@@ -158,7 +158,7 @@ const WORKS_DATA = {
   "tag": "ロゴ / コンペ",
   "thumb": "./assets/works/graphic/02/hero.webp",
   "modalThumb": "./assets/works/graphic/02/thumb.webp",
-  "detailImg": "./assets/works/graphic/02/detail.webp",
+  /*"detailImg": "./assets/works/graphic/02/detail.webp",*/
   "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
   "target": "食品メーカー・生活者",
   "period": "1日",

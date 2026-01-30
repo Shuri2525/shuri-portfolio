@@ -85,10 +85,7 @@
 
     <!-- モーダルヘッダー -->
     <header class="modal-header">
-      <div class="modal-header-left">
-        <button class="modal-nav-btn modal-prev" id="modal-prev" aria-label="前の作品">‹</button>
-        <button class="modal-nav-btn modal-next" id="modal-next" aria-label="次の作品">›</button>
-      </div>
+      <div class="modal-header-left"></div>
       <p class="modal-main-title"></p>
       <div class="modal-header-right">
         <button class="modal-close" id="modal-close" aria-label="モーダルを閉じる">×</button>
@@ -148,6 +145,19 @@
       </section>
 
     </div>
+
+    <!-- モーダル下部ナビゲーション -->
+    <nav class="modal-footer-nav">
+      <button class="modal-footer-nav-btn prev" id="modal-footer-prev" aria-label="前の作品">
+        <span class="arrow">←</span>
+        <span>PREV</span>
+      </button>
+      <button class="modal-footer-nav-btn next" id="modal-footer-next" aria-label="次の作品">
+        <span>NEXT</span>
+        <span class="arrow">→</span>
+      </button>
+    </nav>
+
   </div>
 </div>
 
