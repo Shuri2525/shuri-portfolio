@@ -1823,7 +1823,7 @@ a {
 
 /* アコーディオンセクション全体 */
 .sp-about-ability {
-  border-top: 1px solid var(--color-dark);
+  border-top: none;
   background: var(--color-white);
 }
 
