@@ -1033,6 +1033,11 @@ a {
   padding: 5px 16px;
   border-radius: 999px;
   white-space: nowrap;
+  min-width: 92px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .sp-meta-text {
@@ -1042,6 +1047,8 @@ a {
   line-height: 1.7;
   color: var(--color-dark);
   flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* 詳細画像 */
@@ -1626,7 +1633,7 @@ a {
 /* CONTACTページ用フッター調整 */
 .sp-contact .sp-footer {
   background: var(--color-dark);
-  border-top: 1px solid var(--color-light);
+  border-top: none;
 }
 
 .sp-contact .sp-copyright {
