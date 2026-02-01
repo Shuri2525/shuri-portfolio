@@ -97,7 +97,7 @@ const WORKS_DATA = {
   "id": "01",
   "title": "名刺デザイン",
   "tag": "名刺 / 個人制作",
-  "thumb": "./assets/works/dtp/01/hero.webp",
+  "thumb": "./assets/works/dtp/01/hero (1).webp",
   "modalThumb": "./assets/works/dtp/01/thumb.webp",
   "detailImg": "./assets/works/dtp/01/detail.webp",
   "outline": "自身のブランディングを意識して制作した個人用の名刺デザインです。シンプルながら印象に残る構成を目指しました。",
@@ -111,9 +111,9 @@ const WORKS_DATA = {
   "id": "02",
   "title": "リーフレットデザイン",
   "tag": "チラシ / 実案件",
-  "thumb": "./assets/works/dtp/02/hero.webp",
+  "thumb": "./assets/works/dtp/02/hero (1).webp",
   "modalThumb": "./assets/works/dtp/02/thumb.webp",
-  "detailImg": "./assets/works/dtp/02/detail.webp",
+  "detailImg": "./assets/works/dtp/02/detail (1).webp",
   "outline": "建築会社にて、外壁塗装サービスの営業用三つ折りリーフレットを制作しました。実際の営業シーンを想定し、話の流れに沿って構成しています。",
   "target": "戸建住宅を検討する施主・住民",
   "period": "2日",
@@ -125,9 +125,9 @@ const WORKS_DATA = {
   "id": "03",
   "title": "戸建て販売チラシ",
   "tag": "チラシ / 実案件",
-  "thumb": "./assets/works/dtp/03/hero.webp",
+  "thumb": "./assets/works/dtp/03/hero (1).webp",
   "modalThumb": "./assets/works/dtp/03/thumb.webp",
-  "detailImg": "./assets/works/dtp/03/detail.webp",
+  "detailImg": "./assets/works/dtp/03/detail (1).webp",
   "outline": "新築分譲住宅の販売促進を目的とした、A4サイズの物件チラシを実務で制作しました。視認性と汎用性を重視した設計です。",
   "target": "住宅購入を検討するファミリー層・地域住民",
   "period": "3日",
@@ -250,4 +250,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
