@@ -163,11 +163,13 @@
         </div>
       </section>
 
-    </div>
+      <!-- 最終作品用の終了エリア -->
+      <div class="sp-modal-end-area hidden" id="modalEndArea">
+        <button class="sp-modal-end-close" id="modalEndClose" aria-label="閉じる">
+          ×
+        </button>
+      </div>
 
-    <!-- モーダル終点導線（最終作品のみ表示） -->
-    <div class="sp-modal-end-actions modal-close-area" id="modalEndActions" aria-hidden="true">
-      <button class="sp-modal-end-close modal-close" id="modalEndClose" type="button">CLOSE</button>
     </div>
 
     <!-- モーダル下部ナビゲーション -->
@@ -176,7 +178,7 @@
         <span class="arrow">←</span>
         <span>PREV</span>
       </button>
-      <button class="sp-modal-footer-nav-btn close" id="sp-modal-footer-close" aria-label="閉じる">
+      <button class="sp-modal-footer-nav-btn close hidden" id="sp-modal-footer-close" aria-label="閉じる">
         <span>×</span>
       </button>
       <button class="sp-modal-footer-nav-btn next" id="sp-modal-footer-next" aria-label="次の作品">
@@ -281,7 +283,7 @@ const WORKS_DATA = {
   "tag": "チラシ / 実案件",
   "thumb": "../assets/works/dtp/02/hero (1).webp",
   "modalThumb": "../assets/works/dtp/02/thumb.webp",
-  "detailImg": "../assets/works/dtp/02/detail(1).webp",
+  "detailImg": "../assets/works/dtp/02/detail.jpg",
   "outline": "建築会社にて、外壁塗装サービスの営業用三つ折りリーフレットを制作しました。実際の営業シーンを想定し、話の流れに沿って構成しています。",
   "target": "戸建住宅を検討する施主・住民",
   "period": "制作〜入稿まで約2週間 入稿約1〜2週間",
@@ -293,8 +295,8 @@ const WORKS_DATA = {
   "title": "戸建て販売チラシ",
   "tag": "チラシ / 実案件",
   "thumb": "../assets/works/dtp/03/hero (1).webp",
-  "modalThumb": "../assets/works/dtp/03/thumb.webp",
-  "detailImg": "../assets/works/dtp/03/detail(1).webp",
+  "modalThumb": "../assets/works/dtp/03/thumb.jpg",
+  "detailImg": "../assets/works/dtp/03/detail.jpg",
   "outline": "新築分譲住宅の販売促進を目的とした、A4サイズの物件チラシを実務で制作しました。視認性と汎用性を重視した設計です。",
   "target": "住宅購入を検討するファミリー層・地域住民",
   "period": "3日",
@@ -490,7 +492,6 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', () => {
   const catButtons = document.querySelectorAll('.sp-category-nav .sp-cat-btn[data-cat]');
   const modalClose = document.getElementById('modalClose');
-  const modalEndClose = document.getElementById('modalEndClose');
   const modal = document.getElementById('worksModal');
   const modalPrev = document.getElementById('modalPrev');
   const modalNext = document.getElementById('modalNext');
@@ -500,23 +501,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // モーダルナビの状態管理
   function updateModalNav(total) {
-    // ヘッダーナビは非表示のまま（CSSで制御済み）
+    const footerCloseBtn = document.getElementById('sp-modal-footer-close');
+    const endArea = document.getElementById('modalEndArea');
     
-    // 下部ナビの更新
-    if (footerPrevBtn) {
-      if (currentIndex <= 0) {
-        footerPrevBtn.classList.add('hidden');
-      } else {
-        footerPrevBtn.classList.remove('hidden');
+    const works = WORKS_DATA[currentCategory] || [];
+    const isLastWork = currentIndex >= works.length - 1;
+    
+    // 最終作品の場合、PREV/NEXTを完全に非表示にして×のみ表示
+    if (isLastWork) {
+      if (footerPrevBtn) footerPrevBtn.style.display = 'none';
+      if (footerNextBtn) footerNextBtn.style.display = 'none';
+      if (footerCloseBtn) footerCloseBtn.classList.remove('hidden');
+    } else {
+      // 最終作品でない場合、通常のナビゲーション
+      if (footerPrevBtn) {
+        footerPrevBtn.style.display = 'flex';
+        if (currentIndex <= 0) {
+          footerPrevBtn.classList.add('hidden');
+        } else {
+          footerPrevBtn.classList.remove('hidden');
+        }
       }
-    }
-
-    if (footerNextBtn) {
-      const works = WORKS_DATA[currentCategory] || [];
-      if (currentIndex >= works.length - 1) {
-        footerNextBtn.classList.add('hidden');
-      } else {
+      
+      if (footerNextBtn) {
+        footerNextBtn.style.display = 'flex';
         footerNextBtn.classList.remove('hidden');
+      }
+      
+      if (footerCloseBtn) footerCloseBtn.classList.add('hidden');
+    }
+    
+    // 最終作品の場合、コンテンツ内の終了エリアを表示
+    if (endArea) {
+      if (isLastWork) {
+        endArea.classList.remove('hidden');
+      } else {
+        endArea.classList.add('hidden');
       }
     }
   }
@@ -610,11 +630,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // モーダルを閉じる
   modalClose.addEventListener('click', closeModal);
-  if (modalEndClose) modalEndClose.addEventListener('click', closeModal);
   
   // フッタークローズボタン
   const footerCloseBtn = document.getElementById('sp-modal-footer-close');
   if (footerCloseBtn) footerCloseBtn.addEventListener('click', closeModal);
+  
+  // 終了エリアのクローズボタン
+  const modalEndClose = document.getElementById('modalEndClose');
+  if (modalEndClose) modalEndClose.addEventListener('click', closeModal);
   
   // オーバーレイクリック
   modal.addEventListener('click', (e) => {

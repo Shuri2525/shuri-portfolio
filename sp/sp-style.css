@@ -1063,34 +1063,41 @@ a {
   display: block;
 }
 
-/* モーダル終点導線 */
-.sp-modal-end-actions {
-  display: none;
+/* 最終作品用の終了エリア */
+.sp-modal-end-area {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  padding: 24px 20px 48px;
-  margin-top: 16px;
-}
-
-.modal-close-area {
+  justify-content: center;
+  padding: 24px 20px;
   margin-top: 0;
-  padding: 40px 0 32px;
-  background: #f5f5f5;
-  text-align: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e0e0e0;
+  background: var(--color-white);
 }
 
-.modal-close {
+.sp-modal-end-area.hidden {
+  display: none;
+}
+
+.sp-modal-end-close {
+  width: 40px;
+  height: 40px;
   border: none;
-  background: none;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  color: #444;
-  text-align: center;
+  background: transparent;
+  font-size: 28px;
+  font-weight: 200;
+  color: #999;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+}
+
+.sp-modal-end-close:active {
+  color: var(--color-dark);
 }
 
 /* ================================
@@ -1103,28 +1110,32 @@ a {
 /* ================================
    SP モーダル - 下部ナビゲーション
 ================================ */
+/* ================================
+   SP モーダル - 下部ナビゲーション
+================================ */
 .sp-modal-footer-nav {
   border-top: 1px solid #e0e0e0;
-  padding: 20px 16px;
+  padding: 24px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--color-white);
+  position: relative;
 }
 
 .sp-modal-footer-nav-btn {
   background: none;
   border: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.08em;
   color: #999;
   cursor: pointer;
-  padding: 8px 12px;
-  transition: color 0.3s ease;
+  padding: 8px 0;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -1132,9 +1143,42 @@ a {
   color: var(--color-dark);
 }
 
+/* PREV/NEXTボタン */
+.sp-modal-footer-nav-btn.prev,
+.sp-modal-footer-nav-btn.next {
+  flex: 0 0 auto;
+}
+
+/* クローズボタン（中央・最終作品のみ表示） */
+.sp-modal-footer-nav-btn.close {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  flex: 0 0 auto;
+  padding: 0;
+  font-size: 28px;
+  color: #999;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sp-modal-footer-nav-btn.close span {
+  line-height: 1;
+}
+
+.sp-modal-footer-nav-btn.close:active {
+  color: var(--color-dark);
+}
+
 /* 矢印アイコン */
 .sp-modal-footer-nav-btn .arrow {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ボタンが存在しない場合の空白保持 */
@@ -1142,6 +1186,7 @@ a {
   visibility: hidden;
   pointer-events: none;
 }
+
 
 
 /* ================================

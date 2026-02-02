@@ -136,6 +136,72 @@
 
 <!-- JavaScript -->
 <script>
+  // WORKSデータ
+  const TOP_WORKS_DATA = {
+    web: [
+      {
+        "id": "01",
+        "title": "PORTFOLIO SITE",
+        "tag": "ポートフォリオ / 個人制作",
+        "thumb": "../assets/works/web/01/hero.jpg"
+      },
+      {
+        "id": "02",
+        "title": "ビジネスホテルHP",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/02/hero.jpg"
+      },
+      {
+        "id": "03",
+        "title": "ヘッドスパLP",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/03/hero.jpg"
+      },
+      {
+        "id": "05",
+        "title": "整形外科医院サイト",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/05/hero.jpg"
+      }
+    ],
+    
+    dtp: [
+      {
+        "id": "01",
+        "title": "名刺デザイン",
+        "tag": "名刺 / 個人制作",
+        "thumb": "../assets/works/dtp/01/hero.webp"
+      },
+      {
+        "id": "02",
+        "title": "リーフレットデザイン",
+        "tag": "チラシ / 実案件",
+        "thumb": "../assets/works/dtp/02/hero.webp"
+      },
+      {
+        "id": "03",
+        "title": "戸建て販売チラシ",
+        "tag": "チラシ / 実案件",
+        "thumb": "../assets/works/dtp/03/hero.webp"
+      }
+    ],
+    
+    graphic: [
+      {
+        "id": "01",
+        "title": "ロゴデザイン",
+        "tag": "ロゴ / コンペ",
+        "thumb": "../assets/works/graphic/01/hero.webp"
+      },
+      {
+        "id": "02",
+        "title": "ロゴデザイン",
+        "tag": "ロゴ / コンペ",
+        "thumb": "../assets/works/graphic/02/hero.webp"
+      }
+    ]
+  };
+
   // スプラッシュ画面制御
   window.addEventListener('load', () => {
     const splashScreen = document.getElementById('splashScreen');
@@ -147,6 +213,31 @@
         splashScreen.style.display = 'none';
       }, 800);
     }, 2000);
+  });
+
+  // ページロード時の処理
+  document.addEventListener('DOMContentLoaded', () => {
+    // カテゴリアコーディオン
+    const worksToggle = document.getElementById('worksToggle');
+    const categoryBody = document.getElementById('categoryBody');
+    const icon = worksToggle.querySelector('.works-icon');
+
+    worksToggle.addEventListener('click', () => {
+      const isOpen = categoryBody.classList.contains('active');
+
+      if (isOpen) {
+        categoryBody.classList.remove('active');
+        icon.textContent = '+';
+
+        setTimeout(() => {
+          worksToggle.classList.remove('is-open');
+        }, 400);
+      } else {
+        worksToggle.classList.add('is-open');
+        categoryBody.classList.add('active');
+        icon.textContent = '−';
+      }
+    });
   });
 
   // ヘッダーロゴの表示制御
@@ -186,28 +277,6 @@
       menuOverlay.classList.remove('active');
       document.body.style.overflow = '';
     });
-  });
-
-  // カテゴリアコーディオン
-  const worksToggle = document.getElementById('worksToggle');
-  const categoryBody = document.getElementById('categoryBody');
-  const icon = worksToggle.querySelector('.works-icon');
-
-  worksToggle.addEventListener('click', () => {
-    const isOpen = categoryBody.classList.contains('active');
-
-    if (isOpen) {
-      categoryBody.classList.remove('active');
-      icon.textContent = '+';
-
-      setTimeout(() => {
-        worksToggle.classList.remove('is-open');
-      }, 400);
-    } else {
-      worksToggle.classList.add('is-open');
-      categoryBody.classList.add('active');
-      icon.textContent = '−';
-    }
   });
 </script>
 <script src="../js/sp-header-scroll.js"></script>
