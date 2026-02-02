@@ -65,7 +65,7 @@
 ================================ */
 .modal-header {
   position: relative;
-  height: 140px;
+  height: 280px;
   padding: 0 40px;
   background: var(--color-white);
   display: flex;
@@ -342,6 +342,7 @@
   justify-content: space-between;
   align-items: center;
   background: var(--color-white);
+  position: relative;
 }
 
 .modal-footer-nav-btn {
@@ -380,6 +381,25 @@
 
 .modal-footer-nav-btn.next:hover .arrow {
   transform: translateX(2px);
+}
+
+/* ×ボタン（最終作品用・中央配置） */
+.modal-footer-nav-btn.close {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #999;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer-nav-btn.close:hover {
+  color: var(--color-dark);
 }
 
 /* ボタンが存在しない場合の空白保持 */
