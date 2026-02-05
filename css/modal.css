@@ -237,6 +237,14 @@
   margin-bottom: 28px;
 }
 
+#modalOutline {
+  margin-bottom: 48px;
+}
+
+.modal-text:last-of-type {
+  margin-bottom: 0;
+}
+
 /* ================================
    モーダル - テキスト
 ================================ */
@@ -246,7 +254,11 @@
   letter-spacing: 0.04em;
   line-height: 1.9;
   color: var(--color-dark);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+#modalOutline {
+  margin-bottom: 30px;
 }
 
 .modal-text:last-of-type {
@@ -303,6 +315,7 @@
   line-height: 1.7;
   color: var(--color-dark);
 }
+
 
 /* ================================
    モーダル - 区切り線
@@ -440,4 +453,12 @@
     font-size: 13px;
     padding: 6px 12px;
   }
+}
+
+#modalOutline {
+  margin-bottom: 35px !important;
+}
+
+p.modal-text.modal-outline {
+  margin-bottom: 35px !important;
 }

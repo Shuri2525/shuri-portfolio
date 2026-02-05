@@ -1001,10 +1001,14 @@ a {
   white-space: pre-line;
 }
 
+#modalOutline {
+  margin-bottom: 30px;
+}
+
 /* メタ情報 */
 .sp-modal-meta {
   list-style: none;
-  margin: 24px 0 0;
+  margin: 30px 0 0;
   padding: 0;
   border-top: 1px solid #d8d8d8;
 }
