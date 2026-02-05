@@ -38,7 +38,7 @@ const WORKS_DATA = {
   "thumb": "./assets/works/web/03/hero.jpg",
   "modalThumb": "./assets/works/web/03/thumb.jpg",
   "detailImg": "./assets/works/web/03/detail.jpg",
-  "outline": "海外在住女性向けのヘッドスパ専門店LPをコンペにて制作しました。\n\n日本らしい癒しの空気感が伝わるビジュアルを意識しました。",
+  "outline": "海外在住女性向けのヘッドスパ専門店LPをコンペにて制作しました。日本らしい癒しの空気感が伝わるビジュアルを意識しました。",
   "target": "30代後半〜40代後半の女性（海外在住）",
   "period": "3日",
   "purpose": "日本の癒し文化を伝え、予約につなげるため",
