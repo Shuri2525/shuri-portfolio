@@ -27,8 +27,19 @@
   // 現在のページ名を取得
   function getCurrentPage() {
     const path = window.location.pathname;
-    const page = path.split('/').pop() || 'index.html';
-    return page.replace('.html', '');
+    const last = path.split('/').pop();
+    if (!last || !last.includes('.')) return 'index';
+    return last.replace('.html', '');
+  }
+
+  // ベースディレクトリを取得
+  function getBaseDir() {
+    const path = window.location.pathname;
+    if (path.endsWith('/')) return path;
+    if (path.includes('.')) {
+      return path.substring(0, path.lastIndexOf('/') + 1);
+    }
+    return `${path}/`;
   }
   
   // SP版/PC版のパス判定
@@ -55,13 +66,14 @@
     
     const currentPage = getCurrentPage();
     const currentPath = window.location.pathname;
+    const baseDir = getBaseDir();
     
     log('Redirect triggered!');
     
     if (isMobileOrTablet()) {
       // モバイル・タブレットデバイス → SP版へリダイレクト
       if (!currentPath.includes('/sp/')) {
-        const targetUrl = `./sp/${currentPage}.html`;
+        const targetUrl = `${baseDir}sp/${currentPage}.html`;
         log('Redirecting to SP:', targetUrl);
         window.location.href = targetUrl;
       }
@@ -69,7 +81,7 @@
       // PCデバイス → PC版へリダイレクト
       if (currentPath.includes('/sp/')) {
         const pcPage = currentPage;
-        const targetUrl = `../${pcPage}.html`;
+        const targetUrl = `${baseDir}../${pcPage}.html`;
         log('Redirecting to PC:', targetUrl);
         window.location.href = targetUrl;
       }
