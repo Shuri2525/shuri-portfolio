@@ -6,193 +6,276 @@
   <title>ABOUT | SHURI PORTFOLIO</title>
 
   <!-- デバイス判定・自動リダイレクト -->
-  <script src="./js/device-redirect.js?v=20260205"></script>
+  <script src="../js/device-redirect.js"></script>
 
-  <!-- SP版への関連づけ（SEO対策） -->
-  <link rel="alternate" media="only screen and (max-width: 1024px)" href="./sp/about.html">
+  <!-- PC版への関連づけ（SEO対策） -->
+  <link rel="canonical" href="../about.html">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./sp-style.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-about">
+<body class="sp-about">
 
 <!-- ヘッダー -->
-<header class="site-header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li><a href="./index.html">TOP</a></li>
-      <li><a href="./works.html">WORKS</a></li>
-      <li><a href="./about.html" class="active">ABOUT</a></li>
-      <li><a href="./contact.html">CONTACT</a></li>
-    </ul>
-  </nav>
+<header class="sp-header">
+  <div class="sp-header-inner">
+    <a href="./index.html" class="sp-logo-text">HIDAKA SHURI</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
-<!-- 左カラム（固定30%） -->
-<aside class="about-left">
-  <div class="about-left-inner">
-    <img src="./assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="about-left-logo">
-    <p class="about-left-title">HIDAKA SHURI</p>
-  </div>
-</aside>
+<!-- メニューオーバーレイ -->
+<nav class="menu-overlay" id="menuOverlay">
+  <ul class="menu-list">
+    <li><a href="./index.html">TOP</a></li>
+    <li><a href="./works.html">WORKS</a></li>
+    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+    class="menu-instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+  <!-- 右下装飾（模様） -->
+  <img
+    src="../assets/deco/deco_f5f5f5.svg"
+    alt=""
+    class="menu-pattern"
+    aria-hidden="true"
+  >
+</nav>
 
 <!-- メインコンテンツ -->
-<main class="about-main page-main">
+<main class="sp-main">
 
-  <!-- 装飾 -->
-  <img src="./assets/deco/deco_3f3b3a.svg" class="page-deco" alt="">
+  <!-- メインビジュアル -->
+  <a href="./index.html" class="sp-hero-link" aria-label="TOPへ戻る">
+    <section class="sp-hero sp-about-hero">
+      <div class="sp-hero-content">
+        <img src="../assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
+        <p class="sp-hero-title sp-about-hero-title">HIDAKA SHURI</p>
+      </div>
+      <img src="../assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
+    </section>
+  </a>
 
-  <!-- 名刺 + ABOUTテキスト -->
-  <section class="about-intro">
+  <!-- ページタイトル -->
+  <section class="sp-page-header sp-about-page-header">
+    <h1 class="sp-page-title">ABOUT</h1>
+    <p class="sp-page-subtitle">わたしについて</p>
+  </section>
 
-    <!-- ABOUTテキスト -->
-    <div class="about-text-block">
-      <h1 class="about-heading">ABOUT</h1>
-      <p class="about-sub">わたしについて</p>
+  <!-- ABOUTコンテンツ -->
+  <section class="sp-about-content">
+    
+    <!-- 名刺カード -->
+    <div class="sp-about-card-container">
+      <a
+        href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+        class="sp-card-link"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="sp-card-wrapper">
+          <div class="sp-card-flip" id="cardFlip">
+            <img src="../assets/about/img_nemu_omote.png" alt="名刺 表面" class="sp-card-face sp-card-front">
+            <img src="../assets/about/img_nemu_ura.png" alt="名刺 裏面" class="sp-card-face sp-card-back">
+          </div>
+        </div>
+      </a>
+    </div>
 
-      <div class="about-description">
-
-
+    <!-- 説明文 -->
+    <div class="sp-about-description">
+      <p>
 <p>
-大分市でWeb・グラフィックを中心に制作しているデザイナーです。<br>
+<p>
+大分市でWeb・グラフィックを中心に<br>
+制作しているデザイナーです。<br>
 印刷物も入稿まで対応可能です。
 </p>
 
 <p>
-シンプルで落ち着いたトーンや余白を活かした<br>
+シンプルで落ち着いたトーンや<br>
+余白を活かした<br>
 洗練された表現を得意としています。
 </p>
 
 <p>
-イメージを形にできるよう、ヒアリングを大切にしながら<br>
-一緒に形にしていけるように制作しています。<br>
-ご相談の段階からでも、お声がけいただけたら嬉しいです。
+イメージを形にできるよう、<br>
+ヒアリングを大切にしながら<br>
+一緒に形にしていけるように
+制作しています。<br>
+</p>
+
+<p>
+ご相談の段階からでも<br>
+お声がけいただけたら嬉しいです。
 </p>
 
 
-
-
-      </div>
+      </p>
     </div>
 
-    <!-- 名刺カード -->
-    <a
-      href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
-      class="card-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div class="card-wrapper">
-        <div class="card-flip">
-          <img src="./assets/about/img_nemu_omote.png" alt="名刺 表面" class="card-face card-front">
-          <img src="./assets/about/img_nemu_ura.png" alt="名刺 裏面" class="card-face card-back">
-        </div>
-      </div>
-    </a>
-
   </section>
 
-  <!-- WHAT I DO / FAVORITES -->
-  <section class="about-abilities">
+  <!-- 写真 -->
+  <div class="sp-about-photo">
+    <img src="../assets/about/about_picture.png" alt="プロフィール写真">
+  </div>
 
-    <div class="abilities-container">
-
-      <!-- 左:アコーディオン -->
-      <div class="abilities-left">
-
-        <!-- SKILL & PROFILE -->
-        <div class="ability-block ability-accordion">
-          <button class="ability-header" type="button">
-            <span class="ability-title">SKILL & PROFILE</span>
-            <span class="ability-sub">スキル・自己紹介</span>
-            <span class="ability-toggle">+</span>
-          </button>
-
-          <div class="ability-body">
-            <ul class="ability-list">
-              <!-- PROFILE -->
-              <li class="ability-section">
-                <h3 class="ability-section-title">PROFILE</h3>
-              </li>
-              <li>
-                <h3>自己紹介</h3>
-                <p>日高 朱璃｜デザイナー｜大分市在住｜2000年2月生まれ</p>
-              </li>
-              <!-- SKILL -->
-              <li class="ability-section">
-                <h3 class="ability-section-title">SKILL</h3>
-              </li>
-              <li>
-                <h3>Adobe Photoshop</h3>
-                <p>写真加工・Webデザイン</p>
-              </li>
-              <li>
-                <h3>Adobe Illustrator</h3>
-                <p>Webデザイン・DTPデザイン（名刺・チラシ等）</p>
-              </li>
-              <li>
-                <h3>HTML / CSS</h3>
-                <p>コーディング・Webサイト制作</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="ability-block ability-contact-block">
-          <a href="./contact.html" class="ability-header ability-contact-link">
-            <span class="ability-title">CONTACT</span>
-            <span class="ability-sub">お問い合わせ</span>
-            <span class="ability-toggle">→</span>
-          </a>
-        </div>
-
-      </div><!-- abilities-left -->
-
-      <!-- 右:写真 -->
-      <div class="abilities-right">
-        <img src="./assets/about/about_picture.png" alt="プロフィール写真" class="about-picture">
+  <!-- SKILL & PROFILE -->
+  <section class="sp-about-ability">
+    <button class="sp-ability-header" id="whatIDoToggle" type="button">
+      <div class="sp-ability-title-wrap">
+        <span class="sp-ability-title">SKILL & PROFILE</span>
+        <span class="sp-ability-sub">スキル・自己紹介</span>
       </div>
+      <span class="sp-ability-toggle">+</span>
+    </button>
 
-    </div><!-- abilities-container -->
-
+    <div class="sp-ability-body" id="whatIDoBody">
+      <div class="sp-ability-scroll-container">
+        <ul class="sp-ability-list">
+          <!-- PROFILE -->
+          <li class="ability-section">
+            <h3 class="ability-section-title">PROFILE</h3>
+          </li>
+          <li>
+            <h3>自己紹介</h3>
+            <p>日高 朱璃｜デザイナー｜大分市在住｜2000年2月生まれ</p>
+          </li>
+          <!-- SKILL -->
+          <li class="ability-section">
+            <h3 class="ability-section-title">SKILL</h3>
+          </li>
+          <li>
+            <h3>Adobe Photoshop</h3>
+            <p>写真加工・Webデザイン</p>
+          </li>
+          <li>
+            <h3>Adobe Illustrator</h3>
+            <p>Webデザイン・DTPデザイン（名刺・チラシ等）</p>
+          </li>
+          <li>
+            <h3>HTML / CSS</h3>
+            <p>コーディング・Webサイト制作</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
+
+  <!-- CONTACT -->
+<section class="sp-section sp-contact-section">
+  <a href="../contact.html" class="contact-button">
+    <p class="contact-button-en">CONTACT</p>
+    <p class="contact-button-ja">お問い合わせ</p>
+    <span class="contact-arrow">→</span>
+  </a>
+</section>
 
 </main>
 
-<!-- アコーディオンJS -->
+<!-- フッター -->
+<footer class="sp-footer">
+  <p class="sp-copyright">© 2026 Hidaka Syuri</p>
+</footer>
+
+<!-- JavaScript -->
 <script>
-  document.querySelectorAll('.ability-block.ability-accordion').forEach(function (block) {
-    const header = block.querySelector('.ability-header');
-    const toggle = block.querySelector('.ability-toggle');
-
-    function toggleBlock() {
-      block.classList.toggle('is-open');
-      
-      if (block.classList.contains('is-open')) {
-        toggle.textContent = '-';
-      } else {
-        toggle.textContent = '+';
-      }
+  // ヘッダーロゴの表示制御
+  const headerLogo = document.querySelector('.sp-logo-text');
+  const heroSection = document.querySelector('.sp-about-hero');
+  
+  function handleScroll() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 60;
+    
+    if (scrollPosition > heroBottom) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+    } else {
+      headerLogo.style.opacity = '0';
+      headerLogo.style.visibility = 'hidden';
     }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 
-    header.addEventListener('click', toggleBlock);
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // メニューリンククリックで閉じる
+  document.querySelectorAll('.menu-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // 名刺カード（3秒後自動フリップ）
+  const cardFlip = document.getElementById('cardFlip');
+  const cardLink = document.querySelector('.sp-card-link');
+
+  setTimeout(() => {
+    cardFlip.style.transform = 'rotateY(180deg)';
+    setTimeout(() => {
+      cardLink.style.pointerEvents = 'auto';
+    }, 600);
+  }, 3000);
+
+  // アコーディオン
+  function setupAccordion(toggleId, bodyId) {
+    const toggle = document.getElementById(toggleId);
+    const body = document.getElementById(bodyId);
+    const icon = toggle.querySelector('.sp-ability-toggle');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = body.classList.contains('active');
+
+      if (isOpen) {
+        body.classList.remove('active');
+        icon.textContent = '+';
+      } else {
+        body.classList.add('active');
+        icon.textContent = '−';
+      }
+    });
+  }
+
+  setupAccordion('whatIDoToggle', 'whatIDoBody');
+
+  // ファーストビューロゴクリック
+  document.querySelector('.sp-hero-logo').addEventListener('click', () => {
+    window.location.href = './index.html';
   });
 </script>
-
-<script src="./js/header-scroll.js"></script>
-
-<div class="copyright-fixed">
-  © 2026 Hidaka Syuri
-</div>
-
+<script src="../js/sp-header-scroll.js"></script>
 
 </body>
-
-
 </html>
