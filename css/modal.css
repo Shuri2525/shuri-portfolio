@@ -166,9 +166,7 @@
   width: 100%;
   display: block;
   margin: 0;
-  padding: 0;
-  transition: transform 0.3s ease;
-  vertical-align: bottom; /* 画像の下に隙間ができるのを防ぐ */
+  padding: 0;  vertical-align: bottom; /* 画像の下に隙間ができるのを防ぐ */
 }
 
 .modal-hero:hover img {
@@ -339,10 +337,6 @@
   width: 100%;
   border-radius: 4px;
   transition: transform 0.3s ease;
-}
-
-.modal-image:hover img {
-  transform: scale(1.02);
 }
 
 /* ================================
