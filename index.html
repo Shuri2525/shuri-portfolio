@@ -6,60 +6,280 @@
   <title>SHURI PORTFOLIO</title>
 
   <!-- デバイス判定・自動リダイレクト -->
-  <script src="./js/device-redirect.js?v=20260205"></script>
+  <script src="../js/device-redirect.js"></script>
 
-  <!-- SP版への関連づけ（SEO対策） -->
-  <link rel="alternate" media="only screen and (max-width: 1024px)" href="./sp/index.html">
+  <!-- PC版への関連づけ（SEO対策） -->
+  <link rel="canonical" href="../index.html">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sp-style.css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="sp-top">
 
-  <!-- ヘッダー -->
-  <header class="site-header">
-    <nav class="nav">
-      <ul class="nav-list">
-        <li><a href="./index.html" class="active">TOP</a></li>
-        <li><a href="./works.html">WORKS</a></li>
-        <li><a href="./about.html">ABOUT</a></li>
-        <li><a href="./contact.html">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- スプラッシュ画面 -->
+<div class="splash-screen" id="splashScreen">
+  <div class="splash-content">
+    <img src="../assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="splash-logo">
+    <p class="splash-title">HIDAKA SHURI</p>
+  </div>
+  <img src="../assets/deco/deco_f5f5f5.svg" alt="" class="splash-deco" aria-hidden="true">
+</div>
+
+<!-- ヘッダー -->
+<header class="sp-header" id="spHeader">
+  <div class="sp-header-inner">
+    <a href="./index.html" class="sp-logo-text" id="headerLogo">HIDAKA SHURI</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- メニューオーバーレイ -->
+<nav class="menu-overlay" id="menuOverlay">
+  <ul class="menu-list">
+    <li><a href="./index.html">TOP</a></li>
+    <li><a href="./works.html">WORKS</a></li>
+    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
+    class="menu-instagram"
+    target="_blank"
+    rel="noopener"
+  >
+    Instagram
+  </a>
+
+  <!-- 右下装飾（模様） -->
+  <img
+    src="../assets/deco/deco_f5f5f5.svg"
+    alt=""
+    class="menu-pattern"
+    aria-hidden="true"
+  >
+</nav>
+
+<!-- メインコンテンツ -->
+<main class="sp-main">
 
   <!-- メインビジュアル -->
-  <main class="top-hero">
-
-    <!-- 中央ロゴ -->
-    <div class="hero-center">
-      <img
-        src="./assets/common/logo_f5f5f5.svg"
-        alt="SHURI PORTFOLIO logo"
-        class="hero-logo"
-      >
-      <p class="hero-title">SHURI PORTFOLIO SITE</p>
+  <section class="sp-hero">
+    <div class="sp-hero-content">
+      <img src="../assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="sp-hero-logo">
+      <p class="sp-hero-title">HIDAKA SHURI</p>
     </div>
 
-    <!-- 装飾 -->
-    <img
-      src="./assets/deco/deco_f5f5f5.svg"
-      alt=""
-      class="hero-deco"
-      aria-hidden="true"
-    >
+  </section>
 
-  </main>
+  <!-- WORKSセクション -->
+  <section class="sp-section sp-works-section">
+    <button class="works-toggle" id="worksToggle" type="button">
+      <div class="works-title-wrap">
+        <h2 class="sp-section-title">WORKS</h2>
+        <p class="sp-section-sub">制作したもの</p>
+      </div>
+      <span class="works-icon">+</span>
+    </button>
 
-  <div class="copyright-fixed">
-    © 2026 Hidaka Syuri
-  </div>
+    <!-- 開閉される中身 -->
+    <div class="category-body" id="categoryBody">
+      <div class="category-buttons">
+        <a href="./works.html?cat=web" class="category-btn btn-web"># WEB</a>
+        <a href="./works.html?cat=dtp" class="category-btn btn-dtp"># DTP</a>
+        <a href="./works.html?cat=graphic" class="category-btn btn-graphic"># GRAPHIC</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUTセクション -->
+  <section class="sp-section sp-about-section">
+    <h2 class="sp-section-title">ABOUT</h2>
+    <p class="sp-section-sub">わたしについて</p>
+
+    <!-- 名刺カード -->
+<div class="card-container">
+  <a href="./about.html" class="card-link-top">
+    <div class="card-wrapper-sp">
+      <div class="card-flip-sp">
+        <img src="../assets/about/img_nemu_top_omote-.png" alt="名刺 表面" class="card-face card-front">
+      </div>
+    </div>
+  </a>
+</div>
+  </section>
+
+  <!-- CONTACTセクション -->
+  <section class="sp-section sp-contact-section">
+    <a href="./contact.html" class="contact-button">
+      <span class="contact-button-en">CONTACT</span>
+      <span class="contact-button-ja">お問い合わせ</span>
+      <span class="contact-arrow">→</span>
+    </a>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="sp-footer">
+  <p class="sp-copyright">© 2026 Hidaka Syuri</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // WORKSデータ
+  const TOP_WORKS_DATA = {
+    web: [
+      {
+        "id": "01",
+        "title": "PORTFOLIO SITE",
+        "tag": "ポートフォリオ / 個人制作",
+        "thumb": "../assets/works/web/01/hero.jpg"
+      },
+      {
+        "id": "02",
+        "title": "ビジネスホテルHP",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/02/hero.jpg"
+      },
+      {
+        "id": "03",
+        "title": "ヘッドスパLP",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/03/hero.jpg"
+      },
+      {
+        "id": "05",
+        "title": "整形外科医院サイト",
+        "tag": "TOPページ / コンペ制作",
+        "thumb": "../assets/works/web/05/hero.jpg"
+      }
+    ],
+    
+    dtp: [
+      {
+        "id": "01",
+        "title": "名刺デザイン",
+        "tag": "名刺 / 個人制作",
+        "thumb": "../assets/works/dtp/01/hero.jpg"
+      },
+      {
+        "id": "02",
+        "title": "リーフレットデザイン",
+        "tag": "チラシ / 実案件",
+        "thumb": "../assets/works/dtp/02/hero.jpg"
+      },
+      {
+        "id": "03",
+        "title": "戸建て販売チラシ",
+        "tag": "チラシ / 実案件",
+        "thumb": "../assets/works/dtp/03/hero.jpg"
+      }
+    ],
+    
+    graphic: [
+      {
+        "id": "01",
+        "title": "ロゴデザイン",
+        "tag": "ロゴ / コンペ",
+        "thumb": "../assets/works/graphic/01/hero.webp"
+      },
+      {
+        "id": "02",
+        "title": "ロゴデザイン",
+        "tag": "ロゴ / コンペ",
+        "thumb": "../assets/works/graphic/02/hero.webp"
+      }
+    ]
+  };
+
+  // スプラッシュ画面制御
+  window.addEventListener('load', () => {
+    const splashScreen = document.getElementById('splashScreen');
+    
+    setTimeout(() => {
+      splashScreen.classList.add('fade-out');
+      
+      setTimeout(() => {
+        splashScreen.style.display = 'none';
+      }, 800);
+    }, 2000);
+  });
+
+  // ページロード時の処理
+  document.addEventListener('DOMContentLoaded', () => {
+    // カテゴリアコーディオン
+    const worksToggle = document.getElementById('worksToggle');
+    const categoryBody = document.getElementById('categoryBody');
+    const icon = worksToggle.querySelector('.works-icon');
+
+    worksToggle.addEventListener('click', () => {
+      const isOpen = categoryBody.classList.contains('active');
+
+      if (isOpen) {
+        categoryBody.classList.remove('active');
+        icon.textContent = '+';
+
+        setTimeout(() => {
+          worksToggle.classList.remove('is-open');
+        }, 400);
+      } else {
+        worksToggle.classList.add('is-open');
+        categoryBody.classList.add('active');
+        icon.textContent = '−';
+      }
+    });
+  });
+
+  // ヘッダーロゴの表示制御
+  const headerLogo = document.getElementById('headerLogo');
+  const heroSection = document.querySelector('.sp-hero');
   
-  <script src="./js/header-scroll.js"></script>
+  function handleScroll() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + 60;
+    
+    if (scrollPosition > heroBottom) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+    } else {
+      headerLogo.style.opacity = '0';
+      headerLogo.style.visibility = 'hidden';
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // メニューリンククリックで閉じる
+  document.querySelectorAll('.menu-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+<script src="../js/sp-header-scroll.js"></script>
 
 </body>
 </html>
