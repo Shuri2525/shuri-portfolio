@@ -1,0 +1,458 @@
+/* ================================
+   モーダル - ベース
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ================================
+   モーダル - ラッパー（アニメーション）
+================================ */
+.modal-wrapper {
+  background: var(--color-white);
+  width: 70%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay.active .modal-wrapper {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-wrapper.closing {
+  animation: modalOut 0.3s ease-out forwards;
+}
+
+@keyframes modalOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* ================================
+   モーダル - ヘッダー
+================================ */
+.modal-header {
+  position: relative;
+  height: 280px;
+  padding: 0 40px;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: none;
+  margin: 0;
+}
+
+.modal-main-title {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: var(--ls-brand);
+  color: var(--color-dark);
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.modal-header-left,
+.modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-nav-btn {
+  border: none;
+  background: none;
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+
+.modal-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.modal-close {
+  border: none;
+  background: none;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  opacity: 0.6;
+  transform: rotate(90deg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* ================================
+   モーダル - ボディ
+================================ */
+.modal-body {
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.modal-title-block {
+  margin: 0;
+  padding: 0;
+  display: none; /* タイトルブロックが使われていないので非表示 */
+}
+
+/* ================================
+   モーダル - ヒーロー画像
+================================ */
+.modal-hero {
+  background: #f2f2f2;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-hero img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;  vertical-align: bottom; /* 画像の下に隙間ができるのを防ぐ */
+}
+
+.modal-hero:hover img {
+  transform: scale(1.05);
+}
+
+/* ================================
+   モーダル - セクション
+================================ */
+.modal-section {
+  padding: 56px 40px 0 40px;
+  animation: fadeInUp 0.5s ease-out;
+  margin: 0;
+}
+
+.modal-section:first-child {
+  padding-top: 56px;
+}
+
+.modal-section + .modal-section {
+  padding-top: 24px;
+}
+
+/* 最後のセクション（DETAIL）の下部パディングを完全にゼロに */
+.modal-section:last-child {
+  padding-bottom: 0;
+}
+
+.modal-section:last-child .modal-text,
+.modal-section:last-child .modal-image {
+  margin-bottom: 0;
+}
+
+.modal-outline-section {
+  padding-bottom: 24px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   モーダル - セクションタイトル
+================================ */
+.modal-section-title {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
+  color: var(--color-dark);
+  text-align: left;
+}
+
+.modal-section-sub {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: #8a8a8a;
+  margin-bottom: 28px;
+}
+
+#modalOutline {
+  margin-bottom: 48px;
+}
+
+.modal-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ================================
+   モーダル - テキスト
+================================ */
+.modal-text {
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.9;
+  color: var(--color-dark);
+  margin-bottom: 48px;
+}
+
+#modalOutline {
+  margin-bottom: 30px;
+}
+
+.modal-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ================================
+   モーダル - メタ情報
+================================ */
+.modal-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #d8d8d8;
+}
+
+.modal-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 0;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.modal-meta-item:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.modal-meta-item + .modal-meta-item {
+  border-top: 1px solid #d8d8d8;
+}
+
+.meta-label {
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  min-width: 92px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.meta-text {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: var(--color-dark);
+}
+
+
+/* ================================
+   モーダル - 区切り線
+================================ */
+.modal-section-divider {
+  border-top: 1px solid #d8d8d8;
+  margin: 0 0 16px;
+}
+
+/* ================================
+   モーダル - 画像
+================================ */
+.modal-image {
+  margin-top: 48px;
+  margin-bottom: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.modal-image img {
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* ================================
+   モーダル - 下部ナビゲーション
+================================ */
+.modal-footer-nav {
+  border-top: 1px solid #e0e0e0;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  position: relative;
+}
+
+.modal-footer-nav-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #999;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-footer-nav-btn:hover {
+  color: var(--color-dark);
+}
+
+.modal-footer-nav-btn:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* 矢印アイコン */
+.modal-footer-nav-btn .arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.modal-footer-nav-btn.prev:hover .arrow {
+  transform: translateX(-2px);
+}
+
+.modal-footer-nav-btn.next:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* ×ボタン（最終作品用・中央配置） */
+.modal-footer-nav-btn.close {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #999;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer-nav-btn.close:hover {
+  color: var(--color-dark);
+}
+
+/* ボタンが存在しない場合の空白保持 */
+.modal-footer-nav-btn.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ================================
+   レスポンシブ
+================================ */
+@media (max-width: 768px) {
+  .modal-wrapper {
+    width: 92%;
+  }
+
+  .modal-section,
+  .modal-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .modal-outline-section {
+    padding-bottom: 32px;
+  }
+
+  .modal-meta-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .modal-footer-nav {
+    padding: 20px;
+  }
+
+  .modal-footer-nav-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+#modalOutline {
+  margin-bottom: 35px !important;
+}
+
+p.modal-text.modal-outline {
+  margin-bottom: 35px !important;
+}
