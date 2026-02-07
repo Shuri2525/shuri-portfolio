@@ -60,7 +60,7 @@
       下記フォームよりわかる範囲でご記入ください。
     </p>
 
-    <form class="contact-form">
+    <form class="contact-form" id="contactForm">
 
       <div class="form-group">
         <label for="company">貴社名</label>
@@ -100,6 +100,79 @@
   
   <script src="./js/header-scroll.js"></script>
 
+  <!-- フォーム送信処理 -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const formWrapper = document.querySelector('.contact-form-wrapper');
+    
+    // Googleフォーム送信URL
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeIKCRpT29dpIj_WRiTTHyYIz9mvynQz4BnxChk4uaidYpy5A/formResponse';
+    
+    // Googleフォームの各フィールドのentry ID
+    const FIELD_IDS = {
+      company: 'entry.527448709',   // 貴社名
+      name: 'entry.1780214834',     // お名前
+      email: 'entry.580767685',     // メールアドレス
+      tel: 'entry.1108535601',      // 電話番号
+      message: 'entry.63702374'     // お問い合わせ内容
+    };
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // 送信ボタンを無効化
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      
+      // フォームデータを取得
+      const formData = new FormData();
+      formData.append(FIELD_IDS.company, document.getElementById('company').value);
+      formData.append(FIELD_IDS.name, document.getElementById('name').value);
+      formData.append(FIELD_IDS.email, document.getElementById('email').value);
+      formData.append(FIELD_IDS.tel, document.getElementById('tel').value);
+      formData.append(FIELD_IDS.message, document.getElementById('message').value);
+      
+      try {
+        // Googleフォームに送信（CORS対策のためno-corsモード）
+        await fetch(GOOGLE_FORM_URL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+        
+        // 成功メッセージを表示
+        formWrapper.style.background = 'rgba(255, 255, 255, 0.95)';
+        formWrapper.innerHTML = `
+          <div style="text-align: center; padding: 60px 40px;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 24px;">
+              <circle cx="24" cy="24" r="22" stroke="#3f3b3a" stroke-width="1.5" fill="none"/>
+              <path d="M15 24L21 30L33 18" stroke="#3f3b3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            
+            <h2 style="font-size: 18px; font-weight: 400; letter-spacing: 0.12em; margin: 0 0 12px; color: #3f3b3a;">
+              お問い合わせありがとうございます
+            </h2>
+            
+            <p style="font-size: 14px; font-weight: 400; letter-spacing: 0.07em; line-height: 1.85; color: #3f3b3a; margin: 0 0 40px;">
+              内容を確認のうえ、数日以内にご連絡いたします。
+            </p>
+            
+            <a href="./index.html" style="display: inline-block; padding: 12px 48px; background: #3f3b3a; color: #ffffff; font-size: 14px; font-weight: 400; letter-spacing: 0.12em; text-decoration: none; transition: opacity 0.2s ease;">
+              TOPへ戻る
+            </a>
+          </div>
+        `;
+        
+      } catch (error) {
+        console.error('送信エラー:', error);
+        alert('送信に失敗しました。お手数ですが、再度お試しください。');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  </script>
 
 </main>
 
