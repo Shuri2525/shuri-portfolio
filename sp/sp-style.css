@@ -434,6 +434,7 @@ a {
   transform: translateY(-50%);
   font-size: 22px;
   font-weight: 200;
+  margin-right: 8px;
 }
 
 /* カテゴリアコーディオン */
