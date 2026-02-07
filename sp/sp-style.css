@@ -476,14 +476,16 @@ a {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.35);
   border-radius: 999px;
-  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
   text-decoration: none;
 }
 
 .category-btn:active {
   background-color: #f4f4f4;
-  transform: scale(0.97);
+  transform: scale(0.97) translateY(2px);
   border-color: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .category-btn:visited {
@@ -495,7 +497,7 @@ a {
    ABOUTセクション
 ================================ */
 .sp-about-section {
-  background: var(--color-white);
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
   color: var(--color-dark);
   padding: 60px 0;
 }
@@ -528,11 +530,12 @@ a {
   transform-style: preserve-3d;
   transition: transform 0.25s ease, filter 0.25s ease;
   cursor: pointer;
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.18));
 }
 
 .card-wrapper-sp:active .card-flip-sp {
-  transform: scale(0.98);
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+  transform: scale(0.98) translateY(2px);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
 }
 
 .card-face {
@@ -2110,4 +2113,53 @@ a {
   line-height: 1;
   display: block;
   color: var(--color-dark);
+}
+
+/* ================================
+   スクロールインジケーター（SP版TOP）
+   境界線上に配置
+================================ */
+.sp-scroll-slider {
+  position: relative;
+  margin: -50px auto 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.sp-scroll-label {
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  margin-left: 1px;
+  color: #f5f5f5;
+}
+
+.sp-scroll-line {
+  width: 1px;
+  height: 110px;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #f5f5f5 50%, #3f3b3a 50%, #3f3b3a 100%);
+  position: relative;
+}
+
+.sp-scroll-knob {
+  width: 6px;
+  height: 6px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spSlideBall 2.8s ease-in-out infinite;
+}
+
+@keyframes spSlideBall {
+  0%   { top: 0; opacity: 0; background: #f5f5f5; }
+  15%  { opacity: 1; }
+  50%  { top: 50%; background: #3f3b3a; }
+  85%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; background: #3f3b3a; }
 }
