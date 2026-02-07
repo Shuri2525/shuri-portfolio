@@ -78,6 +78,7 @@
       <img src="../assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="sp-hero-logo">
       <p class="sp-hero-title">HIDAKA SHURI</p>
     </div>
+    <img src="../assets/deco/deco_f5f5f5.svg" alt="" class="sp-hero-deco" aria-hidden="true">
   </section>
 
   <!-- スクロールインジケーター（境界線上） -->
@@ -245,6 +246,22 @@
         icon.textContent = '−';
       }
     });
+
+    // 名刺カードのスライドイン
+    const card = document.querySelector('.card-wrapper-sp');
+    if (card && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            card.classList.add('is-visible');
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(card);
+    } else if (card) {
+      card.classList.add('is-visible');
+    }
   });
 
   // ヘッダーロゴの表示制御
