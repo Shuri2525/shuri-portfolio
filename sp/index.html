@@ -3,7 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHURI PORTFOLIO</title>
+  <title>HIDAKA SHURI | Web・グラフィックデザイナー | 大分</title>
+  <meta name="description" content="大分市でWeb・グラフィックデザインを中心に制作しているデザイナー、日高朱璃のポートフォリオサイト。シンプルで洗練された表現を得意としています。">
+  
+  <!-- OGP -->
+  <meta property="og:title" content="HIDAKA SHURI | Web・グラフィックデザイナー">
+  <meta property="og:description" content="大分市でWeb・グラフィックデザインを中心に制作しているデザイナーのポートフォリオ">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shuri2525.github.io/shuri-portfolio/sp/">
+  <meta property="og:image" content="https://shuri2525.github.io/shuri-portfolio/assets/ogp.jpg">
+  <meta property="og:site_name" content="HIDAKA SHURI PORTFOLIO">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HIDAKA SHURI | Web・グラフィックデザイナー">
+  <meta name="twitter:description" content="大分市でWeb・グラフィックデザインを中心に制作しているデザイナーのポートフォリオ">
+  <meta name="twitter:image" content="https://shuri2525.github.io/shuri-portfolio/assets/ogp.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/common/logo_3f3b3a.svg">
+  <link rel="apple-touch-icon" href="../assets/common/logo_3f3b3a.svg">
 
   <!-- デバイス判定・自動リダイレクト -->
   <script src="../js/device-redirect.js"></script>
@@ -101,11 +120,46 @@
 
     <!-- 開閉される中身 -->
     <div class="category-body" id="categoryBody">
-      <div class="category-buttons">
-        <a href="./works.html?cat=web" class="category-btn btn-web"># WEB</a>
-        <a href="./works.html?cat=dtp" class="category-btn btn-dtp"># DTP</a>
-        <a href="./works.html?cat=graphic" class="category-btn btn-graphic"># GRAPHIC</a>
+      
+      <!-- WEB -->
+      <div class="category-item">
+        <a href="./works.html?cat=web" class="category-link">
+          <div class="category-thumb">
+            <img src="./assets/works/web/01/hero.jpg" alt="PORTFOLIO SITE">
+          </div>
+          <div class="category-info">
+            <span class="category-tag"># WEB</span>
+            <h3 class="category-title">PORTFOLIO SITE</h3>
+          </div>
+        </a>
       </div>
+
+      <!-- DTP -->
+      <div class="category-item">
+        <a href="./works.html?cat=dtp" class="category-link">
+          <div class="category-thumb">
+            <img src="./assets/works/dtp/01/hero.jpg" alt="名刺デザイン">
+          </div>
+          <div class="category-info">
+            <span class="category-tag"># DTP</span>
+            <h3 class="category-title">名刺デザイン</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- GRAPHIC -->
+      <div class="category-item">
+        <a href="./works.html?cat=graphic" class="category-link">
+          <div class="category-thumb">
+            <img src="./assets/works/graphic/01/hero.webp" alt="ロゴデザイン">
+          </div>
+          <div class="category-info">
+            <span class="category-tag"># GRAPHIC</span>
+            <h3 class="category-title">ロゴデザイン</h3>
+          </div>
+        </a>
+      </div>
+
     </div>
   </section>
 
