@@ -1400,9 +1400,11 @@ a {
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: 200;
+  font-size: 28px;
+  font-weight: 300;
   color: var(--color-dark);
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
 /* アコーディオンボディ */
@@ -1426,7 +1428,7 @@ a {
 }
 
 .sp-ability-list li {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .sp-ability-list li:last-child {
@@ -1436,35 +1438,50 @@ a {
 .sp-ability-list h3 {
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: var(--color-dark);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .sp-ability-list p {
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   line-height: 1.7;
-  color: var(--color-dark);
+  color: #555;
   margin: 0;
 }
 
 /* セクション見出し */
 .sp-ability-list .ability-section {
-  margin-top: 22px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
 }
 
 .sp-ability-list .ability-section:first-child {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .sp-ability-list .ability-section-title {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gray);
-  margin: 0;
+  color: #999;
+  margin: 0 0 8px;
+}
+
+/* スキル項目のインライン表示 */
+.sp-ability-list .skill-inline p {
+  display: inline;
+}
+
+.sp-ability-list .skill-inline p + p::before {
+  content: ' ｜ ';
+  margin: 0 3px;
+  color: #999;
 }
 
 /* 資格 */
@@ -1953,9 +1970,11 @@ a {
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: 200;
+  font-size: 28px;
+  font-weight: 300;
   color: var(--color-dark);
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
 /* アコーディオンボディ */
@@ -1986,7 +2005,7 @@ a {
 }
 
 .sp-ability-list li {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .sp-ability-list li:last-child {
@@ -1996,35 +2015,50 @@ a {
 .sp-ability-list h3 {
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: var(--color-dark);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .sp-ability-list p {
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   line-height: 1.7;
-  color: var(--color-dark);
+  color: #555;
   margin: 0;
 }
 
 /* セクション見出し */
 .sp-ability-list .ability-section {
-  margin-top: 22px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
 }
 
 .sp-ability-list .ability-section:first-child {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .sp-ability-list .ability-section-title {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gray);
-  margin: 0;
+  color: #999;
+  margin: 0 0 8px;
+}
+
+/* スキル項目のインライン表示 */
+.sp-ability-list .skill-inline p {
+  display: inline;
+}
+
+.sp-ability-list .skill-inline p + p::before {
+  content: ' ｜ ';
+  margin: 0 3px;
+  color: #999;
 }
 
 /* ================================
@@ -2115,11 +2149,12 @@ a {
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 300;
   line-height: 1;
   display: block;
   color: var(--color-dark);
+  transition: transform 0.3s ease;
 }
 
 /* ================================
@@ -2187,4 +2222,24 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+
+.ability-section {
+  margin-bottom: 48px; 
+}
+
+.skill-list > li {
+  margin-bottom: 48px;
+}
+
+.skill-list li:last-child {
+  margin-top: 56px;
+}
+
+.skill-list li:last-child h3,
+.skill-list li:last-child p {
+  color: #888;
 }
