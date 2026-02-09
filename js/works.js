@@ -121,6 +121,8 @@ const WORKS_DATA = {
   "detailText": "観音開きの三つ折りリーフレットとして、営業担当者が話しやすい順序と情報の展開を意識しながら制作しました。\n\n配色やビジュアルには“塗装のプロらしさ”と“安心感”を両立させ、専門的な内容でも読みやすく整理。価格・工法・メリットなどを簡潔に伝えつつ、デザイン性も損なわないよう構成しています。"
 }
 ,
+
+
     {
   "id": "03",
   "title": "戸建て販売チラシ",
@@ -138,13 +140,28 @@ const WORKS_DATA = {
   ],
 
   graphic: [
-  {
+
+    {
   "id": "01",
-  "title": "ロゴデザイン",
-  "tag": "ロゴ / コンペ",
+  "title": "パーソナルロゴ",
+  "tag": "ロゴ / 個人制作",
   "thumb": "./assets/works/graphic/01/hero.webp",
   "modalThumb": "./assets/works/graphic/01/thumb.webp",
   /*"detailImg": "./assets/works/graphic/01/detail.jpg",*/
+  "outline": "自身の名前の頭文字「S」をモチーフにした、シンプルで多面的な印象を持つパーソナルロゴです。モノクロ配色により、あらゆる媒体での汎用性を確保しています。",
+  "target": "個人ブランディング全般",
+  "period": "3日",
+  "purpose": "パーソナルブランドの視覚的アイデンティティ確立",
+  "detailText": "控えめでありながら記憶に残る、そんなバランスを目指したデザインです。二つの有機的な曲線は、見る人によって異なる印象を与えます——生き物のようにも、チューリップのような植物にも見え、重ねると幾何学的な手裏剣のような形が現れます。\n\nこの「解釈の余白」こそが、このロゴの核心です。シンプルな形状の中に多様性を秘めることで、さまざまなシーンに柔軟に対応しながら、見る人それぞれの想像力を刺激する視覚体験を生み出しています。"
+},
+
+  {
+  "id": "02",
+  "title": "ロゴデザイン",
+  "tag": "ロゴ / コンペ",
+  "thumb": "./assets/works/graphic/02/hero.webp",
+  "modalThumb": "./assets/works/graphic/02/thumb.webp",
+  /*"detailImg": "./assets/works/graphic/02/detail.jpg",*/
   "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
   "target": "美容室（40代女性中心）",
   "period": "2日",
@@ -153,15 +170,15 @@ const WORKS_DATA = {
 }
 ,
    {
-  "id": "02",
+  "id": "03",
   "title": "ロゴデザイン",
   "tag": "ロゴ / コンペ",
-  "thumb": "./assets/works/graphic/02/hero.webp",
-  "modalThumb": "./assets/works/graphic/02/thumb.webp",
-  /*"detailImg": "./assets/works/graphic/02/detail.webp",*/
+  "thumb": "./assets/works/graphic/03/hero.webp",
+  "modalThumb": "./assets/works/graphic/03/thumb.webp",
+  /*"detailImg": "./assets/works/graphic/03/detail.webp",*/
   "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
   "target": "食品メーカー・生活者",
-  "period": "1日",
+  "period": "4日",
   "purpose": "ブランドの価値観（つながり・誠実さ・温かさ）を象徴するロゴを提案するため",
   "detailText": "箸袋を結んだ動きをモチーフに、“むすぶ”という行為を抽象化し、ロゴ全体で温かい人間関係やご縁を表現しました。\n\n背景の3本線は水引をイメージし、「心を結ぶ」「縁をつなぐ」という想いを込めています。配色は深みのある赤と金で、品格・誠実さ・ぬくもりを表現。結び目の形がMのシルエットを形成し、ブランド名との一体感を持たせたデザインです。"
 }

@@ -190,9 +190,9 @@
   padding-top: 24px;
 }
 
-/* 最後のセクション（DETAIL）の下部パディングを完全にゼロに */
+/* 最後のセクション（DETAIL）の下部に余白を確保 */
 .modal-section:last-child {
-  padding-bottom: 0;
+  padding-bottom: 56px;
 }
 
 .modal-section:last-child .modal-text,
