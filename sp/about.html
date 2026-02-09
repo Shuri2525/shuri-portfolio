@@ -87,15 +87,12 @@
     <div class="sp-about-card-container">
       <a
         href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
-        class="sp-card-link"
+        class="sp-card-link sp-card-static"
         target="_blank"
         rel="noopener"
       >
         <div class="sp-card-wrapper">
-          <div class="sp-card-flip" id="cardFlip">
-            <img src="../assets/about/img_nemu_omote.png" alt="名刺 表面" class="sp-card-face sp-card-front">
-            <img src="../assets/about/img_nemu_ura.png" alt="名刺 裏面" class="sp-card-face sp-card-back">
-          </div>
+          <img src="../assets/about/img_nemu_ura.png" alt="名刺 裏面（QRコード）" class="sp-card-face-static">
         </div>
       </a>
     </div>
@@ -265,17 +262,6 @@
       document.body.style.overflow = '';
     });
   });
-
-  // 名刺カード（3秒後自動フリップ）
-  const cardFlip = document.getElementById('cardFlip');
-  const cardLink = document.querySelector('.sp-card-link');
-
-  setTimeout(() => {
-    cardFlip.style.transform = 'rotateY(180deg)';
-    setTimeout(() => {
-      cardLink.style.pointerEvents = 'auto';
-    }, 600);
-  }, 3000);
 
   // アコーディオン
   function setupAccordion(toggleId, bodyId) {

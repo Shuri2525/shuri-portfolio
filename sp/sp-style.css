@@ -438,6 +438,17 @@ a {
 }
 
 /* カテゴリアコーディオン */
+/* WORKSヘッダー */
+.sp-works-header {
+  text-align: center;
+  padding: 0 20px 32px;
+}
+
+/* 作品リスト */
+.category-list {
+  padding: 0 16px 28px;
+}
+
 .category-body {
   max-height: 0;
   overflow: hidden;
@@ -498,18 +509,18 @@ a {
 
 .category-tag {
   display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.12em;
-  color: #888;
+  color: var(--color-dark);
   margin-bottom: 6px;
 }
 
 .category-title {
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--color-dark);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #666;
   margin: 0;
 }
 
@@ -1360,6 +1371,23 @@ a {
 
 .sp-card-back {
   transform: rotateY(180deg);
+}
+
+/* 静的表示用の名刺カード（ABOUTページ） */
+.sp-card-static {
+  display: block;
+  cursor: pointer;
+}
+
+.sp-card-static .sp-card-wrapper {
+  transform-style: flat;
+}
+
+.sp-card-face-static {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* TOPページ用名刺リンク */

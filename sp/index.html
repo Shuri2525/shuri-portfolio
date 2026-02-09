@@ -110,16 +110,13 @@
 
   <!-- WORKSセクション -->
   <section class="sp-section sp-works-section">
-    <button class="works-toggle" id="worksToggle" type="button">
-      <div class="works-title-wrap">
-        <h2 class="sp-section-title">WORKS</h2>
-        <p class="sp-section-sub">制作したもの</p>
-      </div>
-      <span class="works-icon">+</span>
-    </button>
+    <div class="sp-works-header">
+      <h2 class="sp-section-title">WORKS</h2>
+      <p class="sp-section-sub">制作したもの</p>
+    </div>
 
-    <!-- 開閉される中身 -->
-    <div class="category-body" id="categoryBody">
+    <!-- 作品リスト -->
+    <div class="category-list">
       
       <!-- WEB -->
       <div class="category-item">
@@ -129,7 +126,7 @@
           </div>
           <div class="category-info">
             <span class="category-tag"># WEB</span>
-            <h3 class="category-title">PORTFOLIO SITE</h3>
+            <h3 class="category-title">サイト制作・LP・ポートフォリオ</h3>
           </div>
         </a>
       </div>
@@ -142,7 +139,7 @@
           </div>
           <div class="category-info">
             <span class="category-tag"># DTP</span>
-            <h3 class="category-title">名刺デザイン</h3>
+            <h3 class="category-title">名刺・チラシ・パンフレット</h3>
           </div>
         </a>
       </div>
@@ -155,7 +152,7 @@
           </div>
           <div class="category-info">
             <span class="category-tag"># GRAPHIC</span>
-            <h3 class="category-title">ロゴデザイン</h3>
+            <h3 class="category-title">ロゴ・ビジュアル</h3>
           </div>
         </a>
       </div>
@@ -279,28 +276,6 @@
 
   // ページロード時の処理
   document.addEventListener('DOMContentLoaded', () => {
-    // カテゴリアコーディオン
-    const worksToggle = document.getElementById('worksToggle');
-    const categoryBody = document.getElementById('categoryBody');
-    const icon = worksToggle.querySelector('.works-icon');
-
-    worksToggle.addEventListener('click', () => {
-      const isOpen = categoryBody.classList.contains('active');
-
-      if (isOpen) {
-        categoryBody.classList.remove('active');
-        icon.textContent = '+';
-
-        setTimeout(() => {
-          worksToggle.classList.remove('is-open');
-        }, 400);
-      } else {
-        worksToggle.classList.add('is-open');
-        categoryBody.classList.add('active');
-        icon.textContent = '−';
-      }
-    });
-
     // 名刺カードのスライドイン
     const card = document.querySelector('.card-wrapper-sp');
     if (card && 'IntersectionObserver' in window) {
