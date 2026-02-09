@@ -621,6 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // クエリ指定カテゴリを初期表示
   const params = new URLSearchParams(window.location.search);
   const initialCat = params.get('cat');
+  const initialId = params.get('id');
   const validCats = new Set(['web', 'dtp', 'graphic']);
   const startCat = validCats.has(initialCat) ? initialCat : 'web';
 
@@ -628,6 +629,19 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.toggle('active', btn.dataset.cat === startCat);
   });
   renderWorks(startCat);
+  
+  // TOPから遷移した場合、指定IDのモーダルを自動で開く
+  if (initialId) {
+    const works = WORKS_DATA[startCat] || [];
+    const work = works.find(w => w.id === initialId);
+    
+    if (work) {
+      // 少し遅延させてから開く（ページ読み込み完了後）
+      setTimeout(() => {
+        openModal(work, startCat);
+      }, 300);
+    }
+  }
   
   // カテゴリボタンクリック
   catButtons.forEach(btn => {
