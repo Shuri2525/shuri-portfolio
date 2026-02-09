@@ -145,9 +145,9 @@ const WORKS_DATA = {
   "id": "01",
   "title": "パーソナルロゴ",
   "tag": "ロゴ / 個人制作",
-  "thumb": "./assets/works/graphic/01/hero.webp",
-  "modalThumb": "./assets/works/graphic/01/thumb.webp",
-  /*"detailImg": "./assets/works/graphic/01/detail.jpg",*/
+  "thumb": "./assets/works/graphic/01/hero.jpg",
+  "modalThumb": "../assets/works/graphic/01/thumb.jpg",
+  /*"detailImg": "../assets/works/graphic/01/detail.jpg",*/
   "outline": "自身の名前の頭文字「S」をモチーフにした、シンプルで多面的な印象を持つパーソナルロゴです。モノクロ配色により、あらゆる媒体での汎用性を確保しています。",
   "target": "個人ブランディング全般",
   "period": "3日",
