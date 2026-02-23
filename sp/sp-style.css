@@ -692,7 +692,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.9;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   color: #3f3b3a;
   text-align: center;
 }
@@ -2852,7 +2852,7 @@ a {
 /* ABOUTコンテンツ（白背景） */
 .sp-about-content {
   background: var(--color-white);
-  padding: 24px 20px 48px;
+  padding: 24px 20px 50px;
 }
 
 /* 名刺カード */
@@ -2942,7 +2942,7 @@ a {
 /* ABOUTコンテンツ */
 .sp-about-content {
   background: #ffffff;
-  padding: 0 20px 60px;
+  padding: 0 20px 25px;
 }
 
 /* ① プロフィール画像 (4:5) */
@@ -4646,7 +4646,7 @@ a {
 }
 
 .sp-section-divider {
-  padding: 20px 0;  /* 左右の余白を0に */
+  padding: 0px 0;  /* 左右の余白を0に */
 }
 
 .sp-section-divider::before {
