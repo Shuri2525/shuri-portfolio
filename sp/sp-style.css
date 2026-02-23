@@ -7,6 +7,7 @@
   --color-white: #ffffff;
   --color-gray: #7a7a7a;
   --sp-section-closed-height: 140px;
+  --font-en: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -37,6 +38,25 @@ a {
 button,
 a {
   user-select: none;
+}
+
+.splash-title,
+.sp-logo-text,
+.menu-list a,
+.menu-instagram,
+.sp-hero-title,
+.sp-section-title,
+.works-toggle,
+.sp-works-page-header .sp-page-title,
+.sp-about-page-header .sp-page-title,
+.sp-contact-page-header .sp-page-title,
+.sp-category-title,
+.contact-button-en,
+.sp-modal-title,
+.sp-modal-section-title,
+.sp-modal-footer-nav-btn,
+.sp-ability-title {
+  font-family: var(--font-en);
 }
 
 /* ================================
@@ -564,67 +584,1570 @@ a {
   color: var(--color-dark);
   background-color: #ffffff;
 }
-
 /* ================================
    ABOUTセクション
+   パターンA改: 控えめで上品(推奨)
 ================================ */
 .sp-about-section {
   background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
-  color: var(--color-dark);
-  padding: 60px 0;
+  padding: 60px 20px 80px;
 }
 
-.sp-about-section .sp-section-title {
-  color: var(--color-dark);
+/* ABOUTカード */
+.about-card-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.sp-about-section .sp-section-sub {
-  color: var(--color-gray);
+.about-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* 名刺カード */
-.card-container {
+.about-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-card:active {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* カード内タイトルエリア */
+.about-card-title-area {
+  padding: 32px 20px 24px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.about-card-main-title {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  color: #3f3b3a;
+}
+
+.about-card-sub-title {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin: 0;
+  color: #7a7a7a;
+  opacity: 0.7;
+}
+
+/* プロフィール画像コンテナ - カード内に余白 */
+.about-card-image {
+  padding: 0 32px 24px 32px;
+  background: #ffffff;
+}
+
+.about-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 2px;
+}
+
+/* カード内容 */
+.about-card-content {
+  padding: 0 24px 28px 24px;
+  text-align: center;
+}
+
+/* ヘッダー部分 */
+.about-card-header {
+  margin-bottom: 20px;
+}
+
+.about-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  color: #3f3b3a;
+}
+
+.about-name-en {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  margin: 0;
+  color: #7a7a7a;
+  opacity: 0.7;
+}
+
+/* 哲学テキスト */
+.about-philosophy {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  margin: 0 0 24px;
+  color: #3f3b3a;
+  text-align: center;
+}
+
+/* フッター（カテゴリタグ） */
+.about-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.about-card-footer .category-tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #3f3b3a;
+  margin-bottom: 6px;
+}
+
+.about-card-footer .category-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin: 0;
+}
+
+/* タブレット対応 */
+@media (min-width: 600px) {
+  .about-card-title-area {
+    padding: 36px 32px 28px;
+  }
+
+  .about-card-main-title {
+    font-size: 20px;
+  }
+  
+  .about-card-sub-title {
+    font-size: 11px;
+  }
+
+  .about-card-image {
+    padding: 0 48px 28px 48px;
+  }
+
+  .about-card-content {
+    padding: 0 32px 32px 32px;
+  }
+  
+  .about-philosophy {
+    font-size: 13px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* ================================
+   CONTACTセクション
+================================ */
+.sp-contact-section {
+  background: var(--color-dark);
+  min-height: var(--sp-section-closed-height);
   display: flex;
+  align-items: center;
+  padding: 0;
+  border-top: 1px solid var(--color-light);
+}
+
+.contact-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+  background: var(--color-dark);
+  color: var(--color-light);
+  border: none;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.contact-button:active {
+  opacity: 0.7;
+}
+
+.contact-button-en {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.contact-button-ja {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.7);
+  text-align: center;
+  margin: 0;
+}
+
+.contact-arrow {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+.contact-button:active .contact-arrow {
+  transform: translate(6px, -50%);
+}
+
+/* ================================
+   フッター
+================================ */
+.sp-footer {
+  background: var(--color-dark);
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid var(--color-light);
+}
+
+.sp-copyright {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(245, 245, 245, 0.5);
+  margin: 0;
+}
+
+
+/* ================================
+   SP WORKS ページ専用スタイル
+================================ */
+
+/* ヘッダーロゴの初期状態（非表示） */
+.sp-works .sp-logo-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* メインビジュアル（黒背景、TOPと同じ高さ） */
+.sp-works-hero {
+  background: var(--color-dark);
+  height: calc((100vh * 2 / 3) - 60px);
+}
+
+.sp-works-hero .sp-hero-deco {
+  opacity: 0.07;
+}
+
+/* ページタイトルセクション（グレー背景） */
+.sp-works-page-header {
+  background: var(--color-white);
+  padding: 32px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.sp-works-page-header .sp-page-title {
+  color: var(--color-dark);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+.sp-works-page-header .sp-page-subtitle {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* タイトルセクション装飾 */
+.sp-works-header-deco {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 120px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* 作品一覧セクション（白背景） */
+.sp-works-list-section {
+  background: var(--color-white);
+  padding: 40px 20px 60px;
+  min-height: 50vh;
+}
+
+/* 作品一覧（1カラム） */
+.sp-works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 作品アイテム */
+.sp-work-item {
+  background: var(--color-white);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sp-work-item:active {
+  transform: scale(0.98);
+}
+
+/* 作品サムネイル */
+.sp-work-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* 作品タイトル */
+.sp-work-title {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  color: var(--color-dark);
+  margin: 0 0 8px;
+}
+
+/* 作品ラベル */
+.sp-work-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.sp-work-label .tag-en {
+  margin-right: 4px;
+}
+
+/* WORKSページ用フッター調整 */
+.sp-works-footer {
+  background: var(--color-white);
+  border-top: none; /* ← ここが重要：ボーダー削除 */
+}
+
+.sp-works .sp-copyright {
+  color: rgba(63, 59, 58, 0.5);
+}
+
+/* ================================
+   カテゴリセクション
+================================ */
+.sp-works-category-section {
+  background: var(--color-light);
+  border-top: 1px solid var(--color-dark);
+}
+
+
+/* 下部カテゴリセクション */
+.sp-works-category-bottom {
+  border-top: 1px solid var(--color-dark); /* ← 下部のみ上ボーダーあり */
+}
+
+.sp-category-toggle {
+  position: relative;
+  width: 100%;
+  min-height: var(--sp-section-closed-height);
+  display: flex;
+  align-items: center;
   justify-content: center;
   padding: 0 20px;
-}
-
-.card-wrapper-sp {
-  width: 220px;
-  aspect-ratio: 320 / 520;
-  perspective: 1000px;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.card-wrapper-sp.is-visible {
-  animation: cardSlideIn 1s ease both;
-}
-
-.card-flip-sp {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.25s ease, filter 0.25s ease;
+  background: var(--color-white);
+  border: none;
+  border-bottom: 1px solid var(--color-dark);
   cursor: pointer;
-  background: transparent;
+  color: var(--color-dark);
 }
 
-.card-wrapper-sp:active .card-flip-sp {
-  transform: scale(0.98) translateY(2px);
+.sp-category-toggle.is-open {
+  border-bottom: none;
 }
 
-.card-face {
+.sp-category-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sp-category-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.sp-category-sub {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 8px 0 0;
+}
+
+.sp-category-icon {
   position: absolute;
-  inset: 0;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 200;
+  color: var(--color-dark);
+}
+
+.sp-category-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
+  background: var(--color-white);
+}
+
+.sp-category-body.active {
+  max-height: 400px;
+  padding-top: 12px;
+}
+
+.sp-category-buttons {
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================================
+   モーダル
+================================ */
+.sp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  backface-visibility: hidden;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sp-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sp-modal-wrapper {
+  min-height: 100vh;
+  background: var(--color-white);
+  padding: 60px 0 0;
+}
+
+/* モーダルナビ */
+.sp-modal-nav-btn {
+  border: none;
+  background: none;
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 10px 8px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.sp-modal-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* モーダルヘッダー */
+.sp-modal-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-dark);
+  z-index: 10001;
+}
+
+.sp-modal-header-left,
+.sp-modal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-modal-category {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--color-dark);
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.sp-modal-close {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-weight: 200;
+  color: var(--color-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* モーダルコンテンツ */
+.sp-modal-content {
+  padding: 32px 20px 24px;
+}
+
+.sp-modal-title-block {
+  margin-bottom: 24px;
+}
+
+.sp-modal-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-dark);
+  margin: 0 0 8px;
+}
+
+.sp-modal-tag {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* モーダル画像 */
+.sp-modal-image {
+  margin-bottom: 40px;
+}
+
+.sp-modal-image img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
+/* モーダルセクション */
+.sp-modal-section {
+  margin-bottom: 48px;
+}
+
+.sp-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.sp-modal-section-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  margin: 0 0 6px;
+}
+
+.sp-modal-section-sub {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 0 0 20px;
+}
+
+.sp-modal-text {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.85;
+  color: var(--color-dark);
+  margin: 0 0 24px;
+  white-space: pre-line;
+}
+
+#modalOutline {
+  margin-bottom: 30px;
+}
+
+/* メタ情報 */
+.sp-modal-meta {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+  border-top: 1px solid #d8d8d8;
+}
+
+.sp-modal-meta li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+  padding: 22px 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.sp-modal-meta li:last-child {
+  margin-bottom: 0;
+}
+
+.sp-meta-label {
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  min-width: 92px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sp-meta-text {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: var(--color-dark);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* 詳細画像 */
+.sp-modal-detail-image {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.sp-modal-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 最終作品用の終了エリア */
+.sp-modal-end-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  margin-top: 0;
+  border-top: 1px solid #e0e0e0;
+  background: var(--color-white);
+}
+
+.sp-modal-end-area.hidden {
+  display: none;
+}
+
+.sp-modal-end-close {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  font-weight: 200;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+}
+
+.sp-modal-end-close:active {
+  color: var(--color-dark);
+}
+
+/* ================================
+   SP モーダル - ヘッダーナビ非表示
+================================ */
+.sp-modal-header-left {
+  visibility: hidden; /* 左側のナビボタンを非表示 */
+}
+
+/* ================================
+   SP モーダル - 下部ナビゲーション
+================================ */
+/* ================================
+   SP モーダル - 下部ナビゲーション
+================================ */
+.sp-modal-footer-nav {
+  border-top: 1px solid #e0e0e0;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  position: relative;
+}
+
+.sp-modal-footer-nav-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #999;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sp-modal-footer-nav-btn:active {
+  color: var(--color-dark);
+}
+
+/* PREV/NEXTボタン */
+.sp-modal-footer-nav-btn.prev,
+.sp-modal-footer-nav-btn.next {
+  flex: 0 0 auto;
+}
+
+/* クローズボタン（中央・最終作品のみ表示） */
+.sp-modal-footer-nav-btn.close {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  flex: 0 0 auto;
+  padding: 0;
+  font-size: 28px;
+  color: #999;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sp-modal-footer-nav-btn.close span {
+  line-height: 1;
+}
+
+.sp-modal-footer-nav-btn.close:active {
+  color: var(--color-dark);
+}
+
+/* 矢印アイコン */
+.sp-modal-footer-nav-btn .arrow {
+  font-size: 16px;
+}
+
+/* ボタンが存在しない場合の空白保持 */
+.sp-modal-footer-nav-btn.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* ================================
+   SP共通 - ベース設定
+================================ */
+:root {
+  --color-dark: #3f3b3a;
+  --color-light: #f5f5f5;
+  --color-white: #ffffff;
+  --color-gray: #7a7a7a;
+  --sp-section-closed-height: 140px;
+  --font-en: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  background: var(--color-dark);
+  color: var(--color-light);
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  user-select: none;
+}
+
+.splash-title,
+.sp-logo-text,
+.menu-list a,
+.menu-instagram,
+.sp-hero-title,
+.sp-section-title,
+.works-toggle,
+.sp-works-page-header .sp-page-title,
+.sp-about-page-header .sp-page-title,
+.sp-contact-page-header .sp-page-title,
+.sp-category-title,
+.contact-button-en,
+.sp-modal-title,
+.sp-modal-section-title,
+.sp-modal-footer-nav-btn,
+.sp-ability-title {
+  font-family: var(--font-en);
+}
+
+/* ================================
+   スプラッシュ画面
+================================ */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.splash-screen.fade-out {
+  opacity: 0;
+}
+
+.splash-content {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: splashFadeUp 0.8s ease-out 0.3s forwards;
+}
+
+.splash-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 18px;
+}
+
+.splash-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  margin: 0;
+}
+
+.splash-deco {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 200px;
+  opacity: 0;
+  animation: splashDecoFade 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes splashFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashDecoFade {
+  to {
+    opacity: 0.07;
+  }
+}
+
+/* ================================
+   ヘッダー
+================================ */
+.sp-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--color-dark);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.sp-header.scrolled {
+  background: rgba(63, 59, 58, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.sp-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.sp-logo-text {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin: 0;
+  color: var(--color-light);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: var(--color-light);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* メニューオーバーレイ */
+.menu-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-list li {
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-list li:nth-child(1) { transition-delay: 0.05s; }
+.menu-list li:nth-child(2) { transition-delay: 0.1s; }
+.menu-list li:nth-child(3) { transition-delay: 0.15s; }
+.menu-list li:nth-child(4) { transition-delay: 0.2s; }
+
+.menu-overlay.active .menu-list li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-list a {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  transition: opacity 0.2s ease;
+}
+
+.menu-list a:active {
+  opacity: 0.6;
+}
+
+.menu-instagram {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.6);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.menu-overlay.active .menu-instagram {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.menu-instagram:active {
+  opacity: 0.5;
+}
+
+.menu-pattern {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menu-overlay.active .menu-pattern {
+  opacity: 0.05;
+  transition-delay: 0.15s;
+}
+
+/* ================================
+   メインコンテンツ
+================================ */
+.sp-main {
+  padding-top: 60px;
+}
+
+/* ファーストビューをTOPリンクに */
+.sp-hero-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ================================
+   メインビジュアル
+================================ */
+.sp-hero {
+  width: 100%;
+  height: calc((100vh * 2 / 3) - 60px);
+  background: var(--color-dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.sp-hero-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* ファーストビューロゴをクリック可能に */
+.sp-hero-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.sp-hero-logo:active {
+  opacity: 0.7;
+}
+
+.sp-hero-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--color-light);
+  margin: 0;
+}
+
+.sp-hero-deco {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 180px;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+
+/* ================================
+   セクション共通
+================================ */
+.sp-section {
+  padding: 20px 0;
+}
+
+.sp-section-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 8px;
+  padding: 0 20px;
+}
+
+.sp-section-sub {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+  text-align: center;
+  margin: 0 0 32px;
+  padding: 0 20px;
+}
+
+/* ================================
+   WORKSセクション
+================================ */
+.sp-works-section {
+  background: var(--color-light);
+  color: var(--color-dark);
+  padding-bottom: 0;
+}
+
+/* WORKSトグル（タイトル部分） */
+.works-toggle {
+  position: relative;
+  width: 100%;
+  min-height: var(--sp-section-closed-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-light);
+  border: none;
+  border-bottom: 1px solid var(--color-dark);
+  cursor: pointer;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.works-toggle.is-open {
+  border-bottom: none;
+}
+
+.works-toggle:visited,
+.works-toggle:hover,
+.works-toggle:active {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.works-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.works-toggle .sp-section-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.works-toggle .sp-section-sub {
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+}
+
+/* ＋−アイコン */
+.works-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 200;
+  margin-right: 8px;
+}
+
+/* カテゴリアコーディオン */
+/* WORKSヘッダー */
+.sp-works-header {
+  text-align: center;
+  padding: 0 20px 32px;
+}
+
+/* 作品リスト */
+.category-list {
+  padding: 0 16px 28px;
+}
+
+.category-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
+  background: var(--color-light);
+  border-bottom: 1px solid var(--color-dark);
+  margin-bottom: -1px;
+}
+
+.category-body.active {
+  max-height: none;
+  margin-bottom: 0;
+  padding: 20px 16px 28px;
+}
+
+/* カテゴリアイテム */
+.category-item {
+  margin-bottom: 24px;
+}
+
+.category-item:last-child {
+  margin-bottom: 0;
+}
+
+.category-link {
+  display: block;
+  text-decoration: none;
+  color: var(--color-dark);
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-link:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.category-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.category-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.category-info {
+  padding: 16px 20px;
+}
+
+.category-tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.category-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin: 0;
+}
+
+/* カテゴリボタン群（旧スタイル - 使用しない場合は削除可） */
+.category-buttons {
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* カテゴリボタン */
+.category-btn {
+  width: 100%;
+  max-width: 420px;
+  height: 52px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  color: var(--color-dark);
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+
+.category-btn:active {
+  background-color: #f4f4f4;
+  transform: scale(0.97) translateY(2px);
+  border-color: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.category-btn:visited {
+  color: var(--color-dark);
+  background-color: #ffffff;
+}
+/* ================================
+   ABOUTセクション
+   パターンA改: 控えめで上品(推奨)
+================================ */
+.sp-about-section {
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+  padding: 60px 20px 80px;
+}
+
+/* ABOUTカード */
+.about-card-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.about-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-card:active {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* カード内タイトルエリア */
+.about-card-title-area {
+  padding: 32px 20px 24px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.about-card-main-title {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  color: #3f3b3a;
+}
+
+.about-card-sub-title {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin: 0;
+  color: #7a7a7a;
+  opacity: 0.7;
+}
+
+/* プロフィール画像コンテナ - カード内に余白 */
+.about-card-image {
+  padding: 0 32px 24px 32px;
+  background: #ffffff;
+}
+
+.about-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 2px;
+}
+
+/* カード内容 */
+.about-card-content {
+  padding: 0 24px 28px 24px;
+  text-align: center;
+}
+
+/* ヘッダー部分 */
+.about-card-header {
+  margin-bottom: 20px;
+}
+
+.about-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  color: #3f3b3a;
+}
+
+.about-name-en {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  margin: 0;
+  color: #7a7a7a;
+  opacity: 0.7;
+}
+
+/* 哲学テキスト */
+.about-philosophy {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  margin: 0 0 24px;
+  color: #3f3b3a;
+  text-align: center;
+}
+
+/* フッター（カテゴリタグ） */
+.about-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.about-card-footer .category-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #7a7a7a;
+  margin-bottom: 6px;
+}
+
+.about-card-footer .category-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #3f3b3a;
+  margin: 0;
+}
+
+/* タブレット対応 */
+@media (min-width: 600px) {
+  .about-card-title-area {
+    padding: 36px 32px 28px;
+  }
+
+  .about-card-main-title {
+    font-size: 20px;
+  }
+  
+  .about-card-sub-title {
+    font-size: 11px;
+  }
+
+  .about-card-image {
+    padding: 0 48px 28px 48px;
+  }
+
+  .about-card-content {
+    padding: 0 32px 32px 32px;
+  }
+  
+  .about-philosophy {
+    font-size: 13px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* ================================
    CONTACTセクション
 ================================ */
@@ -1335,8 +2858,12 @@ a {
 /* 名刺カード */
 .sp-about-card-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  padding: 40px 20px;
 }
 
 .sp-card-link {
@@ -1390,6 +2917,16 @@ a {
   display: block;
 }
 
+.sp-about-card-caption {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  color: #888;
+  text-align: center;
+}
+
 /* TOPページ用名刺リンク */
 .card-link-top {
   display: block;
@@ -1401,37 +2938,80 @@ a {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
 }
 
-/* 説明文（中央揃え・行間広く） */
-.sp-about-description {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 2.2;
-  color: var(--color-dark);
+
+/* ABOUTコンテンツ */
+.sp-about-content {
+  background: #ffffff;
+  padding: 0 20px 60px;
+}
+
+/* ① プロフィール画像 (4:5) */
+.sp-about-profile-image {
+  max-width: 320px;
+  margin: 0 auto 32px;
+}
+
+.sp-about-profile-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  display: block;
+}
+
+/* ② 名前 + 肩書き */
+.sp-about-profile-info {
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 40px;
+}
+
+.sp-about-name {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  color: #3f3b3a;
+}
+
+.sp-about-name-en {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  margin: 0 0 12px;
+  color: #7a7a7a;
+  opacity: 0.8;
+}
+
+.sp-about-role {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin: 0;
+  color: #7a7a7a;
+  opacity: 0.7;
+}
+
+/* ③ 思想テキスト */
+.sp-about-description {
+  max-width: 480px;
+  margin: 0 auto 48px;
+  text-align: center;
 }
 
 .sp-about-description p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 2.0;
   margin: 0 0 24px;
+  color: #3f3b3a;
 }
 
 .sp-about-description p:last-child {
   margin-bottom: 0;
 }
 
-/* 写真（余白なし） */
-.sp-about-photo {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.sp-about-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 
 
@@ -1668,6 +3248,7 @@ a {
 .sp-ability-scroll-container::-webkit-scrollbar-thumb:hover {
   background: #a0a0a0;
 }
+
 
 
 /* ================================
@@ -2330,4 +3911,943 @@ a {
 .skill-list li:last-child h3,
 .skill-list li:last-child p {
   color: #888;
+}
+
+
+/* ================================
+   アコーディオンセクション
+================================ */
+.sp-about-ability {
+  border-top: none;
+  background: var(--color-white);
+}
+
+/* アコーディオンヘッダー */
+.sp-ability-header {
+  position: relative;
+  width: 100%;
+  min-height: var(--sp-section-closed-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.sp-ability-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sp-ability-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.sp-ability-sub {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 8px 0 0;
+}
+
+/* トグルアイコン */
+.sp-ability-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--color-dark);
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+/* アコーディオンボディ */
+.sp-ability-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
+  background: var(--color-white);
+}
+
+.sp-ability-body.active {
+  max-height: none;
+  background: var(--color-white); /* グレーから白に変更 */
+}
+
+/* WHAT I DO リスト */
+.sp-ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-ability-list li {
+  margin-bottom: 14px;
+}
+
+.sp-ability-list li:last-child {
+  margin-bottom: 24px;
+}
+
+.sp-ability-list h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-dark);
+  margin: 0 0 4px;
+}
+
+.sp-ability-list p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* セクション見出し */
+.sp-ability-list .ability-section {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.sp-ability-list .ability-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.sp-ability-list .ability-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #999;
+  margin: 0 0 8px;
+}
+
+/* スキル項目のインライン表示 */
+.sp-ability-list .skill-inline p {
+  display: inline;
+}
+
+.sp-ability-list .skill-inline p + p::before {
+  content: ' ｜ ';
+  margin: 0 3px;
+  color: #999;
+}
+
+/* 資格 */
+.sp-qualification-item {
+  margin-bottom: 16px;
+}
+
+.sp-qualification-item:last-child {
+  margin-bottom: 0;
+}
+
+.sp-qualification-name {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--color-dark);
+  margin: 0 0 2px;
+}
+
+.sp-qualification-level {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* FAVORITES テキスト */
+.sp-favorites-text {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.85;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* ABOUTページ用フッター調整 */
+.sp-about .sp-footer {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-dark);
+}
+
+.sp-about .sp-copyright {
+  color: rgba(63, 59, 58, 0.5);
+}
+
+/* ABOUT内のCONTACTはアコーディオンと同トーンに */
+.sp-about .sp-contact-section {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-dark);
+}
+
+.sp-about .contact-button {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.sp-about .contact-button-ja {
+  color: var(--color-gray);
+}
+
+.sp-about .contact-arrow {
+  color: var(--color-dark);
+  opacity: 1;
+}
+
+.sp-about .contact-button:active .contact-arrow {
+  transform: translateY(-50%);
+}
+
+
+/* スクロールコンテナ */
+.sp-ability-scroll-container {
+  max-height: none;
+  overflow: visible;
+  padding: 20px;
+}
+
+/* スクロールバーのスタイリング（Webkit） */
+.sp-ability-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sp-ability-scroll-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.sp-ability-scroll-container::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 3px;
+}
+
+.sp-ability-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+
+
+/* ================================
+   SP CONTACT ページ専用スタイル
+================================ */
+
+/* ヘッダーロゴの初期状態（非表示） */
+.sp-contact .sp-logo-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* メインビジュアル（白背景、TOPと同じ高さ） */
+.sp-contact-hero {
+  background: var(--color-white);
+  height: calc((100vh * 2 / 3) - 60px);
+}
+
+.sp-contact-hero-title {
+  color: var(--color-dark);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.sp-contact-hero .sp-hero-deco {
+  opacity: 0.07;
+}
+
+/* ページタイトルセクション（黒背景・幅狭く） */
+.sp-contact-page-header {
+  background: var(--color-dark);
+  padding: 32px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.sp-contact-page-header .sp-page-title {
+  color: var(--color-white);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+.sp-contact-page-header .sp-page-subtitle {
+  color: rgba(245, 245, 245, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* フォームセクション（黒背景に白フォーム） */
+.sp-contact-form-section {
+  background: var(--color-dark);
+  padding: 20px 20px 48px;
+  min-height: auto;
+}
+
+/* フォーム（白背景ボックス） */
+.sp-contact-form {
+  max-width: 100%;
+  background: var(--color-white);
+  padding: 32px 20px 40px;
+}
+
+.sp-contact-lead {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.85;
+  color: var(--color-dark);
+  margin: 0 0 32px;
+  text-align: left;
+}
+
+.sp-form-group {
+  margin-bottom: 24px;
+}
+
+.sp-form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin-bottom: 8px;
+}
+
+.sp-required {
+  font-size: 10px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.sp-contact-form input,
+.sp-contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(63, 59, 58, 0.3);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  background: var(--color-white);
+  color: var(--color-dark);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.sp-contact-form input:focus,
+.sp-contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-dark);
+}
+
+.sp-contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* 送信ボタン */
+.sp-form-submit {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.sp-form-submit button {
+  width: 100%;
+  max-width: 280px;
+  height: 48px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.sp-form-submit button:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* CONTACTページ用フッター調整 */
+.sp-contact .sp-footer {
+  background: var(--color-dark);
+  border-top: none;
+}
+
+.sp-contact .sp-copyright {
+  color: rgba(245, 245, 245, 0.5);
+}
+
+
+
+
+
+/* カテゴリナビゲーション */
+.sp-category-nav {
+  background: var(--color-white);
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid var(--color-dark);
+}
+
+.sp-cat-btn {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--color-dark);
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sp-cat-btn.active {
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.sp-cat-btn:active {
+  transform: scale(0.98);
+}
+
+/* ヘッダーロゴの初期状態（非表示） */
+.sp-works .sp-logo-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* メインビジュアル */
+.sp-works-hero {
+  background: var(--color-dark);
+  height: calc((100vh * 2 / 3) - 60px);
+}
+
+.sp-works-hero .sp-hero-deco {
+  opacity: 0.07;
+}
+
+/* ページタイトルセクション */
+.sp-works-page-header {
+  background: var(--color-white);
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.sp-works-page-header .sp-page-title {
+  color: var(--color-dark);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+}
+
+.sp-works-page-header .sp-page-subtitle {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* 作品一覧セクション */
+.sp-works-list-section {
+  background: var(--color-white);
+  padding: 40px 20px 60px;
+  min-height: 50vh;
+}
+
+/* 作品一覧 */
+.sp-works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 作品アイテム */
+.sp-work-item {
+  background: var(--color-white);
+}
+
+/* 作品サムネイル */
+.sp-work-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* 作品タイトル */
+.sp-work-title {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  color: var(--color-dark);
+  margin: 0 0 8px;
+}
+
+/* 作品ラベル */
+.sp-work-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.sp-tag-en {
+  margin-right: 4px;
+}
+
+
+
+/* ================================
+   SP TOPページ サブタイトル統一
+   ================================ */
+
+/* 修正1: WORKSセクションのサブタイトル（408行目付近） */
+/* 変更前 */
+.works-toggle .sp-section-sub {
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-gray);
+}
+
+/* 変更後 */
+.works-toggle .sp-section-sub {
+  margin: 8px 0 0;
+  font-size: 14px;  /* 12px → 14px */
+  letter-spacing: 0.12em;  /* 0.08em → 0.12em */
+  color: var(--color-gray);
+}
+
+/* ================================ */
+
+/* 修正2: CONTACTボタンのサブタイトル（574行目付近） */
+/* 変更前 */
+.contact-button-ja {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.7);
+  text-align: center;
+  margin: 0;
+}
+
+/* 変更後 */
+.contact-button-ja {
+  font-size: 14px;  /* 12px → 14px */
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.7);
+  text-align: center;
+  margin: 0;
+}
+
+
+
+/* アコーディオンセクション全体 */
+.sp-about-ability {
+  border-top: none;
+  background: var(--color-white);
+}
+
+/* アコーディオンヘッダー */
+.sp-ability-header {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.sp-ability-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sp-ability-title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* トグルアイコン */
+.sp-ability-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--color-dark);
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+/* アコーディオンボディ */
+.sp-ability-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
+  background: var(--color-white);
+}
+
+.sp-ability-body.active {
+  max-height: none;
+  background: var(--color-white);
+}
+
+/* スクロールコンテナ */
+.sp-ability-scroll-container {
+  max-height: none;
+  overflow: visible;
+  padding: 20px;
+}
+
+/* リスト */
+.sp-ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-ability-list li {
+  margin-bottom: 14px;
+}
+
+.sp-ability-list li:last-child {
+  margin-bottom: 24px;
+}
+
+.sp-ability-list h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-dark);
+  margin: 0 0 4px;
+}
+
+.sp-ability-list p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* セクション見出し */
+.sp-ability-list .ability-section {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.sp-ability-list .ability-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.sp-ability-list .ability-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #999;
+  margin: 0 0 8px;
+}
+
+/* スキル項目のインライン表示 */
+.sp-ability-list .skill-inline p {
+  display: inline;
+}
+
+.sp-ability-list .skill-inline p + p::before {
+  content: ' ｜ ';
+  margin: 0 3px;
+  color: #999;
+}
+
+.sp-section-divider {
+  width: 100%;           /* 親要素は画面幅いっぱい */
+  background: #ffffff;   /* 白背景 */
+  padding: 20px 20px;    /* 上下余白 */
+  display: flex;
+  justify-content: center;
+}
+
+.sp-section-divider::before {
+  content: '';
+  width: 100%;
+  max-width: 100%;      /* ライン自体の長さ */
+  height: 1px;
+  background: #000000;
+}
+
+.sp-section-divider {
+  padding: 20px 0;  /* 左右の余白を0に */
+}
+
+.sp-section-divider::before {
+  width: 100%;      /* 画面幅いっぱい */
+  max-width: 100%;  /* 制限なし */
+}
+
+
+/* ================================
+   SP ABOUT CONTACT
+================================ */
+.sp-about .sp-contact-section {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-dark);
+  padding: 0;
+  margin: 0;
+}
+
+.sp-about .contact-button {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: var(--color-white);
+  border: none;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+/* CONTACTは元の表示方法を使用 */
+.sp-about .contact-button-en {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 8px;
+  color: var(--color-dark);
+}
+
+.sp-about .contact-button-ja {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 0;
+  color: var(--color-gray);
+}
+
+.sp-about .contact-arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 200;
+  color: var(--color-dark);
+  opacity: 1;
+}
+
+.sp-about .contact-button:active .contact-arrow {
+  transform: translateY(-50%);
+}
+
+.contact-arrow{
+  right: 10;
+}
+
+
+.sp-ability-title,
+.sp-about .contact-button-en {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+
+.sp-ability-sub,
+.sp-about .contact-button-ja {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+}
+
+
+/* アイコン共通 */
+.sp-ability-toggle,
+.sp-about .contact-arrow {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  display: block;
+  color: var(--color-dark);
+  transition: transform 0.3s ease;
+}
+
+/* ================================
+   スクロールインジケーター（SP版TOP）
+   境界線上に配置
+================================ */
+.sp-scroll-slider {
+  position: relative;
+  margin: -50px auto 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.sp-scroll-label {
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+  margin-left: 1px;
+  color: #f5f5f5;
+}
+
+.sp-scroll-line {
+  width: 1px;
+  height: 110px;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #f5f5f5 50%, #3f3b3a 50%, #3f3b3a 100%);
+  position: relative;
+}
+
+.sp-scroll-knob {
+  width: 6px;
+  height: 6px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spSlideBall 2.8s ease-in-out infinite;
+}
+
+@keyframes spSlideBall {
+  0%   { top: 0; opacity: 1; background: #f5f5f5; }
+  15%  { opacity: 1; }
+  50%  { top: 50%; background: #3f3b3a; }
+  85%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; background: #3f3b3a; }
+}
+/* ================================
+   SP版TOP専用：メインビジュアルの模様位置調整
+================================ */
+.sp-top .sp-hero .sp-hero-deco {
+  right: 20px;
+  bottom: -140px;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.ability-section {
+  margin-bottom: 48px; 
+}
+
+.skill-list > li {
+  margin-bottom: 48px;
+}
+
+.skill-list li:last-child {
+  margin-top: 56px;
+}
+
+.skill-list li:last-child h3,
+.skill-list li:last-child p {
+  color: #888;
+}
+
+
+.sp-works-section {
+  padding-top: 80px;  /* 追加 */
+}
+
+/* WORKS & ABOUT - 統一 */
+.sp-works-section {
+  background: var(--color-light);  /* #f5f5f5 */
+}
+
+.sp-about-section {
+  background: var(--color-light);  /* #f5f5f5 */
 }

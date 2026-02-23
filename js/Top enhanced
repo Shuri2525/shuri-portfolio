@@ -1,0 +1,94 @@
+// ================================
+// TOPページ強化スクリプト
+// マウスカーソル追従エフェクト & パララックス
+// ================================
+
+(function() {
+  'use strict';
+  
+  // カーソル追従エフェクト
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  
+  const hero = document.querySelector('.top-hero');
+  const bgText = document.querySelector('.hero-bg-text');
+  const deco = document.querySelector('.hero-deco-wrapper');
+  const logo = document.querySelector('.hero-logo-wrapper');
+  
+  if (!hero) return;
+  
+  // マウス位置を追跡
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // スムーズなアニメーション
+  function animate() {
+    // イージング係数（小さいほど滑らか）
+    const easing = 0.05;
+    
+    currentX += (mouseX - currentX) * easing;
+    currentY += (mouseY - currentY) * easing;
+    
+    // 画面中央からの相対位置を計算
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const moveX = (currentX - centerX) / centerX;
+    const moveY = (currentY - centerY) / centerY;
+    
+    // 背景数字のパララックス
+    if (bgText) {
+      bgText.style.transform = `translate(-50%, -50%) translate(${moveX * 30}px, ${moveY * 30}px)`;
+    }
+    
+    // 装飾のパララックス
+    if (deco) {
+      deco.style.transform = `translate(${moveX * -20}px, ${moveY * -20}px)`;
+    }
+    
+    // ロゴの微妙な動き
+    if (logo) {
+      logo.style.transform = `translate(${moveX * 10}px, ${moveY * 10}px)`;
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+  
+  // スクロールパララックス
+  let ticking = false;
+  
+  function updateOnScroll() {
+    const scrolled = window.scrollY;
+    const scrollPercent = Math.min(scrolled / window.innerHeight, 1);
+    
+    if (hero) {
+      hero.style.opacity = 1 - scrollPercent * 0.5;
+      hero.style.transform = `translateY(${scrollPercent * 100}px)`;
+    }
+    
+    ticking = false;
+  }
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateOnScroll);
+      ticking = true;
+    }
+  });
+  
+  // ロゴクリックでスクロールダウン（オプション）
+  if (logo) {
+    logo.addEventListener('click', () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+  }
+  
+})();

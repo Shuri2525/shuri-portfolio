@@ -33,6 +33,7 @@ body.page-contact {
 }
 
 .contact-left-title {
+  font-family: var(--font-en);
   margin-top: 24px;
   font-size: 20px;
   letter-spacing: var(--ls-brand);
@@ -72,6 +73,7 @@ body.page-contact {
    ページタイトル
 ================================ */
 .contact-title {
+  font-family: var(--font-en);
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -159,6 +161,7 @@ textarea {
 }
 
 .form-submit button {
+  font-family: var(--font-en);
   background: var(--color-dark);
   color: var(--color-white);
   border: none;

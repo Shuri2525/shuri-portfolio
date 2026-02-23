@@ -65,7 +65,7 @@
   <ul class="menu-list">
     <li><a href="./index.html">TOP</a></li>
     <li><a href="./works.html">WORKS</a></li>
-    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./about.html">CONCEPT</a></li>
     <li><a href="./contact.html">CONTACT</a></li>
   </ul>
 
@@ -112,7 +112,7 @@
   <section class="sp-section sp-works-section">
     <div class="sp-works-header">
       <h2 class="sp-section-title">WORKS</h2>
-      <p class="sp-section-sub">制作したもの</p>
+      <p class="sp-section-sub">制作実績</p>
     </div>
 
     <!-- 作品リスト -->
@@ -162,19 +162,46 @@
 
   <!-- ABOUTセクション -->
   <section class="sp-section sp-about-section">
-    <h2 class="sp-section-title">ABOUT</h2>
-    <p class="sp-section-sub">わたしについて</p>
+    <!-- ABOUTカード -->
+    <div class="about-card-wrapper">
+      <a href="./about.html" class="about-card-link">
+        <div class="about-card">
+          
+          <!-- カード内タイトル -->
+          <div class="about-card-title-area">
+            <h2 class="about-card-main-title">装飾よりも<br>構造から考える</h2>
+            <p class="about-card-sub-title">Design begins with structure.</p>
+          </div>
 
-    <!-- 名刺カード -->
-<div class="card-container">
-  <a href="./about.html" class="card-link-top">
-    <div class="card-wrapper-sp">
-      <div class="card-flip-sp">
-        <img src="../assets/about/img_nemu_top_omote-.png" alt="名刺 表面" class="card-face card-front">
-      </div>
+          <!-- プロフィール画像 (4:5) -->
+          <div class="about-card-image">
+            <img src="../assets/about/about_picture1.png" alt="プロフィール写真">
+          </div>
+          
+          <!-- プロフィールテキスト -->
+          <div class="about-card-content">
+            <div class="about-card-header">
+              <h3 class="about-name">日高 朱璃</h3>
+              <p class="about-name-en">HIDAKA SHURI</p>
+            </div>
+            
+            <p class="about-philosophy">
+              余白や比率、情報の整理によって<br>
+              ブランドの印象は大きく変わると考えています。<br>
+              <br>
+              見た目を整えるだけでなく、<br>
+              「誰にどう記憶されたいか」から逆算して設計します。
+            </p>
+
+            <!-- カテゴリ風タグ -->
+            <div class="about-card-footer">
+              <span class="category-tag"># CONCEPT</span>
+              <h3 class="category-title">SKILL & PROFILE</h4>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
-  </a>
-</div>
   </section>
 
   <!-- CONTACTセクション -->
@@ -276,21 +303,7 @@
 
   // ページロード時の処理
   document.addEventListener('DOMContentLoaded', () => {
-    // 名刺カードのスライドイン
-    const card = document.querySelector('.card-wrapper-sp');
-    if (card && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            card.classList.add('is-visible');
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.3 });
-      observer.observe(card);
-    } else if (card) {
-      card.classList.add('is-visible');
-    }
+    // 必要に応じて他の初期化処理
   });
 
   // ヘッダーロゴの表示制御

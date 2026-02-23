@@ -76,6 +76,7 @@
 }
 
 .modal-main-title {
+  font-family: var(--font-en);
   font-size: 15px;
   font-weight: 400;
   letter-spacing: var(--ls-brand);
@@ -219,6 +220,7 @@
    モーダル - セクションタイトル
 ================================ */
 .modal-section-title {
+  font-family: var(--font-en);
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -353,6 +355,7 @@
 }
 
 .modal-footer-nav-btn {
+  font-family: var(--font-en);
   background: none;
   border: none;
   font-size: 14px;

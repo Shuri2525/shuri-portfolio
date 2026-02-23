@@ -37,7 +37,7 @@
   <ul class="menu-list">
     <li><a href="./index.html">TOP</a></li>
     <li><a href="./works.html">WORKS</a></li>
-    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./about.html">CONCEPT</a></li>
     <li><a href="./contact.html">CONTACT</a></li>
   </ul>
 
@@ -63,16 +63,7 @@
 <!-- メインコンテンツ -->
 <main class="sp-main">
 
-  <!-- メインビジュアル -->
-  <a href="./index.html" class="sp-hero-link" aria-label="TOPへ戻る">
-    <section class="sp-hero sp-contact-hero">
-      <div class="sp-hero-content">
-        <img src="../assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
-        <p class="sp-hero-title sp-contact-hero-title">HIDAKA SHURI</p>
-      </div>
-      <img src="../assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
-    </section>
-  </a>
+
 
   <!-- ページタイトル -->
   <section class="sp-page-header sp-contact-page-header">
@@ -131,25 +122,14 @@
 
 <!-- JavaScript -->
 <script>
-  // ヘッダーロゴの表示制御
+  // ヘッダーロゴの表示制御（CONTACTページはヒーローセクションなし）
   const headerLogo = document.querySelector('.sp-logo-text');
-  const heroSection = document.querySelector('.sp-contact-hero');
   
-  function handleScroll() {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const scrollPosition = window.scrollY + 60;
-    
-    if (scrollPosition > heroBottom) {
-      headerLogo.style.opacity = '1';
-      headerLogo.style.visibility = 'visible';
-    } else {
-      headerLogo.style.opacity = '0';
-      headerLogo.style.visibility = 'hidden';
-    }
+  // ヘッダーロゴは常に表示
+  if (headerLogo) {
+    headerLogo.style.opacity = '1';
+    headerLogo.style.visibility = 'visible';
   }
-  
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
 
   // ハンバーガーメニュー
   const hamburger = document.getElementById('hamburger');

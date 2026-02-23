@@ -17,6 +17,9 @@
   --ls-brand: 0.3em;
   --ls-ui: 0.1em;
   --ls-body: 0.05em;
+
+  /* 英字UIフォント */
+  --font-en: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
 }
 
 /* ================================
@@ -110,6 +113,7 @@ a {
 
 .site-header .nav a {
   color: var(--color-light);
+  font-family: var(--font-en);
   font-size: 16px;
   font-weight: 400;
   letter-spacing: var(--ls-ui);
@@ -159,6 +163,7 @@ a {
 }
 
 .hero-title {
+  font-family: var(--font-en);
   font-size: 28px;
   font-weight: 400;
   letter-spacing: var(--ls-brand);
@@ -209,6 +214,7 @@ a {
 }
 
 .copyright-fixed {
+  font-family: var(--font-en);
   position: fixed;
   bottom: 12px;
   left: 12px;

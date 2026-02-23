@@ -51,6 +51,7 @@ a {
 }
 
 .about-left-title {
+  font-family: var(--font-en);
   margin-top: 24px;
   font-size: 20px;
   letter-spacing: var(--ls-brand);
@@ -92,31 +93,32 @@ a {
 .page-deco {
   position: absolute;
   right: 30px;
-  top: 377px;
+  top: 400px;
   width: 210px;
   opacity: 0.05;
   pointer-events: none;
 }
 
 /* ================================
-   名刺 + ABOUTテキスト
+   ABOUTテキスト + プロフィール画像
 ================================ */
 .about-intro {
   width: 100%;
-  max-width: 880px;
-  margin: 0 auto 19px;
-  padding-left: 30px;
+  max-width: 960px;
+  margin: 0 auto 70px;
+  padding-left: 10px;
   display: flex;
-  gap: 80px;
+  gap: 60px;
   align-items: flex-start;
 }
 
 /* テキストブロック */
 .about-text-block {
-  max-width: 470px;
+  max-width: 520px;
 }
 
 .about-heading {
+  font-family: var(--font-en);
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -147,64 +149,56 @@ a {
   margin-bottom: 0;
 }
 
+/* プロフィール画像ブロック */
+.about-profile-image-block {
+  flex-shrink: 0;
+}
+
+.about-profile-image {
+  width: clamp(220px, 20vw, 280px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  display: block;
+}
+
+.about-profile-info {
+  margin-top: 20px; /* 24 → 20 少し詰める */
+  text-align: center;
+}
+
+.about-name {
+  font-size: 16px;        /* そのまま */
+  font-weight: 500;
+  letter-spacing: 0.06em; /* 0.08 → 少し下げる */
+  margin: 0 0 3px;        /* 下余白減らす */
+  color: #3f3b3a;
+}
+
+.about-name-en {
+  font-size: 11px;
+  letter-spacing: 0.14em; /* 英字は少し広げる */
+  opacity: 0.7;         /* 少しだけ弱く */
+}
+
+.about-role {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  margin-top: 8px;
+  color: #7a7a7a;
+  opacity: 0.75;
+}
+
+.about-profile-image-block {
+  padding-top: 20px;
+}
 /* ================================
-   名刺カード（ホバー強化）
-================================ */
-.card-link {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.card-wrapper {  width: clamp(160px, 20vw, 250px);
-  aspect-ratio: 320 / 520;
-  perspective: 1000px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.card-wrapper:hover {
-  transform: translateY(-8px);
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
-}
-
-.card-flip {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
-
-.card-wrapper:hover .card-flip {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  backface-visibility: hidden;
-  border-radius: 4px;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* フォーカス時 */
-.card-link:focus-visible {
-  outline: 2px solid var(--color-dark);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* ================================
-   SKILL & PROFILE / CONTACT
+   SKILL & PROFILE / CONTACT 横並び
 ================================ */
 .about-abilities {
   width: 100%;
-  margin: 70px 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -212,61 +206,13 @@ a {
   display: flex;
   width: 100%;
   margin: 0 auto;
-  align-items: stretch;
   border-top: 1px solid var(--color-dark);
 }
 
-/* 左ボックス（テキスト） - 高さ固定 */
-.abilities-left {
-  width: 50%;
-  height: 266px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 右ボックス（写真） - 高さ固定 */
-.abilities-right {
-  width: 50%;
-  height: 266px;
-  overflow: hidden;
-}
-
-.about-picture {
-  width: 100%;
-  height: 266px;
-  object-fit: cover;
-  display: block;
-}
-
-.skill-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-
-
-
-
-.skill-list > li {
-  margin-bottom: 48px;
-}
-
-.skill-list li:last-child {
-  margin-top: 56px;
-}
-
-.skill-list li:last-child h3,
-.skill-list li:last-child p {
-  color: #888;
-}
-
-
-/* ================================
-   アコーディオンブロック - 高さ固定
-================================ */
+/* 各ブロック - 50%ずつ */
 .ability-block {
-  height: 133px;
+  width: 50%;
+  height: 190px;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
@@ -277,12 +223,12 @@ a {
 }
 
 .ability-block + .ability-block {
-  border-top: 1px solid var(--color-dark);
+  border-left: 1px solid var(--color-dark);
 }
 
-/* 開いた状態でも高さは133pxのまま */
+/* 開いた状態でも高さは266pxのまま */
 .ability-block.is-open {
-  height: 133px;
+  height: 190px;
   background: #fafafa;
 }
 
@@ -290,7 +236,7 @@ a {
    ヘッダー
 ================================ */
 .ability-header {
-  height: 133px;
+  height: 190px;
   padding-left: 30px;
   background: var(--color-white);
   border: none;
@@ -322,7 +268,8 @@ a {
    統一テキストスタイル
 ================================ */
 .ability-title {
-  font-size: 22px;
+  font-family: var(--font-en);
+  font-size: 26px;
   font-weight: 400;
   letter-spacing: 0.14em;
   margin: 0 0 6px;
@@ -369,10 +316,10 @@ a {
   transition: opacity 0.3s ease, height 0.3s ease;
 }
 
-/* 開いた状態 - 高さ133px内でスクロール */
+/* 開いた状態 - 高さ266px内でスクロール */
 .ability-block.is-open .ability-body {
-  height: 133px;
-  padding: 16px 30px;
+  height: 200px;
+  padding: 20px 30px;
   overflow-y: auto;
   opacity: 1;
 }

@@ -35,6 +35,7 @@ body.page-works {
 }
 
 .works-left-title {
+  font-family: var(--font-en);
   margin-top: 24px;
   font-size: 20px;
   font-weight: 400;
@@ -79,6 +80,7 @@ body.page-works {
    ページタイトル
 ================================ */
 .works-title {
+  font-family: var(--font-en);
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -106,6 +108,7 @@ body.page-works {
 }
 
 .cat-btn {
+  font-family: var(--font-en);
   width: 250px;
   height: 40px;
   border: 1px solid var(--color-dark);
@@ -147,6 +150,7 @@ body.page-works {
 }
 
 .scroll-label {
+  font-family: var(--font-en);
   writing-mode: vertical-rl;
   font-size: 14px;
   font-weight: 400;
@@ -234,6 +238,7 @@ body.page-works {
 }
 
 .work-title .title-en {
+  font-family: var(--font-en);
   margin-left: 6px;
   font-size: 14px;
   letter-spacing: 0.14em;

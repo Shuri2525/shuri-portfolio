@@ -37,7 +37,7 @@
   <ul class="menu-list">
     <li><a href="./index.html">TOP</a></li>
     <li><a href="./works.html">WORKS</a></li>
-    <li><a href="./about.html">ABOUT</a></li>
+    <li><a href="./about.html">CONCEPT</a></li>
     <li><a href="./contact.html">CONTACT</a></li>
   </ul>
 
@@ -63,64 +63,50 @@
 <!-- メインコンテンツ -->
 <main class="sp-main">
 
-  <!-- メインビジュアル -->
-  <a href="./index.html" class="sp-hero-link" aria-label="TOPへ戻る">
-    <section class="sp-hero sp-about-hero">
-      <div class="sp-hero-content">
-        <img src="../assets/common/logo_3f3b3a.svg" alt="SHURI LOGO" class="sp-hero-logo">
-        <p class="sp-hero-title sp-about-hero-title">HIDAKA SHURI</p>
-      </div>
-      <img src="../assets/deco/deco_3f3b3a.svg" alt="" class="sp-hero-deco" aria-hidden="true">
-    </section>
-  </a>
 
   <!-- ページタイトル -->
   <section class="sp-page-header sp-about-page-header">
-    <h1 class="sp-page-title">ABOUT</h1>
-    <p class="sp-page-subtitle">わたしについて</p>
+   <h1 class="sp-page-title">CONCEPT</h1>
+    <p class="sp-page-subtitle">Design begins with structure.</p>
   </section>
 
   <!-- ABOUTコンテンツ -->
   <section class="sp-about-content">
     
-    <!-- 名刺カード -->
-    <div class="sp-about-card-container">
-      <a
-        href="https://www.instagram.com/hidaka.shuri?igsh=MzhubHdlcjQ0Y3Ez&utm_source=qr"
-        class="sp-card-link sp-card-static"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="sp-card-wrapper">
-          <img src="../assets/about/img_nemu_ura.png" alt="名刺 裏面（QRコード）" class="sp-card-face-static">
-        </div>
-      </a>
+   <!-- ① プロフィール画像 (4:5) -->
+    <div class="sp-about-profile-image">
+      <img src="../assets/about/about_picture1.png" alt="プロフィール写真">
     </div>
 
+    <!-- ② 名前 + 肩書き -->
+    <div class="sp-about-profile-info">
+      <h2 class="sp-about-name">日高 朱璃</h2>
+      <p class="sp-about-name-en">HIDAKA SHURI</p>
+      <p class="sp-about-role">Web & Graphic Designer / Oita</p>
+    </div>
     <!-- 説明文 -->
     <div class="sp-about-description">
-      <p>
 <p>
-<p>
-大分市でWeb・グラフィックを中心に<br>
-制作しているデザイナーです。<br>
-印刷物も入稿まで対応可能です。
+装飾よりも、構造から考える。<br>
+余白や比率、情報の整理によって<br>
+ブランドの印象は大きく変わると考えています。
 </p>
 
 <p>
-シンプルで落ち着いたトーンや<br>
-余白を活かした<br>
-洗練された表現を得意としています。
+大分市を拠点に、Web・グラフィックを中心に制作。<br>
+ロゴや名刺などの印刷物も、入稿まで対応可能です。
 </p>
 
 <p>
-言葉になりきらないイメージも大切にしながら、<br>
-デザインとして丁寧に形にしていきます。
+見た目を整えるだけでなく、<br>
+「誰にどう記憶されたいか」から逆算して設計し、<br>
+ミニマルな表現の中に、意味と戦略を設計しています。
 </p>
 
 <p>
-ご相談の段階からでも<br>
-お声がけいただけたら嬉しいです。
+ヒアリング内容を整理し、<br>
+目的や課題を明確にした上で、<br>
+視覚的なアウトプットへと具体化していきます。
 </p>
 
 
@@ -129,10 +115,8 @@
 
   </section>
 
-  <!-- 写真 -->
-  <div class="sp-about-photo">
-    <img src="../assets/about/about_picture.png" alt="プロフィール写真">
-  </div>
+  <!-- 仕切りライン -->
+  <div class="sp-section-divider"></div>
 
   <!-- SKILL & PROFILE -->
   <section class="sp-about-ability">
@@ -224,25 +208,14 @@
 
 <!-- JavaScript -->
 <script>
-  // ヘッダーロゴの表示制御
+  // ヘッダーロゴの表示制御（ABOUTページはヒーローセクションなし）
   const headerLogo = document.querySelector('.sp-logo-text');
-  const heroSection = document.querySelector('.sp-about-hero');
   
-  function handleScroll() {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const scrollPosition = window.scrollY + 60;
-    
-    if (scrollPosition > heroBottom) {
-      headerLogo.style.opacity = '1';
-      headerLogo.style.visibility = 'visible';
-    } else {
-      headerLogo.style.opacity = '0';
-      headerLogo.style.visibility = 'hidden';
-    }
+  // ヘッダーロゴは常に表示
+  if (headerLogo) {
+    headerLogo.style.opacity = '1';
+    headerLogo.style.visibility = 'visible';
   }
-  
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
 
   // ハンバーガーメニュー
   const hamburger = document.getElementById('hamburger');
@@ -283,11 +256,6 @@
   }
 
   setupAccordion('whatIDoToggle', 'whatIDoBody');
-
-  // ファーストビューロゴクリック
-  document.querySelector('.sp-hero-logo').addEventListener('click', () => {
-    window.location.href = './index.html';
-  });
 </script>
 <script src="../js/sp-header-scroll.js"></script>
 
