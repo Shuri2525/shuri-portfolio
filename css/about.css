@@ -106,7 +106,7 @@ a {
   width: 100%;
   max-width: 960px;
   margin: 0 auto 70px;
-  padding-left: 10px;
+  padding-left: 20px;
   display: flex;
   gap: 60px;
   align-items: flex-start;
@@ -237,7 +237,7 @@ a {
 ================================ */
 .ability-header {
   height: 190px;
-  padding-left: 30px;
+  padding-left: 40px;
   background: var(--color-white);
   border: none;
   cursor: pointer;
