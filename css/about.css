@@ -93,8 +93,8 @@ a {
 .page-deco {
   position: absolute;
   right: 30px;
-  top: 460px;
-  width: 210px;
+  top: 600px;
+  width: 150px;
   opacity: 0.04;
   pointer-events: none;
 }
@@ -106,10 +106,9 @@ a {
   width: 100%;
   max-width: 960px;
   margin: 0 auto 70px;
-  padding: 0 40px;
+  padding-left: 10px;
   display: flex;
-  gap: 72px;
-  justify-content: space-between;
+  gap: 60px;
   align-items: flex-start;
 }
 
@@ -165,7 +164,7 @@ a {
 }
 
 .about-profile-info {
-  margin-top: 24px;
+  margin-top: 15px; /* 24 → 20 少し詰める */
   text-align: center;
 }
 
@@ -192,7 +191,7 @@ a {
 }
 
 .about-profile-image-block {
-  padding-top: 44px;
+  padding-top: 40px;
 }
 /* ================================
    SKILL & PROFILE / CONTACT 横並び
