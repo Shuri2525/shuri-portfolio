@@ -4557,3 +4557,11 @@ a {
     transform: translateY(0);
   }
 }
+
+/* ================================
+   SP TOP専用：メインビジュアルロゴ調整
+================================ */
+.sp-top .sp-hero .sp-hero-logo {
+  width: 76px;
+  margin-bottom: 0;
+}
