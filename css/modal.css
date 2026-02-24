@@ -138,40 +138,6 @@
 }
 
 /* ================================
-   モーダル - カテゴリ別ヘッダー
-================================ */
-.modal-overlay.modal-cat-web .modal-header {
-  background: #ffffff;
-  border-bottom: 1px solid #d9d9d9;
-}
-
-.modal-overlay.modal-cat-web .modal-main-title,
-.modal-overlay.modal-cat-web .modal-close {
-  color: #3f3b3a;
-}
-
-.modal-overlay.modal-cat-dtp .modal-header {
-  background: #3f3b3a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.modal-overlay.modal-cat-dtp .modal-main-title,
-.modal-overlay.modal-cat-dtp .modal-close {
-  color: #f5f5f5;
-}
-
-.modal-overlay.modal-cat-graphic .modal-header {
-  background: #f2f2f2;
-  border-bottom: 1px solid #d6d6d6;
-}
-
-.modal-overlay.modal-cat-graphic .modal-main-title,
-.modal-overlay.modal-cat-graphic .modal-close {
-  color: #3f3b3a;
-}
-
-
-/* ================================
    モーダル - ボディ
 ================================ */
 .modal-body {
@@ -183,17 +149,26 @@
 
 .modal-title-block {
   margin: 0;
-  padding: 28px 40px 24px;
+  padding: 14px 40px 12px;
   border-bottom: 1px solid #ededed;
   background: #fff;
 }
 
 .modal-sub-title {
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   letter-spacing: 0.06em;
-  line-height: 1.55;
+  line-height: 1.4;
   color: var(--color-dark);
+  margin: 0 0 6px;
+  text-align: left;
+}
+
+.modal-sub-tag {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #8a8a8a;
   margin: 0;
   text-align: left;
 }
