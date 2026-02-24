@@ -119,7 +119,7 @@ a {
 
 @keyframes splashDecoFade {
   to {
-    opacity: 0.07;
+    opacity: 0.05;
   }
 }
 
@@ -287,7 +287,7 @@ a {
 }
 
 .menu-overlay.active .menu-pattern {
-  opacity: 0.05;
+  opacity: 0.035;
   transition-delay: 0.15s;
 }
 
@@ -356,7 +356,7 @@ a {
   right: 20px;
   bottom: 20px;
   width: 180px;
-  opacity: 0.07;
+  opacity: 0.05;
   z-index: 0;
 }
 
@@ -645,7 +645,7 @@ a {
 
 /* プロフィール画像コンテナ - カード内に余白 */
 .about-card-image {
-  padding: 0 32px 24px 32px;
+  padding: 0 80px 24px 80px;
   background: #ffffff;
 }
 
@@ -692,7 +692,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.9;
-  margin: 0 0 20px;
+  margin: 0 0 50px;
   color: #3f3b3a;
   text-align: center;
 }
@@ -850,7 +850,7 @@ a {
 }
 
 .sp-works-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション（グレー背景） */
@@ -883,7 +883,7 @@ a {
   right: 20px;
   bottom: 20px;
   width: 120px;
-  opacity: 0.07;
+  opacity: 0.05;
   pointer-events: none;
 }
 
@@ -1518,7 +1518,7 @@ a {
 
 @keyframes splashDecoFade {
   to {
-    opacity: 0.07;
+    opacity: 0.05;
   }
 }
 
@@ -1686,7 +1686,7 @@ a {
 }
 
 .menu-overlay.active .menu-pattern {
-  opacity: 0.05;
+  opacity: 0.035;
   transition-delay: 0.15s;
 }
 
@@ -1755,7 +1755,7 @@ a {
   right: 20px;
   bottom: 20px;
   width: 180px;
-  opacity: 0.07;
+  opacity: 0.05;
   z-index: 0;
 }
 
@@ -2044,7 +2044,7 @@ a {
 
 /* プロフィール画像コンテナ - カード内に余白 */
 .about-card-image {
-  padding: 0 32px 24px 32px;
+  padding: 0 80px 24px 80px;
   background: #ffffff;
 }
 
@@ -2091,7 +2091,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.9;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   color: #3f3b3a;
   text-align: center;
 }
@@ -2104,18 +2104,18 @@ a {
 
 .about-card-footer .category-tag {
   display: inline-block;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.12em;
-  color: #7a7a7a;
+  color: #3f3b3a;
   margin-bottom: 6px;
 }
 
 .about-card-footer .category-title {
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  color: #3f3b3a;
+  letter-spacing: 0.06em;
+  color: #666;
   margin: 0;
 }
 
@@ -2249,7 +2249,7 @@ a {
 }
 
 .sp-works-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション（グレー背景） */
@@ -2282,7 +2282,7 @@ a {
   right: 20px;
   bottom: 20px;
   width: 120px;
-  opacity: 0.07;
+  opacity: 0.05;
   pointer-events: none;
 }
 
@@ -2823,7 +2823,7 @@ a {
 }
 
 .sp-about-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション（白背景） */
@@ -3222,6 +3222,23 @@ a {
   transform: translateY(-50%);
 }
 
+/* ABOUTページ 区切り線 */
+.sp-section-divider {
+  width: 100%;
+  background: #ffffff;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sp-section-divider::before {
+  content: '';
+  width: 100%;
+  max-width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
 
 /* スクロールコンテナ */
 .sp-ability-scroll-container {
@@ -3277,7 +3294,7 @@ a {
 }
 
 .sp-contact-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション（黒背景・幅狭く） */
@@ -3472,7 +3489,7 @@ a {
 }
 
 .sp-works-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション */
@@ -3549,50 +3566,6 @@ a {
 }
 
 
-
-/* ================================
-   SP TOPページ サブタイトル統一
-   ================================ */
-
-/* 修正1: WORKSセクションのサブタイトル（408行目付近） */
-/* 変更前 */
-.works-toggle .sp-section-sub {
-  margin: 8px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--color-gray);
-}
-
-/* 変更後 */
-.works-toggle .sp-section-sub {
-  margin: 8px 0 0;
-  font-size: 14px;  /* 12px → 14px */
-  letter-spacing: 0.12em;  /* 0.08em → 0.12em */
-  color: var(--color-gray);
-}
-
-/* ================================ */
-
-/* 修正2: CONTACTボタンのサブタイトル（574行目付近） */
-/* 変更前 */
-.contact-button-ja {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(245, 245, 245, 0.7);
-  text-align: center;
-  margin: 0;
-}
-
-/* 変更後 */
-.contact-button-ja {
-  font-size: 14px;  /* 12px → 14px */
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(245, 245, 245, 0.7);
-  text-align: center;
-  margin: 0;
-}
 
 
 
@@ -3757,8 +3730,8 @@ a {
 
 /* CONTACTは元の表示方法を使用 */
 .sp-about .contact-button-en {
-  font-size: 36px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-align: center;
   margin: 0 0 8px;
@@ -3766,11 +3739,25 @@ a {
 }
 
 .sp-about .contact-button-ja {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-align: center;
   margin: 0;
+  color: var(--color-gray);
+}
+
+.sp-about .sp-ability-title {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-dark);
+}
+
+.sp-about .sp-ability-sub {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   color: var(--color-gray);
 }
 
@@ -3790,24 +3777,7 @@ a {
 }
 
 .contact-arrow{
-  right: 10;
-}
-
-
-.sp-ability-title,
-.sp-about .contact-button-en {
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
-
-.sp-ability-sub,
-.sp-about .contact-button-ja {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--color-gray);
+  right: 10px;
 }
 
 
@@ -4176,7 +4146,7 @@ a {
 }
 
 .sp-contact-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション（黒背景・幅狭く） */
@@ -4371,7 +4341,7 @@ a {
 }
 
 .sp-works-hero .sp-hero-deco {
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 /* ページタイトルセクション */
@@ -4449,405 +4419,82 @@ a {
 
 
 
-/* ================================
-   SP TOPページ サブタイトル統一
-   ================================ */
-
-/* 修正1: WORKSセクションのサブタイトル（408行目付近） */
-/* 変更前 */
-.works-toggle .sp-section-sub {
-  margin: 8px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--color-gray);
-}
-
-/* 変更後 */
-.works-toggle .sp-section-sub {
-  margin: 8px 0 0;
-  font-size: 14px;  /* 12px → 14px */
-  letter-spacing: 0.12em;  /* 0.08em → 0.12em */
-  color: var(--color-gray);
-}
-
-/* ================================ */
-
-/* 修正2: CONTACTボタンのサブタイトル（574行目付近） */
-/* 変更前 */
-.contact-button-ja {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(245, 245, 245, 0.7);
-  text-align: center;
-  margin: 0;
-}
-
-/* 変更後 */
-.contact-button-ja {
-  font-size: 14px;  /* 12px → 14px */
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(245, 245, 245, 0.7);
-  text-align: center;
-  margin: 0;
-}
-
-
-
-/* アコーディオンセクション全体 */
-.sp-about-ability {
-  border-top: none;
-  background: var(--color-white);
-}
-
-/* アコーディオンヘッダー */
-.sp-ability-header {
-  position: relative;
-  width: 100%;
-  min-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  background: var(--color-white);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--color-dark);
-}
-
-.sp-ability-title-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.sp-ability-title {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--color-dark);
-  margin: 0;
-}
-
-/* トグルアイコン */
-.sp-ability-toggle {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--color-dark);
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-/* アコーディオンボディ */
-.sp-ability-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(0.2, 0, 0, 1);
-  background: var(--color-white);
-}
-
-.sp-ability-body.active {
-  max-height: none;
-  background: var(--color-white);
-}
-
-/* スクロールコンテナ */
-.sp-ability-scroll-container {
-  max-height: none;
-  overflow: visible;
-  padding: 20px;
-}
-
-/* リスト */
-.sp-ability-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.sp-ability-list li {
-  margin-bottom: 14px;
-}
-
-.sp-ability-list li:last-child {
-  margin-bottom: 24px;
-}
-
-.sp-ability-list h3 {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--color-dark);
-  margin: 0 0 4px;
-}
-
-.sp-ability-list p {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  line-height: 1.7;
-  color: #555;
-  margin: 0;
-}
-
-/* セクション見出し */
-.sp-ability-list .ability-section {
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid #e8e8e8;
-}
-
-.sp-ability-list .ability-section:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
-
-.sp-ability-list .ability-section-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #999;
-  margin: 0 0 8px;
-}
-
-/* スキル項目のインライン表示 */
-.sp-ability-list .skill-inline p {
-  display: inline;
-}
-
-.sp-ability-list .skill-inline p + p::before {
-  content: ' ｜ ';
-  margin: 0 3px;
-  color: #999;
-}
-
-.sp-section-divider {
-  width: 100%;           /* 親要素は画面幅いっぱい */
-  background: #ffffff;   /* 白背景 */
-  padding: 20px 20px;    /* 上下余白 */
-  display: flex;
-  justify-content: center;
-}
-
-.sp-section-divider::before {
-  content: '';
-  width: 100%;
-  max-width: 100%;      /* ライン自体の長さ */
-  height: 1px;
-  background: #000000;
-}
-
-.sp-section-divider {
-  padding: 0px 0;  /* 左右の余白を0に */
-}
-
-.sp-section-divider::before {
-  width: 100%;      /* 画面幅いっぱい */
-  max-width: 100%;  /* 制限なし */
-}
-
-
-/* ================================
-   SP ABOUT CONTACT
-================================ */
-.sp-about .sp-contact-section {
-  background: var(--color-white);
-  border-top: 1px solid var(--color-dark);
-  padding: 0;
-  margin: 0;
-}
-
-.sp-about .contact-button {
-  position: relative;
-  width: 100%;
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  background: var(--color-white);
-  border: none;
-  color: var(--color-dark);
-  text-decoration: none;
-}
-
-/* CONTACTは元の表示方法を使用 */
-.sp-about .contact-button-en {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-align: center;
-  margin: 0 0 8px;
-  color: var(--color-dark);
-}
-
-.sp-about .contact-button-ja {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-align: center;
-  margin: 0;
-  color: var(--color-gray);
-}
-
-.sp-about .contact-arrow {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: 200;
-  color: var(--color-dark);
-  opacity: 1;
-}
-
-.sp-about .contact-button:active .contact-arrow {
-  transform: translateY(-50%);
-}
-
-.contact-arrow{
-  right: 10;
-}
-
-
-.sp-ability-title,
-.sp-about .contact-button-en {
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
-
-.sp-ability-sub,
-.sp-about .contact-button-ja {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--color-gray);
-}
-
-
-/* アイコン共通 */
-.sp-ability-toggle,
-.sp-about .contact-arrow {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 1;
-  display: block;
-  color: var(--color-dark);
-  transition: transform 0.3s ease;
-}
-
-/* ================================
-   スクロールインジケーター（SP版TOP）
-   境界線上に配置
-================================ */
-.sp-scroll-slider {
-  position: relative;
-  margin: -50px auto 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-}
-
-.sp-scroll-label {
-  writing-mode: vertical-rl;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  margin-bottom: 12px;
-  margin-left: 1px;
-  color: #f5f5f5;
-}
-
-.sp-scroll-line {
-  width: 1px;
-  height: 110px;
-  background: linear-gradient(to bottom, #f5f5f5 0%, #f5f5f5 50%, #3f3b3a 50%, #3f3b3a 100%);
-  position: relative;
-}
-
-.sp-scroll-knob {
-  width: 6px;
-  height: 6px;
-  background: #f5f5f5;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: spSlideBall 2.8s ease-in-out infinite;
-}
-
-@keyframes spSlideBall {
-  0%   { top: 0; opacity: 1; background: #f5f5f5; }
-  15%  { opacity: 1; }
-  50%  { top: 50%; background: #3f3b3a; }
-  85%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; background: #3f3b3a; }
-}
-/* ================================
-   SP版TOP専用：メインビジュアルの模様位置調整
-================================ */
-.sp-top .sp-hero .sp-hero-deco {
-  right: 20px;
-  bottom: -140px;
-}
-
-@keyframes cardSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-
-.ability-section {
-  margin-bottom: 48px; 
-}
-
-.skill-list > li {
-  margin-bottom: 48px;
-}
-
-.skill-list li:last-child {
-  margin-top: 56px;
-}
-
-.skill-list li:last-child h3,
-.skill-list li:last-child p {
-  color: #888;
-}
-
-
-.sp-works-section {
+.sp-top .sp-works-section {
   padding-top: 80px;  /* 追加 */
 }
 
 /* WORKS & ABOUT - 統一 */
-.sp-works-section {
+.sp-top .sp-works-section {
   background: var(--color-light);  /* #f5f5f5 */
 }
 
-.sp-about-section {
-  background: var(--color-light);  /* #f5f5f5 */
+.sp-top .sp-about-section {
+  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+}
+
+/* ================================
+   SP TOP Only Overrides
+================================ */
+.sp-top .works-toggle .sp-section-sub {
+  margin: 8px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--color-gray);
+}
+
+.sp-top .contact-button-ja {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.7);
+  text-align: center;
+  margin: 0;
+}
+
+.sp-top .sp-about-section {
+  padding: 60px 20px 80px;
+}
+
+.sp-top .sp-about-section .sp-section-title {
+  color: var(--color-dark);
+}
+
+.sp-top .about-card-main-title {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.sp-top .about-card-image {
+  padding: 0 80px 24px 80px;
+}
+
+.sp-top .about-philosophy {
+  margin: 10px 0 50px;
+}
+
+.sp-top .about-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid #e8e8e8;
+  position: relative;
+  text-align: center;
+}
+
+.sp-top .about-card-footer-label {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--color-dark);
+}
+
+.sp-top .about-card-footer-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+  font-weight: 200;
+  color: var(--color-dark);
+  opacity: 0.7;
 }

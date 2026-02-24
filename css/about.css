@@ -95,7 +95,7 @@ a {
   right: 30px;
   top: 400px;
   width: 210px;
-  opacity: 0.05;
+  opacity: 0.04;
   pointer-events: none;
 }
 
@@ -259,9 +259,21 @@ a {
   outline-offset: -2px;
 }
 
-/* 開いた状態ではヘッダーを非表示 */
+/* 開いた状態でもヘッダーを残して閉じる導線を表示 */
 .ability-block.is-open .ability-header {
+  height: 56px;
+  justify-content: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ability-block.is-open .ability-header .ability-sub {
   display: none;
+}
+
+.ability-block.is-open .ability-header .ability-title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.1em;
 }
 
 /* ================================
@@ -316,10 +328,10 @@ a {
   transition: opacity 0.3s ease, height 0.3s ease;
 }
 
-/* 開いた状態 - 高さ266px内でスクロール */
+/* 開いた状態 - ヘッダー下をスクロール領域に */
 .ability-block.is-open .ability-body {
-  height: 200px;
-  padding: 20px 30px;
+  height: 134px;
+  padding: 12px 30px;
   overflow-y: auto;
   opacity: 1;
 }
@@ -335,6 +347,10 @@ a {
 
 .ability-list li + li {
   margin-top: 14px;
+}
+
+.ability-list li:last-child {
+  margin-bottom: 12px;
 }
 
 .ability-list h3 {
