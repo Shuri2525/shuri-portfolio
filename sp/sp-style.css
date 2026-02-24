@@ -3003,7 +3003,7 @@ a {
 /* ③ 思想テキスト */
 .sp-about-description {
   max-width: 480px;
-  margin: 0 auto 48px;
+  margin: 0 auto 72px;
   text-align: center;
 }
 
@@ -4582,4 +4582,63 @@ a {
 ================================ */
 .sp-works .sp-works-list {
   gap: 40px;
+}
+
+/* ================================
+   SP ABOUT専用：右下装飾
+================================ */
+.sp-about-deco-wrap {
+  position: sticky;
+  bottom: 20px;
+  height: 0;
+  overflow: visible;
+  margin-top: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sp-about-deco {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  opacity: 0.035;
+  display: block;
+}
+
+/* ================================
+   SP WORKSモーダル：作品差別化
+================================ */
+
+.sp-modal-overlay.modal-cat-web .sp-modal-header {
+  background: #ffffff;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.sp-modal-overlay.modal-cat-web .sp-modal-category,
+.sp-modal-overlay.modal-cat-web .sp-modal-close,
+.sp-modal-overlay.modal-cat-web .sp-modal-nav-btn {
+  color: #3f3b3a;
+}
+
+.sp-modal-overlay.modal-cat-dtp .sp-modal-header {
+  background: #3f3b3a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.sp-modal-overlay.modal-cat-dtp .sp-modal-category,
+.sp-modal-overlay.modal-cat-dtp .sp-modal-close,
+.sp-modal-overlay.modal-cat-dtp .sp-modal-nav-btn {
+  color: #f5f5f5;
+}
+
+.sp-modal-overlay.modal-cat-graphic .sp-modal-header {
+  background: #f2f2f2;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.sp-modal-overlay.modal-cat-graphic .sp-modal-category,
+.sp-modal-overlay.modal-cat-graphic .sp-modal-close,
+.sp-modal-overlay.modal-cat-graphic .sp-modal-nav-btn {
+  color: #3f3b3a;
 }

@@ -55,6 +55,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return axisMap[category] || "情報整理 / 余白設計 / 印象の一貫性";
   }
 
+  function formatModalTitle(work) {
+    const source = (work.modalTitle || work.title || "").trim();
+    if (!source) return "";
+    if (source.includes("<br>")) return source;
+    const plain = source.replace(/\s+/g, "");
+    if (plain.length <= 12) return plain;
+    const mid = Math.floor(plain.length / 2);
+    const candidates = ["を", "で", "と", "の"];
+    let breakIndex = -1;
+
+    candidates.forEach((ch) => {
+      const idx = plain.indexOf(ch);
+      if (idx > 2 && idx < plain.length - 3) {
+        if (breakIndex === -1 || Math.abs(idx - mid) < Math.abs(breakIndex - mid)) {
+          breakIndex = idx + 1;
+        }
+      }
+    });
+
+    if (breakIndex === -1) breakIndex = mid;
+    return `${plain.slice(0, breakIndex)}<br>${plain.slice(breakIndex)}`;
+  }
+
   function showWork(category, index) {
     const works = getWorks(category);
     const work = works[index];
@@ -81,6 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal.querySelector(".modal-main-title").textContent =
       work.category ? work.category.toUpperCase() : "WORKS";
+    modal.classList.remove("modal-cat-web", "modal-cat-dtp", "modal-cat-graphic");
+    modal.classList.add(`modal-cat-${category || "web"}`);
+
+    const subTitle = modal.querySelector(".modal-sub-title");
+    if (subTitle) subTitle.innerHTML = formatModalTitle(work);
 
     modal.querySelector(".modal-outline").textContent = work.outline || "";
     modal.querySelector(".modal-target").textContent = work.target || "";

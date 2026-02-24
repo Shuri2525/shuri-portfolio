@@ -483,14 +483,42 @@ function getDesignAxis(work, category) {
   return axisMap[category] || "情報整理 / 余白設計 / 印象の一貫性";
 }
 
+function formatModalTitle(work) {
+  const source = (work.modalTitle || work.title || '').trim();
+  if (!source) return '';
+  if (source.includes('<br>')) return source;
+  const plain = source.replace(/\s+/g, '');
+  if (plain.length <= 12) return plain;
+
+  const mid = Math.floor(plain.length / 2);
+  const candidates = ['を', 'で', 'と', 'の'];
+  let breakIndex = -1;
+
+  candidates.forEach(ch => {
+    const idx = plain.indexOf(ch);
+    if (idx > 2 && idx < plain.length - 3) {
+      if (breakIndex === -1 || Math.abs(idx - mid) < Math.abs(breakIndex - mid)) {
+        breakIndex = idx + 1;
+      }
+    }
+  });
+
+  if (breakIndex === -1) breakIndex = mid;
+  return `${plain.slice(0, breakIndex)}<br>${plain.slice(breakIndex)}`;
+}
+
 function showWork(category, index) {
   const works = WORKS_DATA[category] || [];
   const work = works[index];
   if (!work) return;
 
   // データを設定
+  const modal = document.getElementById('worksModal');
+  modal.classList.remove('modal-cat-web', 'modal-cat-dtp', 'modal-cat-graphic');
+  modal.classList.add(`modal-cat-${category || 'web'}`);
+
   document.getElementById('modalCategory').textContent = category.toUpperCase();
-  document.getElementById('modalTitle').innerHTML = work.modalTitle || work.title;
+  document.getElementById('modalTitle').innerHTML = formatModalTitle(work);
   document.getElementById('modalTag').textContent = work.tag;
   document.getElementById('modalThumb').src = work.modalThumb;
   document.getElementById('modalThumb').alt = work.title;
@@ -531,11 +559,11 @@ function showWork(category, index) {
   }
 
   // 先頭にスクロール
-  const modal = document.getElementById('worksModal');
-  if (modal) {
-    modal.scrollTop = 0;
+  const modalEl = document.getElementById('worksModal');
+  if (modalEl) {
+    modalEl.scrollTop = 0;
     requestAnimationFrame(() => {
-      modal.scrollTop = 0;
+      modalEl.scrollTop = 0;
     });
   }
 }

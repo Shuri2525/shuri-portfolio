@@ -93,8 +93,8 @@ a {
 .page-deco {
   position: absolute;
   right: 30px;
-  top: 600px;
-  width: 150px;
+  top: 430px;
+  width: 210px;
   opacity: 0.04;
   pointer-events: none;
 }
