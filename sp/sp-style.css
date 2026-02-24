@@ -4565,3 +4565,21 @@ a {
   width: 76px;
   margin-bottom: 0;
 }
+
+/* ================================
+   SP TOP専用：WORKSカード間隔調整
+================================ */
+.sp-top .sp-works-section .category-item {
+  margin-bottom: 30px;
+}
+
+.sp-top .sp-works-section .category-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================
+   SP WORKS専用：作品カード間隔調整
+================================ */
+.sp-works .sp-works-list {
+  gap: 40px;
+}
