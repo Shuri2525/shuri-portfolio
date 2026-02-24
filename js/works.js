@@ -6,6 +6,7 @@ const WORKS_DATA = {
    {
   "id": "01",
   "title": "余白設計で魅せるポートフォリオ",
+  "modalTitle": "余白設計で魅せる<br>ポートフォリオ",
   "tag": "ポートフォリオ / 個人制作",
   "thumb": "./assets/works/web/01/hero.jpg",
   "modalThumb": "./assets/works/web/01/thumb.jpg",
