@@ -45,6 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function getDesignAxis(work, category) {
+    if (work.designAxis) return work.designAxis;
+    const axisMap = {
+      web: "導線設計 / 情報の余白 / 信頼感のトーン",
+      dtp: "可読性 / 運用しやすさ / 情報の優先度",
+      graphic: "象徴性 / 余白バランス / 記憶に残る造形"
+    };
+    return axisMap[category] || "情報整理 / 余白設計 / 印象の一貫性";
+  }
+
   function showWork(category, index) {
     const works = getWorks(category);
     const work = works[index];
@@ -76,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.querySelector(".modal-target").textContent = work.target || "";
     modal.querySelector(".modal-period").textContent = work.period || "";
     modal.querySelector(".modal-purpose").textContent = work.purpose || "";
+    modal.querySelector(".modal-axis").textContent = getDesignAxis(work, category);
     modal.querySelector(".modal-detail").textContent = work.detailText || "";
 
     updateNav(works.length);

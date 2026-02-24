@@ -124,7 +124,7 @@
       <!-- 概要 -->
       <section class="sp-modal-section">
         <h3 class="sp-modal-section-title">OUTLINE</h3>
-        <p class="sp-modal-section-sub">制作概要</p>
+        <p class="sp-modal-section-sub">背景と設計意図</p>
         <p class="sp-modal-text" id="modalOutline"></p>
 
         <ul class="sp-modal-meta">
@@ -137,8 +137,12 @@
             <span class="sp-meta-text" id="modalPeriod"></span>
           </li>
           <li>
-            <span class="sp-meta-label">目的</span>
+            <span class="sp-meta-label">意図</span>
             <span class="sp-meta-text" id="modalPurpose"></span>
+          </li>
+          <li>
+            <span class="sp-meta-label">設計軸</span>
+            <span class="sp-meta-text" id="modalAxis"></span>
           </li>
         </ul>
       </section>
@@ -146,7 +150,7 @@
       <!-- 詳細 -->
       <section class="sp-modal-section">
         <h3 class="sp-modal-section-title">DETAIL</h3>
-        <p class="sp-modal-section-sub">内容詳細</p>
+        <p class="sp-modal-section-sub">設計の要点</p>
         <p class="sp-modal-text" id="modalDetail"></p>
 
         <div class="sp-modal-detail-image" id="modalDetailImageWrap" style="display: none;">
@@ -188,7 +192,8 @@ const WORKS_DATA = {
   web: [
     {
       "id": "01",
-      "title": "PORTFOLIO SITE",
+      "title": "余白設計で魅せるポートフォリオ",
+      "modalTitle": "余白設計で魅せる<br>ポートフォリオ",
       "tag": "ポートフォリオ / 個人制作",
       "thumb": "../assets/works/web/01/hero.jpg",
       "modalThumb": "../assets/works/web/01/thumb.jpg",
@@ -196,13 +201,15 @@ const WORKS_DATA = {
       "outline": "自身のデザインや考え方を伝えるために制作したポートフォリオサイトです。情報を詰め込みすぎず、必要なことが自然に伝わる構成を意識しました。",
       "target": "ブランドや印象を大切にしたい事業者・個人",
       "period": "約3ヶ月",
-      "purpose": "スキルや制作姿勢を、構成と実装の両面から伝えるため",
-      "detailText": "視線の流れや余白のバランスを大切にし、落ち着いたトーンで全体を設計。作品が主役になるよう、装飾は控えめにまとめています。見る人にとって心地よく、迷わず閲覧できるサイトを目指しました。"
+      "purpose": "制作姿勢と設計力が自然に伝わる見せ方を整えるため",
+      "designAxis": "余白設計 / 情報階層 / 世界観の統一",
+      "detailText": "視線の流れと余白のバランスを整え、落ち着いたトーンで全体を設計しました。作品そのものが引き立つよう装飾は抑え、心地よく読み進められる構成にまとめています。"
     },
 
-        {
+    {
       "id": "06",
-      "title": "団体ポータルサイト",
+      "title": "地域に伝わる消防団ポータル設計",
+      "modalTitle": "地域に伝わる<br>消防団ポータル設計",
       "tag": "TOPページ / コンペ制作",
       "thumb": "../assets/works/web/06/hero.jpg",
       "modalThumb": "../assets/works/web/06/thumb.jpg",
@@ -210,13 +217,15 @@ const WORKS_DATA = {
       "outline": "消防団の活動を紹介するポータルサイトをコンペにて制作しました。親しみやすさと信頼感のバランスを意識しました。",
       "target": "県内在住の幅広い年齢層の男女",
       "period": "5日",
-      "purpose": "消防団の活動内容を分かりやすく伝えるため",
-      "detailText": "写真選定とレイアウトで安心感を演出し、地域の方が自然に興味を持てる構成に。情報が多くなりすぎないよう整理し、見やすさを優先しています。"
+      "purpose": "公共情報をやさしく整理し、理解と関心につなげるため",
+      "designAxis": "公共性 / 親しみ / 情報整理",
+      "detailText": "写真とレイアウトで安心感をつくり、地域の方が自然に関心を持てる構成に整えました。情報量が過多にならないよう整理し、迷わず閲覧できるナビゲーションを設計しています。短期間でも品質を保てるよう、デザインパターンとコンポーネントを効率的に活用しました。"
     },
 
     {
       "id": "02",
-      "title": "ビジネスホテルHP",
+      "title": "予約導線を整えたホテルサイト",
+      "modalTitle": "予約導線を整えた<br>ホテルサイト",
       "tag": "TOPページ / コンペ制作",
       "thumb": "../assets/works/web/02/hero.jpg",
       "modalThumb": "../assets/works/web/02/thumb.jpg",
@@ -224,13 +233,15 @@ const WORKS_DATA = {
       "outline": "沖縄・那覇のビジネスホテルTOPページデザインをコンペにて制作しました。",
       "target": "40代男性を中心とした、ビジネス・ファミリー・団体利用者",
       "period": "3日",
-      "purpose": "宿泊予約までの導線を分かりやすく設計し、新たな利用層への訴求を強化するため",
-      "detailText": "落ち着きと信頼感を感じられる配色と余白設計で、安心して選べる印象づくりを重視。ビジネス利用だけでなく、旅行利用も想像できるよう写真や情報の配置を工夫しました。"
+      "purpose": "予約まで迷わない導線と安心感の両立を目指すため",
+      "designAxis": "予約導線 / 安心感 / 情報の即時把握",
+      "detailText": "落ち着きと信頼感が伝わる配色と余白設計で、安心して選べる印象に整えました。ビジネス利用と旅行利用の両方を想起できるよう、写真と情報の配置にリズムを持たせています。"
     },
 
         {
       "id": "05",
-      "title": "整形外科医院サイト",
+      "title": "信頼と先進性を両立した医院サイト",
+      "modalTitle": "信頼と先進性を両立した<br>医院サイト",
       "tag": "TOPページ / コンペ制作",
       "thumb": "../assets/works/web/05/hero.jpg",
       "modalThumb": "../assets/works/web/05/thumb.jpg",
@@ -238,13 +249,15 @@ const WORKS_DATA = {
       "outline": "整形外科医院のTOPページリニューアル案をコンペにて制作しました。安心感の中に、少しの先進性を感じられるデザインを目指しました。",
       "target": "通院を検討する幅広い年齢層のユーザー",
       "period": "3日",
-      "purpose": "既存イメージを刷新し、信頼感と先進性を伝えるため",
-      "detailText": "旧サイトの印象にとらわれず、清潔感のある配色と余白設計で、見やすさと信頼感を重視。幅広い年代の方が直感的に情報を探せるよう、シンプルな構成にまとめています。"
+      "purpose": "信頼感を保ちながら、現代的な印象へ整えるため",
+      "designAxis": "信頼感 / 清潔感 / 先進性のバランス",
+      "detailText": "清潔感のある配色と余白設計で、見やすさと信頼感を両立する構成に整えました。幅広い年代の方が直感的に情報を探せるよう、要素の優先度を整理したシンプルな導線を採用しています。"
     },
 
     {
       "id": "03",
-      "title": "ヘッドスパLP",
+      "title": "癒しの空気感を伝えるヘッドスパLP",
+      "modalTitle": "癒しの空気感を伝える<br>ヘッドスパLP",
       "tag": "TOPページ / コンペ制作",
       "thumb": "../assets/works/web/03/hero.jpg",
       "modalThumb": "../assets/works/web/03/thumb.jpg",
@@ -252,8 +265,9 @@ const WORKS_DATA = {
       "outline": "海外在住女性向けのヘッドスパ専門店LPをコンペにて制作しました。日本らしい癒しの空気感が伝わるビジュアルを意識しました。",
       "target": "30代後半〜40代後半の女性（海外在住）",
       "period": "3日",
-      "purpose": "日本の癒し文化を伝え、予約につなげるため",
-      "detailText": "情報を詰め込みすぎず、リラックス感が伝わる余白と配色で構成。安心して予約できるよう、やわらかく信頼感のあるトーンにまとめています。"
+      "purpose": "世界観の表現と予約行動のバランスを整えるため",
+      "designAxis": "情緒表現 / 可読性 / 行動導線",
+      "detailText": "情報を詰め込みすぎず、余白と配色でリラックス感が伝わる構成に整えました。世界観を保ちながら予約まで自然につながるよう、要素の密度と順序を丁寧に調整しています。"
     },
     /*
     {
@@ -275,7 +289,8 @@ const WORKS_DATA = {
   dtp: [
     {
       "id": "01",
-      "title": "名刺デザイン",
+      "title": "第一印象を整える名刺デザイン",
+      "modalTitle": "第一印象を整える<br>名刺デザイン",
       "tag": "名刺 / 個人制作",
       "thumb": "../assets/works/dtp/01/hero.jpg",
       "modalThumb": "../assets/works/dtp/01/thumb.webp",
@@ -283,25 +298,29 @@ const WORKS_DATA = {
       "outline": "自身のブランディングを意識して制作した名刺です。シンプルな中にも印象に残るデザインを目指しました。",
       "target": "取引先・クライアント",
       "period": "1日",
-      "purpose": "第一印象をより良くし、信頼感を与えるため",
-      "detailText": "タイポグラフィと余白設計に配慮し、必要な情報が一目で伝わる構成に。入稿データとしての再現性や可読性も意識して制作しています。"
+      "purpose": "初対面でも落ち着いて伝わる情報設計にするため",
+      "designAxis": "第一印象 / 可読性 / 再現性",
+      "detailText": "タイポグラフィと余白の取り方を丁寧に調整し、必要な情報が一目で伝わる構成に整えました。入稿時の再現性や可読性にも配慮し、実用面と印象面の両方を成立させています。"
     },
     {
       "id": "02",
-      "title": "リーフレットデザイン",
+      "title": "説明しやすい三つ折りリーフレット",
+      "modalTitle": "説明しやすい<br>三つ折りリーフレット",
       "tag": "チラシ / 実案件",
       "thumb": "../assets/works/dtp/02/hero.jpg",
       "modalThumb": "../assets/works/dtp/02/thumb.webp",
       "detailImg": "../assets/works/dtp/02/detail.jpg",
-      "outline": "外壁塗装サービスの三つ折りリーフレット。営業担当者が話しやすい順序と情報の展開を意識しながら制作しました。",
+      "outline": "外壁塗装サービスの三つ折りリーフレット。案内時に伝わりやすい順序と情報の展開を意識して制作しました。",
       "target": "戸建住宅を検討する施主・住民",
       "period": "2日",
-      "purpose": "営業担当者が対面で説明する際に使いやすく、視覚的に信頼感を与えるため",
-      "detailText": "観音開きの三つ折りリーフレットとして、営業担当者が話しやすい順序と情報の展開を意識しながら制作しました。配色やビジュアルには“塗装のプロらしさ”と“安心感”を両立させ、専門的な内容でも読みやすく整理。価格・工法・メリットなどを簡潔に伝えつつ、デザイン性も損なわないよう構成しています。"
+      "purpose": "説明しやすさと読みやすさを両立するため",
+      "designAxis": "説明順序 / 情報圧縮 / 信頼感",
+      "detailText": "観音開きの特性を活かし、説明の流れが自然につながる情報設計に整えました。専門的な内容でも読みやすさを保てるよう、配色と要素配置を整理し、安心感とデザイン性の両立を意識しています。"
     },
     {
       "id": "03",
-      "title": "戸建て販売チラシ",
+      "title": "更新運用に強い戸建て販売チラシ",
+      "modalTitle": "更新運用に強い<br>戸建て販売チラシ",
       "tag": "チラシ / 実案件",
       "thumb": "../assets/works/dtp/03/hero.jpg",
       "modalThumb": "../assets/works/dtp/03/thumb.webp",
@@ -309,15 +328,17 @@ const WORKS_DATA = {
       "outline": "新築分譲住宅の販売チラシ。視認性と汎用性を重視した設計です。",
       "target": "住宅購入を検討するファミリー層・地域住民",
       "period": "3日",
-      "purpose": "毎月の新着物件に対応できる、更新性と大量展開に優れた販促ツールの作成",
-      "detailText": "物件情報が主役になるよう整理し、視線が迷わない構成に。物件情報の更新頻度が高い現場での運用を想定し、配色を切り替えて展開できる設計にすることで、統一感と更新のしやすさを両立しています。"
+      "purpose": "更新しやすさと見やすさを継続できる設計にするため",
+      "designAxis": "更新性 / 視認性 / 展開しやすさ",
+      "detailText": "物件情報が主役として伝わるよう情報を整理し、視線が迷わない紙面構成に整えました。更新頻度の高い運用を想定し、配色を切り替えて展開できる設計で、統一感と更新性を両立しています。"
     }
   ],
   graphic: [
 
       {
   "id": "01",
-  "title": "パーソナルロゴ",
+  "title": "多義性を持つSモチーフロゴ",
+  "modalTitle": "多義性を持つ<br>Sモチーフロゴ",
   "tag": "ロゴ / 個人制作",
   "thumb": "../assets/works/graphic/01/hero.jpg",
   "modalThumb": "../assets/works/graphic/01/thumb.jpg",
@@ -325,13 +346,15 @@ const WORKS_DATA = {
   "outline": "自身の名前の頭文字「S」をモチーフにした、シンプルで多面的な印象を持つパーソナルロゴです。モノクロ配色により、あらゆる媒体での汎用性を確保しています。",
   "target": "個人ブランディング全般",
   "period": "3日",
-  "purpose": "パーソナルブランドの視覚的アイデンティティ確立",
-  "detailText": "控えめでありながら記憶に残る、そんなバランスを目指したデザインです。二つの有機的な曲線は、見る人によって異なる印象を与えます——生き物のようにも、チューリップのような植物にも見え、重ねると幾何学的な手裏剣のような形が現れます。\n\nシンプルな形状の中に多様性を秘めることで、さまざまなシーンに柔軟に対応しながら、見る人それぞれの想像力を刺激する視覚体験を生み出しています。"
+  "purpose": "個人のらしさを一貫して伝える土台を作るため",
+  "designAxis": "象徴性 / 多義性 / 汎用性",
+  "detailText": "控えめでありながら記憶に残るバランスを目指し、シンプルな造形に多義性を持たせました。媒体を問わず使える汎用性を確保しながら、見る人の解釈が広がる余白を意識して設計しています。"
 },
 
     {
       "id": "02",
-      "title": "ロゴデザイン",
+      "title": "上質感を伝える美容室ロゴ提案",
+      "modalTitle": "上質感を伝える<br>美容室ロゴ提案",
       "tag": "ロゴ / コンペ",
       "thumb": "../assets/works/graphic/02/hero.webp",
       "modalThumb": "../assets/works/graphic/02/thumb.webp",
@@ -339,12 +362,14 @@ const WORKS_DATA = {
       "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
       "target": "美容室（40代女性中心）",
       "period": "３日",
-      "purpose": "ブランドイメージ構築と店舗の印象強化",
-      "detailText": "「まっすぐに続く美しさ」をテーマに、縦ラインと余白を活かした静けさのあるレイアウトを採用。縦組みの文字配置は上品で視認性が高く、シンプルながら記憶に残る印象を与えるよう設計しました。\n\nフォントの丸みやアーチ状の処理によって、髪のしなやかさや居心地の良さを視覚的に表現。視線誘導とブランド性の両立を目指したロゴ提案です。"
+      "purpose": "ブランドの印象をやわらかく記憶に残すため",
+      "designAxis": "上質感 / 視認性 / 記憶性",
+      "detailText": "「まっすぐに続く美しさ」を軸に、縦ラインと余白を活かした静けさのある構成に整えました。上品な視認性を保ちながら、丸みのある処理でやわらかな印象を加え、記憶に残る佇まいを目指しています。"
     },
     {
       "id": "03",
-      "title": "ロゴデザイン",
+      "title": "つながりを象徴する食品ブランドロゴ",
+      "modalTitle": "つながりを象徴する<br>食品ブランドロゴ",
       "tag": "ロゴ / コンペ",
       "thumb": "../assets/works/graphic/03/hero.webp",
       "modalThumb": "../assets/works/graphic/03/thumb.webp",
@@ -352,8 +377,9 @@ const WORKS_DATA = {
       "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
       "target": "食品メーカー・生活者",
       "period": "５日",
-      "purpose": "ブランドの価値観（つながり・誠実さ・温かさ）を象徴するロゴを提案するため",
-      "detailText": "箸袋を結んだ動きをモチーフに、“むすぶ”という行為を抽象化し、ロゴ全体で温かい人間関係やご縁を表現しました。\n\n背景の3本線は水引をイメージし、「心を結ぶ」「縁をつなぐ」という想いを込めています。配色は深みのある赤と金で、品格・誠実さ・ぬくもりを表現。結び目の形がMのシルエットを形成し、ブランド名との一体感を持たせたデザインです。"
+      "purpose": "価値観を静かに伝え、長く記憶に残る印象を作るため",
+      "designAxis": "物語性 / 温度感 / ブランド一体感",
+      "detailText": "「むすぶ」という行為を抽象化し、あたたかいつながりが伝わる造形に整えました。水引を想起させる要素と深みのある配色で、品格とぬくもりを両立し、ブランド名との一体感まで設計しています。"
     }
   ]
 };
@@ -447,6 +473,16 @@ function openModal(work, category) {
   });
 }
 
+function getDesignAxis(work, category) {
+  if (work.designAxis) return work.designAxis;
+  const axisMap = {
+    web: "導線設計 / 情報の余白 / 信頼感のトーン",
+    dtp: "可読性 / 運用しやすさ / 情報の優先度",
+    graphic: "象徴性 / 余白バランス / 記憶に残る造形"
+  };
+  return axisMap[category] || "情報整理 / 余白設計 / 印象の一貫性";
+}
+
 function showWork(category, index) {
   const works = WORKS_DATA[category] || [];
   const work = works[index];
@@ -454,7 +490,7 @@ function showWork(category, index) {
 
   // データを設定
   document.getElementById('modalCategory').textContent = category.toUpperCase();
-  document.getElementById('modalTitle').textContent = work.title;
+  document.getElementById('modalTitle').innerHTML = work.modalTitle || work.title;
   document.getElementById('modalTag').textContent = work.tag;
   document.getElementById('modalThumb').src = work.modalThumb;
   document.getElementById('modalThumb').alt = work.title;
@@ -462,6 +498,7 @@ function showWork(category, index) {
   document.getElementById('modalTarget').textContent = work.target;
   document.getElementById('modalPeriod').textContent = work.period;
   document.getElementById('modalPurpose').textContent = work.purpose;
+  document.getElementById('modalAxis').textContent = getDesignAxis(work, category);
   document.getElementById('modalDetail').textContent = work.detailText;
 
   // 終点導線（最終作品のみ表示）
