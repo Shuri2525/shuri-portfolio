@@ -3196,40 +3196,6 @@ a {
   margin: 0;
 }
 
-/* ABOUTページ用フッター調整 */
-.sp-about .sp-footer {
-  background: var(--color-white);
-  border-top: 1px solid var(--color-dark);
-}
-
-.sp-about .sp-copyright {
-  color: rgba(63, 59, 58, 0.5);
-}
-
-/* ABOUT内のCONTACTはアコーディオンと同トーンに */
-.sp-about .sp-contact-section {
-  background: var(--color-white);
-  border-top: 1px solid var(--color-dark);
-}
-
-.sp-about .contact-button {
-  background: var(--color-white);
-  color: var(--color-dark);
-}
-
-.sp-about .contact-button-ja {
-  color: var(--color-gray);
-}
-
-.sp-about .contact-arrow {
-  color: var(--color-dark);
-  opacity: 1;
-}
-
-.sp-about .contact-button:active .contact-arrow {
-  transform: translateY(-50%);
-}
-
 /* ABOUTページ 区切り線 */
 .sp-section-divider {
   width: 100%;
@@ -4064,41 +4030,6 @@ a {
   color: var(--color-dark);
   margin: 0;
 }
-
-/* ABOUTページ用フッター調整 */
-.sp-about .sp-footer {
-  background: var(--color-white);
-  border-top: 1px solid var(--color-dark);
-}
-
-.sp-about .sp-copyright {
-  color: rgba(63, 59, 58, 0.5);
-}
-
-/* ABOUT内のCONTACTはアコーディオンと同トーンに */
-.sp-about .sp-contact-section {
-  background: var(--color-white);
-  border-top: 1px solid var(--color-dark);
-}
-
-.sp-about .contact-button {
-  background: var(--color-white);
-  color: var(--color-dark);
-}
-
-.sp-about .contact-button-ja {
-  color: var(--color-gray);
-}
-
-.sp-about .contact-arrow {
-  color: var(--color-dark);
-  opacity: 1;
-}
-
-.sp-about .contact-button:active .contact-arrow {
-  transform: translateY(-50%);
-}
-
 
 /* スクロールコンテナ */
 .sp-ability-scroll-container {
