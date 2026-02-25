@@ -498,15 +498,14 @@ a {
   text-decoration: none;
   color: var(--color-dark);
   background: var(--color-white);
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  transition: opacity 0.2s ease;
 }
 
 .category-link:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  opacity: 0.7;
 }
 
 .category-thumb {
@@ -1901,15 +1900,14 @@ a {
   text-decoration: none;
   color: var(--color-dark);
   background: var(--color-white);
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  transition: opacity 0.2s ease;
 }
 
 .category-link:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  opacity: 0.7;
 }
 
 .category-thumb {
@@ -3776,7 +3774,7 @@ a {
 ================================ */
 .sp-scroll-slider {
   position: relative;
-  margin: -42px auto 24px;
+  margin: -42px auto 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3795,8 +3793,8 @@ a {
 
 .sp-scroll-line {
   width: 1px;
-  height: 132px;
-  background: #f5f5f5;
+  height: 100px;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #f5f5f5 50%, #3f3b3a 50%, #3f3b3a 100%);
   position: relative;
 }
 
@@ -3814,17 +3812,16 @@ a {
 @keyframes spSlideBall {
   0%   { top: 0; opacity: 1; background: #f5f5f5; }
   15%  { opacity: 1; }
-  50%  { top: 50%; background: #f5f5f5; }
+  50%  { top: 50%; background: #3f3b3a; }
   85%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; background: #f5f5f5; }
+  100% { top: 100%; opacity: 0; background: #3f3b3a; }
 }
 /* ================================
    SP版TOP専用：メインビジュアルの模様位置調整
 ================================ */
 .sp-top .sp-hero .sp-hero-deco {
-  width: 200px;
   right: 20px;
-  bottom: -100px;
+  bottom: -140px;
 }
 
 @keyframes cardSlideIn {
@@ -4365,11 +4362,11 @@ a {
 
 /* WORKS & ABOUT - 統一 */
 .sp-top .sp-works-section {
-  background: #f5f5f5;
+  background: var(--color-light);  /* #f5f5f5 */
 }
 
 .sp-top .sp-about-section {
-  background: #f5f5f5;
+  background: var(--color-light);
 }
 
 /* ================================
@@ -4484,7 +4481,7 @@ a {
   width: calc(100% - 40px);
   min-height: calc(100vh - 40px);
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 12px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   padding: 0;
@@ -4495,7 +4492,7 @@ a {
   top: 0;
   left: auto;
   width: 100%;
-  border-radius: 6px 6px 0 0;
+  border-radius: 12px 12px 0 0;
 }
 
 .sp-modal-overlay.active .sp-modal-title-block {
@@ -4525,16 +4522,26 @@ a {
    SP TOP専用：メインビジュアルロゴ調整
 ================================ */
 .sp-top .sp-hero {
-  height: calc((100vh * 2 / 3) - 80px);
-  background:
-    radial-gradient(120% 80% at 50% 42%, rgba(245, 245, 245, 0.08) 0%, rgba(245, 245, 245, 0) 62%),
-    var(--color-dark);
+  height: 75vh;
+  background: var(--color-dark);
 }
 
-.sp-top .sp-hero .sp-hero-logo {
-  width: 80px;
-  margin-bottom: 0;
-  transform: translateY(2px);
+.sp-top .sp-hero .sp-hero-content {
+  transform: translateY(-8%);
+}
+
+.sp-top .sp-hero .sp-hero-copy {
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: rgba(245, 245, 245, 0.75);
+}
+
+.sp-top .sp-hero .sp-hero-deco {
+  display: none;
 }
 
 /* ================================
@@ -4695,85 +4702,4 @@ a {
 
 .sp-about .sp-ability-list .ability-section-title {
   margin-bottom: 10px;
-}
-
-/* ================================
-   SP CONTACT：送信中スピナー
-================================ */
-.sp-contact .sp-form-submit button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.sp-contact .sp-form-submit button:disabled {
-  cursor: wait;
-  opacity: 1;
-}
-
-.sp-contact .sp-form-submit button.is-loading::before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-top-color: rgba(255, 255, 255, 0.95);
-  box-sizing: border-box;
-  animation: submitSpin 0.75s linear infinite;
-}
-
-@keyframes submitSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sp-contact .sp-form-submit button.is-loading::before {
-    animation: none;
-  }
-}
-
-/* ================================
-   SP調整：デザイン統一と可読性
-================================ */
-/* ③ SP TOP WORKSカードをPC寄りのフラット表現に */
-.sp-top .sp-works-section .category-link {
-  border-radius: 6px;
-  box-shadow: none;
-  transition: opacity 0.2s ease;
-}
-
-.sp-top .sp-works-section .category-link:active {
-  transform: none;
-  box-shadow: none;
-  opacity: 0.88;
-}
-
-/* ③ SP WORKSページもフラットに統一 */
-.sp-works .sp-work-item {
-  border-radius: 0;
-  box-shadow: none;
-  transition: opacity 0.2s ease;
-}
-
-.sp-works .sp-work-item:active {
-  transform: none;
-  opacity: 0.88;
-}
-
-/* ④ SP ABOUT 本文は中央揃え */
-.sp-about .sp-about-description,
-.sp-about .sp-about-description p {
-  text-align: center;
-}
-
-/* ⑦ SP CONTACT 矢印の重なり耐性を強化 */
-.sp-contact .contact-button {
-  padding-right: clamp(56px, 14vw, 72px);
-}
-
-.sp-contact .contact-arrow {
-  right: clamp(16px, 5vw, 28px);
 }

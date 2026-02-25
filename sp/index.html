@@ -95,17 +95,9 @@
   <!-- メインビジュアル -->
   <section class="sp-hero">
     <div class="sp-hero-content">
-      <img src="../assets/common/logo_f5f5f5.svg" alt="SHURI LOGO" class="sp-hero-logo" fetchpriority="high">
+      <p class="sp-hero-copy">Design begins<br>with structure.</p>
     </div>
-    <img src="../assets/deco/deco_f5f5f5.svg" alt="" class="sp-hero-deco" aria-hidden="true">
   </section>
-
-  <!-- スクロールインジケーター（境界線上） -->
-  <div class="sp-scroll-slider">
-    <div class="sp-scroll-line">
-      <div class="sp-scroll-knob"></div>
-    </div>
-  </div>
 
   <!-- WORKSセクション -->
   <section class="sp-section sp-works-section">
@@ -340,17 +332,17 @@
 
   // ヘッダーロゴの表示制御
   const headerLogo = document.getElementById('headerLogo');
-  const heroLogo = document.querySelector('.sp-hero-logo');
+  const heroTrigger = document.querySelector('.sp-hero-content');
   const headerElement = document.getElementById('spHeader');
   
   function handleScroll() {
-    if (!heroLogo || !headerElement) return;
+    if (!heroTrigger || !headerElement) return;
 
-    const logoRect = heroLogo.getBoundingClientRect();
+    const triggerRect = heroTrigger.getBoundingClientRect();
     const headerBottom = headerElement.getBoundingClientRect().bottom;
 
-    // ヒーローロゴがヘッダー下端に隠れるタイミングで表示
-    if (logoRect.bottom <= headerBottom) {
+    // ヒーローコピーがヘッダー下端に隠れるタイミングで表示
+    if (triggerRect.bottom <= headerBottom) {
       headerLogo.style.opacity = '1';
       headerLogo.style.visibility = 'visible';
     } else {
