@@ -92,13 +92,6 @@
 <!-- メインコンテンツ -->
 <main class="sp-main">
 
-  <!-- メインビジュアル -->
-  <section class="sp-hero">
-    <div class="sp-hero-content">
-      <p class="sp-hero-copy">Design begins<br>with structure.</p>
-    </div>
-  </section>
-
   <!-- WORKSセクション -->
   <section class="sp-section sp-works-section">
     <div class="sp-works-header">
@@ -336,7 +329,13 @@
   const headerElement = document.getElementById('spHeader');
   
   function handleScroll() {
-    if (!heroTrigger || !headerElement) return;
+    if (!headerElement) return;
+
+    if (!heroTrigger) {
+      headerLogo.style.opacity = '1';
+      headerLogo.style.visibility = 'visible';
+      return;
+    }
 
     const triggerRect = heroTrigger.getBoundingClientRect();
     const headerBottom = headerElement.getBoundingClientRect().bottom;
