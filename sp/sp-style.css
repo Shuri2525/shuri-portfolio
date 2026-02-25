@@ -4357,12 +4357,8 @@ a {
 
 
 .sp-top .sp-works-section {
-  padding-top: 45px;
-}
-
-/* WORKS & ABOUT - 統一 */
-.sp-top .sp-works-section {
-  background: var(--color-light);  /* #f5f5f5 */
+  padding-top: 56px;
+  background: var(--color-light);
 }
 
 .sp-top .sp-about-section {
