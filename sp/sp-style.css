@@ -4713,3 +4713,27 @@ a {
 .sp-modal-overlay.modal-cat-graphic .sp-modal-nav-btn {
   color: #3f3b3a;
 }
+
+/* ================================
+   Tablet: WORKSを2列表示
+   SP(〜767px)=1列 / Tablet(768px〜)=2列
+================================ */
+@media (min-width: 768px) {
+  /* SP WORKSページ */
+  .sp-works .sp-works-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  /* SP TOPのWORKSセクション */
+  .sp-top .sp-works-section .category-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+
+  .sp-top .sp-works-section .category-item {
+    margin-bottom: 0;
+  }
+}
