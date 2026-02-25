@@ -4737,3 +4737,30 @@ a {
     margin-bottom: 0;
   }
 }
+
+/* ================================
+   SP ABOUT：アコーディオン可読性調整
+================================ */
+.sp-about .sp-ability-scroll-container {
+  padding: 24px 20px 30px;
+}
+
+.sp-about .sp-ability-list li {
+  margin-bottom: 18px;
+}
+
+.sp-about .sp-ability-list p,
+.sp-about .sp-qualification-name,
+.sp-about .sp-favorites-text {
+  line-height: 1.85;
+  max-width: 36ch;
+}
+
+.sp-about .sp-ability-list .ability-section {
+  margin-top: 22px;
+  padding-top: 14px;
+}
+
+.sp-about .sp-ability-list .ability-section-title {
+  margin-bottom: 10px;
+}

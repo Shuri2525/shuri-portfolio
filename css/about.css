@@ -372,7 +372,7 @@ a {
 }
 
 .ability-list li + li {
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .ability-list li:last-child {
@@ -384,21 +384,23 @@ a {
   font-weight: 500;
   letter-spacing: 0.06em;
   margin: 0 0 4px;
+  max-width: 34ch;
 }
 
 .ability-list p {
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.05em;
-  line-height: 1.7;
+  line-height: 1.8;
   margin: 0;
   color: #555;
+  max-width: 36ch;
 }
 
 /* セクション見出し */
 .ability-section {
-  margin-top: 18px;
-  padding-top: 12px;
+  margin-top: 20px;
+  padding-top: 14px;
   border-top: 1px solid #e8e8e8;
 }
 
@@ -413,7 +415,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.18em;
   color: #999;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 /* スキル項目のインライン表示 */
