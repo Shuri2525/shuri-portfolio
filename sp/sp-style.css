@@ -3822,6 +3822,7 @@ a {
    SP版TOP専用：メインビジュアルの模様位置調整
 ================================ */
 .sp-top .sp-hero .sp-hero-deco {
+  width: 150px;
   right: 20px;
   bottom: -100px;
 }
