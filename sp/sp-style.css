@@ -3743,7 +3743,7 @@ a {
   letter-spacing: 0.08em;
   text-align: center;
   margin: 0 0 8px;
-  color: var(--color-dark);
+  color: var(--color-white);
 }
 
 .sp-about .contact-button-ja {
@@ -3810,7 +3810,7 @@ a {
 ================================ */
 .sp-scroll-slider {
   position: relative;
-  margin: -50px auto 30px;
+  margin: -42px auto 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4463,6 +4463,37 @@ a {
   padding: 60px 20px 80px;
 }
 
+/* SP TOP：WORKS見出しとカードの間隔を少し詰める */
+.sp-top .sp-works-section .sp-works-header {
+  padding-bottom: 20px;
+}
+
+/* SP TOP：ABOUT見出しとカードの間隔をWORKSと統一 */
+.sp-top .sp-about-section .sp-works-header {
+  padding-bottom: 20px;
+}
+
+/* SP TOP：ABOUTカードの弱いスライドイン */
+.sp-top .about-card-wrapper {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  will-change: opacity, transform;
+}
+
+.sp-top .about-card-wrapper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-top .about-card-wrapper {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .sp-top .sp-about-section .sp-section-title {
   color: var(--color-dark);
 }
@@ -4561,9 +4592,14 @@ a {
 /* ================================
    SP TOP専用：メインビジュアルロゴ調整
 ================================ */
+.sp-top .sp-hero {
+  height: calc((100vh * 2 / 3) - 80px);
+}
+
 .sp-top .sp-hero .sp-hero-logo {
-  width: 76px;
+  width: 80px;
   margin-bottom: 0;
+  transform: translateY(6px);
 }
 
 /* ================================
@@ -4604,6 +4640,38 @@ a {
   width: 150px;
   opacity: 0.035;
   display: block;
+}
+
+/* ================================
+   SP ABOUT：CONTACTをTOP配色に統一
+================================ */
+.sp-about .sp-contact-section {
+  background: var(--color-dark);
+  border-top: 1px solid var(--color-light);
+}
+
+.sp-about .contact-button {
+  background: var(--color-dark);
+  color: var(--color-light);
+}
+
+.sp-about .contact-button-ja {
+  color: rgba(245, 245, 245, 0.7);
+}
+
+.sp-about .contact-arrow {
+  color: var(--color-light);
+  opacity: 0.8;
+}
+
+/* SP ABOUT：フッターをTOP配色に統一 */
+.sp-about .sp-footer {
+  background: var(--color-dark);
+  border-top: 1px solid var(--color-light);
+}
+
+.sp-about .sp-copyright {
+  color: rgba(245, 245, 245, 0.5);
 }
 
 /* ================================

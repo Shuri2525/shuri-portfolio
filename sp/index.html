@@ -310,18 +310,47 @@
 
   // ページロード時の処理
   document.addEventListener('DOMContentLoaded', () => {
-    // 必要に応じて他の初期化処理
+    const aboutCardWrapper = document.querySelector('.sp-top .about-card-wrapper');
+    if (!aboutCardWrapper) return;
+
+    // 動きを抑制する環境ではアニメーションを無効化
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      aboutCardWrapper.classList.add('is-visible');
+      return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      aboutCardWrapper.classList.add('is-visible');
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          aboutCardWrapper.classList.add('is-visible');
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    observer.observe(aboutCardWrapper);
   });
 
   // ヘッダーロゴの表示制御
   const headerLogo = document.getElementById('headerLogo');
-  const heroSection = document.querySelector('.sp-hero');
+  const heroLogo = document.querySelector('.sp-hero-logo');
+  const headerElement = document.getElementById('spHeader');
   
   function handleScroll() {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const scrollPosition = window.scrollY + 60;
-    
-    if (scrollPosition > heroBottom) {
+    if (!heroLogo || !headerElement) return;
+
+    const logoRect = heroLogo.getBoundingClientRect();
+    const headerBottom = headerElement.getBoundingClientRect().bottom;
+
+    // ヒーローロゴがヘッダー下端に隠れるタイミングで表示
+    if (logoRect.bottom <= headerBottom) {
       headerLogo.style.opacity = '1';
       headerLogo.style.visibility = 'visible';
     } else {
