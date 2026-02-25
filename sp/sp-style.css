@@ -4594,10 +4594,13 @@ a {
 ================================ */
 .sp-top .sp-hero {
   height: calc((100vh * 2 / 3) - 80px);
+  background:
+    radial-gradient(120% 80% at 50% 42%, rgba(245, 245, 245, 0.08) 0%, rgba(245, 245, 245, 0) 62%),
+    var(--color-dark);
 }
 
 .sp-top .sp-hero .sp-hero-logo {
-  width: 80px;
+  width: 76px;
   margin-bottom: 0;
   transform: translateY(6px);
 }
