@@ -28,6 +28,11 @@ body.page-works {
   text-align: center;
 }
 
+.works-left-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .works-left-logo {
   width: 67px;
   height: 99px;

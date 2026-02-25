@@ -4749,10 +4749,10 @@ a {
   opacity: 0.88;
 }
 
-/* ④ SP ABOUT 長文は左揃えで可読性を優先 */
+/* ④ SP ABOUT 本文は中央揃え */
 .sp-about .sp-about-description,
 .sp-about .sp-about-description p {
-  text-align: left;
+  text-align: center;
 }
 
 /* ⑦ SP CONTACT 矢印の重なり耐性を強化 */
