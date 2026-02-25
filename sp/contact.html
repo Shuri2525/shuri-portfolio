@@ -103,22 +103,22 @@
     
       <div class="sp-form-group">
         <label for="company">貴社名</label>
-        <input type="text" id="company" name="company">
+        <input type="text" id="company" name="company" autocomplete="organization">
       </div>
 
       <div class="sp-form-group">
         <label for="name">お名前 <span class="sp-required">必須</span></label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" autocomplete="name" required>
       </div>
 
       <div class="sp-form-group">
         <label for="email">メールアドレス <span class="sp-required">必須</span></label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" autocomplete="email" required>
       </div>
 
       <div class="sp-form-group">
         <label for="tel">電話番号</label>
-        <input type="tel" id="tel" name="tel">
+        <input type="tel" id="tel" name="tel" autocomplete="tel">
       </div>
 
       <div class="sp-form-group">
@@ -193,7 +193,9 @@
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = '送信中...';
+    submitBtn.classList.add('is-loading');
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.textContent = '送信中';
     
     // フォームデータを取得
     const formData = new FormData();
@@ -237,6 +239,8 @@
       console.error('送信エラー:', error);
       alert('送信に失敗しました。お手数ですが、再度お試しください。');
       submitBtn.disabled = false;
+      submitBtn.classList.remove('is-loading');
+      submitBtn.removeAttribute('aria-busy');
       submitBtn.textContent = originalText;
     }
   });

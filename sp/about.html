@@ -141,7 +141,13 @@
 
   <!-- SKILL & PROFILE -->
   <section class="sp-about-ability">
-    <button class="sp-ability-header" id="whatIDoToggle" type="button">
+    <button
+      class="sp-ability-header"
+      id="whatIDoToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="whatIDoBody"
+    >
       <div class="sp-ability-title-wrap">
         <span class="sp-ability-title">SKILL & PROFILE</span>
         <span class="sp-ability-sub">スキル・自己紹介</span>
@@ -149,7 +155,7 @@
       <span class="sp-ability-toggle">+</span>
     </button>
 
-    <div class="sp-ability-body" id="whatIDoBody">
+    <div class="sp-ability-body" id="whatIDoBody" aria-hidden="true">
       <div class="sp-ability-scroll-container">
         <ul class="sp-ability-list">
           <!-- PROFILE -->
@@ -269,9 +275,13 @@
       if (isOpen) {
         body.classList.remove('active');
         icon.textContent = '+';
+        toggle.setAttribute('aria-expanded', 'false');
+        body.setAttribute('aria-hidden', 'true');
       } else {
         body.classList.add('active');
         icon.textContent = '−';
+        toggle.setAttribute('aria-expanded', 'true');
+        body.setAttribute('aria-hidden', 'false');
       }
     });
   }

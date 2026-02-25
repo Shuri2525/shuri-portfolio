@@ -120,16 +120,42 @@ a {
   position: relative;
   display: inline-block;
   padding-bottom: 4px;
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
 }
 
+.site-header .nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.65;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
 
+.site-header .nav a:hover::after,
+.site-header .nav a:focus-visible::after {
+  transform: scaleX(0.82);
+  opacity: 0.75;
+}
+
+.site-header .nav a.active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.site-header .nav a:hover,
+.site-header .nav a:focus-visible {
+  opacity: 0.92;
+}
 
 .site-header .nav a.active {
-  font-weight: 500;
-}
-
-.site-header .nav a:hover {
-  font-weight: 500;
+  opacity: 1;
 }
 
 /* フォーカス時 */
@@ -323,5 +349,35 @@ img[loading="lazy"]:not([src]) {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* ================================
+   モーション軽減設定
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-center,
+  .hero-logo,
+  .hero-title,
+  .splash-screen.fade-out,
+  .splash-logo,
+  .splash-title,
+  img[loading="lazy"]:not([src]) {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-center,
+  .hero-logo,
+  .hero-title {
+    opacity: 1;
+  }
+
+  .hamburger span {
+    transition: none;
   }
 }

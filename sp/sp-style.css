@@ -3776,7 +3776,7 @@ a {
 ================================ */
 .sp-scroll-slider {
   position: relative;
-  margin: -42px auto 30px;
+  margin: -34px auto 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3796,7 +3796,7 @@ a {
 .sp-scroll-line {
   width: 1px;
   height: 130px;
-  background: linear-gradient(to bottom, #f5f5f5 0%, #f5f5f5 50%, #3f3b3a 50%, #3f3b3a 100%);
+  background: #f5f5f5;
   position: relative;
 }
 
@@ -3814,16 +3814,16 @@ a {
 @keyframes spSlideBall {
   0%   { top: 0; opacity: 1; background: #f5f5f5; }
   15%  { opacity: 1; }
-  50%  { top: 50%; background: #3f3b3a; }
+  50%  { top: 50%; background: #f5f5f5; }
   85%  { opacity: 1; }
-  100% { top: 100%; opacity: 0; background: #3f3b3a; }
+  100% { top: 100%; opacity: 0; background: #f5f5f5; }
 }
 /* ================================
    SP版TOP専用：メインビジュアルの模様位置調整
 ================================ */
 .sp-top .sp-hero .sp-hero-deco {
   right: 20px;
-  bottom: -140px;
+  bottom: -100px;
 }
 
 @keyframes cardSlideIn {
@@ -4694,4 +4694,72 @@ a {
 
 .sp-about .sp-ability-list .ability-section-title {
   margin-bottom: 10px;
+}
+
+/* ================================
+   SP CONTACT：送信中スピナー
+================================ */
+.sp-contact .sp-form-submit button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sp-contact .sp-form-submit button:disabled {
+  cursor: wait;
+  opacity: 1;
+}
+
+.sp-contact .sp-form-submit button.is-loading::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+  animation: submitSpin 0.75s linear infinite;
+}
+
+@keyframes submitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-contact .sp-form-submit button.is-loading::before {
+    animation: none;
+  }
+}
+
+/* ================================
+   SP調整：デザイン統一と可読性
+================================ */
+/* ③ SP TOP WORKSカードをPC寄りのフラット表現に */
+.sp-top .sp-works-section .category-link {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.sp-top .sp-works-section .category-link:active {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.88;
+}
+
+/* ④ SP ABOUT 長文は左揃えで可読性を優先 */
+.sp-about .sp-about-description,
+.sp-about .sp-about-description p {
+  text-align: left;
+}
+
+/* ⑦ SP CONTACT 矢印の重なり耐性を強化 */
+.sp-contact .contact-button {
+  padding-right: clamp(56px, 14vw, 72px);
+}
+
+.sp-contact .contact-arrow {
+  right: clamp(16px, 5vw, 28px);
 }

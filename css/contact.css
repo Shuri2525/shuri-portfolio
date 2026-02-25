@@ -48,7 +48,7 @@ body.page-contact {
   margin-left: var(--left-width);
   width: var(--right-width);
   min-height: 100vh;
-  padding-top: 130px;
+  padding-top: 160px;
   box-sizing: border-box;
   position: relative;
 }
@@ -171,8 +171,45 @@ textarea {
   letter-spacing: 0.12em;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 180px;
 }
 
 .form-submit button:hover {
   opacity: 0.8;
+}
+
+.form-submit button:disabled {
+  cursor: wait;
+  opacity: 1;
+}
+
+.form-submit button.is-loading::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+  animation: submitSpin 0.75s linear infinite;
+}
+
+@keyframes submitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-submit button {
+    transition: none;
+  }
+
+  .form-submit button.is-loading::before {
+    animation: none;
+  }
 }

@@ -226,7 +226,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       worksList.insertAdjacentHTML("beforeend", `
         <div class="work-item" data-id="${work.id}" data-category="${category}">
-          <img src="${work.thumb}" alt="${work.title}" class="work-thumb">
+          <div class="work-thumb-wrap">
+            <img src="${work.thumb}" alt="${work.title}" class="work-thumb" loading="lazy" decoding="async">
+          </div>
           <p class="work-title">${work.title}</p>
           <p class="work-label">
             <span class="tag-en"># ${tagEn}</span>
@@ -265,12 +267,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期表示（WEB）
   renderWorks("web");
   document.querySelector(".btn-web")?.classList.add("active");
+  catButtons.forEach(b => b.setAttribute("aria-pressed", b.classList.contains("btn-web") ? "true" : "false"));
 
   // カテゴリボタンのイベント
   catButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      catButtons.forEach(b => b.classList.remove("active"));
+      catButtons.forEach(b => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
 
       if (btn.classList.contains("btn-web")) renderWorks("web");
       if (btn.classList.contains("btn-dtp")) renderWorks("dtp");
