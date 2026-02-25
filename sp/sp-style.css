@@ -4437,7 +4437,7 @@ a {
 }
 
 .sp-top .sp-about-section {
-  background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+  background: var(--color-light);
 }
 
 /* ================================
