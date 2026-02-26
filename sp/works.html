@@ -176,6 +176,9 @@
         <div class="sp-modal-detail-image" id="modalDetailImageWrap" style="display: none;">
           <img id="modalDetailImg" src="" alt="">
         </div>
+        <div class="sp-modal-detail-image" id="modalDetailImageWrap2" style="display: none;">
+          <img id="modalDetailImg2" src="" alt="">
+        </div>
       </section>
 
       <!-- 最終作品用の終了エリア -->
@@ -329,7 +332,8 @@ const WORKS_DATA = {
       "tag": "チラシ / 実案件",
       "thumb": "../assets/works/dtp/02/hero.jpg?v=20260226",
       "modalThumb": "../assets/works/dtp/02/thumb.webp?v=20260226",
-      "detailImg": "../assets/works/dtp/02/detail.webp",
+      "detailImg": "../assets/works/dtp/02/detail1.webp?v=20260226",
+      "detailImg2": "../assets/works/dtp/02/detail2.webp?v=20260226",
       "outline": "外壁塗装サービスの三つ折りリーフレット。案内時に伝わりやすい順序と情報の展開を意識して制作しました。",
       "target": "戸建住宅を検討する施主・住民",
       "period": "2日",
@@ -565,12 +569,21 @@ function showWork(category, index) {
   // 詳細画像
   const detailImgWrap = document.getElementById('modalDetailImageWrap');
   const detailImg = document.getElementById('modalDetailImg');
+  const detailImgWrap2 = document.getElementById('modalDetailImageWrap2');
+  const detailImg2 = document.getElementById('modalDetailImg2');
   if (work.detailImg) {
     detailImg.src = work.detailImg;
     detailImg.alt = work.title;
     detailImgWrap.style.display = 'block';
   } else {
     detailImgWrap.style.display = 'none';
+  }
+  if (work.detailImg2) {
+    detailImg2.src = work.detailImg2;
+    detailImg2.alt = work.title;
+    detailImgWrap2.style.display = 'block';
+  } else {
+    detailImgWrap2.style.display = 'none';
   }
 
   // ナビ状態
