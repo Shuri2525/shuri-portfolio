@@ -4393,6 +4393,10 @@ a {
   padding-bottom: 20px;
 }
 
+.sp-top .sp-works-section .category-title {
+  font-size: 12px;
+}
+
 /* SP TOP：ABOUT見出しとカードの間隔をWORKSと統一 */
 .sp-top .sp-about-section .sp-works-header {
   padding-bottom: 20px;
