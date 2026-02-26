@@ -173,12 +173,7 @@
         <p class="sp-modal-section-sub">設計の要点</p>
         <p class="sp-modal-text" id="modalDetail"></p>
 
-        <div class="sp-modal-detail-image" id="modalDetailImageWrap" style="display: none;">
-          <img id="modalDetailImg" src="" alt="">
-        </div>
-        <div class="sp-modal-detail-image" id="modalDetailImageWrap2" style="display: none;">
-          <img id="modalDetailImg2" src="" alt="">
-        </div>
+        <div class="sp-modal-detail-images" id="modalDetailImages"></div>
       </section>
 
       <!-- 最終作品用の終了エリア -->
@@ -346,9 +341,18 @@ const WORKS_DATA = {
       "title": "更新運用に強い戸建て販売チラシ",
       "modalTitle": "更新運用に強い<br>戸建て販売チラシ",
       "tag": "チラシ / 実案件",
-      "thumb": "../assets/works/dtp/03/hero.jpg",
-      "modalThumb": "../assets/works/dtp/03/thumb.jpg",
-      "detailImg": "../assets/works/dtp/03/detail.webp",
+      "thumb": "../assets/works/dtp/03/hero.webp",
+      "modalThumb": "../assets/works/dtp/03/thumb.webp",
+      "detailImgs": [
+        "../assets/works/dtp/03/detail1.webp",
+        "../assets/works/dtp/03/detail2.webp",
+        "../assets/works/dtp/03/detail3.webp",
+        "../assets/works/dtp/03/detail4.webp",
+        "../assets/works/dtp/03/detail5.webp",
+        "../assets/works/dtp/03/detail6.webp",
+        "../assets/works/dtp/03/detail7.webp",
+        "../assets/works/dtp/03/detail8.webp"
+      ],
       "outline": "新築分譲住宅の販売チラシ。視認性と汎用性を重視した設計です。",
       "target": "住宅購入を検討するファミリー層・地域住民",
       "period": "3日",
@@ -566,24 +570,25 @@ function showWork(category, index) {
     footerNav.style.display = isLast ? 'none' : 'flex';
   }
   
-  // 詳細画像
-  const detailImgWrap = document.getElementById('modalDetailImageWrap');
-  const detailImg = document.getElementById('modalDetailImg');
-  const detailImgWrap2 = document.getElementById('modalDetailImageWrap2');
-  const detailImg2 = document.getElementById('modalDetailImg2');
-  if (work.detailImg) {
-    detailImg.src = work.detailImg;
-    detailImg.alt = work.title;
-    detailImgWrap.style.display = 'block';
-  } else {
-    detailImgWrap.style.display = 'none';
-  }
-  if (work.detailImg2) {
-    detailImg2.src = work.detailImg2;
-    detailImg2.alt = work.title;
-    detailImgWrap2.style.display = 'block';
-  } else {
-    detailImgWrap2.style.display = 'none';
+  // 詳細画像（複数対応）
+  const detailImagesRoot = document.getElementById('modalDetailImages');
+  const detailImages = Array.isArray(work.detailImgs) && work.detailImgs.length
+    ? work.detailImgs
+    : [work.detailImg, work.detailImg2].filter(Boolean);
+
+  if (detailImagesRoot) {
+    detailImagesRoot.innerHTML = '';
+    detailImages.forEach((src, idx) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'sp-modal-detail-image';
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `${work.title} ${idx + 1}`;
+
+      wrap.appendChild(img);
+      detailImagesRoot.appendChild(wrap);
+    });
   }
 
   // ナビ状態

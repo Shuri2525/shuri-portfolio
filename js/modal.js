@@ -61,34 +61,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!work) return;
 
     const heroImg = modal.querySelector(".hero-img");
-    const detailImg = modal.querySelector(".detail-img");
-    const detailWrap = detailImg ? detailImg.closest('.modal-image') : null;
-    const detailImg2 = modal.querySelector(".detail-img-2");
-    const detailWrap2 = detailImg2 ? detailImg2.closest('.modal-image') : null;
+    const detailImagesRoot = modal.querySelector(".modal-detail-images");
 
     if (heroImg) {
       heroImg.src = work.modalThumb || "";
       heroImg.alt = work.title || "";
     }
 
-    if (detailImg && detailWrap) {
-      if (work.detailImg) {
-        detailImg.src = work.detailImg;
-        detailImg.alt = work.title || "";
-        detailWrap.style.display = "block";
-      } else {
-        detailWrap.style.display = "none";
-      }
-    }
+    if (detailImagesRoot) {
+      const detailImages = Array.isArray(work.detailImgs) && work.detailImgs.length
+        ? work.detailImgs
+        : [work.detailImg, work.detailImg2].filter(Boolean);
 
-    if (detailImg2 && detailWrap2) {
-      if (work.detailImg2) {
-        detailImg2.src = work.detailImg2;
-        detailImg2.alt = work.title || "";
-        detailWrap2.style.display = "block";
-      } else {
-        detailWrap2.style.display = "none";
-      }
+      detailImagesRoot.innerHTML = "";
+      detailImages.forEach((src, idx) => {
+        const wrap = document.createElement("div");
+        wrap.className = "modal-image";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `${work.title || ""} ${idx + 1}`.trim();
+
+        wrap.appendChild(img);
+        detailImagesRoot.appendChild(wrap);
+      });
     }
 
     const categoryLabel = (category || work.category || "works").toUpperCase();
