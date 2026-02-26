@@ -176,9 +176,6 @@
         <div class="sp-modal-detail-image" id="modalDetailImageWrap" style="display: none;">
           <img id="modalDetailImg" src="" alt="">
         </div>
-        <div class="sp-modal-detail-image" id="modalDetailImageWrap2" style="display: none;">
-          <img id="modalDetailImg2" src="" alt="">
-        </div>
       </section>
 
       <!-- 最終作品用の終了エリア -->
@@ -221,7 +218,7 @@ const WORKS_DATA = {
       "thumb": "../assets/works/web/01/hero.jpg",
       "modalThumb": "../assets/works/web/01/thumb.jpg",
       "detailImg": "../assets/works/web/01/detail.jpg",
-      "detailImg2": "../assets/works/web/01/detail2.jpg",
+      "detailImg": "../assets/works/web/01/detail2.jpg",
       "outline": "自身のデザインや考え方を伝えるために制作したポートフォリオサイトです。情報を詰め込みすぎず、必要なことが自然に伝わる構成を意識しました。",
       "target": "ブランドや印象を大切にしたい事業者・個人",
       "period": "約3ヶ月",
@@ -318,7 +315,6 @@ const WORKS_DATA = {
       "tag": "名刺 / 個人制作",
       "thumb": "../assets/works/dtp/01/hero.jpg?v=20260226",
       "modalThumb": "../assets/works/dtp/01/thumb.jpg?v=20260226",
-      "detailImg": "../assets/works/dtp/01/hero2.jpg?v=20260226",
       "outline": "自身のブランディングを意識して制作した名刺です。シンプルな中にも印象に残るデザインを目指しました。",
       "target": "取引先・クライアント",
       "period": "1日",
@@ -347,7 +343,7 @@ const WORKS_DATA = {
       "modalTitle": "更新運用に強い<br>戸建て販売チラシ",
       "tag": "チラシ / 実案件",
       "thumb": "../assets/works/dtp/03/hero.jpg",
-      "modalThumb": "../assets/works/dtp/03/thumb.webp",
+      "modalThumb": "../assets/works/dtp/03/thumb.jpg",
       "detailImg": "../assets/works/dtp/03/detail.jpg",
       "outline": "新築分譲住宅の販売チラシ。視認性と汎用性を重視した設計です。",
       "target": "住宅購入を検討するファミリー層・地域住民",
@@ -396,7 +392,7 @@ const WORKS_DATA = {
       "modalTitle": "つながりを象徴する<br>食品ブランドロゴ",
       "tag": "ロゴ / コンペ",
       "thumb": "../assets/works/graphic/03/hero.webp",
-      "modalThumb": "../assets/works/graphic/03/thumb.webp",
+      "modalThumb": "../assets/works/graphic/03/thumb.jpg",
       /*"detailImg": "../assets/works/graphic/02/detail.webp",*/
       "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
       "target": "食品メーカー・生活者",
@@ -569,22 +565,12 @@ function showWork(category, index) {
   // 詳細画像
   const detailImgWrap = document.getElementById('modalDetailImageWrap');
   const detailImg = document.getElementById('modalDetailImg');
-  const detailImgWrap2 = document.getElementById('modalDetailImageWrap2');
-  const detailImg2 = document.getElementById('modalDetailImg2');
   if (work.detailImg) {
     detailImg.src = work.detailImg;
     detailImg.alt = work.title;
     detailImgWrap.style.display = 'block';
   } else {
     detailImgWrap.style.display = 'none';
-  }
-
-  if (work.detailImg2) {
-    detailImg2.src = work.detailImg2;
-    detailImg2.alt = work.title;
-    detailImgWrap2.style.display = 'block';
-  } else {
-    detailImgWrap2.style.display = 'none';
   }
 
   // ナビ状態
