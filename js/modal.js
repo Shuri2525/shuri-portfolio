@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroImg = modal.querySelector(".hero-img");
     const detailImg = modal.querySelector(".detail-img");
     const detailWrap = detailImg ? detailImg.closest('.modal-image') : null;
+    const detailImg2 = modal.querySelector(".detail-img-2");
+    const detailWrap2 = detailImg2 ? detailImg2.closest('.modal-image') : null;
 
     if (heroImg) {
       heroImg.src = work.modalThumb || "";
@@ -76,6 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
         detailWrap.style.display = "block";
       } else {
         detailWrap.style.display = "none";
+      }
+    }
+
+    if (detailImg2 && detailWrap2) {
+      if (work.detailImg2) {
+        detailImg2.src = work.detailImg2;
+        detailImg2.alt = work.title || "";
+        detailWrap2.style.display = "block";
+      } else {
+        detailWrap2.style.display = "none";
       }
     }
 
