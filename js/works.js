@@ -170,7 +170,7 @@ const WORKS_DATA = {
   "title": "上質感を伝える美容室ロゴ提案",
   "tag": "ロゴ / コンペ",
   "thumb": "./assets/works/graphic/02/hero.webp",
-  "modalThumb": "./assets/works/graphic/02/thumb.webp",
+  "modalThumb": "./assets/works/graphic/02/thumb.webp?v=20260226",
   /*"detailImg": "./assets/works/graphic/02/detail.jpg",*/
   "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
   "target": "美容室（40代女性中心）",
@@ -185,7 +185,7 @@ const WORKS_DATA = {
   "title": "つながりを象徴する食品ブランドロゴ",
   "tag": "ロゴ / コンペ",
   "thumb": "./assets/works/graphic/03/hero.webp",
-  "modalThumb": "./assets/works/graphic/03/thumb.webp",
+  "modalThumb": "./assets/works/graphic/03/thumb.webp?v=20260226",
   /*"detailImg": "./assets/works/graphic/03/detail.webp",*/
   "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
   "target": "食品メーカー・生活者",
