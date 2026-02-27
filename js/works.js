@@ -106,6 +106,7 @@ const WORKS_DATA = {
   "tag": "名刺 / 個人制作",
   "thumb": "./assets/works/dtp/01/hero.jpg?v=20260226",
   "modalThumb": "./assets/works/dtp/01/thumb.jpg?v=20260226",
+  "detailImg": "./assets/works/dtp/01/detail.webp",
   "outline": "自身のブランディングを意識して制作した名刺です。シンプルな中にも印象に残るデザインを目指しました。",
   "target": "取引先・クライアント",
   "period": "2日",
@@ -120,7 +121,8 @@ const WORKS_DATA = {
   "tag": "名刺 / 実案件",
   "thumb": "./assets/works/dtp/04/hero.webp",
   "modalThumb": "./assets/works/dtp/04/thumb.webp",
-  "outline": "新装建設ロゴを用いた名刺展開案。縦型の落ち着きと信頼感を保ちながら、横書きレイアウトで読みやすさと親しみやすさを両立しました。",
+  "detailImg": "./assets/works/dtp/04/detail.webp",
+  "outline": "新装建設のブランドトーンに合わせて設計した、名刺デザイン。",
   "target": "新装建設 / 取引先・協力会社",
   "period": "3日",
   "purpose": "建設業らしい安心感を維持しつつ、堅すぎない印象に整えるため",
@@ -175,10 +177,10 @@ const WORKS_DATA = {
     {
       "label": "展開バリエーション（運用）",
       "images": [
-        "./assets/works/dtp/03/detail3.webp",
-        "./assets/works/dtp/03/detail4.webp",
         "./assets/works/dtp/03/detail5.webp",
-        "./assets/works/dtp/03/detail6.webp"
+        "./assets/works/dtp/03/detail6.webp",
+        "./assets/works/dtp/03/detail3.webp",
+        "./assets/works/dtp/03/detail4.webp"
       ]
     },
     {
@@ -204,6 +206,8 @@ const WORKS_DATA = {
   "thumb": "./assets/works/dtp/05/hero.webp",
   "modalThumb": "./assets/works/dtp/05/thumb.webp",
   "detailImgs": [
+    "./assets/works/dtp/05/detail.png",
+    "./assets/works/dtp/05/detail2.png",
     "./assets/works/dtp/05/detail1.webp",
     "./assets/works/dtp/05/detail2.webp"
   ],
@@ -224,6 +228,10 @@ const WORKS_DATA = {
   "tag": "ロゴ / 個人制作",
   "thumb": "./assets/works/graphic/01/hero.jpg",
   "modalThumb": "./assets/works/graphic/01/hero.jpg",
+  "detailImgs": [
+    "./assets/works/graphic/01/detail1.webp",
+    "./assets/works/graphic/01/detail2.webp"
+  ],
   /*"detailImg": "../assets/works/graphic/01/detail.jpg",*/
   "outline": "自身の名前の頭文字「S」をモチーフにした、シンプルで多面的な印象を持つパーソナルロゴです。モノクロ配色により、あらゆる媒体での汎用性を確保しています。",
   "target": "個人ブランディング全般",
