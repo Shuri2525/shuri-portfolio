@@ -175,34 +175,42 @@ const WORKS_DATA = {
   "detailText": "控えめでありながら記憶に残るバランスを目指し、シンプルな造形に多義性を持たせました。媒体を問わず使える汎用性を確保しながら、見る人の解釈が広がる余白を意識して設計しています。"
 },
 
-  {
-  "id": "02",
-  "title": "上質感を伝える美容室ロゴ提案",
-  "tag": "ロゴ / コンペ",
-  "thumb": "./assets/works/graphic/02/hero.webp",
-  "modalThumb": "./assets/works/graphic/02/thumb.webp?v=20260226",
-  /*"detailImg": "./assets/works/graphic/02/detail.jpg",*/
-  "outline": "美容室のブランディングを目的としたロゴデザインを、コンペ提出用に制作しました。40代の女性をターゲットに、落ち着きと品のある印象を意識しています。",
-  "target": "美容室（40代女性中心）",
-  "period": "2日",
-  "purpose": "ブランドの印象をやわらかく記憶に残すため",
-  "designAxis": "上質感 / 視認性 / 記憶性",
-  "detailText": "「まっすぐに続く美しさ」を軸に、縦ラインと余白を活かした静けさのある構成に整えました。上品な視認性を保ちながら、丸みのある処理でやわらかな印象を加え、記憶に残る佇まいを目指しています。"
-}
-,
+  
    {
-  "id": "03",
-  "title": "つながりを象徴する食品ブランドロゴ",
-  "tag": "ロゴ / コンペ",
-  "thumb": "./assets/works/graphic/03/hero.webp",
-  "modalThumb": "./assets/works/graphic/03/thumb.webp?v=20260226",
-  /*"detailImg": "./assets/works/graphic/03/detail.webp",*/
-  "outline": "食品会社のブランドロゴとしてコンペに提出したデザインです。人と人とのつながりを“結ぶ”というテーマに落とし込みました。",
-  "target": "食品メーカー・生活者",
-  "period": "4日",
-  "purpose": "価値観を静かに伝え、長く記憶に残る印象を作るため",
-  "designAxis": "物語性 / 温度感 / ブランド一体感",
-  "detailText": "「むすぶ」という行為を抽象化し、あたたかいつながりが伝わる造形に整えました。水引を想起させる要素と深みのある配色で、品格とぬくもりを両立し、ブランド名との一体感まで設計しています。"
+  "id": "04",
+  "title": "新創建設｜末広がりを託したロゴ設計",
+  "tag": "ロゴ / 実案件",
+  "thumb": "./assets/works/graphic/04/hero.webp",
+  "modalThumb": "./assets/works/graphic/04/thumb.webp",
+  "detailSections": [
+    {
+      "label": "印刷用ロゴ",
+      "images": [
+        "./assets/works/graphic/04/detail1.webp?v=20260227",
+        "./assets/works/graphic/04/detail2.webp?v=20260227"
+      ]
+    },
+    {
+      "label": "WEB用ロゴ",
+      "images": [
+        "./assets/works/graphic/04/detail3.webp?v=20260227",
+        "./assets/works/graphic/04/detail4.webp?v=20260227",
+        "./assets/works/graphic/04/detail5.webp?v=20260227"
+      ]
+    },
+    {
+      "label": "ガイドライン",
+      "images": [
+        "./assets/works/graphic/04/detail6.webp?v=20260227"
+      ]
+    }
+  ],
+  "outline": "大分市の鉄筋建設事業向けに制作した実案件ロゴです。末広がりの意味を持つ「8」をモチーフに、丸みのある造形で親しみと成長性を両立させました。",
+  "target": "大分市 / 鉄筋・建設事業",
+  "period": "2週間",
+  "purpose": "企業の発展性と信頼感を、媒体をまたいで一貫して伝えるため",
+  "designAxis": "象徴性 / 媒体適応 / 親和性",
+  "detailText": "「新創」の意味を軸に、若さ・成長・未来への広がりを表現しました。角ばった建設ロゴではなく、円形基調で調和と安心感を設計。カラーはグリーンを主軸にブルーを添え、誠実さと若々しさを両立しています。印刷用途では再現性を優先してベタ配色、WEB・SNSでは表現幅としてグラデーションを展開しています。"
 }
 
   ]

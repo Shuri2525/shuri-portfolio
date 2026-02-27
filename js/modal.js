@@ -69,22 +69,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (detailImagesRoot) {
-      const detailImages = Array.isArray(work.detailImgs) && work.detailImgs.length
-        ? work.detailImgs
-        : [work.detailImg, work.detailImg2].filter(Boolean);
-
       detailImagesRoot.innerHTML = "";
-      detailImages.forEach((src, idx) => {
-        const wrap = document.createElement("div");
-        wrap.className = "modal-image";
+      if (Array.isArray(work.detailSections) && work.detailSections.length) {
+        work.detailSections.forEach((section) => {
+          const images = Array.isArray(section.images) ? section.images.filter(Boolean) : [];
+          if (!images.length) return;
 
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = `${work.title || ""} ${idx + 1}`.trim();
+          const label = document.createElement("p");
+          label.className = "modal-detail-section-label";
+          label.textContent = section.label || "";
+          detailImagesRoot.appendChild(label);
 
-        wrap.appendChild(img);
-        detailImagesRoot.appendChild(wrap);
-      });
+          images.forEach((src, idx) => {
+            const wrap = document.createElement("div");
+            wrap.className = "modal-image";
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = `${work.title || ""} ${idx + 1}`.trim();
+            wrap.appendChild(img);
+            detailImagesRoot.appendChild(wrap);
+          });
+        });
+      } else {
+        const detailImages = Array.isArray(work.detailImgs) && work.detailImgs.length
+          ? work.detailImgs
+          : [work.detailImg, work.detailImg2].filter(Boolean);
+
+        detailImages.forEach((src, idx) => {
+          const wrap = document.createElement("div");
+          wrap.className = "modal-image";
+
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = `${work.title || ""} ${idx + 1}`.trim();
+
+          wrap.appendChild(img);
+          detailImagesRoot.appendChild(wrap);
+        });
+      }
     }
 
     const categoryLabel = (category || work.category || "works").toUpperCase();

@@ -370,6 +370,22 @@
   transition: transform 0.3s ease;
 }
 
+.modal-detail-section-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--modal-gray-450);
+  margin: 18px 0 10px;
+  padding-top: 14px;
+  border-top: 1px solid #ededed;
+}
+
+.modal-detail-section-label:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 /* ================================
    モーダル - 下部ナビゲーション
 ================================ */
