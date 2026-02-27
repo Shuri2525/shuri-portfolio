@@ -140,13 +140,13 @@ const WORKS_DATA = {
     {
       "label": "表（表紙・P1・裏表紙）",
       "images": [
-        "./assets/works/dtp/02/detail1.webp?v=20260226"
+        "./assets/works/dtp/02/detail01.webp"
       ]
     },
     {
       "label": "裏（P2・P3・P4）",
       "images": [
-        "./assets/works/dtp/02/detail2.webp?v=20260226"
+        "./assets/works/dtp/02/detail02.webp"
       ]
     }
   ],
@@ -206,10 +206,8 @@ const WORKS_DATA = {
   "thumb": "./assets/works/dtp/05/hero.webp",
   "modalThumb": "./assets/works/dtp/05/thumb.webp",
   "detailImgs": [
-    "./assets/works/dtp/05/detail.png",
-    "./assets/works/dtp/05/detail2.png",
-    "./assets/works/dtp/05/detail1.webp",
-    "./assets/works/dtp/05/detail2.webp"
+    "./assets/works/dtp/05/detail01.webp",
+    "./assets/works/dtp/05/detail02.webp"
   ],
   "outline": "建築会社の地主様向けチラシとして制作した実案件です。土地活用を身近に感じてもらえるよう、地域密着の明るいトーンで構成しました。",
   "target": "土地活用を検討する地主様・地域住民",
