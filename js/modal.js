@@ -121,6 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal.querySelector(".modal-outline").textContent = work.outline || "";
     modal.querySelector(".modal-target").textContent = work.target || "";
+    const periodLabel = modal.querySelector("#modal-period-label");
+    if (periodLabel) {
+      periodLabel.textContent = category === "web" ? "制作期間" : "対応期間";
+    }
     modal.querySelector(".modal-period").textContent = work.period || "";
     modal.querySelector(".modal-purpose").textContent = work.purpose || "";
     modal.querySelector(".modal-axis").textContent = getDesignAxis(work, category);
