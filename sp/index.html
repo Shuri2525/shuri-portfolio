@@ -104,41 +104,41 @@
       
       <!-- WEB -->
       <div class="category-item">
-        <a href="./works.html?cat=web&id=01" class="category-link">
+        <div class="category-link" data-modal-url="./works.html?cat=web&id=01" role="link" tabindex="0" aria-label="WEB作品の詳細を開く">
           <div class="category-thumb">
             <img src="../assets/works/web/01/hero1.jpg" alt="余白設計で魅せるポートフォリオ">
           </div>
           <div class="category-info">
-            <span class="category-tag"># WEB</span>
+            <a href="./works.html?cat=web" class="category-tag category-tag-link"># WEB</a>
             <h3 class="category-title">サイト制作・LP・ビジュアル改善</h3>
           </div>
-        </a>
+        </div>
       </div>
 
       <!-- DTP -->
       <div class="category-item">
-        <a href="./works.html?cat=dtp&id=01" class="category-link">
+        <div class="category-link" data-modal-url="./works.html?cat=dtp&id=01" role="link" tabindex="0" aria-label="DTP作品の詳細を開く">
           <div class="category-thumb">
             <img src="../assets/works/dtp/01/hero2.jpg" alt="第一印象を整える名刺デザイン">
           </div>
           <div class="category-info">
-            <span class="category-tag"># DTP</span>
+            <a href="./works.html?cat=dtp" class="category-tag category-tag-link"># DTP</a>
             <h3 class="category-title">名刺・チラシ・印刷物</h3>
           </div>
-        </a>
+        </div>
       </div>
 
       <!-- GRAPHIC -->
       <div class="category-item">
-        <a href="./works.html?cat=graphic&id=01" class="category-link">
+        <div class="category-link" data-modal-url="./works.html?cat=graphic&id=01" role="link" tabindex="0" aria-label="GRAPHIC作品の詳細を開く">
           <div class="category-thumb">
             <img src="../assets/works/graphic/01/hero1.jpg" alt="ロゴデザイン">
           </div>
           <div class="category-info">
-            <span class="category-tag"># GRAPHIC</span>
+            <a href="./works.html?cat=graphic" class="category-tag category-tag-link"># GRAPHIC</a>
             <h3 class="category-title">ロゴ・キービジュアル・印象設計</h3>
           </div>
-        </a>
+        </div>
       </div>
 
     </div>
@@ -295,6 +295,29 @@
 
   // ページロード時の処理
   document.addEventListener('DOMContentLoaded', () => {
+    // TOP WORKS: カード本体は作品モーダル直遷移、カテゴリ名のみ一覧遷移
+    document.querySelectorAll('.category-link[data-modal-url]').forEach((card) => {
+      const modalUrl = card.getAttribute('data-modal-url');
+      if (!modalUrl) return;
+
+      card.addEventListener('click', () => {
+        window.location.href = modalUrl;
+      });
+
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          window.location.href = modalUrl;
+        }
+      });
+    });
+
+    document.querySelectorAll('.category-tag-link').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+    });
+
     const aboutCardWrapper = document.querySelector('.sp-top .about-card-wrapper');
     if (!aboutCardWrapper) return;
 
