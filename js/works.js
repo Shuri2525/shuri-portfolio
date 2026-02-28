@@ -170,24 +170,19 @@ const WORKS_DATA = {
     {
       "label": "ベース配色（落ち着き）",
       "images": [
-        "./assets/works/dtp/03/detail1.webp",
-        "./assets/works/dtp/03/detail2.webp"
+        "./assets/works/dtp/03/detail1.webp"
       ]
     },
     {
       "label": "展開バリエーション（運用）",
       "images": [
-        "./assets/works/dtp/03/detail5.webp",
-        "./assets/works/dtp/03/detail6.webp",
-        "./assets/works/dtp/03/detail3.webp",
-        "./assets/works/dtp/03/detail4.webp"
+        "./assets/works/dtp/03/detail2.webp"
       ]
     },
     {
       "label": "アクセント配色（訴求）",
       "images": [
-        "./assets/works/dtp/03/detail7.webp",
-        "./assets/works/dtp/03/detail8.webp"
+        "./assets/works/dtp/03/detail3.webp"
       ]
     }
   ],
@@ -206,8 +201,7 @@ const WORKS_DATA = {
   "thumb": "./assets/works/dtp/05/hero.webp",
   "modalThumb": "./assets/works/dtp/05/thumb.webp",
   "detailImgs": [
-    "./assets/works/dtp/05/detail01.webp",
-    "./assets/works/dtp/05/detail02.webp"
+    "./assets/works/dtp/05/detail.webp"
   ],
   "outline": "建築会社の地主様向けチラシとして制作した実案件です。土地活用を身近に感じてもらえるよう、地域密着の明るいトーンで構成しました。",
   "target": "土地活用を検討する地主様・地域住民",
