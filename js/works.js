@@ -241,6 +241,7 @@ const WORKS_DATA = {
     {
       "label": "印刷用ロゴ",
       "images": [
+        "./assets/works/graphic/04/detail0.webp",
         "./assets/works/graphic/04/detail1.webp?v=20260227",
         "./assets/works/graphic/04/detail2.webp?v=20260227"
       ]
