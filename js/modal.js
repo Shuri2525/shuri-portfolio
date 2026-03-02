@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.querySelector(".modal-period").textContent = work.period || "";
     modal.querySelector(".modal-purpose").textContent = work.purpose || "";
     modal.querySelector(".modal-axis").textContent = getDesignAxis(work, category);
-    modal.querySelector(".modal-detail").textContent = work.detailText || "";
+    modal.querySelector(".modal-detail").innerHTML = work.detailText || "";
 
     updateNav(works.length);
 

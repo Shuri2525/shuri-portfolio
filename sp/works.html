@@ -439,7 +439,7 @@ const WORKS_DATA = {
     {
       "id": "04",
       "title": "新創建設｜末広がりを託したロゴ設計",
-      "modalTitle": "新創建設｜末広がりを託した<br>ロゴ設計",
+      "modalTitle": "新創建設｜末広がりを<br>託したロゴ設計",
       "tag": "ロゴ / 実案件",
       "thumb": "../assets/works/graphic/04/hero.webp",
       "modalThumb": "../assets/works/graphic/04/thumb.webp",
@@ -472,7 +472,7 @@ const WORKS_DATA = {
       "period": "10〜12日",
       "purpose": "企業の発展性と信頼感を、媒体をまたいで一貫して伝えるため",
       "designAxis": "象徴性 / 媒体適応 / 親和性",
-      "detailText": "「新創」の意味を軸に、成長と未来への広がりを表現しました。角ばった建設ロゴではなく、円形基調で調和と安心感を設計。カラーはグリーンを主軸にブルーを添え、誠実さと先進性を両立しています。印刷用途では再現性を優先してベタ配色、WEB・SNSでは表現幅としてグラデーションを展開しています。ご相談・ご依頼はInstagram（@sinso_kensetsu31）から受け付けています。"
+      "detailText": "「新創」の意味を軸に、成長と未来への広がりを表現しました。角ばった建設ロゴではなく、円形基調で調和と安心感を設計。カラーはグリーンを主軸にブルーを添え、誠実さと先進性を両立しています。印刷用途では再現性を優先してベタ配色、WEB・SNSでは表現幅としてグラデーションを展開しています。<br><span class=\"detail-note\">本ロゴ制作先企業のInstagram：@sinso_kensetsu31</span>"
     }
   ]
 };
@@ -624,7 +624,7 @@ function showWork(category, index) {
   document.getElementById('modalPeriod').textContent = work.period;
   document.getElementById('modalPurpose').textContent = work.purpose;
   document.getElementById('modalAxis').textContent = getDesignAxis(work, category);
-  document.getElementById('modalDetail').textContent = work.detailText;
+  document.getElementById('modalDetail').innerHTML = work.detailText;
 
   // 終点導線（最終作品のみ表示）
   const endActions = document.getElementById('modalEndActions');

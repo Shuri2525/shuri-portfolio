@@ -1176,7 +1176,7 @@ a {
 
 /* モーダルセクション */
 .sp-modal-section {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 
 .sp-modal-section:last-child {
@@ -2594,7 +2594,7 @@ a {
 
 /* モーダルセクション */
 .sp-modal-section {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 
 .sp-modal-section:last-child {
@@ -4718,4 +4718,14 @@ a {
 
 .sp-about .sp-ability-list .ability-section-title {
   margin-bottom: 10px;
+}
+
+#modalDetail .detail-note {
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8f8f8f;
+  letter-spacing: 0.02em;
 }

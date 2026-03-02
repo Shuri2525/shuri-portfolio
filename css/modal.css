@@ -217,7 +217,7 @@
 }
 
 .modal-section + .modal-section {
-  padding-top: 24px;
+  padding-top: 12px;
 }
 
 /* 最後のセクション（DETAIL）の下部に余白を確保 */
@@ -230,8 +230,12 @@
   margin-bottom: 0;
 }
 
+.modal-section:last-child .modal-text.modal-detail {
+  margin-bottom: 35px;
+}
+
 .modal-outline-section {
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 }
 
 @keyframes fadeInUp {
@@ -253,7 +257,7 @@
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.18em;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
   color: var(--color-dark);
   text-align: left;
 }
@@ -351,7 +355,7 @@
 ================================ */
 .modal-section-divider {
   border-top: 1px solid var(--modal-gray-300);
-  margin: 0 0 16px;
+  margin: 0 0 8px;
 }
 
 /* ================================
@@ -382,8 +386,8 @@
 
 .modal-detail-section-label:first-child {
   margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+  padding-top: 14px;
+  border-top: 1px solid #ededed;
 }
 
 /* ================================
@@ -503,4 +507,14 @@
 
 p.modal-text.modal-outline {
   margin-bottom: 35px !important;
+}
+
+.modal-detail .detail-note {
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8f8f8f;
+  letter-spacing: 0.02em;
 }
