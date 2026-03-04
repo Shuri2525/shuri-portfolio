@@ -4729,3 +4729,7 @@ a {
   color: #8f8f8f;
   letter-spacing: 0.02em;
 }
+#modalDetail .detail-note a {
+  color: inherit;
+  text-underline-offset: 2px;
+}

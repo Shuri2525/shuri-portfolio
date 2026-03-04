@@ -518,3 +518,7 @@ p.modal-text.modal-outline {
   color: #8f8f8f;
   letter-spacing: 0.02em;
 }
+.modal-detail .detail-note a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
