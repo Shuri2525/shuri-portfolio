@@ -106,7 +106,7 @@ const WORKS_DATA = {
   "tag": "名刺 / 個人制作",
   "thumb": "./assets/works/dtp/01/hero.jpg?v=20260226",
   "modalThumb": "./assets/works/dtp/01/thumb.jpg?v=20260226",
-  "detailImg": "./assets/works/dtp/01/detail.jpg",
+  "detailImg": "./assets/works/dtp/01/detail.jpg?v=20260305",
   "outline": "自身のブランディングを意識して制作した名刺です。シンプルな中にも印象に残るデザインを目指しました。",
   "target": "取引先・クライアント",
   "period": "2日",
