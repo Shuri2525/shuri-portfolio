@@ -235,6 +235,7 @@ const WORKS_DATA = {
   "id": "04",
   "title": "新創建設｜末広がりを託したロゴ設計",
   "tag": "ロゴ / 実案件",
+  "pickupLabel": "PICK UP",
   "thumb": "./assets/works/graphic/04/hero.webp",
   "modalThumb": "./assets/works/graphic/04/thumb.webp",
   "detailSections": [
@@ -301,6 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
       worksList.insertAdjacentHTML("beforeend", `
         <div class="work-item" data-id="${work.id}" data-category="${category}">
           <div class="work-thumb-wrap">
+            ${work.pickupLabel ? `<span class="work-pickup-badge">${work.pickupLabel}</span>` : ""}
             <img src="${work.thumb}" alt="${work.title}" class="work-thumb" loading="lazy" decoding="async">
           </div>
           <p class="work-title">${work.title}</p>
