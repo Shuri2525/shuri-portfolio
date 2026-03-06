@@ -4373,7 +4373,7 @@ a {
 
 
 .sp-top .sp-works-section {
-  padding-top: 56px;
+  padding-top: 40px;
   background: var(--color-light);
 }
 
@@ -4401,45 +4401,51 @@ a {
 }
 
 .sp-top .sp-about-section {
-  padding: 60px 20px 80px;
+  padding: 40px 20px 40px;
 }
 
-/* SP TOP：WORKS見出しとカードの間隔を少し詰める */
+/* SP TOP：WORKS見出し下 */
 .sp-top .sp-works-section .sp-works-header {
-  padding-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+/* SP TOP：ABOUT見出し下 */
+.sp-top .sp-about-section .sp-works-header {
+  padding-bottom: 16px;
 }
 
 .sp-top .sp-works-subheader {
   padding: 0 16px 12px;
-  text-align: left;
+  text-align: center;
 }
 
 .sp-top .sp-works-subheader-featured {
-  padding-top: 8px;
+  padding-top: 20px;
+  padding-bottom: 12px;
 }
 
 .sp-top .sp-works-subtitle {
   margin: 0;
   font-family: var(--font-en);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  color: var(--color-dark);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: rgba(45, 43, 42, 0.45);
 }
 
 .sp-top .sp-works-subcopy {
   margin: 6px 0 0;
   font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: #7f7f7f;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(63, 59, 58, 0.35);
 }
 
 .sp-top .category-list-featured {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  padding: 0 16px 10px;
+  padding: 0 16px 32px;
 }
 
 .sp-top .category-list-featured .featured-item {

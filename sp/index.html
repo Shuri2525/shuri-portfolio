@@ -102,7 +102,7 @@
     <!-- CATEGORY -->
     <div class="sp-works-subheader">
       <h3 class="sp-works-subtitle">CATEGORY</h3>
-      <p class="sp-works-subcopy">カテゴリから作品一覧へ</p>
+    
     </div>
     <div class="category-list">
       
@@ -150,7 +150,7 @@
     <!-- FEATURED WORK -->
     <div class="sp-works-subheader sp-works-subheader-featured">
       <h3 class="sp-works-subtitle">FEATURED WORK</h3>
-      <p class="sp-works-subcopy">注目実績を最短で表示</p>
+    
     </div>
     <div class="category-list category-list-featured">
       <div class="category-item featured-item">
@@ -380,35 +380,12 @@
     observer.observe(aboutCardWrapper);
   });
 
-  // ヘッダーロゴの表示制御
+  // ヘッダーロゴの表示制御（常時表示）
   const headerLogo = document.getElementById('headerLogo');
-  const heroTrigger = document.querySelector('.sp-hero-content');
-  const headerElement = document.getElementById('spHeader');
-  
-  function handleScroll() {
-    if (!headerElement) return;
-
-    if (!heroTrigger) {
-      headerLogo.style.opacity = '1';
-      headerLogo.style.visibility = 'visible';
-      return;
-    }
-
-    const triggerRect = heroTrigger.getBoundingClientRect();
-    const headerBottom = headerElement.getBoundingClientRect().bottom;
-
-    // ヒーローコピーがヘッダー下端に隠れるタイミングで表示
-    if (triggerRect.bottom <= headerBottom) {
-      headerLogo.style.opacity = '1';
-      headerLogo.style.visibility = 'visible';
-    } else {
-      headerLogo.style.opacity = '0';
-      headerLogo.style.visibility = 'hidden';
-    }
+  if (headerLogo) {
+    headerLogo.style.opacity = '1';
+    headerLogo.style.visibility = 'visible';
   }
-  
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
 
   // ハンバーガーメニュー
   const hamburger = document.getElementById('hamburger');
