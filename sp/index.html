@@ -147,35 +147,6 @@
 
     </div>
 
-    <!-- FEATURED WORK -->
-    <div class="sp-works-subheader sp-works-subheader-featured">
-      <h3 class="sp-works-subtitle">FEATURED WORK</h3>
-    
-    </div>
-    <div class="category-list category-list-featured">
-      <div class="category-item featured-item">
-        <div class="category-link" data-modal-url="./works.html?cat=graphic&id=04" role="link" tabindex="0" aria-label="新創建設ロゴ実績を開く">
-          <div class="category-thumb">
-            <img src="../assets/works/graphic/04/detail3.webp?v=20260227" alt="新創建設｜末広がりを託したロゴ設計">
-          </div>
-          <div class="category-info">
-            <span class="category-tag category-tag-static"># FEATURED LOGO</span>
-            <h3 class="category-title">新創建設｜ロゴ設計</h3>
-          </div>
-        </div>
-      </div>
-      <div class="category-item featured-item">
-        <div class="category-link" data-modal-url="./works.html?cat=dtp&id=03" role="link" tabindex="0" aria-label="更新運用に強い戸建て販売チラシを開く">
-          <div class="category-thumb">
-            <img src="../assets/works/dtp/03/hero.webp" alt="更新運用に強い戸建て販売チラシ">
-          </div>
-          <div class="category-info">
-            <span class="category-tag category-tag-static"># FEATURED DTP</span>
-            <h3 class="category-title">戸建て販売チラシ</h3>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ABOUTセクション -->
@@ -329,7 +300,7 @@
 
   // ページロード時の処理
   document.addEventListener('DOMContentLoaded', () => {
-    // TOP WORKS: CATEGORY/FEATUREDカードは指定URLへ遷移
+    // TOP WORKS: CATEGORYカードは指定URLへ遷移
     document.querySelectorAll('.category-link[data-modal-url]').forEach((card) => {
       const modalUrl = card.getAttribute('data-modal-url');
       if (!modalUrl) return;

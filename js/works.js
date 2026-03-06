@@ -101,69 +101,10 @@ const WORKS_DATA = {
 
   dtp: [
     {
-  "id": "01",
-  "title": "第一印象を整える名刺デザイン",
-  "tag": "名刺 / 個人制作",
-  "thumb": "./assets/works/dtp/01/hero.jpg?v=20260226",
-  "modalThumb": "./assets/works/dtp/01/thumb.jpg?v=20260226",
-  "detailImg": "./assets/works/dtp/01/detail.jpg?v=20260305",
-  "outline": "自身のブランディングを意識して制作した名刺です。シンプルな中にも印象に残るデザインを目指しました。",
-  "target": "取引先・クライアント",
-  "period": "2日",
-  "purpose": "初対面でも落ち着いて伝わる情報設計にするため",
-  "designAxis": "第一印象 / 可読性 / 再現性",
-  "detailText": "タイポグラフィと余白の取り方を丁寧に調整し、必要な情報が一目で伝わる構成に整えました。入稿時の再現性や可読性にも配慮し、実用面と印象面の両方を成立させています。入稿データ作成から納品まで一貫して対応しています。<br><span class=\"detail-note\">担当範囲：デザイン / 入稿データ作成</span>"
-}
-,
-  {
-  "id": "04",
-  "title": "新創建設｜信頼感を整える縦型名刺",
-  "tag": "名刺 / 実案件",
-  "thumb": "./assets/works/dtp/04/hero.webp",
-  "modalThumb": "./assets/works/dtp/04/thumb.webp",
-  "detailImg": "./assets/works/dtp/04/detail.webp",
-  "outline": "新創建設のブランドトーンに合わせて設計した、名刺デザイン。",
-  "target": "新創建設 / 取引先・協力会社",
-  "period": "3日",
-  "purpose": "建設業らしい安心感を維持しつつ、堅すぎない印象に整えるため",
-  "designAxis": "信頼感 / 可読性 / 余白設計",
-  "detailText": "縦型名刺の端正さを軸に、情報は横書きで整理して視線移動をスムーズに設計しました。ロゴ案件とトーンを揃えながら、実務で扱いやすい明瞭な情報階層にまとめています。入稿仕様の整理から納品データの最終調整まで担当しました。<br><span class=\"detail-note\">担当範囲：デザイン / 入稿データ作成</span>"
-}
-,
-  {
-  "id": "02",
-  "title": "説明しやすい三つ折りリーフレット",
-  "tag": "チラシ / 実案件",
-  "thumb": "./assets/works/dtp/02/hero.jpg?v=20260226",
-  "modalThumb": "./assets/works/dtp/02/thumb.jpg?v=20260226",
-  "detailSections": [
-    {
-      "label": "表（表紙・P1・裏表紙）",
-      "images": [
-        "./assets/works/dtp/02/detail01.webp"
-      ]
-    },
-    {
-      "label": "裏（P2・P3・P4）",
-      "images": [
-        "./assets/works/dtp/02/detail02.webp"
-      ]
-    }
-  ],
-  "outline": "外壁塗装サービスの三つ折りリーフレット。案内時に伝わりやすい順序と情報の展開を意識して制作しました。",
-  "target": "戸建住宅を検討する施主・住民",
-  "period": "12〜14日",
-  "purpose": "説明しやすさと読みやすさを両立するため",
-  "designAxis": "説明順序 / 情報圧縮 / 信頼感",
-  "detailText": "観音開きの特性を活かし、説明の流れが自然につながる情報設計に整えました。専門的な内容でも読みやすさを保てるよう、配色と要素配置を整理し、安心感とデザイン性の両立を意識しています。入稿形式の要件確認から納品データの調整まで責任を持って対応しました。<br><span class=\"detail-note\">担当範囲：社内ヒアリング / 構成設計 / テキスト作成 / 写真撮影 / デザイン / 入稿データ作成</span>"
-}
-,
-
-
-    {
   "id": "03",
   "title": "更新運用に強い戸建て販売チラシ",
   "tag": "チラシ / 実案件",
+  "pickupLabel": "PICK UP",
   "thumb": "./assets/works/dtp/03/hero.webp",
   "modalThumb": "./assets/works/dtp/03/thumb.webp",
   "detailSections": [
@@ -192,8 +133,48 @@ const WORKS_DATA = {
   "purpose": "更新しやすさと見やすさを継続できる設計にするため",
   "designAxis": "更新性 / 視認性 / 展開しやすさ",
   "detailText": "物件情報が主役として伝わるよう情報を整理し、視線が迷わない紙面構成に整えました。更新頻度の高い運用を想定し、配色を切り替えて展開できる設計で、統一感と更新性を両立しています。マップやQRの素材準備、物件撮影を含め、印刷会社との連携を踏まえて納品データを制作しました。<br><span class=\"detail-note\">担当範囲：社内ヒアリング / 構成設計 / テキスト作成 / 写真撮影 / デザイン / 入稿データ作成</span>"
-}
-,
+},
+  {
+  "id": "04",
+  "title": "新創建設｜信頼感を整える縦型名刺",
+  "tag": "名刺 / 実案件",
+  "thumb": "./assets/works/dtp/04/hero.webp",
+  "modalThumb": "./assets/works/dtp/04/thumb.webp",
+  "detailImg": "./assets/works/dtp/04/detail.webp",
+  "outline": "新創建設のブランドトーンに合わせて設計した、名刺デザイン。",
+  "target": "新創建設 / 取引先・協力会社",
+  "period": "3日",
+  "purpose": "建設業らしい安心感を維持しつつ、堅すぎない印象に整えるため",
+  "designAxis": "信頼感 / 可読性 / 余白設計",
+  "detailText": "縦型名刺の端正さを軸に、情報は横書きで整理して視線移動をスムーズに設計しました。ロゴ案件とトーンを揃えながら、実務で扱いやすい明瞭な情報階層にまとめています。入稿仕様の整理から納品データの最終調整まで担当しました。<br><span class=\"detail-note\">担当範囲：デザイン / 入稿データ作成</span>"
+},
+  {
+  "id": "02",
+  "title": "説明しやすい三つ折りリーフレット",
+  "tag": "チラシ / 実案件",
+  "thumb": "./assets/works/dtp/02/hero.jpg?v=20260226",
+  "modalThumb": "./assets/works/dtp/02/thumb.jpg?v=20260226",
+  "detailSections": [
+    {
+      "label": "表（表紙・P1・裏表紙）",
+      "images": [
+        "./assets/works/dtp/02/detail01.webp"
+      ]
+    },
+    {
+      "label": "裏（P2・P3・P4）",
+      "images": [
+        "./assets/works/dtp/02/detail02.webp"
+      ]
+    }
+  ],
+  "outline": "外壁塗装サービスの三つ折りリーフレット。案内時に伝わりやすい順序と情報の展開を意識して制作しました。",
+  "target": "戸建住宅を検討する施主・住民",
+  "period": "12〜14日",
+  "purpose": "説明しやすさと読みやすさを両立するため",
+  "designAxis": "説明順序 / 情報圧縮 / 信頼感",
+  "detailText": "観音開きの特性を活かし、説明の流れが自然につながる情報設計に整えました。専門的な内容でも読みやすさを保てるよう、配色と要素配置を整理し、安心感とデザイン性の両立を意識しています。入稿形式の要件確認から納品データの調整まで責任を持って対応しました。<br><span class=\"detail-note\">担当範囲：社内ヒアリング / 構成設計 / テキスト作成 / 写真撮影 / デザイン / 入稿データ作成</span>"
+},
     {
   "id": "05",
   "title": "地域密着で伝える土地活用チラシ",
@@ -280,6 +261,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const worksList = document.querySelector("#worksList");
   const catButtons = document.querySelectorAll(".cat-btn");
+  const DISPLAY_ORDER = {
+    web: ["01", "06", "02", "05", "03"],
+    dtp: ["03", "04", "02", "05"],
+    graphic: ["04", "01"]
+  };
 
   if (!worksList) {
     console.error("❌ #worksList が見つかりません");
@@ -296,7 +282,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    data.forEach(work => {
+    const order = DISPLAY_ORDER[category] || [];
+    const orderMap = new Map(order.map((id, index) => [id, index]));
+    const sortedData = [...data].sort((a, b) => {
+      const aOrder = orderMap.has(a.id) ? orderMap.get(a.id) : Number.MAX_SAFE_INTEGER;
+      const bOrder = orderMap.has(b.id) ? orderMap.get(b.id) : Number.MAX_SAFE_INTEGER;
+      return aOrder - bOrder;
+    });
+
+    sortedData.forEach(work => {
       const [tagEn, tagJa] = work.tag.split("/").map(t => t?.trim());
 
       worksList.insertAdjacentHTML("beforeend", `
