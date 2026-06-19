@@ -30,8 +30,8 @@ const WORKS_DATA = {
   "modalTitle": "看板・サイン制作会社の<br>コーポレートサイト",
   "tag": "コーポレート / 受託制作 / リニューアル",
     "pickupLabel": "PICK UP",
-  "thumb": "../assets/works/web/07/hero.jpg",
-  "modalThumb": "../assets/works/web/07/thumb.jpg",
+  "thumb": "./assets/works/web/07/hero.jpg",
+  "modalThumb": "./assets/works/web/07/thumb.jpg",
  "detailSections": [
   {
     "label": "PCデザイン",
