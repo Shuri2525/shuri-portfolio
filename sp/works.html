@@ -637,53 +637,63 @@ function showWork(category, index, direction = null) {
 
   if (direction && wrapper) {
     isAnimating = true;
+    const isNext    = direction === 'next';
+    const exitTo    = isNext ? '-100%' : '100%';
+    const enterFrom = isNext ? '100%'  : '-100%';
 
-    const isNext = direction === 'next';
-    const fromX  = isNext ? '0%'    : '0%';
-    const exitTo = isNext ? '-100%' : '100%';
-    const enterFrom = isNext ? '100%' : '-100%';
+    // アニメーション中はスクロール固定（縦揺れ防止）
+    overlay.style.overflow = 'hidden';
 
-    // 現カードをクローンしてoverlayに絶対配置
+    // 現在の表示位置を取得（スクロール固定後に計測）
+    const wrapperTop = wrapper.getBoundingClientRect().top;
+
+    // 現コンテンツをクローン（固定ヘッダーは除外してz-index競合を防ぐ）
     const clone = wrapper.cloneNode(true);
+    const clonedHeader = clone.querySelector('.sp-modal-header');
+    if (clonedHeader) clonedHeader.remove();
     clone.style.cssText = `
       position: fixed;
-      top: ${wrapper.getBoundingClientRect().top}px;
+      top: ${wrapperTop}px;
       left: 0; width: 100%;
-      z-index: 10001;
+      z-index: 10000;
       pointer-events: none;
-      border-radius: inherit;
+      border-radius: 12px 12px 0 0;
       background: var(--color-white);
-      transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
       will-change: transform;
     `;
     document.body.appendChild(clone);
 
-    // 新コンテンツをwrapperに差し替え（画面外に待機）
+    // スクロールをリセット（クローンが隠すのでチカつかない）
+    overlay.scrollTop = 0;
+
+    // 新コンテンツをセット・画面外に待機
     _fillWork(category, index, work);
-    wrapper.style.transform = `translateX(${enterFrom})`;
+    wrapper.style.willChange = 'transform';
     wrapper.style.transition = 'none';
+    wrapper.style.transform = `translateX(${enterFrom})`;
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        // 同時スライド
-        wrapper.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
-        wrapper.style.transform = 'translateX(0%)';
+        const easing = '0.30s cubic-bezier(0.4,0,0.2,1)';
+        wrapper.style.transition = `transform ${easing}`;
+        wrapper.style.transform = 'translateX(0)';
+        clone.style.transition = `transform ${easing}`;
         clone.style.transform = `translateX(${exitTo})`;
 
         setTimeout(() => {
           clone.remove();
           wrapper.style.transform = '';
           wrapper.style.transition = '';
-          overlay.scrollTop = 0;
+          wrapper.style.willChange = '';
+          overlay.style.overflow = '';
           isAnimating = false;
-        }, 340);
+        }, 320);
       });
     });
 
   } else {
     _fillWork(category, index, work);
-    const modal = document.getElementById('worksModal');
-    if (modal) modal.scrollTop = 0;
+    if (overlay) overlay.scrollTop = 0;
   }
 }
 
