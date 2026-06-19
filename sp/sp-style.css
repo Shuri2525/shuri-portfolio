@@ -4826,7 +4826,112 @@ a {
   background: rgba(245, 245, 245, 0.86);
   border: 1px solid rgba(63, 59, 58, 0.24);
   border-radius: 999px;
-  padding: 2px 7px;
-  line-height: 1.4;
+  padding: 4px 8px 3px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
   pointer-events: none;
+}
+
+/* ================================
+   SPモーダル スワイプアニメーション
+================================ */
+
+/* 退場：左へはける（次へ） */
+.sp-modal-content.sp-slide-exit-left {
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.26s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 退場：右へはける（前へ） */
+.sp-modal-content.sp-slide-exit-right {
+  transform: translateX(60px);
+  opacity: 0;
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.26s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 登場準備：右から来る（次へ） */
+.sp-modal-content.sp-slide-enter-right {
+  transform: translateX(60px);
+  opacity: 0;
+  transition: none;
+}
+
+/* 登場準備：左から来る（前へ） */
+.sp-modal-content.sp-slide-enter-left {
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: none;
+}
+
+/* 登場アニメーション */
+.sp-modal-content.sp-slide-entering {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.30s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.30s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* モーション軽減設定 */
+@media (prefers-reduced-motion: reduce) {
+  .sp-modal-content.sp-slide-exit-left,
+  .sp-modal-content.sp-slide-exit-right,
+  .sp-modal-content.sp-slide-entering {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+/* ================================
+   SPモーダル スワイプアニメーション（カード全体）
+================================ */
+
+/* アニメーション中はoverlayのスクロールを止めてクリップ */
+.sp-modal-overlay.is-animating {
+  overflow: hidden;
+}
+
+/* アニメーション中はwrapperのoverflowを解除 */
+.sp-modal-wrapper.sp-slide-exit-left,
+.sp-modal-wrapper.sp-slide-exit-right,
+.sp-modal-wrapper.sp-slide-enter-right,
+.sp-modal-wrapper.sp-slide-enter-left,
+.sp-modal-wrapper.sp-slide-entering {
+  overflow: visible;
+}
+
+.sp-modal-wrapper.sp-slide-exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.26s cubic-bezier(0.4,0,0.2,1), opacity 0.26s cubic-bezier(0.4,0,0.2,1);
+}
+.sp-modal-wrapper.sp-slide-exit-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.26s cubic-bezier(0.4,0,0.2,1), opacity 0.26s cubic-bezier(0.4,0,0.2,1);
+}
+.sp-modal-wrapper.sp-slide-enter-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: none;
+}
+.sp-modal-wrapper.sp-slide-enter-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: none;
+}
+.sp-modal-wrapper.sp-slide-entering {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.30s cubic-bezier(0.4,0,0.2,1), opacity 0.30s cubic-bezier(0.4,0,0.2,1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sp-modal-wrapper.sp-slide-exit-left,
+  .sp-modal-wrapper.sp-slide-exit-right,
+  .sp-modal-wrapper.sp-slide-entering {
+    transition: none; transform: none; opacity: 1;
+  }
 }

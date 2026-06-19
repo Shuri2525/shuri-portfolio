@@ -242,8 +242,10 @@ body.page-works {
   background: rgba(245, 245, 245, 0.86);
   border: 1px solid rgba(63, 59, 58, 0.24);
   border-radius: 999px;
-  padding: 3px 8px 2px;
-  line-height: 1.2;
+  padding: 5px 10px 4px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 .work-thumb {
@@ -301,6 +303,40 @@ body.page-works {
   right: 30px;
   top: 377px;
   width: 210px;
-  opacity: 0.04;
+  opacity: 0.03;
   pointer-events: none;
+}
+
+/* ================================
+   TOPへ戻るボタン
+================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-dark);
+  color: var(--color-light);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  opacity: 0.75;
 }

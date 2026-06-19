@@ -74,7 +74,8 @@
 ================================ */
 .modal-header {
   position: relative;
-  height: 96px;
+  min-height: 60px;
+  flex-shrink: 0;
   padding: 0 40px;
   background: var(--color-white);
   display: flex;

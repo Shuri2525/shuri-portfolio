@@ -3,6 +3,9 @@
 ================================ */
 const WORKS_DATA = {
   web: [
+
+
+
    {
   "id": "01",
   "title": "余白設計で魅せるポートフォリオ",
@@ -20,6 +23,36 @@ const WORKS_DATA = {
   "detailText": "視線の流れと余白のバランスを整え、落ち着いたトーンで全体を設計しました。作品そのものが引き立つよう装飾は抑え、心地よく読み進められる構成にまとめています。<br><span class=\"detail-note\">担当範囲：デザイン / コーディング / 公開（AI補助：Claude・ChatGPT、実装環境：Visual Studio Code）</span>"
 }
 ,
+
+{
+  "id": "07",
+  "title": "看板・サイン制作会社のコーポレートサイト",
+  "modalTitle": "看板・サイン制作会社の<br>コーポレートサイト",
+  "tag": "コーポレート / 受託制作 / リニューアル",
+    "pickupLabel": "PICK UP",
+  "thumb": "../assets/works/web/07/hero.jpg",
+  "modalThumb": "../assets/works/web/07/thumb.jpg",
+ "detailSections": [
+  {
+    "label": "PCデザイン",
+    "images": [
+      "./assets/works/web/07/detail.jpg"
+    ]
+  },
+  {
+    "label": "SPデザイン",
+    "images": [
+      "./assets/works/web/07/detail2.jpg"
+    ]
+  }
+],
+  "outline": "大分を拠点に看板・サイン制作を手がける冨城企画株式会社のコーポレートサイトのリニューアルです。SP対応の再設計と情報構造の見直しを行いました。イラストを活用した固定スクロール演出やアニメーションで、空間への価値提供という世界観を視覚的に表現しています。",
+  "target": "地域に根ざした看板・サイン制作の依頼を検討している事業者",
+  "period": "約1.5ヶ月",
+  "purpose": "レスポンシブ対応と事業内容の整理により、あらゆる端末で企業の信頼感と施工力が伝わるサイトに刷新するため",
+  "designAxis": "レスポンシブ設計 / 固定スクロール演出 / イラストとテキストの対比 / 清潔感のある配色",
+  "detailText": "SP非対応という課題を解消しながら、事業内容を4カテゴリに整理して訴求力を高めました。ヒーローセクションではイラストを画面右半分に固定し、キャッチコピーからABOUTへテキストだけがスクロールする演出で、空間づくりへのこだわりを体験として伝える構成を設計しています。看板・サインという視覚的な事業との一貫性を意識し、余白・タイポグラフィ・アイスブルーの配色で清潔感と専門性を両立しました。<br><span class=\"detail-note\">担当範囲：デザイン / コーディング / 公開（AI補助：Claude、実装環境：Visual Studio Code）納品日：2026年4月30日</span>"
+},
     {
   "id": "02",
   "title": "予約導線を整えたホテルサイト",
@@ -38,7 +71,7 @@ const WORKS_DATA = {
     {
   "id": "03",
   "title": "癒しの空気感を伝えるヘッドスパLP",
-  "tag": "TOPページ / コンペ制作",
+  "tag": "TOPページ / カンプ / コンペ制作",
   "thumb": "./assets/works/web/03/hero.jpg",
   "modalThumb": "./assets/works/web/03/thumb.jpg",
   "detailImg": "./assets/works/web/03/detail.jpg",
@@ -70,7 +103,7 @@ const WORKS_DATA = {
 {
   "id": "05",
   "title": "信頼と先進性を両立した医院サイト",
-  "tag": "TOPページ / コンペ制作",
+  "tag": "TOPページ / カンプ / コンペ制作",
   "thumb": "./assets/works/web/05/hero.jpg",
   "modalThumb": "./assets/works/web/05/thumb.jpg",
   "detailImg": "./assets/works/web/05/detail.png",
@@ -85,7 +118,7 @@ const WORKS_DATA = {
 {
   "id": "06",
   "title": "地域に伝わる消防団ポータル設計",
-  "tag": "TOPページ / コンペ制作",
+  "tag": "TOPページ / カンプ  / コンペ制作",
   "thumb": "./assets/works/web/06/hero.jpg",
   "modalThumb": "./assets/works/web/06/thumb.jpg",
   "detailImg": "./assets/works/web/06/detail.jpg",
@@ -262,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const worksList = document.querySelector("#worksList");
   const catButtons = document.querySelectorAll(".cat-btn");
   const DISPLAY_ORDER = {
-    web: ["01", "06", "02", "05", "03"],
+    web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"]
   };

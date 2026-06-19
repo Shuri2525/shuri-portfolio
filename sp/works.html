@@ -208,6 +208,9 @@
 // WORKSデータ（完全版・修正済み）
 const WORKS_DATA = {
   web: [
+
+
+
     {
       "id": "01",
       "title": "余白設計で魅せるポートフォリオ",
@@ -224,6 +227,37 @@ const WORKS_DATA = {
       "designAxis": "余白設計 / 情報階層 / 世界観の統一",
       "detailText": "視線の流れと余白のバランスを整え、落ち着いたトーンで全体を設計しました。作品そのものが引き立つよう装飾は抑え、心地よく読み進められる構成にまとめています。<br><span class=\"detail-note\">担当範囲：デザイン / コーディング / 公開（AI補助：Claude・ChatGPT、実装環境：Visual Studio Code）</span>"
     },
+
+
+{
+  "id": "07",
+  "title": "看板・サイン制作会社のコーポレートサイト",
+  "modalTitle": "看板・サイン制作会社の<br>コーポレートサイト",
+  "tag": "コーポレート / 受託制作 / リニューアル",
+  "pickupLabel": "PICK UP",
+  "thumb": "../assets/works/web/07/hero.jpg",
+  "modalThumb": "../assets/works/web/07/thumb.jpg",
+ "detailSections": [
+  {
+    "label": "PCデザイン",
+    "images": [
+      "../assets/works/web/07/detail.jpg"
+    ]
+  },
+  {
+    "label": "SPデザイン",
+    "images": [
+      "../assets/works/web/07/detail2.jpg"
+    ]
+  }
+],
+  "outline": "大分を拠点に看板・サイン制作を手がける冨城企画株式会社のコーポレートサイトのリニューアルです。SP対応の再設計と情報構造の見直しを行いました。イラストを活用した固定スクロール演出やアニメーションで、空間への価値提供という世界観を視覚的に表現しています。",
+  "target": "地域に根ざした看板・サイン制作の依頼を検討している事業者",
+  "period": "約1.5ヶ月",
+  "purpose": "レスポンシブ対応と事業内容の整理により、あらゆる端末で企業の信頼感と施工力が伝わるサイトに刷新するため",
+  "designAxis": "レスポンシブ設計 / 固定スクロール演出 / イラストとテキストの対比 / 清潔感のある配色",
+  "detailText": "SP非対応という課題を解消しながら、事業内容を4カテゴリに整理して訴求力を高めました。ヒーローセクションではイラストを画面右半分に固定し、キャッチコピーからABOUTへテキストだけがスクロールする演出で、空間づくりへのこだわりを体験として伝える構成を設計しています。看板・サインという視覚的な事業との一貫性を意識し、余白・タイポグラフィ・アイスブルーの配色で清潔感と専門性を両立しました。<br><span class=\"detail-note\">担当範囲：デザイン / コーディング / 公開（AI補助：Claude、実装環境：Visual Studio Code）納品日：2026年4月30日</span>"
+},
 
     {
       "id": "06",
@@ -590,11 +624,70 @@ function formatModalTitle(work) {
   return `${plain.slice(0, breakIndex)}<br>${plain.slice(breakIndex)}`;
 }
 
-function showWork(category, index) {
+let isAnimating = false;
+
+function showWork(category, index, direction = null) {
+  if (isAnimating) return;
   const works = WORKS_DATA[category] || [];
   const work = works[index];
   if (!work) return;
 
+  const wrapper = document.querySelector('.sp-modal-wrapper');
+  const overlay = document.getElementById('worksModal');
+
+  if (direction && wrapper) {
+    isAnimating = true;
+
+    const isNext = direction === 'next';
+    const fromX  = isNext ? '0%'    : '0%';
+    const exitTo = isNext ? '-100%' : '100%';
+    const enterFrom = isNext ? '100%' : '-100%';
+
+    // 現カードをクローンしてoverlayに絶対配置
+    const clone = wrapper.cloneNode(true);
+    clone.style.cssText = `
+      position: fixed;
+      top: ${wrapper.getBoundingClientRect().top}px;
+      left: 0; width: 100%;
+      z-index: 10001;
+      pointer-events: none;
+      border-radius: inherit;
+      background: var(--color-white);
+      transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+      will-change: transform;
+    `;
+    document.body.appendChild(clone);
+
+    // 新コンテンツをwrapperに差し替え（画面外に待機）
+    _fillWork(category, index, work);
+    wrapper.style.transform = `translateX(${enterFrom})`;
+    wrapper.style.transition = 'none';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // 同時スライド
+        wrapper.style.transition = 'transform 0.32s cubic-bezier(0.4,0,0.2,1)';
+        wrapper.style.transform = 'translateX(0%)';
+        clone.style.transform = `translateX(${exitTo})`;
+
+        setTimeout(() => {
+          clone.remove();
+          wrapper.style.transform = '';
+          wrapper.style.transition = '';
+          overlay.scrollTop = 0;
+          isAnimating = false;
+        }, 340);
+      });
+    });
+
+  } else {
+    _fillWork(category, index, work);
+    const modal = document.getElementById('worksModal');
+    if (modal) modal.scrollTop = 0;
+  }
+}
+
+function _fillWork(category, index, work) {
   // データを設定
   const modal = document.getElementById('worksModal');
   modal.classList.remove('modal-cat-web', 'modal-cat-dtp', 'modal-cat-graphic');
@@ -617,15 +710,16 @@ function showWork(category, index) {
   document.getElementById('modalDetail').innerHTML = work.detailText;
 
   // 終点導線（最終作品のみ表示）
+  const _totalWorks = (WORKS_DATA[category] || []).length;
   const endActions = document.getElementById('modalEndActions');
   if (endActions) {
-    const isLast = index >= works.length - 1;
+    const isLast = index >= _totalWorks - 1;
     endActions.style.display = isLast ? 'flex' : 'none';
     endActions.setAttribute('aria-hidden', isLast ? 'false' : 'true');
   }
   const footerNav = document.querySelector('.sp-modal-footer-nav');
   if (footerNav) {
-    const isLast = index >= works.length - 1;
+    const isLast = index >= _totalWorks - 1;
     footerNav.style.display = isLast ? 'none' : 'flex';
   }
   
@@ -674,16 +768,7 @@ function showWork(category, index) {
 
   // ナビ状態
   if (typeof window.updateModalNav === 'function') {
-    window.updateModalNav(works.length);
-  }
-
-  // 先頭にスクロール
-  const modalEl = document.getElementById('worksModal');
-  if (modalEl) {
-    modalEl.scrollTop = 0;
-    requestAnimationFrame(() => {
-      modalEl.scrollTop = 0;
-    });
+    window.updateModalNav((WORKS_DATA[category] || []).length);
   }
 }
 
@@ -750,20 +835,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // グローバル参照用
   window.updateModalNav = updateModalNav;
 
-  // 前後移動
   function goPrev() {
+    if (isAnimating) return;
     const works = WORKS_DATA[currentCategory] || [];
     if (currentIndex > 0) {
       currentIndex -= 1;
-      showWork(currentCategory, currentIndex);
+      showWork(currentCategory, currentIndex, 'prev');
     }
   }
 
   function goNext() {
+    if (isAnimating) return;
     const works = WORKS_DATA[currentCategory] || [];
     if (currentIndex < works.length - 1) {
       currentIndex += 1;
-      showWork(currentCategory, currentIndex);
+      showWork(currentCategory, currentIndex, 'next');
     }
   }
 
@@ -775,25 +861,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerPrevBtn) footerPrevBtn.addEventListener('click', goPrev);
   if (footerNextBtn) footerNextBtn.addEventListener('click', goNext);
 
-  // スワイプで前後移動
+  // スワイプで前後移動（縦スクロールと分離）
   let touchStartX = 0;
   let touchStartY = 0;
+  let swipeCancelled = false;
+
   modalWrapper.addEventListener('touchstart', (e) => {
     const touch = e.touches[0];
     touchStartX = touch.clientX;
     touchStartY = touch.clientY;
+    swipeCancelled = false;
+  }, { passive: true });
+
+  modalWrapper.addEventListener('touchmove', (e) => {
+    if (swipeCancelled) return;
+    const touch = e.touches[0];
+    const dx = Math.abs(touch.clientX - touchStartX);
+    const dy = Math.abs(touch.clientY - touchStartY);
+    // 縦方向の動きが大きければスワイプキャンセル（縦スクロール優先）
+    if (dy > dx && dy > 10) {
+      swipeCancelled = true;
+    }
   }, { passive: true });
 
   modalWrapper.addEventListener('touchend', (e) => {
+    if (swipeCancelled) return;
     const touch = e.changedTouches[0];
     const dx = touch.clientX - touchStartX;
     const dy = touch.clientY - touchStartY;
-
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    // 横方向60px以上かつ横>縦の場合のみ作動
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
       if (dx > 0) {
-        goPrev();
+        goPrev();  // 右スワイプ → 前へ
       } else {
-        goNext();
+        goNext();  // 左スワイプ → 次へ
       }
     }
   }, { passive: true });
