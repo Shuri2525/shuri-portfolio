@@ -523,7 +523,16 @@ a {
 }
 
 .category-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 16px 20px;
+}
+
+.category-info-text {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .category-tag {
@@ -541,6 +550,14 @@ a {
   letter-spacing: 0.06em;
   color: #666;
   margin: 0;
+}
+
+.category-arrow {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 200;
+  color: var(--color-dark);
+  opacity: 0.7;
 }
 
 /* カテゴリボタン群（旧スタイル - 使用しない場合は削除可） */
@@ -1943,7 +1960,16 @@ a {
 }
 
 .category-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 16px 20px;
+}
+
+.category-info-text {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .category-tag {
@@ -1961,6 +1987,14 @@ a {
   letter-spacing: 0.06em;
   color: #666;
   margin: 0;
+}
+
+.category-arrow {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 200;
+  color: var(--color-dark);
+  opacity: 0.7;
 }
 
 /* カテゴリボタン群（旧スタイル - 使用しない場合は削除可） */
