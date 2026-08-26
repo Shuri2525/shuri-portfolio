@@ -708,7 +708,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.9;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
   color: #3f3b3a;
   text-align: center;
 }
@@ -4569,7 +4569,15 @@ a {
 }
 
 .sp-top .about-philosophy {
-  margin: 10px 0 50px;
+  margin: 10px 0 20px;
+}
+
+.sp-top .about-philosophy:first-of-type {
+  margin-top: 0;
+}
+
+.sp-top .about-philosophy:last-of-type {
+  margin-bottom: 50px;
 }
 
 .sp-top .about-card-footer {
