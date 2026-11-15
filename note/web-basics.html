@@ -211,15 +211,10 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -315,7 +310,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
     <p class="sec-sub">用語集</p>
     <dl class="gloss"><dt>alt</dt><dd>画像の内容を言葉で伝える属性。読み上げや画像が出ないときに使われる。<a href="#vol10">第10回</a></dd><dt>CDN</dt><dd>世界中のサーバーにファイルを置き、近い場所から届ける仕組み。<a href="#vol09">第9回</a></dd><dt>Core Web Vitals</dt><dd>Googleがページの使い心地を測る3つの指標（LCP・INP・CLS）。<a href="#vol09">第9回</a></dd><dt>CSS</dt><dd>ページの見た目を指定する言語。<a href="#vol05">第5回</a></dd><dt>DNS</dt><dd>ドメインをIPアドレスに変換する仕組み。<a href="#vol01">第1回</a></dd><dt>DOM</dt><dd>ブラウザがHTMLから作る、文書の構造。JavaScriptで操作できる。<a href="#vol08">第8回</a></dd><dt>Git</dt><dd>ファイルの変更履歴を記録する仕組み。<a href="#vol12">第12回</a></dd><dt>HTML</dt><dd>ページの中身と構造を書く言語。<a href="#vol04">第4回</a></dd><dt>HTTP / HTTPS</dt><dd>ブラウザとサーバーのやりとりの決まり。Sは暗号化された形。<a href="#vol01">第1回</a></dd><dt>OGP</dt><dd>SNSでシェアされたときのタイトル・説明・画像を指定する仕組み。<a href="#vol11">第11回</a></dd><dt>rem</dt><dd>ページの基準の文字サイズ（通常16px）の何倍かを表す単位。<a href="#vol06">第6回</a></dd><dt>sRGB</dt><dd>Webの標準の色空間。<a href="#vol02">第2回</a></dd><dt>SVG</dt><dd>線と面の式でできた画像形式。拡大してもぼけない。<a href="#vol03">第3回</a></dd><dt>WCAG</dt><dd>Webアクセシビリティの国際的な基準。最新は2.2。<a href="#vol10">第10回</a></dd><dt>WOFF2</dt><dd>Webフォントの圧縮形式。<a href="#vol07">第7回</a></dd><dt>キャッシュ</dt><dd>一度読み込んだファイルをブラウザが保存しておく仕組み。<a href="#vol09">第9回</a></dd><dt>コンテナクエリ</dt><dd>部品が置かれた箱の幅で、スタイルを切り替える仕組み。<a href="#vol06">第6回</a></dd><dt>詳細度</dt><dd>CSSの指定がぶつかったときの優先度。<a href="#vol05">第5回</a></dd><dt>セマンティクス</dt><dd>HTMLの要素が持つ意味。<a href="#vol04">第4回</a></dd><dt>デバイスピクセル比</dt><dd>画面の1pxを、何点の細かさで表示するかの比率。<a href="#vol03">第3回</a></dd><dt>ブレークポイント</dt><dd>レイアウトを切り替える画面幅。<a href="#vol06">第6回</a></dd><dt>ボックスモデル</dt><dd>すべての要素を中身・内側の余白・枠線・外側の余白の箱として扱う考え方。<a href="#vol05">第5回</a></dd><dt>レスポンシブ</dt><dd>画面幅に合わせてレイアウトが変わるつくり。<a href="#vol06">第6回</a></dd></dl>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 07 / 08</p><a class="prev" href="illustrator-shortcuts.html"><span class="pg-l">← PREV</span><span class="pg-en">ILLUSTRATOR SHORTCUTS</span><span class="pg-ja">イラレのショートカット帳</span></a><a class="next" href="ai-basics.html"><span class="pg-l">NEXT →</span><span class="pg-en">AI BASICS</span><span class="pg-ja">AIのきほん帳</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="prev" href="illustrator-shortcuts.html">← PREV</a><a class="next" href="ai-basics.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：Google（web.dev）「Core Web Vitals」「Baseline」関連記事／W3C「What’s New in WCAG 2.2」／Meta（Facebook）のOGP画像推奨サイズ。基準値やブラウザの対応状況は2026年11月時点の情報です。図は説明用のイメージです。</p>

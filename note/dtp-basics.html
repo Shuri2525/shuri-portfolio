@@ -209,15 +209,10 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -858,7 +853,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
       <dt>リッチブラック</dt><dd>K100%に他の色を少し混ぜた深い黒。<a href="#vol06">第6回</a></dd>
     </dl>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 01 / 08</p><a class="next" href="type-basics.html"><span class="pg-l">NEXT →</span><span class="pg-en">TYPE BASICS</span><span class="pg-ja">文字・フォントのきほん帳</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="next" href="type-basics.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：沖データ株式会社「いまさら聞けない!? DTP・印刷の基礎知識」第1回〜第11回／アドビ「PDF Printing Guide 2026」／Adobe ヘルプセンター「PostScript Type 1 フォントのサポート終了」。内容は自分の言葉で要約・再構成し、ソフトの情報を2026年版に更新しています。図は説明用のイメージです。</p>

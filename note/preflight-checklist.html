@@ -242,15 +242,10 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -337,7 +332,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
     <p class="sec-sub">用語集</p>
     <dl class="gloss"><dt>オーバープリント</dt><dd>下の色を抜かずに、上に重ねて刷ること。<a href="#vol04">04 色</a></dd><dt>出力見本</dt><dd>仕上がりを確認するためのPDFやJPG。<a href="#vol06">06 書き出し</a></dd><dt>色校正</dt><dd>本番に近い紙とインクで試し刷りすること。<a href="#vol07">07 入稿後</a></dd><dt>墨ノセ</dt><dd>K100の文字などを、オーバープリントで刷ること。<a href="#vol04">04 色</a></dd><dt>総インキ量（TAC）</dt><dd>CMYKの4色の値を合計した量。<a href="#vol04">04 色</a></dd><dt>トンボ</dt><dd>断裁や折りの位置を示す印。トリムマーク。<a href="#vol01">01 基本</a></dd><dt>特色（スポットカラー）</dt><dd>CMYKの掛け合わせではなく、専用に調合したインク。<a href="#vol04">04 色</a></dd><dt>パッケージ</dt><dd>データとリンク画像・フォントを1つのフォルダに集める機能。<a href="#vol06">06 書き出し</a></dd><dt>PDF/X-1a・X-4</dt><dd>印刷用のPDFの規格。X-1aは透明を分割・統合し、X-4は透明をそのまま持つ。<a href="#vol06">06 書き出し</a></dd><dt>分割・統合</dt><dd>透明や描画モードを、画像とパスに分けて変換すること。<a href="#vol05">05 線・効果</a></dd><dt>リッチブラック</dt><dd>K100にCMYを足した、深い黒。<a href="#vol04">04 色</a></dd><dt>ラスタライズ効果</dt><dd>影やぼかしなど、出力で画像になる効果。<a href="#vol05">05 線・効果</a></dd></dl>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 04 / 08</p><a class="prev" href="layout-basics.html"><span class="pg-l">← PREV</span><span class="pg-en">LAYOUT BASICS</span><span class="pg-ja">レイアウトのきほん帳</span></a><a class="next" href="fx-recipes.html"><span class="pg-l">NEXT →</span><span class="pg-en">FX RECIPES</span><span class="pg-ja">イラレの加工帳</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="prev" href="layout-basics.html">← PREV</a><a class="next" href="fx-recipes.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：Adobe Illustrator ユーザーガイド（ドキュメント設定・リンク・パッケージ・オーバープリント・分割・統合・PDF書き出し）、各印刷会社の入稿ガイドで共通して挙げられている項目をもとにまとめました。数値は一般的な目安です。入稿の形式や数値は、必ず依頼先の印刷会社の指定に従ってください。</p>

@@ -236,15 +236,10 @@ body.os-win .mac,body:not(.os-win) .win{display:none!important}
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -343,7 +338,7 @@ body.os-win .mac,body:not(.os-win) .win{display:none!important}
     <p class="sec-sub">キーの記号</p>
     <div class="keytab"><div class="kt-h"><span>Mac</span><span>名前</span><span>Windows</span></div><div class="kt-r"><span><kbd>⌘</kbd></span><span>command</span><span><kbd>Ctrl</kbd></span></div><div class="kt-r"><span><kbd>⌥</kbd></span><span>option</span><span><kbd>Alt</kbd></span></div><div class="kt-r"><span><kbd>⇧</kbd></span><span>shift</span><span><kbd>Shift</kbd></span></div><div class="kt-r"><span><kbd>⏎</kbd></span><span>return</span><span><kbd>Enter</kbd></span></div><div class="kt-r"><span><kbd>⌫</kbd></span><span>delete</span><span><kbd>Backspace</kbd></span></div><div class="kt-r"><span><kbd>Esc</kbd></span><span>escape</span><span><kbd>Esc</kbd></span></div><div class="kt-r"><span><kbd>Space</kbd></span><span>スペース</span><span><kbd>Space</kbd></span></div><div class="kt-r"><span><kbd>F1〜F12</kbd></span><span>ファンクション（fnと一緒に）</span><span><kbd>F1〜F12</kbd></span></div></div>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 06 / 08</p><a class="prev" href="fx-recipes.html"><span class="pg-l">← PREV</span><span class="pg-en">FX RECIPES</span><span class="pg-ja">イラレの加工帳</span></a><a class="next" href="web-basics.html"><span class="pg-l">NEXT →</span><span class="pg-en">WEB BASICS</span><span class="pg-ja">Webのきほん帳</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="prev" href="fx-recipes.html">← PREV</a><a class="next" href="web-basics.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：Adobe Illustrator ユーザーガイド「デフォルトのキーボードショートカット」「キーボードショートカットのカスタマイズ」。Illustrator 30（Creative Cloud 2026年版）の初期設定にもとづいています。ショートカットを自分で変えている場合や、キーボードの配列によっては、表示と違うことがあります。</p>

@@ -214,15 +214,10 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -322,7 +317,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
     <p class="sec-sub">用語集</p>
     <dl class="gloss"><dt>テクスチャライザー</dt><dd>キャンバスや麻布などの凹凸を加えるPhotoshop効果。<a href="#vol10">第10回</a></dd><dt>画像トレース</dt><dd>画像をパスに変換する機能。<a href="#vol10">第10回</a></dd><dt>ハーフトーン</dt><dd>色の濃さを点の大きさで表す表現。網点。<a href="#vol10">第10回</a></dd><dt>アピアランス</dt><dd>オブジェクトの見た目（塗り・線・効果の重なり）。<a href="#vol01">第1回</a></dd><dt>アピアランスを分割</dt><dd>重ねた見た目を、普通のパスや画像に変換すること。<a href="#vol01">第1回</a></dd><dt>エンベロープ</dt><dd>形やメッシュに合わせてオブジェクトをゆがめる機能。<a href="#vol06">第6回</a></dd><dt>グラフィックスタイル</dt><dd>アピアランスをまとめて保存したもの。<a href="#vol02">第2回</a></dd><dt>シェイプ形成ツール</dt><dd>重なった図形を、ドラッグで合体・クリックで削除するツール。<a href="#vol03">第3回</a></dd><dt>スムーズカラー</dt><dd>ブレンドで、色がなめらかにつながる設定。<a href="#vol05">第5回</a></dd><dt>線幅ツール</dt><dd>線の途中の太さを変えるツール。<a href="#vol04">第4回</a></dd><dt>パスファインダー</dt><dd>図形を合体・型抜き・交差などで組み合わせる機能。<a href="#vol03">第3回</a></dd><dt>描画モード</dt><dd>重なった色の混ざり方（乗算・スクリーンなど）。<a href="#vol07">第7回</a></dd><dt>複合シェイプ</dt><dd>元の形を残したままの型抜き・合体。<a href="#vol03">第3回</a></dd><dt>不透明マスク</dt><dd>白黒の形で、部分的に透明にする機能。<a href="#vol07">第7回</a></dd><dt>ブレンド</dt><dd>2つのオブジェクトの間を中間の形と色で埋める機能。<a href="#vol05">第5回</a></dd><dt>ラスタライズ効果</dt><dd>出力時に画像になる効果（影・ぼかしなど）とその解像度。<a href="#vol14">第14回</a></dd><dt>ワープ</dt><dd>アーチや旗などの決まった形にゆがめる効果。<a href="#vol06">第6回</a></dd></dl>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 05 / 08</p><a class="prev" href="preflight-checklist.html"><span class="pg-l">← PREV</span><span class="pg-en">PREFLIGHT CHECK</span><span class="pg-ja">入稿チェックリスト</span></a><a class="next" href="illustrator-shortcuts.html"><span class="pg-l">NEXT →</span><span class="pg-en">ILLUSTRATOR SHORTCUTS</span><span class="pg-ja">イラレのショートカット帳</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="prev" href="preflight-checklist.html">← PREV</a><a class="next" href="illustrator-shortcuts.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：Adobe Illustrator ユーザーガイド（アピアランス・効果・パスファインダー・ブレンド・エンベロープ・3Dとマテリアル・透明）。メニュー名と操作は Illustrator 30（Creative Cloud 2026年版）の日本語版にもとづいています。図は仕上がりのイメージで、実際の効果の見た目とは少し異なります。</p>

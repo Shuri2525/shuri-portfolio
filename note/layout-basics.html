@@ -213,15 +213,10 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
 .bx{word-break:keep-all;overflow-wrap:anywhere}
-.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
-.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
-.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
-.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
-.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
-.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
-.pager .next{text-align:right;align-items:flex-end;grid-column:2}
-.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
-@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
+.pager{display:flex;justify-content:space-between;align-items:center;margin:72px 0 0}
+.pager a{font-family:var(--font-en);font-size:14px;letter-spacing:.16em;color:var(--color-dark);text-decoration:none;transition:opacity .2s}
+.pager a:hover{opacity:.6}
+.pager .next{margin-left:auto}
 </style>
 </head>
 <body id="top">
@@ -319,7 +314,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
     <p class="sec-sub">用語集</p>
     <dl class="gloss"><dt>角版（かくはん）</dt><dd>写真を四角いまま使うこと。<a href="#vol07">第7回</a></dd><dt>ガター</dt><dd>コラムとコラムの間のすき間。<a href="#vol02">第2回</a></dd><dt>キーオブジェクト</dt><dd>整列するときに動かさない基準のもの。<a href="#vol05">第5回</a></dd><dt>近接</dt><dd>関係のあるものを近くに置くと、仲間に見えること。<a href="#vol03">第3回</a></dd><dt>切り抜き</dt><dd>写真の背景を消して、形で切ること。<a href="#vol07">第7回</a></dd><dt>コラム（段）</dt><dd>版面を縦に分けた1列。<a href="#vol02">第2回</a></dd><dt>小口（こぐち）</dt><dd>冊子の開く側の端。<a href="#vol01">第1回</a></dd><dt>裁ち落とし</dt><dd>仕上がり線の外まで背景や写真を伸ばすこと。塗り足しとも。<a href="#vol01">第1回</a></dd><dt>天・地</dt><dd>紙面の上と下。<a href="#vol01">第1回</a></dd><dt>トリミング</dt><dd>写真の必要な部分だけを切り取ること。<a href="#vol07">第7回</a></dd><dt>中綴じ</dt><dd>重ねた紙を真ん中で綴じる製本。ページ数は4の倍数。<a href="#vol09">第9回</a></dd><dt>ノド</dt><dd>冊子の綴じる側。<a href="#vol01">第1回</a></dd><dt>ノンブル</dt><dd>ページ番号。<a href="#vol09">第9回</a></dd><dt>版面（はんづら）</dt><dd>文字や写真を入れる範囲。<a href="#vol01">第1回</a></dd><dt>反復</dt><dd>同じルールを繰り返して統一感を出すこと。<a href="#vol13">第13回</a></dd><dt>マージン</dt><dd>版面の外側の余白。<a href="#vol01">第1回</a></dd><dt>巻三つ折り</dt><dd>内側に巻き込むように三つに折る形。<a href="#vol09">第9回</a></dd><dt>モジュール</dt><dd>縦横に区切ったグリッドの1マス。<a href="#vol02">第2回</a></dd><dt>ラフ</dt><dd>配置を考えるための手描きの下書き。<a href="#vol03">第3回</a></dd></dl>
 
-    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 03 / 08</p><a class="prev" href="type-basics.html"><span class="pg-l">← PREV</span><span class="pg-en">TYPE BASICS</span><span class="pg-ja">文字・フォントのきほん帳</span></a><a class="next" href="preflight-checklist.html"><span class="pg-l">NEXT →</span><span class="pg-en">PREFLIGHT CHECK</span><span class="pg-ja">入稿チェックリスト</span></a></nav>
+    <nav class="pager" aria-label="ほかのノートへ"><a class="prev" href="type-basics.html">← PREV</a><a class="next" href="preflight-checklist.html">NEXT →</a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：Adobe Illustrator ユーザーガイド（アートボード・整列・グリッドに分割・リピート・トリミング表示）。サイズや数値は一般的な紙媒体での目安で、印刷会社や媒体の指定がある場合はそちらを優先してください。Illustratorの操作は Illustrator 30（Creative Cloud 2026年版）の日本語版にもとづいています。図は説明用のイメージです。</p>
