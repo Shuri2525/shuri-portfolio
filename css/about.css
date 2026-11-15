@@ -234,8 +234,14 @@ a {
   opacity: 0.75;
 }
 
+/* 写真＋名前を、見出しの下の本文の高さの中央にそろえる
+   padding-top = CONCEPT〜サブタイトルの高さ（150px） */
 .about-profile-image-block {
-  padding-top: 45px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 150px;
 }
 /* ================================
    SKILL & PROFILE / CONTACT 横並び
