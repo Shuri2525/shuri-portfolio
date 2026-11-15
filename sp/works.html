@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="../assets/common/logo_3f3b3a.svg">
 
   <!-- デバイス判定・自動リダイレクト -->
-  <script src="../js/device-redirect.js"></script>
+  <script src="../js/device-redirect.js?v=20261115"></script>
 
   <!-- PC版への関連づけ（SEO対策） -->
   <link rel="canonical" href="../works.html">
@@ -102,6 +102,7 @@
     <button class="sp-cat-btn active" data-cat="web"># WEB</button>
     <button class="sp-cat-btn" data-cat="dtp"># DTP</button>
     <button class="sp-cat-btn" data-cat="graphic"># GRAPHIC</button>
+    <button class="sp-cat-btn" data-cat="note"># NOTE</button>
   </section>
 
 </main>
@@ -495,7 +496,16 @@ const WORKS_DATA = {
   "detailText": "シンプルな造形に複数の意味を内包させ、媒体展開を前提とした構造で設計しました。<br><span class=\"detail-note\">担当範囲：コンセプト設計 / 造形設計 / 展開設計 / 納品データ作成</span>"
 },
 
-  ]
+  ],
+  note: [
+    {
+      "id": "01",
+      "title": "DTP・印刷のきほん帳",
+      "tag": "DTP / 基礎知識",
+      "thumb": "../assets/works/note/01/hero.jpg",
+      "link": "../note/dtp-basics.html"
+    }
+  ],
 };
 
 let currentCategory = null;
@@ -505,7 +515,8 @@ let currentIndex = -1;
 const CATEGORY_INFO = {
   web: { title: "WEB", subtitle: "HP / LP / TOPページ" },
   dtp: { title: "DTP", subtitle: "名刺 / チラシ / パンフレット" },
-  graphic: { title: "GRAPHIC", subtitle: "ロゴ / ビジュアル" }
+  graphic: { title: "GRAPHIC", subtitle: "ロゴ / ビジュアル" },
+  note: { title: "NOTE", subtitle: "知識まとめ / 基礎シリーズ" }
 };
 
 // 作品一覧を描画
@@ -558,6 +569,11 @@ function renderWorks(category) {
     
     // クリックイベント
     workItem.addEventListener('click', () => {
+      // link を持つ項目（NOTE）はモーダルを開かずページへ移動
+      if (work.link) {
+        window.location.href = work.link;
+        return;
+      }
       openModal(work, category);
     });
     
@@ -913,7 +929,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const initialCat = params.get('cat');
   const initialId = params.get('id');
-  const validCats = new Set(['web', 'dtp', 'graphic']);
+  const validCats = new Set(['web', 'dtp', 'graphic', 'note']);
   const startCat = validCats.has(initialCat) ? initialCat : 'web';
 
   catButtons.forEach(btn => {
@@ -926,7 +942,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const works = WORKS_DATA[startCat] || [];
     const work = works.find(w => w.id === initialId);
     
-    if (work) {
+    // link を持つ項目（NOTE）はモーダルを開かない
+    if (work && !work.link) {
       // 少し遅延させてから開く（ページ読み込み完了後）
       setTimeout(() => {
         openModal(work, startCat);

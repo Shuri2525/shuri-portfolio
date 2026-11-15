@@ -67,13 +67,15 @@
     const currentPage = getCurrentPage();
     const currentPath = window.location.pathname;
     const baseDir = getBaseDir();
+    // ?以降と#以降はそのまま引き継ぐ（例：?cat=note）
+    const suffix = `${window.location.search}${window.location.hash}`;
     
     log('Redirect triggered!');
     
     if (isMobileOrTablet()) {
       // モバイル・タブレットデバイス → SP版へリダイレクト
       if (!currentPath.includes('/sp/')) {
-        const targetUrl = `${baseDir}sp/${currentPage}.html`;
+        const targetUrl = `${baseDir}sp/${currentPage}.html${suffix}`;
         log('Redirecting to SP:', targetUrl);
         window.location.href = targetUrl;
       }
@@ -81,7 +83,7 @@
       // PCデバイス → PC版へリダイレクト
       if (currentPath.includes('/sp/')) {
         const pcPage = currentPage;
-        const targetUrl = `${baseDir}../${pcPage}.html`;
+        const targetUrl = `${baseDir}../${pcPage}.html${suffix}`;
         log('Redirecting to PC:', targetUrl);
         window.location.href = targetUrl;
       }

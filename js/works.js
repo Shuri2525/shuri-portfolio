@@ -284,7 +284,16 @@ const WORKS_DATA = {
   "detailText": "「新創」の意味を軸に、成長と未来への広がりを表現しました。建設業に多い直線的なロゴとの差別化を図り、円形基調で調和と安心感を設計。カラーはグリーンを主軸にブルーを添え、誠実さと先進性を両立しています。印刷用途では再現性を優先してベタ配色、WEB・SNSでは表現幅としてグラデーションを展開しています。<br><span class=\"detail-note\">担当範囲：ヒアリング / 造形設計 / 展開設計 / 納品データ作成</span><br><span class=\"detail-note\">本ロゴ制作先企業のInstagram：<a href=\"https://www.instagram.com/sinso_kensetsu31/?hl=ja\" target=\"_blank\" rel=\"noopener noreferrer\">@sinso_kensetsu31</a></span>"
 }
 
-  ]
+  ],
+  note: [
+    {
+      "id": "01",
+      "title": "DTP・印刷のきほん帳",
+      "tag": "DTP / 基礎知識",
+      "thumb": "./assets/works/note/01/hero.jpg",
+      "link": "./note/dtp-basics.html"
+    }
+  ],
 };
 
 /* ================================
@@ -297,7 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const DISPLAY_ORDER = {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
-    graphic: ["04", "01"]
+    graphic: ["04", "01"],
+    note: ["01"]
   };
 
   if (!worksList) {
@@ -357,6 +367,12 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
+        // link を持つ項目（NOTE）はモーダルを開かずページへ移動
+        if (work.link) {
+          window.location.href = work.link;
+          return;
+        }
+
         if (typeof window.openModal !== "function") {
           console.error("❌ openModal が定義されていません");
           return;
@@ -367,10 +383,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 初期表示（WEB）
-  renderWorks("web");
-  document.querySelector(".btn-web")?.classList.add("active");
-  catButtons.forEach(b => b.setAttribute("aria-pressed", b.classList.contains("btn-web") ? "true" : "false"));
+  // 初期表示（?cat= があればそのカテゴリ、なければWEB）
+  const validCats = ["web", "dtp", "graphic", "note"];
+  const initialCat = new URLSearchParams(window.location.search).get("cat");
+  const startCat = validCats.includes(initialCat) ? initialCat : "web";
+  renderWorks(startCat);
+  catButtons.forEach(b => {
+    const isStart = b.classList.contains(`btn-${startCat}`);
+    b.classList.toggle("active", isStart);
+    b.setAttribute("aria-pressed", isStart ? "true" : "false");
+  });
 
   // カテゴリボタンのイベント
   catButtons.forEach(btn => {
@@ -385,6 +407,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (btn.classList.contains("btn-web")) renderWorks("web");
       if (btn.classList.contains("btn-dtp")) renderWorks("dtp");
       if (btn.classList.contains("btn-graphic")) renderWorks("graphic");
+      if (btn.classList.contains("btn-note")) renderWorks("note");
     });
   });
 
