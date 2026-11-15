@@ -3072,6 +3072,18 @@ a {
   margin-bottom: 0;
 }
 
+.sp-about-description a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 補足の1行（※） */
+.sp-about-description .about-note {
+  font-size: 11px;
+  color: #7a7a7a;
+}
+
 
 
 
