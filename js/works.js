@@ -327,6 +327,13 @@ const WORKS_DATA = {
       "tag": "DTP / レイアウト",
       "thumb": "./assets/works/note/06/hero.jpg",
       "link": "./note/layout-basics.html"
+    },
+    {
+      "id": "08",
+      "title": "入稿チェックリスト",
+      "tag": "DTP / 入稿",
+      "thumb": "./assets/works/note/08/hero.jpg",
+      "link": "./note/preflight-checklist.html"
     }
   ],
 };
@@ -342,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02", "03", "04", "05", "06"]
+    note: ["01", "02", "03", "04", "05", "06", "07", "08"]
   };
 
   if (!worksList) {

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>入稿チェックリスト | HIDAKA SHURI</title>
+<meta name="description" content="印刷物の入稿前に確認したい42項目のチェックリスト。データの基本、文字、画像、色、線と効果、書き出し、入稿後まで。Illustratorでの確認方法つき。">
+<link rel="canonical" href="https://shuri2525.github.io/shuri-portfolio/note/preflight-checklist.html">
+<meta property="og:title" content="PREFLIGHT CHECK | HIDAKA SHURI">
+<meta property="og:description" content="印刷物の入稿前に確認したい42項目のチェックリスト">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuri2525.github.io/shuri-portfolio/note/preflight-checklist.html">
+<meta property="og:image" content="https://shuri2525.github.io/shuri-portfolio/assets/works/note/08/hero.jpg">
+<meta property="og:site_name" content="HIDAKA SHURI PORTFOLIO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../assets/common/logo_3f3b3a.svg">
+<link rel="apple-touch-icon" href="../assets/common/logo_3f3b3a.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@700&display=swap">
+<style>
+/* Layout: HIDAKA SHURI ポートフォリオの下層ページと同じ骨格。左30%に濃色の固定カラム（ロゴ）、右70%に固定ヘッダーと本文。モノトーン＋くすみCMYKを図版だけに */
+:root{
+  --color-dark:#3f3b3a; --color-light:#f5f5f5; --color-white:#ffffff; --color-gray:#6b6766;
+  --c:#1C9AD6; --m:#D6246E; --y:#F2BE00; --y-text:#8F7000; --k:#3f3b3a;
+  --c-l:#E3F4FB; --m-l:#FDE6EF; --y-l:#FFF5CC; --k-l:#ECEAE9;
+  --line:#e2e0df; --accent:#a35d68; --paper:#fafafa;
+  --left-width:30%; --right-width:70%; --header-height:80px;
+  --ls-brand:.3em; --ls-ui:.1em; --ls-body:.05em;
+  --font-en:"Avenir Next","Avenir","Helvetica Neue",sans-serif;
+  --font-jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --muted:#6b6766;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scrollbar-gutter:stable;scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 24px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--color-light);color:var(--color-dark);font-family:var(--font-jp);font-weight:400;letter-spacing:var(--ls-body);line-height:1.9}
+a{color:inherit;text-decoration:none}
+*:focus-visible{outline:2px solid var(--color-dark);outline-offset:3px}
+
+/* 左カラム */
+.side{position:fixed;inset:0 auto 0 0;width:var(--left-width);height:100vh;background:var(--color-dark);display:flex;align-items:center;justify-content:center;z-index:2}
+.side-inner{text-align:center;color:var(--color-light)}
+.side-logo{width:67px;height:99px;display:block;margin:0 auto}
+.side-title{font-family:var(--font-en);margin:24px 0 0;font-size:20px;font-weight:400;letter-spacing:var(--ls-brand)}
+
+/* ヘッダー */
+.site-header{position:fixed;top:0;left:var(--left-width);width:var(--right-width);height:var(--header-height);background:rgba(245,245,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--color-dark);display:flex;align-items:center;z-index:10}
+.site-header nav{width:100%}
+.nav-list{list-style:none;display:flex;justify-content:flex-end;gap:60px;margin:0;padding:0 60px 0 0;width:100%}
+.nav-list a{font-family:var(--font-en);font-size:16px;font-weight:400;letter-spacing:var(--ls-ui);opacity:.72;position:relative;padding-bottom:4px}
+.nav-list a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav-list a:hover{opacity:.92}.nav-list a:hover::after{transform:scaleX(.82)}
+
+/* 本文 */
+.main{margin-left:var(--left-width);width:var(--right-width);min-height:100vh;padding:160px 0 120px;position:relative;overflow-x:clip}
+.inner{max-width:1060px;margin:0 auto;padding:0 48px}
+.page-deco{position:absolute;right:30px;top:380px;width:210px;opacity:.03;pointer-events:none}
+
+.page-label{font-family:var(--font-en);font-size:13px;letter-spacing:.2em;color:var(--color-gray);text-align:center;margin:0 0 10px}
+.page-title{font-family:var(--font-en);font-size:48px;font-weight:500;letter-spacing:.08em;text-align:center;margin:0 0 8px;line-height:1.2}
+.page-sub{font-size:20px;font-weight:400;letter-spacing:.12em;text-align:center;margin:0 0 10px}
+.page-date{font-family:var(--font-en);font-size:13px;letter-spacing:.14em;color:var(--color-gray);text-align:center;margin:0 0 40px}
+.lede{max-width:40em;margin:0 auto 56px;font-size:15px;text-align:center}
+
+.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:16px 24px;margin-bottom:24px}
+.cat-btn{font-family:var(--font-jp);min-width:120px;height:40px;padding:0 20px;border:1px solid var(--color-dark);background:var(--color-light);color:var(--color-dark);font-size:15px;font-weight:400;letter-spacing:var(--ls-ui);border-radius:20px;cursor:pointer;transition:all .3s ease}
+.cat-btn:hover,.cat-btn[aria-pressed="true"]{background:var(--color-dark);color:var(--color-light)}
+.cat-note{text-align:center;font-size:12px;color:var(--color-gray);letter-spacing:.08em;margin:0 0 64px}
+
+/* セクション見出し（ポートフォリオのOUTLINE/DETAIL見出しと同形） */
+.sec-title{font-family:var(--font-en);font-size:28px;font-weight:500;letter-spacing:.12em;text-align:center;margin:0}
+.sec-sub{font-size:14px;font-weight:400;letter-spacing:.12em;color:var(--color-gray);text-align:center;margin:4px 0 32px}
+
+.band{position:relative;background:var(--color-white);padding:56px 0 60px;margin:0 0 96px}
+
+/* 目次 */
+.index{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;counter-reset:none}
+.index a{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:400;transition:opacity .2s}
+.index a:hover{opacity:.6}
+.ix-n{font-family:var(--font-en);font-size:15px;letter-spacing:.1em;color:var(--color-gray)}
+
+/* 数字 */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.num{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 22px 18px;display:flex;flex-direction:column;gap:2px;background:var(--color-white)}
+.num .v{font-family:var(--font-en);font-size:26px;font-weight:500;letter-spacing:.04em;line-height:1.3;font-variant-numeric:tabular-nums}
+.num .l{font-size:14px;font-weight:400;margin-top:4px}
+.num .s{font-size:12px;color:var(--color-gray);line-height:1.6}
+.num a{font-family:var(--font-en);font-size:11px;letter-spacing:.12em;color:var(--color-gray);margin-top:6px;text-decoration:underline;text-underline-offset:3px}
+
+/* 各回 */
+section.vol{margin:0 0 104px}
+.vol-h{display:grid;grid-template-columns:auto 1fr;gap:2px 24px;align-items:end;padding-bottom:18px;border-bottom:1px solid var(--color-dark)}
+.badge{grid-row:span 2;font-family:var(--font-en);font-size:56px;font-weight:400;line-height:.9;letter-spacing:.02em}
+.vol-h .tag{font-size:12px;font-weight:400;letter-spacing:.12em;color:var(--color-gray)}
+.vol-h h2{font-size:22px;font-weight:500;letter-spacing:.08em;line-height:1.5;margin:0}
+.short{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;margin:22px 0 0;font-size:15px;font-weight:400;line-height:1.9}
+.short::before{content:"POINT";font-family:var(--font-en);font-size:12px;letter-spacing:.18em;border:1px solid var(--color-dark);border-radius:999px;padding:2px 12px 1px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 32px;margin-top:32px}
+.card{background:var(--color-white);border-radius:4px;padding:20px 24px 26px;display:flex;flex-direction:column;gap:16px;min-width:0;transition:box-shadow .3s ease}
+.card:hover{box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.pv{background:var(--paper);border-radius:2px;overflow:hidden}
+.pv svg{display:block;width:100%;height:auto}
+.card .body{display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;font-size:16px;font-weight:500;letter-spacing:.06em;line-height:1.5}
+.card p,.card ul{margin:0;font-size:14px;line-height:1.95;letter-spacing:.04em}
+.card ul{padding-left:1.2em}
+.card li{margin-bottom:2px}
+.card b{font-weight:700}
+.now{border-top:1px solid var(--line);padding-top:12px;color:var(--color-dark)!important}
+.now b{font-family:var(--font-en);font-weight:500!important;font-size:10.5px;letter-spacing:.14em;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:1px 9px 0;margin-right:8px;display:inline-block;line-height:1.7}
+.kv{display:grid;gap:4px;font-size:13px}
+.kv div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.kv b{font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);font-weight:400}
+th{color:var(--color-gray);font-weight:400;font-size:11.5px;letter-spacing:.08em}
+
+/* 図版内の文字 */
+.o{fill:none;stroke:#3f3b3a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.o2{fill:none;stroke:#3f3b3a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dash{stroke-dasharray:6 5}
+.tx{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:14px;fill:#3f3b3a;letter-spacing:0}
+.ts{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:11.5px;fill:#5f5b5a;letter-spacing:0}
+.tb{font-family:"Avenir Next","Avenir","Helvetica Neue","Noto Sans JP",sans-serif;font-weight:500;font-size:22px;fill:#3f3b3a}
+
+/* 用語集 */
+.gloss{column-count:2;column-gap:48px;margin:0}
+.gloss dt{break-after:avoid}
+.gloss dd{break-inside:avoid}
+.gloss dt{font-size:14px;font-weight:500;letter-spacing:.06em;margin-top:18px}
+.gloss dd{margin:2px 0 0;font-size:13px;color:var(--color-gray);line-height:1.8;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.gloss dd a{font-family:var(--font-en);font-size:11px;letter-spacing:.1em;margin-left:6px;text-decoration:underline;text-underline-offset:3px}
+
+.refs{font-size:12px;color:var(--color-gray);line-height:1.9;border-top:1px solid var(--line);padding-top:20px;margin-top:64px}
+.copyright{font-family:var(--font-en);font-size:12px;letter-spacing:.14em;color:var(--color-gray);text-align:center;margin-top:48px}
+
+/* テーマ色（CMYKの4版） */
+i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:1px;flex:none}
+.d-c{background:var(--c)}.d-m{background:var(--m)}.d-y{background:var(--y)}.d-k{background:var(--k)}
+.t-c{--t:var(--c);--tl:var(--c-l);--tt:var(--c)} .t-m{--t:var(--m);--tl:var(--m-l);--tt:var(--m)} .t-y{--t:var(--y);--tl:var(--y-l);--tt:var(--y-text)} .t-k{--t:var(--k);--tl:var(--k-l);--tt:var(--k)}
+.vol-h{position:relative}
+.vol-h::after{content:"";position:absolute;left:0;bottom:-1px;width:120px;height:4px;background:var(--t)}
+.badge{color:var(--tt)}
+.vol-h .tag{color:var(--tt);font-weight:500}
+.short{background:var(--tl);padding:14px 18px;border-radius:4px}
+.short::before{border-color:var(--tt);color:var(--tt);background:var(--color-white)}
+.vol .card{border-top:3px solid var(--t)}
+.num{border-top:4px solid transparent}
+.num.n-c{border-top-color:var(--c)}.num.n-m{border-top-color:var(--m)}.num.n-y{border-top-color:var(--y)}.num.n-k{border-top-color:var(--k)}
+.ix-n{display:inline-flex;align-items:center}
+.cat-btn i{margin-right:6px}
+.cat-btn[aria-pressed="true"] i.d-k{background:var(--color-light)}
+.inks{display:flex;justify-content:center;gap:6px;margin:0 0 18px}
+.inks span{width:28px;height:6px;border-radius:3px}
+
+/* 章バー（スクロールしても残る） */
+.chap{position:sticky;top:var(--header-height);z-index:8;background:rgba(245,245,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 0 72px}
+.chap-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:1060px;margin:0 auto;padding:10px 48px}
+.chap-row::-webkit-scrollbar{display:none}
+.chap a{flex:none;display:inline-flex;align-items:center;font-size:12.5px;letter-spacing:.06em;padding:4px 12px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:background .2s,border-color .2s}
+.chap a i{margin-right:6px!important}
+.chap a:hover{border-color:var(--color-dark)}
+.chap a.on{background:var(--color-dark);color:var(--color-light)}
+@media (max-width:1024px){.chap-row{padding:8px 20px}}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-en);font-size:13px;letter-spacing:.14em;color:var(--color-gray);margin:0 0 40px;transition:opacity .2s}
+.back-link:hover{opacity:.6}
+.back-wrap{text-align:center;margin-top:72px}
+.back-btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:14px 48px;background:var(--color-dark);color:var(--color-light);transition:opacity .2s}
+.back-btn:hover{opacity:.8}
+.back-btn .en{font-family:var(--font-en);font-size:14px;letter-spacing:.14em}
+.back-btn .ja{font-size:11px;letter-spacing:.1em;opacity:.8}
+
+/* チェックリスト */
+.lede .scope{display:block;width:max-content;margin:0 auto 14px;font-size:13px;font-weight:500;letter-spacing:.1em;border:1px solid var(--color-dark);border-radius:999px;padding:4px 16px}
+.vol-h{position:relative}
+.sec-count{margin-left:auto;font-family:var(--font-en);font-size:13px;letter-spacing:.08em;color:var(--color-gray);white-space:nowrap;align-self:flex-end;padding-bottom:6px}
+.sec-count.done{color:var(--t);font-weight:600}
+.ck-card{padding:6px 24px 10px}
+.cklist{list-style:none;margin:0;padding:0}
+.ck{border-bottom:1px solid var(--line);padding:14px 0 12px}
+.ck:last-child{border-bottom:0}
+.ck input{position:absolute;opacity:0;width:1px;height:1px}
+.ck label{display:grid;grid-template-columns:30px 1fr;column-gap:12px;cursor:pointer}
+.ck .box{grid-row:span 2;width:24px;height:24px;border:1.8px solid var(--color-dark);border-radius:6px;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ck input:checked+label .box{background:var(--t);border-color:var(--t)}
+.ck input:checked+label .box::after{content:"";width:12px;height:6px;border-left:2.4px solid #fff;border-bottom:2.4px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.ck input:focus-visible+label .box{outline:2px solid var(--t);outline-offset:2px}
+.ck .tt{font-size:15px;font-weight:500;line-height:1.6;letter-spacing:.04em}
+.ck .why{font-size:13px;line-height:1.8;color:var(--color-gray);letter-spacing:.03em;margin-top:2px}
+.ck input:checked+label .tt{color:var(--color-gray);text-decoration:line-through;text-decoration-color:var(--t);text-decoration-thickness:1.5px}
+.ck details{margin:6px 0 0 42px}
+.ck summary{font-size:12px;font-family:var(--font-jp);letter-spacing:.06em;color:var(--t);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px}
+.ck summary::-webkit-details-marker{display:none}
+.ck summary::before{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .2s}
+.ck details[open] summary::before{transform:rotate(45deg)}
+.ck details p{margin:6px 0 0;font-size:13px;line-height:1.85;background:var(--paper);padding:10px 14px;border-radius:4px}
+.prog{max-width:520px;margin:0 auto 24px}
+.prog-bar{height:8px;background:#e6e3e2;border-radius:99px;overflow:hidden;display:flex}
+.prog-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--c),var(--m),var(--y));transition:width .3s}
+.prog-t{display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;color:var(--color-gray);margin:10px 0 0;letter-spacing:.06em}
+.prog-t b{font-family:var(--font-en);font-size:18px;color:var(--color-dark);font-weight:600}
+.prog-reset{font-family:var(--font-jp);font-size:12px;border:1px solid var(--color-gray);background:transparent;color:var(--color-gray);border-radius:99px;padding:3px 12px;cursor:pointer}
+@media (max-width:600px){.ck-card{padding:2px 16px 6px}.ck details{margin-left:42px}.sec-count{font-size:12px}}
+@media print{.ck details{display:block}.ck details p{background:none;padding:0}.prog,.cats,.chap,.back-to-top{display:none!important}}
+[hidden]{display:none!important}
+
+.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--color-dark);color:var(--color-light);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;text-decoration:none}
+.back-to-top{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:none}
+.back-to-top.is-visible:hover{opacity:.75}
+
+/* タブレット・スマホ：左カラムをたたんで1カラムに */
+@media (max-width:1024px){
+  .side{display:none}
+  .site-header{left:0;width:100%;justify-content:space-between;padding:0 20px}
+  .site-header .mini{display:flex!important}
+  .site-header nav{width:auto}
+  .nav-list{gap:22px;padding:0;width:auto}
+  .nav-list a{font-size:13px}
+  .main{margin-left:0;width:100%;padding-top:128px}
+  .inner{padding:0 20px}
+  .grid{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .index{grid-template-columns:1fr}
+  .gloss{column-count:1}
+  .page-title{font-size:36px}
+  .page-deco{display:none}
+}
+@media (max-width:480px){
+  .nav-list{gap:14px}.nav-list a{font-size:12px}
+  .page-title{font-size:30px}.page-sub{font-size:16px}
+  .badge{font-size:44px}.vol-h h2{font-size:18px}
+  .short{grid-template-columns:1fr;gap:8px}.short::before{justify-self:start}
+  .card{padding:16px 16px 20px}
+  .site-header .mini span{display:none}
+  .num{padding:16px 14px 14px}.num .v{font-size:19px}
+  .back-to-top{bottom:20px;right:16px}
+}
+.site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
+.site-header .mini svg{width:18px;height:26px}
+</style>
+</head>
+<body id="top">
+
+<aside class="side">
+  <a href="../index.html" aria-label="TOPへ戻る">
+    <div class="side-inner">
+      <svg class="side-logo" viewBox="0 0 344.1 498.3" aria-hidden="true"><path fill="#f5f5f5" d="M171.9,168.2l-1.6,161.9S6.9,322.4,4.8,494.9l169.3,1.7c20.6-.5,32.2-2.4,47.8-6.7,40-11,120.7-55.4,117.3-162.1,0,0-4.8-158.1-167.3-159.6Z"/><path fill="none" stroke="#f5f5f5" stroke-miterlimit="10" stroke-width="9.4" d="M172.2,334.1l1.6-161.9s163.4,7.6,165.5-164.9l-169.3-1.7c-20.6.5-32.2,2.4-47.8,6.7C82.2,23.3,1.5,67.7,4.9,174.4c0,0,4.8,158.1,167.3,159.6Z"/></svg>
+      <p class="side-title">HIDAKA SHURI</p>
+    </div>
+  </a>
+</aside>
+
+<header class="site-header">
+  <a class="mini" href="../index.html"><svg viewBox="0 0 344.1 498.3" aria-hidden="true"><path fill="#3f3b3a" d="M171.9,168.2l-1.6,161.9S6.9,322.4,4.8,494.9l169.3,1.7c20.6-.5,32.2-2.4,47.8-6.7,40-11,120.7-55.4,117.3-162.1,0,0-4.8-158.1-167.3-159.6Z"/><path fill="none" stroke="#3f3b3a" stroke-miterlimit="10" stroke-width="9.4" d="M172.2,334.1l1.6-161.9s163.4,7.6,165.5-164.9l-169.3-1.7c-20.6.5-32.2,2.4-47.8,6.7C82.2,23.3,1.5,67.7,4.9,174.4c0,0,4.8,158.1,167.3,159.6Z"/></svg><span>HIDAKA SHURI</span></a>
+  <nav aria-label="サイト">
+    <ul class="nav-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li><a href="../works.html">WORKS</a></li>
+      <li><a href="../about.html">ABOUT</a></li>
+      <li><a href="../contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <svg class="page-deco" viewBox="0 0 282.24 328.64" aria-hidden="true"><g fill="none" stroke="#3f3b3a" stroke-linecap="round" stroke-linejoin="round" stroke-width="23.59"><polyline points="117.42 240.51 43.13 240.51 43.13 276.32 146.07 276.32 146.07 316.6 11.79 316.6"/><line x1="176.69" y1="48.95" x2="178.48" y2="316.6"/><line x1="185.36" y1="99.62" x2="207.84" y2="99.62"/><polyline points="239.72 11.79 239.72 193.49"/><polyline points="239.72 223.89 239.72 316.84"/><polyline points="209.1 11.79 209.1 193.49"/><polyline points="209.1 223.89 209.1 316.84"/><polyline points="270.34 134.91 270.34 316.6"/><polyline points="270.34 70.7 270.34 37.51 251.61 37.51"/></g></svg>
+
+  <div class="inner">
+    <a class="back-link js-back" href="../works.html?cat=note">← NOTE 一覧へ戻る</a>
+    <div class="inks" aria-hidden="true"><span style="background:var(--c)"></span><span style="background:var(--m)"></span><span style="background:var(--y)"></span><span style="background:var(--k)"></span></div>
+    <p class="page-label">NOTE</p>
+    <h1 class="page-title">PREFLIGHT CHECK</h1>
+    <p class="page-sub">入稿チェックリスト</p>
+    <p class="page-date">2026.11.16　# DTP　# 入稿</p>
+    <p class="lede"><b class="scope">紙のデザイン（DTP）向け</b>印刷物を入稿する前に、上から順に確認していくためのチェックリストです。全42項目に「なぜ確認するのか」と「Illustratorでの確認方法」をつけました。チェックはこのブラウザに保存されるので、途中で閉じても続きから使えます。最後は必ず、印刷会社の入稿ガイドの指定を優先してください。</p>
+  </div>
+
+  <div class="band">
+    <div class="inner">
+      <h2 class="sec-title">INDEX</h2>
+      <p class="sec-sub">目次</p>
+      <ol class="index"><li><a href="#vol01"><span class="ix-n"><i class="d-k"></i>01</span><span>データの基本（7項目）</span></a></li><li><a href="#vol02"><span class="ix-n"><i class="d-c"></i>02</span><span>文字（6項目）</span></a></li><li><a href="#vol03"><span class="ix-n"><i class="d-m"></i>03</span><span>画像（5項目）</span></a></li><li><a href="#vol04"><span class="ix-n"><i class="d-m"></i>04</span><span>色（7項目）</span></a></li><li><a href="#vol05"><span class="ix-n"><i class="d-k"></i>05</span><span>線・オブジェクト・効果（6項目）</span></a></li><li><a href="#vol06"><span class="ix-n"><i class="d-y"></i>06</span><span>書き出しと入稿（7項目）</span></a></li><li><a href="#vol07"><span class="ix-n"><i class="d-y"></i>07</span><span>入稿したあと（4項目）</span></a></li></ol>
+    </div>
+  </div>
+
+  <div class="inner">
+    <h2 class="sec-title">KEY NUMBERS</h2>
+    <p class="sec-sub">入稿で使う数字</p>
+    <div class="nums"><div class="num n-k"><span class="v">3mm</span><span class="l">裁ち落とし</span><span class="s">仕上がり線の外へ</span><a href="#vol01">01 基本</a></div><div class="num n-k"><span class="v">3〜5mm</span><span class="l">文字の安全マージン</span><span class="s">仕上がり線の内側へ</span><a href="#vol01">01 基本</a></div><div class="num n-c"><span class="v">6pt</span><span class="l">文字の大きさの下限</span><span class="s">白抜き・細い明朝はもっと大きく</span><a href="#vol02">02 文字</a></div><div class="num n-m"><span class="v">350ppi</span><span class="l">画像の解像度</span><span class="s">原寸で300〜350ppi</span><a href="#vol03">03 画像</a></div><div class="num n-m"><span class="v">K100</span><span class="l">細い文字の黒</span><span class="s">4色の黒はにじむ</span><a href="#vol04">04 色</a></div><div class="num n-m"><span class="v">300%</span><span class="l">総インキ量の目安</span><span class="s">上限は印刷会社に確認</span><a href="#vol04">04 色</a></div><div class="num n-k"><span class="v">0.1mm</span><span class="l">線の太さの下限</span><span class="s">約0.3pt</span><a href="#vol05">05 線・効果</a></div><div class="num n-y"><span class="v">PDF/X</span><span class="l">印刷用のPDF</span><span class="s">X-1a か X-4</span><a href="#vol06">06 書き出し</a></div></div>
+  </div>
+
+  <nav class="chap" aria-label="各回へ移動" style="margin-top:96px"><div class="chap-row"><a href="#vol01" data-n="01"><i class="d-k"></i>01 基本</a><a href="#vol02" data-n="02"><i class="d-c"></i>02 文字</a><a href="#vol03" data-n="03"><i class="d-m"></i>03 画像</a><a href="#vol04" data-n="04"><i class="d-m"></i>04 色</a><a href="#vol05" data-n="05"><i class="d-k"></i>05 線・効果</a><a href="#vol06" data-n="06"><i class="d-y"></i>06 書き出し</a><a href="#vol07" data-n="07"><i class="d-y"></i>07 入稿後</a></div></nav>
+  <div class="inner">
+    <h2 class="sec-title">CONTENTS</h2>
+    <p class="sec-sub">チェックリスト</p>
+    <div class="prog" aria-live="polite"><div class="prog-bar"><span id="pbar"></span></div><p class="prog-t"><b id="pdone">0</b> / 42 チェック済み<button type="button" id="preset" class="prog-reset">リセット</button></p></div>
+    <div class="cats" role="group" aria-label="テーマで絞り込む">
+      <button class="cat-btn" type="button" id="f-all" data-f="all" aria-pressed="true"># ALL</button>
+      <button class="cat-btn" type="button" id="f-k" data-f="k" aria-pressed="false"><i class="d-k"></i># データ</button>
+      <button class="cat-btn" type="button" id="f-c" data-f="c" aria-pressed="false"><i class="d-c"></i># 文字</button>
+      <button class="cat-btn" type="button" id="f-m" data-f="m" aria-pressed="false"><i class="d-m"></i># 画像・色</button>
+      <button class="cat-btn" type="button" id="f-y" data-f="y" aria-pressed="false"><i class="d-y"></i># 入稿</button>
+    </div>
+    <p class="cat-note">項目をタップしてチェック。「Illustratorで確認」を開くと、確認の方法が表示されます</p>
+
+    
+<section class="vol t-k" id="vol01" data-t="k"><div class="vol-h"><div class="badge">01</div><span class="tag"># データ</span><h2>データの基本</h2><span class="sec-count" data-sec="01">0 / 7</span></div><p class="short">仕上がりのサイズ、裁ち落とし、カラーモードなど、データの土台の確認です。ここがずれていると、ほかが正しくても刷り直しになります。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c01-01" data-k="c01-01"><label for="c01-01"><span class="box" aria-hidden="true"></span><span class="tt">仕上がりサイズは正しい？</span><span class="why">アートボードの大きさが、仕上がりのサイズと同じになっているか。</span></label><details><summary>Illustratorで確認</summary><p>アートボードツール（⇧O）でアートボードを選び、プロパティパネルのW・Hを確認。</p></details></li><li class="ck"><input type="checkbox" id="c01-02" data-k="c01-02"><label for="c01-02"><span class="box" aria-hidden="true"></span><span class="tt">裁ち落としは3mmある？</span><span class="why">紙の端まである背景や写真が、仕上がり線の外3mmまで伸びているか。</span></label><details><summary>Illustratorで確認</summary><p>「ファイル > ドキュメント設定」（⌥⌘P）で裁ち落とし3mmを確認。「表示 > トリミング表示」を切り替えて、外まで伸びているかを見る。</p></details></li><li class="ck"><input type="checkbox" id="c01-03" data-k="c01-03"><label for="c01-03"><span class="box" aria-hidden="true"></span><span class="tt">文字やロゴは内側に入っている？</span><span class="why">切れては困るものが、仕上がり線から3〜5mm以上内側にあるか。折り目やノドにもかかっていないか。</span></label><details><summary>Illustratorで確認</summary><p>内側に引いたガイド（パスのオフセット → ⌘5）からはみ出していないかを見る。</p></details></li><li class="ck"><input type="checkbox" id="c01-04" data-k="c01-04"><label for="c01-04"><span class="box" aria-hidden="true"></span><span class="tt">ドキュメントのカラーモードはCMYK？</span><span class="why">RGBのまま作ったデータは、印刷で色が沈んだり、変わったりする。</span></label><details><summary>Illustratorで確認</summary><p>「ファイル > ドキュメントのカラーモード」がCMYKになっているか。</p></details></li><li class="ck"><input type="checkbox" id="c01-05" data-k="c01-05"><label for="c01-05"><span class="box" aria-hidden="true"></span><span class="tt">トンボは入稿先の指定どおり？</span><span class="why">PDFにトンボを付けるか、データに作るか、付けないかは、印刷会社によって違う。</span></label><details><summary>Illustratorで確認</summary><p>データに作るときは、仕上がりサイズの長方形を選んで「オブジェクト > トリムマークを作成」。</p></details></li><li class="ck"><input type="checkbox" id="c01-06" data-k="c01-06"><label for="c01-06"><span class="box" aria-hidden="true"></span><span class="tt">アートボードの外に不要なものはない？</span><span class="why">作業用のメモや、使わなかった案が残っていると、出力で混ざることがある。</span></label><details><summary>Illustratorで確認</summary><p>⌥⌘0で全体を表示し、アートボードの外のものを確認して削除。</p></details></li><li class="ck"><input type="checkbox" id="c01-07" data-k="c01-07"><label for="c01-07"><span class="box" aria-hidden="true"></span><span class="tt">折りや面の幅は正しい？（パンフ）</span><span class="why">巻三つ折りの折り込み面が2〜3mm短くなっているか。面の順番は合っているか。</span></label><details><summary>Illustratorで確認</summary><p>ガイドの位置を数値で確認し、プリントして実際に折ってみる。</p></details></li></ul></article></section>
+
+<section class="vol t-c" id="vol02" data-t="c"><div class="vol-h"><div class="badge">02</div><span class="tag"># 文字</span><h2>文字</h2><span class="sec-count" data-sec="02">0 / 6</span></div><p class="short">フォントの置き換わりと、文字の見落としの確認です。文字のミスは、デザインがよくても信頼を下げてしまいます。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c02-01" data-k="c02-01"><label for="c02-01"><span class="box" aria-hidden="true"></span><span class="tt">フォントはアウトライン化した？（指定どおり？）</span><span class="why">アウトライン入稿なら、フォントが1つも残っていないこと。フォントを同梱するなら、すべて集めること。</span></label><details><summary>Illustratorで確認</summary><p>「書式 > フォント検索」で、ドキュメント内のフォントが0になっているか確認。</p></details></li><li class="ck"><input type="checkbox" id="c02-02" data-k="c02-02"><label for="c02-02"><span class="box" aria-hidden="true"></span><span class="tt">ロック・非表示の中に文字が残っていない？</span><span class="why">ロックや非表示のオブジェクトは、すべて選択してもアウトライン化されない。</span></label><details><summary>Illustratorで確認</summary><p>⌥⌘2（すべてをロック解除）、⌥⌘3（すべてを表示）をしてから、もう一度フォント検索。</p></details></li><li class="ck"><input type="checkbox" id="c02-03" data-k="c02-03"><label for="c02-03"><span class="box" aria-hidden="true"></span><span class="tt">あふれた文字はない？</span><span class="why">テキストエリアからあふれた文字は、印刷されない。</span></label><details><summary>Illustratorで確認</summary><p>エリア内文字の右下に、赤い「＋」が出ていないか確認。</p></details></li><li class="ck"><input type="checkbox" id="c02-04" data-k="c02-04"><label for="c02-04"><span class="box" aria-hidden="true"></span><span class="tt">空のテキストや孤立点を削除した？</span><span class="why">クリックしただけの空のテキストが残ると、フォントのエラーの原因になる。</span></label><details><summary>Illustratorで確認</summary><p>「オブジェクト > パス > クリーンアップ」で、孤立点・未着色のオブジェクト・空のテキストパスを削除。</p></details></li><li class="ck"><input type="checkbox" id="c02-05" data-k="c02-05"><label for="c02-05"><span class="box" aria-hidden="true"></span><span class="tt">小さすぎる文字はない？</span><span class="why">6pt未満の文字や、細い明朝の白抜き文字は、つぶれたりかすれたりしやすい。</span></label><details><summary>Illustratorで確認</summary><p>⌘1（100%表示）で確認し、最後は実寸で印刷して読む。</p></details></li><li class="ck"><input type="checkbox" id="c02-06" data-k="c02-06"><label for="c02-06"><span class="box" aria-hidden="true"></span><span class="tt">誤字脱字・数字の校正は済んだ？</span><span class="why">人名・社名・電話番号・価格・日付と曜日は、ミスがいちばん多いところ。</span></label><details><summary>Illustratorで確認</summary><p>原稿と照らし合わせて、1文字ずつ読み合わせる。</p></details></li></ul></article></section>
+
+<section class="vol t-m" id="vol03" data-t="m"><div class="vol-h"><div class="badge">03</div><span class="tag"># 画像・色</span><h2>画像</h2><span class="sec-count" data-sec="03">0 / 5</span></div><p class="short">画像の解像度、カラーモード、リンクの確認です。画面ではきれいでも、印刷すると粗さや色の違いがはっきり出ます。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c03-01" data-k="c03-01"><label for="c03-01"><span class="box" aria-hidden="true"></span><span class="tt">解像度は原寸で300〜350ppi？</span><span class="why">拡大して配置すると、実際の解像度は下がる。低いと、粗く、ぼやけて印刷される。</span></label><details><summary>Illustratorで確認</summary><p>リンクパネルで画像を選び、リンク情報の「PPI」（配置した大きさでの解像度）を確認。</p></details></li><li class="ck"><input type="checkbox" id="c03-02" data-k="c03-02"><label for="c03-02"><span class="box" aria-hidden="true"></span><span class="tt">画像はCMYK（またはグレースケール）？</span><span class="why">RGBの画像は、印刷会社で変換されて色が変わることがある。</span></label><details><summary>Illustratorで確認</summary><p>Photoshopで画像を開き、CMYKに変換して色を確認してから配置する。</p></details></li><li class="ck"><input type="checkbox" id="c03-03" data-k="c03-03"><label for="c03-03"><span class="box" aria-hidden="true"></span><span class="tt">リンク切れはない？</span><span class="why">リンク先が見つからない画像は、低解像度のプレビューで出力されたり、出力できなかったりする。</span></label><details><summary>Illustratorで確認</summary><p>リンクパネルに、警告（！）や見つからない（？）のマークがないか確認。</p></details></li><li class="ck"><input type="checkbox" id="c03-04" data-k="c03-04"><label for="c03-04"><span class="box" aria-hidden="true"></span><span class="tt">画像を同梱した？（または埋め込み）</span><span class="why">リンクで入稿するときは、使った画像をすべて一緒に渡す。</span></label><details><summary>Illustratorで確認</summary><p>「ファイル > パッケージ」（⌥⇧⌘P）で、リンク画像を1つのフォルダに集める。</p></details></li><li class="ck"><input type="checkbox" id="c03-05" data-k="c03-05"><label for="c03-05"><span class="box" aria-hidden="true"></span><span class="tt">使っていい画像だけ？</span><span class="why">Webから拾った画像や、権利のわからない画像は、印刷物に使えない。解像度も足りないことが多い。</span></label><details><summary>Illustratorで確認</summary><p>素材サイトの画像は、ライセンスと商用利用の条件を確認する。</p></details></li></ul></article></section>
+
+<section class="vol t-m" id="vol04" data-t="m"><div class="vol-h"><div class="badge">04</div><span class="tag"># 画像・色</span><h2>色</h2><span class="sec-count" data-sec="04">0 / 7</span></div><p class="short">黒の作り方、白やK100のオーバープリント、インクの量など、印刷ならではの色の確認です。画面では気づけないものが多いので、項目を決めて確認します。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c04-01" data-k="c04-01"><label for="c04-01"><span class="box" aria-hidden="true"></span><span class="tt">細い文字や線の黒はK100？</span><span class="why">4色を混ぜた黒の細い文字は、版のずれで色がにじむ。RGBから変換した黒（C70 M60 Y60 K90など）に注意。</span></label><details><summary>Illustratorで確認</summary><p>スウォッチやカラーパネルで、黒の値がC0 M0 Y0 K100かを確認。</p></details></li><li class="ck"><input type="checkbox" id="c04-02" data-k="c04-02"><label for="c04-02"><span class="box" aria-hidden="true"></span><span class="tt">広い黒ベタはリッチブラック？</span><span class="why">K100だけの広い面は、少し薄い黒に見える。印刷会社の推奨値で、CMYを足す。</span></label><details><summary>Illustratorで確認</summary><p>推奨値（例：C40 M40 Y40 K100 など）は印刷会社に確認。細い文字には使わない。</p></details></li><li class="ck"><input type="checkbox" id="c04-03" data-k="c04-03"><label for="c04-03"><span class="box" aria-hidden="true"></span><span class="tt">白にオーバープリントがかかっていない？</span><span class="why">白のオブジェクトにオーバープリントを設定すると、印刷で消えてしまう。</span></label><details><summary>Illustratorで確認</summary><p>属性パネル（⌘F11）で確認。「表示 > オーバープリントプレビュー」（⌥⇧⌘Y）で、消える所がないかを見る。</p></details></li><li class="ck"><input type="checkbox" id="c04-04" data-k="c04-04"><label for="c04-04"><span class="box" aria-hidden="true"></span><span class="tt">K100のオーバープリントの扱いを確認した？</span><span class="why">印刷会社では、K100を自動でオーバープリント（墨ノセ）にすることが多い。下の色が透けて見えることがある。</span></label><details><summary>Illustratorで確認</summary><p>オーバープリントプレビューで、K100の下に写真や色が透けないか確認。</p></details></li><li class="ck"><input type="checkbox" id="c04-05" data-k="c04-05"><label for="c04-05"><span class="box" aria-hidden="true"></span><span class="tt">インクの総量は上限以内？</span><span class="why">4色の合計（総インキ量）が多すぎると、乾きにくく、裏移りの原因になる。上限は印刷会社によって300〜350%程度。</span></label><details><summary>Illustratorで確認</summary><p>濃い色はカラーパネルの合計値を確認。PDFならAcrobatの「出力プレビュー」で確認できる。</p></details></li><li class="ck"><input type="checkbox" id="c04-06" data-k="c04-06"><label for="c04-06"><span class="box" aria-hidden="true"></span><span class="tt">特色は指定どおり？</span><span class="why">特色（スポットカラー）が、プロセスカラーで刷る所に残っていると、版が増えたり、色が変わったりする。</span></label><details><summary>Illustratorで確認</summary><p>スウォッチパネルで、特色のマーク（右下の点）がついた色が使われていないか確認。</p></details></li><li class="ck"><input type="checkbox" id="c04-07" data-k="c04-07"><label for="c04-07"><span class="box" aria-hidden="true"></span><span class="tt">RGBの色が残っていない？</span><span class="why">ほかのファイルからコピーした素材や、配置した画像にRGBが残っていることがある。</span></label><details><summary>Illustratorで確認</summary><p>すべてを選択し、カラーパネルやドキュメント情報パネルで確認。</p></details></li></ul></article></section>
+
+<section class="vol t-k" id="vol05" data-t="k"><div class="vol-h"><div class="badge">05</div><span class="tag"># データ</span><h2>線・オブジェクト・効果</h2><span class="sec-count" data-sec="05">0 / 6</span></div><p class="short">細すぎる線、見えないオブジェクト、効果の解像度など、データの中身の確認です。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c05-01" data-k="c05-01"><label for="c05-01"><span class="box" aria-hidden="true"></span><span class="tt">線の太さは0.1mm（約0.3pt）以上？</span><span class="why">細すぎる線は、かすれたり、印刷されなかったりする。</span></label><details><summary>Illustratorで確認</summary><p>線パネルで太さを確認。拡大・縮小した線は、太さも変わっていないかを見る。</p></details></li><li class="ck"><input type="checkbox" id="c05-02" data-k="c05-02"><label for="c05-02"><span class="box" aria-hidden="true"></span><span class="tt">塗りも線もないオブジェクトは消した？</span><span class="why">見えないパスが残っていると、思わぬトラブルの原因になる。</span></label><details><summary>Illustratorで確認</summary><p>「オブジェクト > パス > クリーンアップ」で「未着色のオブジェクト」を削除。</p></details></li><li class="ck"><input type="checkbox" id="c05-03" data-k="c05-03"><label for="c05-03"><span class="box" aria-hidden="true"></span><span class="tt">ロック・非表示に不要なものはない？</span><span class="why">隠したままの下書きや古い文字が、出力で出てくることがある。</span></label><details><summary>Illustratorで確認</summary><p>⌥⌘2・⌥⌘3で全部を表示して、不要なものを削除。レイヤーパネルで非表示のレイヤーも確認。</p></details></li><li class="ck"><input type="checkbox" id="c05-04" data-k="c05-04"><label for="c05-04"><span class="box" aria-hidden="true"></span><span class="tt">ラスタライズ効果の解像度は300〜350ppi？</span><span class="why">影・ぼかし・光彩などは画像として出力される。低いと粗く印刷される。</span></label><details><summary>Illustratorで確認</summary><p>「効果 > ドキュメントのラスタライズ効果設定」で解像度を確認。</p></details></li><li class="ck"><input type="checkbox" id="c05-05" data-k="c05-05"><label for="c05-05"><span class="box" aria-hidden="true"></span><span class="tt">透明と描画モードを確認した？</span><span class="why">不透明度や描画モードは、PDF/X-1aでは分割・統合されて、見た目が変わることがある。</span></label><details><summary>Illustratorで確認</summary><p>「ウィンドウ > 分割・統合プレビュー」で、透明が使われている所を確認。</p></details></li><li class="ck"><input type="checkbox" id="c05-06" data-k="c05-06"><label for="c05-06"><span class="box" aria-hidden="true"></span><span class="tt">アピアランス・3Dの分割は指定どおり？</span><span class="why">入稿先によっては、アピアランスや効果を分割したデータを求められる。</span></label><details><summary>Illustratorで確認</summary><p>元データを別名で保存してから「オブジェクト > アピアランスを分割」。</p></details></li></ul></article></section>
+
+<section class="vol t-y" id="vol06" data-t="y"><div class="vol-h"><div class="badge">06</div><span class="tag"># 入稿</span><h2>書き出しと入稿</h2><span class="sec-count" data-sec="06">0 / 7</span></div><p class="short">保存の形式、PDFの設定、ファイルのまとめ方の確認です。入稿の形式は印刷会社ごとに違うので、まず指定を確認します。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c06-01" data-k="c06-01"><label for="c06-01"><span class="box" aria-hidden="true"></span><span class="tt">入稿の形式（ai・PDF）とバージョンは指定どおり？</span><span class="why">aiの保存バージョンや、PDFかaiかは、印刷会社によって指定がある。</span></label><details><summary>Illustratorで確認</summary><p>入稿ガイドを確認し、「別名で保存」でバージョンを選ぶ。</p></details></li><li class="ck"><input type="checkbox" id="c06-02" data-k="c06-02"><label for="c06-02"><span class="box" aria-hidden="true"></span><span class="tt">PDFのプリセットは指定どおり？</span><span class="why">印刷用のPDFは、PDF/X-1aかPDF/X-4がよく使われる。透明の扱いが違う。</span></label><details><summary>Illustratorで確認</summary><p>「ファイル > 別名で保存 > Adobe PDF」で、指定のプリセットを選ぶ。</p></details></li><li class="ck"><input type="checkbox" id="c06-03" data-k="c06-03"><label for="c06-03"><span class="box" aria-hidden="true"></span><span class="tt">PDFに裁ち落とし（とトンボ）は入っている？</span><span class="why">裁ち落としが入っていないPDFは、端に白いすき間が出る。</span></label><details><summary>Illustratorで確認</summary><p>「トンボと裁ち落とし」で「ドキュメントの裁ち落とし設定を使用」にチェック。トンボは指定に合わせる。</p></details></li><li class="ck"><input type="checkbox" id="c06-04" data-k="c06-04"><label for="c06-04"><span class="box" aria-hidden="true"></span><span class="tt">aiで入稿するなら、パッケージした？</span><span class="why">画像やフォントを集め忘れると、出力できない。</span></label><details><summary>Illustratorで確認</summary><p>「ファイル > パッケージ」（⌥⇧⌘P）。Adobe Fontsや配布できないフォントは含まれないので、アウトライン化などで対応。</p></details></li><li class="ck"><input type="checkbox" id="c06-05" data-k="c06-05"><label for="c06-05"><span class="box" aria-hidden="true"></span><span class="tt">ファイル名はわかりやすい？</span><span class="why">「最終」「最新」だけでは、どれが入稿データかわからなくなる。</span></label><details><summary>Illustratorで確認</summary><p>内容・表裏・日付を入れ、半角英数字で（例：autumn-fes_omote_20261116.pdf）。</p></details></li><li class="ck"><input type="checkbox" id="c06-06" data-k="c06-06"><label for="c06-06"><span class="box" aria-hidden="true"></span><span class="tt">出力見本を付けた？</span><span class="why">PDFやJPGの見本があると、印刷会社が仕上がりを確認できて、トラブルを防げる。</span></label><details><summary>Illustratorで確認</summary><p>最終データからPDFかJPGを書き出して、同じフォルダに入れる。</p></details></li><li class="ck"><input type="checkbox" id="c06-07" data-k="c06-07"><label for="c06-07"><span class="box" aria-hidden="true"></span><span class="tt">書き出したPDFを開いて、最終確認した？</span><span class="why">フォントの置き換わり、画像の欠け、透明の見た目の変化は、書き出した後に起きることがある。</span></label><details><summary>Illustratorで確認</summary><p>Acrobatで開き、全ページを拡大して確認。「出力プレビュー」で色の分かれ方やインキの量も見られる。</p></details></li></ul></article></section>
+
+<section class="vol t-y" id="vol07" data-t="y"><div class="vol-h"><div class="badge">07</div><span class="tag"># 入稿</span><h2>入稿したあと</h2><span class="sec-count" data-sec="07">0 / 4</span></div><p class="short">入稿で終わりではありません。印刷会社からの連絡と、校正の確認、データの保管までがひと区切りです。</p><article class="card ck-card"><ul class="cklist"><li class="ck"><input type="checkbox" id="c07-01" data-k="c07-01"><label for="c07-01"><span class="box" aria-hidden="true"></span><span class="tt">印刷会社からのデータチェックの連絡を確認した？</span><span class="why">不備の連絡に気づかないと、納期に間に合わなくなる。</span></label><details><summary>Illustratorで確認</summary><p>メールや入稿サイトの通知を、入稿当日と翌日に確認する。</p></details></li><li class="ck"><input type="checkbox" id="c07-02" data-k="c07-02"><label for="c07-02"><span class="box" aria-hidden="true"></span><span class="tt">校正（色校・簡易校正）で確認した？</span><span class="why">色の出方、文字の内容、仕上がりのサイズや折りを、実物に近い形で確認する。</span></label><details><summary>Illustratorで確認</summary><p>画面の色とは違うので、校正紙は明るい場所で見る。気になる色は、修正の指示を具体的に（例：「もう少し赤みを抑える」）。</p></details></li><li class="ck"><input type="checkbox" id="c07-03" data-k="c07-03"><label for="c07-03"><span class="box" aria-hidden="true"></span><span class="tt">修正したら、元データも同じように直した？</span><span class="why">PDFだけ直して元データを直し忘れると、次に使うときに古い内容に戻ってしまう。</span></label><details><summary>Illustratorで確認</summary><p>修正はaiデータで行い、もう一度書き出して入稿する。</p></details></li><li class="ck"><input type="checkbox" id="c07-04" data-k="c07-04"><label for="c07-04"><span class="box" aria-hidden="true"></span><span class="tt">入稿したデータ一式を保管した？</span><span class="why">再版や、似たデザインを作るときに、入稿したデータがすぐに見つかるように。</span></label><details><summary>Illustratorで確認</summary><p>アウトライン前のデータ、入稿データ、出力見本を、日付つきのフォルダにまとめて保管。</p></details></li></ul></article></section>
+
+
+    <h2 class="sec-title" id="glossary">GLOSSARY</h2>
+    <p class="sec-sub">用語集</p>
+    <dl class="gloss"><dt>オーバープリント</dt><dd>下の色を抜かずに、上に重ねて刷ること。<a href="#vol04">04 色</a></dd><dt>出力見本</dt><dd>仕上がりを確認するためのPDFやJPG。<a href="#vol06">06 書き出し</a></dd><dt>色校正</dt><dd>本番に近い紙とインクで試し刷りすること。<a href="#vol07">07 入稿後</a></dd><dt>墨ノセ</dt><dd>K100の文字などを、オーバープリントで刷ること。<a href="#vol04">04 色</a></dd><dt>総インキ量（TAC）</dt><dd>CMYKの4色の値を合計した量。<a href="#vol04">04 色</a></dd><dt>トンボ</dt><dd>断裁や折りの位置を示す印。トリムマーク。<a href="#vol01">01 基本</a></dd><dt>特色（スポットカラー）</dt><dd>CMYKの掛け合わせではなく、専用に調合したインク。<a href="#vol04">04 色</a></dd><dt>パッケージ</dt><dd>データとリンク画像・フォントを1つのフォルダに集める機能。<a href="#vol06">06 書き出し</a></dd><dt>PDF/X-1a・X-4</dt><dd>印刷用のPDFの規格。X-1aは透明を分割・統合し、X-4は透明をそのまま持つ。<a href="#vol06">06 書き出し</a></dd><dt>分割・統合</dt><dd>透明や描画モードを、画像とパスに分けて変換すること。<a href="#vol05">05 線・効果</a></dd><dt>リッチブラック</dt><dd>K100にCMYを足した、深い黒。<a href="#vol04">04 色</a></dd><dt>ラスタライズ効果</dt><dd>影やぼかしなど、出力で画像になる効果。<a href="#vol05">05 線・効果</a></dd></dl>
+
+    <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
+
+    <p class="refs">参考：Adobe Illustrator ユーザーガイド（ドキュメント設定・リンク・パッケージ・オーバープリント・分割・統合・PDF書き出し）、各印刷会社の入稿ガイドで共通して挙げられている項目をもとにまとめました。数値は一般的な目安です。入稿の形式や数値は、必ず依頼先の印刷会社の指定に従ってください。</p>
+    <p class="copyright">© 2026 Hidaka Shuri</p>
+  </div>
+</main>
+
+<a class="back-to-top" href="#top" aria-label="ページトップへ"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>
+/* 戻るリンク：スマホ・タブレット（1024px以下）はSP版の一覧へ */
+(function(){
+  if(window.innerWidth<=1024){
+    document.querySelectorAll('.js-back').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace('works.html','sp/works.html'))});
+  }
+})();
+(function(){
+  var btns=document.querySelectorAll('.cat-btn');
+  var vols=document.querySelectorAll('section.vol');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-f');
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      vols.forEach(function(v){v.hidden=!(f==='all'||v.getAttribute('data-t')===f)});
+    });
+  });
+})();
+(function(){var b=document.querySelector('.back-to-top');function f(){b.classList.toggle('is-visible',window.scrollY>300)}window.addEventListener('scroll',f,{passive:true});f()})();
+(function(){
+  var links={};document.querySelectorAll('.chap a').forEach(function(a){links[a.dataset.n]=a});
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var n=e.target.id.slice(3);Object.values(links).forEach(function(a){a.classList.toggle('on',a.dataset.n===n)});var a=links[n];if(a&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:a.offsetLeft-40,behavior:'smooth'})}}})},{rootMargin:'-140px 0px -60% 0px'});
+  document.querySelectorAll('section.vol').forEach(function(s){io.observe(s)});
+})();
+
+/* 図の中の文字が枠より広いときは自動で縮める（端末のフォント差対策） */
+(function(){
+  function fit(){
+    document.querySelectorAll('.pv svg').forEach(function(svg){
+      var S=svg.getBoundingClientRect(); if(!S.width) return;
+      var u=S.width/400, pad=7*u;
+      var shapes=[].slice.call(svg.querySelectorAll('rect,ellipse,circle')).map(function(r){return r.getBoundingClientRect()}).filter(function(b){return b.width>20*u});
+      svg.querySelectorAll('text').forEach(function(t){
+        if(t.dataset.fs){t.style.fontSize=t.dataset.fs}
+        var b=t.getBoundingClientRect(), cx=b.left+b.width/2, cy=b.top+b.height/2, box=null;
+        shapes.forEach(function(r){if(cx>=r.left&&cx<=r.right&&cy>=r.top&&cy<=r.bottom){if(!box||r.width*r.height<box.width*box.height)box=r}});
+        var max=box?box.width-2*pad:S.width-2*pad;
+        if(b.width>max){
+          var fs=parseFloat(getComputedStyle(t).fontSize);
+          if(t.dataset.fs===undefined)t.dataset.fs=t.style.fontSize||'';
+          t.style.fontSize=Math.max(fs*0.6,fs*max/b.width)+'px';
+        }
+      });
+    });
+  }
+  window.addEventListener('load',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+<script>
+/* チェックの保存と進み具合 */
+(function(){
+  var KEY='preflight-check-v1',st={};
+  try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){st={}}
+  var boxes=document.querySelectorAll('.ck input');
+  function upd(){
+    var n=0;boxes.forEach(function(b){if(b.checked)n++});
+    document.getElementById('pdone').textContent=n;
+    document.getElementById('pbar').style.width=(n/boxes.length*100)+'%';
+    document.querySelectorAll('.sec-count').forEach(function(c){
+      var sec=document.getElementById('vol'+c.getAttribute('data-sec'));
+      var all=sec.querySelectorAll('.ck input'),d=sec.querySelectorAll('.ck input:checked').length;
+      c.textContent=d+' / '+all.length;c.classList.toggle('done',d===all.length);
+    });
+  }
+  boxes.forEach(function(b){
+    b.checked=!!st[b.getAttribute('data-k')];
+    b.addEventListener('change',function(){st[b.getAttribute('data-k')]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}upd()});
+  });
+  document.getElementById('preset').addEventListener('click',function(){
+    st={};try{localStorage.removeItem(KEY)}catch(e){}
+    boxes.forEach(function(b){b.checked=false});upd();
+  });
+  upd();
+})();
+</script>
+</body>
+</html>
