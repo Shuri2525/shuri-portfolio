@@ -313,6 +313,13 @@ const WORKS_DATA = {
       "tag": "Illustrator / ショートカット",
       "thumb": "./assets/works/note/04/hero.jpg",
       "link": "./note/illustrator-shortcuts.html"
+    },
+    {
+      "id": "05",
+      "title": "文字・フォントのきほん帳",
+      "tag": "文字 / フォント",
+      "thumb": "./assets/works/note/05/hero.jpg",
+      "link": "./note/type-basics.html"
     }
   ],
 };
@@ -328,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02", "03", "04"]
+    note: ["01", "02", "03", "04", "05"]
   };
 
   if (!worksList) {
