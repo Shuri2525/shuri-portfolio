@@ -290,56 +290,56 @@ const WORKS_DATA = {
       "id": "01",
       "title": "DTP・印刷のきほん帳",
       "tag": "DTP / 印刷",
-      "thumb": "./assets/works/note/01/hero.jpg",
+      "thumb": "./assets/works/note/01/hero.jpg?v=20261116",
       "link": "./note/dtp-basics.html"
     },
     {
       "id": "02",
       "title": "Webのきほん帳",
       "tag": "Web / 基礎知識",
-      "thumb": "./assets/works/note/02/hero.jpg",
+      "thumb": "./assets/works/note/02/hero.jpg?v=20261116",
       "link": "./note/web-basics.html"
     },
     {
       "id": "03",
       "title": "AIのきほん帳",
       "tag": "AI / 基礎知識",
-      "thumb": "./assets/works/note/03/hero.jpg",
+      "thumb": "./assets/works/note/03/hero.jpg?v=20261116",
       "link": "./note/ai-basics.html"
     },
     {
       "id": "04",
       "title": "イラレのショートカット帳",
       "tag": "Illustrator / ショートカット",
-      "thumb": "./assets/works/note/04/hero.jpg",
+      "thumb": "./assets/works/note/04/hero.jpg?v=20261116",
       "link": "./note/illustrator-shortcuts.html"
     },
     {
       "id": "05",
       "title": "文字・フォントのきほん帳",
       "tag": "DTP / 文字・フォント",
-      "thumb": "./assets/works/note/05/hero.jpg",
+      "thumb": "./assets/works/note/05/hero.jpg?v=20261116",
       "link": "./note/type-basics.html"
     },
     {
       "id": "06",
       "title": "レイアウトのきほん帳",
       "tag": "DTP / レイアウト",
-      "thumb": "./assets/works/note/06/hero.jpg",
+      "thumb": "./assets/works/note/06/hero.jpg?v=20261116",
       "link": "./note/layout-basics.html"
     },
     {
       "id": "07",
       "title": "イラレの加工帳",
       "tag": "Illustrator / 加工",
-      "thumb": "./assets/works/note/07/hero.jpg",
+      "thumb": "./assets/works/note/07/hero.jpg?v=20261116",
       "link": "./note/fx-recipes.html"
     },
     {
       "id": "08",
       "title": "入稿チェックリスト",
       "tag": "DTP / 入稿",
-      "thumb": "./assets/works/note/08/hero.jpg",
+      "thumb": "./assets/works/note/08/hero.jpg?v=20261116",
       "link": "./note/preflight-checklist.html"
     }
   ],
