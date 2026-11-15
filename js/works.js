@@ -299,6 +299,13 @@ const WORKS_DATA = {
       "tag": "WEB / 基礎知識",
       "thumb": "./assets/works/note/02/hero.jpg",
       "link": "./note/web-basics.html"
+    },
+    {
+      "id": "03",
+      "title": "AIのきほん帳",
+      "tag": "AI / 基礎知識",
+      "thumb": "./assets/works/note/03/hero.jpg",
+      "link": "./note/ai-basics.html"
     }
   ],
 };
@@ -314,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02"]
+    note: ["01", "02", "03"]
   };
 
   if (!worksList) {
