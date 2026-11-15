@@ -289,14 +289,14 @@ const WORKS_DATA = {
     {
       "id": "01",
       "title": "DTP・印刷のきほん帳",
-      "tag": "DTP / 基礎知識",
+      "tag": "DTP / 印刷",
       "thumb": "./assets/works/note/01/hero.jpg",
       "link": "./note/dtp-basics.html"
     },
     {
       "id": "02",
       "title": "Webのきほん帳",
-      "tag": "WEB / 基礎知識",
+      "tag": "Web / 基礎知識",
       "thumb": "./assets/works/note/02/hero.jpg",
       "link": "./note/web-basics.html"
     },
@@ -317,7 +317,7 @@ const WORKS_DATA = {
     {
       "id": "05",
       "title": "文字・フォントのきほん帳",
-      "tag": "文字 / フォント",
+      "tag": "DTP / 文字・フォント",
       "thumb": "./assets/works/note/05/hero.jpg",
       "link": "./note/type-basics.html"
     },
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02", "03", "04", "05", "06", "07", "08"]
+    note: ["01", "05", "06", "08", "07", "04", "02", "03"]
   };
 
   if (!worksList) {
@@ -364,9 +364,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // カテゴリの説明文（あるカテゴリだけ一覧の上に表示）
+  const CATEGORY_DESC = {
+    note: "学んだことを、自分用のノートとしてまとめています。<br>紙のデザインの基本は、01から順に読むのがおすすめです。"
+  };
+  const catDesc = document.querySelector("#worksCatDesc");
+
   // 作品一覧を描画
   function renderWorks(category) {
     worksList.innerHTML = "";
+
+    if (catDesc) {
+      catDesc.innerHTML = CATEGORY_DESC[category] || "";
+      catDesc.hidden = !CATEGORY_DESC[category];
+    }
 
     const data = WORKS_DATA[category];
     if (!data) {

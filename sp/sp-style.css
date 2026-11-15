@@ -4993,3 +4993,21 @@ a {
     transition: none; transform: none; opacity: 1;
   }
 }
+
+/* ================================
+   SP WORKS：カテゴリの説明文（NOTEなど）
+================================ */
+.sp-works-cat-desc {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 2.0;
+  color: #3f3b3a;
+  text-align: center;
+}
+
+.sp-works-cat-desc[hidden] {
+  display: none;
+}

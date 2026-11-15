@@ -31,7 +31,7 @@
   <link rel="canonical" href="../works.html">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./sp-style.css?v=20261115">
+  <link rel="stylesheet" href="./sp-style.css?v=20261116">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -93,6 +93,7 @@
 
   <!-- 作品一覧 -->
   <section class="sp-works-list-section">
+    <p class="sp-works-cat-desc" id="categoryDesc" hidden></p>
     <div class="sp-works-list" id="worksList"></div>
   </section>
 
@@ -501,35 +502,14 @@ const WORKS_DATA = {
     {
       "id": "01",
       "title": "DTP・印刷のきほん帳",
-      "tag": "DTP / 基礎知識",
+      "tag": "DTP / 印刷",
       "thumb": "../assets/works/note/01/hero.jpg",
       "link": "../note/dtp-basics.html"
     },
     {
-      "id": "02",
-      "title": "Webのきほん帳",
-      "tag": "WEB / 基礎知識",
-      "thumb": "../assets/works/note/02/hero.jpg",
-      "link": "../note/web-basics.html"
-    },
-    {
-      "id": "03",
-      "title": "AIのきほん帳",
-      "tag": "AI / 基礎知識",
-      "thumb": "../assets/works/note/03/hero.jpg",
-      "link": "../note/ai-basics.html"
-    },
-    {
-      "id": "04",
-      "title": "イラレのショートカット帳",
-      "tag": "Illustrator / ショートカット",
-      "thumb": "../assets/works/note/04/hero.jpg",
-      "link": "../note/illustrator-shortcuts.html"
-    },
-    {
       "id": "05",
       "title": "文字・フォントのきほん帳",
-      "tag": "文字 / フォント",
+      "tag": "DTP / 文字・フォント",
       "thumb": "../assets/works/note/05/hero.jpg",
       "link": "../note/type-basics.html"
     },
@@ -541,6 +521,13 @@ const WORKS_DATA = {
       "link": "../note/layout-basics.html"
     },
     {
+      "id": "08",
+      "title": "入稿チェックリスト",
+      "tag": "DTP / 入稿",
+      "thumb": "../assets/works/note/08/hero.jpg",
+      "link": "../note/preflight-checklist.html"
+    },
+    {
       "id": "07",
       "title": "イラレの加工帳",
       "tag": "Illustrator / 加工",
@@ -548,11 +535,25 @@ const WORKS_DATA = {
       "link": "../note/fx-recipes.html"
     },
     {
-      "id": "08",
-      "title": "入稿チェックリスト",
-      "tag": "DTP / 入稿",
-      "thumb": "../assets/works/note/08/hero.jpg",
-      "link": "../note/preflight-checklist.html"
+      "id": "04",
+      "title": "イラレのショートカット帳",
+      "tag": "Illustrator / ショートカット",
+      "thumb": "../assets/works/note/04/hero.jpg",
+      "link": "../note/illustrator-shortcuts.html"
+    },
+    {
+      "id": "02",
+      "title": "Webのきほん帳",
+      "tag": "Web / 基礎知識",
+      "thumb": "../assets/works/note/02/hero.jpg",
+      "link": "../note/web-basics.html"
+    },
+    {
+      "id": "03",
+      "title": "AIのきほん帳",
+      "tag": "AI / 基礎知識",
+      "thumb": "../assets/works/note/03/hero.jpg",
+      "link": "../note/ai-basics.html"
     }
   ],
 };
@@ -565,7 +566,7 @@ const CATEGORY_INFO = {
   web: { title: "WEB", subtitle: "HP / LP / TOPページ" },
   dtp: { title: "DTP", subtitle: "名刺 / チラシ / パンフレット" },
   graphic: { title: "GRAPHIC", subtitle: "ロゴ / ビジュアル" },
-  note: { title: "NOTE", subtitle: "知識まとめ / 基礎シリーズ" }
+  note: { title: "NOTE", subtitle: "知識まとめ / 基礎シリーズ", description: "学んだことを、自分用のノートとしてまとめています。<br>紙のデザインの基本は、01から順に読むのがおすすめです。" }
 };
 
 // 作品一覧を描画
@@ -587,6 +588,13 @@ function renderWorks(category) {
   const info = CATEGORY_INFO[category];
   if (categoryTitle) categoryTitle.textContent = info.title;
   if (categorySubtitle) categorySubtitle.textContent = info.subtitle;
+
+  // 説明文（description があるカテゴリだけ表示）
+  const categoryDesc = document.getElementById('categoryDesc');
+  if (categoryDesc) {
+    categoryDesc.innerHTML = info.description || '';
+    categoryDesc.hidden = !info.description;
+  }
   
   // 作品リストをクリア
   worksList.innerHTML = '';

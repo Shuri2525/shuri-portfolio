@@ -201,6 +201,23 @@ body.page-works {
   padding: 42px 0 50px;
 }
 
+/* カテゴリの説明文（NOTEなど） */
+.works-cat-desc {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 40px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  line-height: 1.85;
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.works-cat-desc[hidden] {
+  display: none;
+}
+
 .works-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
