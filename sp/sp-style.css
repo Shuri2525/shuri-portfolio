@@ -5011,3 +5011,12 @@ a {
 .sp-works-cat-desc[hidden] {
   display: none;
 }
+
+/* SP WORKS：NOTEの番号（01〜） */
+.sp-work-title .sp-work-num {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-right: 10px;
+}

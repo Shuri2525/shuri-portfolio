@@ -370,6 +370,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const catDesc = document.querySelector("#worksCatDesc");
 
+  // 並び順の番号を付けるカテゴリ
+  const NUMBERED_CATS = ["note"];
+
   // 作品一覧を描画
   function renderWorks(category) {
     worksList.innerHTML = "";
@@ -393,8 +396,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return aOrder - bOrder;
     });
 
-    sortedData.forEach(work => {
+    sortedData.forEach((work, index) => {
       const [tagEn, tagJa] = work.tag.split("/").map(t => t?.trim());
+      // NOTEは並び順の番号（01〜）をタイトルの前に付ける
+      const num = NUMBERED_CATS.includes(category)
+        ? `<span class="work-num">${String(index + 1).padStart(2, "0")}</span>`
+        : "";
 
       worksList.insertAdjacentHTML("beforeend", `
         <div class="work-item" data-id="${work.id}" data-category="${category}">
@@ -402,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${work.pickupLabel ? `<span class="work-pickup-badge">${work.pickupLabel}</span>` : ""}
             <img src="${work.thumb}" alt="${work.title}" class="work-thumb" loading="lazy" decoding="async">
           </div>
-          <p class="work-title">${work.title}</p>
+          <p class="work-title">${num}${work.title}</p>
           <p class="work-label">
             <span class="tag-en"># ${tagEn}</span>
             ${tagJa ? `<span class="tag-ja"> / ${tagJa}</span>` : ""}

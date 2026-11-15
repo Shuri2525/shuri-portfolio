@@ -302,6 +302,15 @@ body.page-works {
   margin-bottom: 8px;
 }
 
+/* NOTEの番号（01〜） */
+.work-title .work-num {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-right: 10px;
+}
+
 .work-title .title-en {
   font-family: var(--font-en);
   margin-left: 6px;

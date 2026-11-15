@@ -31,7 +31,7 @@
   <link rel="canonical" href="../works.html">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./sp-style.css?v=20261116">
+  <link rel="stylesheet" href="./sp-style.css?v=20261116-2">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -604,6 +604,10 @@ function renderWorks(category) {
   console.log('Number of works:', works.length);
   
   works.forEach((work, index) => {
+    // NOTEは並び順の番号（01〜）をタイトルの前に付ける
+    const num = category === 'note'
+      ? `<span class="sp-work-num">${String(index + 1).padStart(2, '0')}</span>`
+      : '';
     console.log(`Rendering work ${index + 1}:`, work.title);
     
     const [tagEn, tagJa] = work.tag.split('/').map(t => t?.trim());
@@ -617,7 +621,7 @@ function renderWorks(category) {
         ${work.pickupLabel ? `<span class="sp-work-pickup-badge">${work.pickupLabel}</span>` : ''}
         <img src="${work.thumb}" alt="${work.title}" class="sp-work-thumb" loading="lazy">
       </div>
-      <p class="sp-work-title">${work.title}</p>
+      <p class="sp-work-title">${num}${work.title}</p>
       <p class="sp-work-label">
         <span class="sp-tag-en"># ${tagEn}</span>
         ${tagJa ? `<span class="sp-tag-ja"> / ${tagJa}</span>` : ''}
