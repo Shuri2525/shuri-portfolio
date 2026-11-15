@@ -320,6 +320,13 @@ const WORKS_DATA = {
       "tag": "文字 / フォント",
       "thumb": "./assets/works/note/05/hero.jpg",
       "link": "./note/type-basics.html"
+    },
+    {
+      "id": "06",
+      "title": "レイアウトのきほん帳",
+      "tag": "DTP / レイアウト",
+      "thumb": "./assets/works/note/06/hero.jpg",
+      "link": "./note/layout-basics.html"
     }
   ],
 };
@@ -335,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02", "03", "04", "05"]
+    note: ["01", "02", "03", "04", "05", "06"]
   };
 
   if (!worksList) {
