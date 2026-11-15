@@ -292,6 +292,13 @@ const WORKS_DATA = {
       "tag": "DTP / 基礎知識",
       "thumb": "./assets/works/note/01/hero.jpg",
       "link": "./note/dtp-basics.html"
+    },
+    {
+      "id": "02",
+      "title": "Webのきほん帳",
+      "tag": "WEB / 基礎知識",
+      "thumb": "./assets/works/note/02/hero.jpg",
+      "link": "./note/web-basics.html"
     }
   ],
 };
@@ -307,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01"]
+    note: ["01", "02"]
   };
 
   if (!worksList) {
