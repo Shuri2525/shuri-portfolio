@@ -208,6 +208,16 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 }
 .site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
 .site-header .mini svg{width:18px;height:26px}
+.bx{word-break:keep-all;overflow-wrap:anywhere}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:72px 0 0}
+.pager a{display:flex;flex-direction:column;gap:6px;background:var(--color-white);border:1px solid var(--line);border-radius:4px;padding:20px 22px;color:var(--color-dark);text-decoration:none;transition:box-shadow .3s ease,border-color .3s ease;min-width:0}
+.pager a:hover{box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:var(--color-dark)}
+.pager .pg-l{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:var(--color-gray)}
+.pager .pg-en{font-family:var(--font-en);font-size:18px;font-weight:500;letter-spacing:.08em;line-height:1.3}
+.pager .pg-ja{font-size:13px;letter-spacing:.06em;color:var(--color-gray)}
+.pager .next{text-align:right;align-items:flex-end;grid-column:2}
+.pager .pg-n{font-family:var(--font-en);font-size:12px;letter-spacing:.1em;color:var(--color-gray)}
+@media (max-width:600px){.pager{grid-template-columns:1fr;gap:12px;margin-top:56px}.pager .next{grid-column:1;order:-1}.pager .pg-n{order:-2}.pager .pg-en{font-size:16px}}
 </style>
 </head>
 <body id="top">
@@ -250,7 +260,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
     <div class="inner">
       <h2 class="sec-title">INDEX</h2>
       <p class="sec-sub">目次</p>
-      <ol class="index"><li><a href="#vol01"><span class="ix-n"><i class="d-k"></i>01</span><span>画面どおりに印刷できるのはなぜ？</span></a></li><li><a href="#vol02"><span class="ix-n"><i class="d-m"></i>02</span><span>なぜ印刷はCMYKのインキを使うの？</span></a></li><li><a href="#vol03"><span class="ix-n"><i class="d-k"></i>03</span><span>印刷線数と解像度、なにが違うの？</span></a></li><li><a href="#vol04"><span class="ix-n"><i class="d-m"></i>04</span><span>画面の色と印刷の色が違う！</span></a></li><li><a href="#vol05"><span class="ix-n"><i class="d-c"></i>05</span><span>フォントのアウトライン化はもう古い？</span></a></li><li><a href="#vol06"><span class="ix-n"><i class="d-y"></i>06</span><span>黒をオーバープリントするのはなぜ？</span></a></li><li><a href="#vol07"><span class="ix-n"><i class="d-y"></i>07</span><span>仕上がりより大きい紙で刷るのはなぜ？</span></a></li><li><a href="#vol08"><span class="ix-n"><i class="d-y"></i>08</span><span>版面とマージンってなに？</span></a></li><li><a href="#vol09"><span class="ix-n"><i class="d-y"></i>09</span><span>本のページ数はどうやって決まる？</span></a></li><li><a href="#vol10"><span class="ix-n"><i class="d-c"></i>10</span><span>読みやすい文章はどう組む？</span></a></li><li><a href="#vol11"><span class="ix-n"><i class="d-m"></i>11</span><span>インキの沈みってなに？</span></a></li></ol>
+      <ol class="index"><li><a href="#vol01"><span class="ix-n"><i class="d-k"></i>01</span><span><span class="bx">画面どおりに<wbr>印刷できるのは<wbr>なぜ？</span></span></a></li><li><a href="#vol02"><span class="ix-n"><i class="d-m"></i>02</span><span><span class="bx">なぜ<wbr>印刷は<wbr>CMYKの<wbr>インキを<wbr>使うの？</span></span></a></li><li><a href="#vol03"><span class="ix-n"><i class="d-k"></i>03</span><span><span class="bx">印刷線数と<wbr>解像度、<wbr>なにが<wbr>違うの？</span></span></a></li><li><a href="#vol04"><span class="ix-n"><i class="d-m"></i>04</span><span><span class="bx">画面の<wbr>色と<wbr>印刷の<wbr>色が<wbr>違う！</span></span></a></li><li><a href="#vol05"><span class="ix-n"><i class="d-c"></i>05</span><span><span class="bx">フォントの<wbr>アウトライン化は<wbr>もう<wbr>古い？</span></span></a></li><li><a href="#vol06"><span class="ix-n"><i class="d-y"></i>06</span><span><span class="bx">黒を<wbr>オーバープリントするのは<wbr>なぜ？</span></span></a></li><li><a href="#vol07"><span class="ix-n"><i class="d-y"></i>07</span><span><span class="bx">仕上がりより<wbr>大きい<wbr>紙で<wbr>刷るのは<wbr>なぜ？</span></span></a></li><li><a href="#vol08"><span class="ix-n"><i class="d-y"></i>08</span><span><span class="bx">版面と<wbr>マージンってなに？</span></span></a></li><li><a href="#vol09"><span class="ix-n"><i class="d-y"></i>09</span><span><span class="bx">本の<wbr>ページ数は<wbr>どうやって<wbr>決まる？</span></span></a></li><li><a href="#vol10"><span class="ix-n"><i class="d-c"></i>10</span><span><span class="bx">読みやすい<wbr>文章は<wbr>どう<wbr>組む？</span></span></a></li><li><a href="#vol11"><span class="ix-n"><i class="d-m"></i>11</span><span><span class="bx">インキの<wbr>沈みってなに？</span></span></a></li></ol>
     </div>
   </div>
 
@@ -287,7 +297,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
 
 <!-- ============ 01 ============ -->
 <section class="vol t-k" id="vol01" data-t="k">
-  <div class="vol-h"><div class="badge">01</div><span class="tag"># 出力</span><h2>画面どおりに印刷できるのはなぜ？</h2></div>
+  <div class="vol-h"><div class="badge">01</div><span class="tag"># 出力</span><h2><span class="bx">画面どおりに<wbr>印刷できるのは<wbr>なぜ？</span></h2></div>
   <p class="short">データを「完成した絵」ではなく「描き方の指示書」として送るから。プリンタ側が指示書を読んで、その機械でいちばんきれいに描きます。</p>
   <div class="grid">
     <article class="card">
@@ -297,7 +307,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(200 30)"><rect x="0" y="0" width="80" height="80" rx="18" fill="#FFF3BF"/><path class="o2" d="M26 22v26M34 22v30M42 22v26M50 22v30"/><path class="o" d="M18 58h44"/><text class="ts" x="40" y="104" text-anchor="middle">ドット式</text></g>
         <g transform="translate(290 30)"><rect x="0" y="0" width="80" height="80" rx="18" fill="#FFF6CC"/><path class="o2" d="M30 52q4-8 0-16t0-14M42 52q4-8 0-16t0-14M54 52q4-8 0-16t0-14" stroke="#F5C400"/><path class="o" d="M20 60h40"/><text class="ts" x="40" y="104" text-anchor="middle">昇華型</text></g>
       </svg></div>
-      <div class="body"><h3>プリンタは4つの方式がある</h3><p>インクを吹きつける、トナーを紙に移す、ピンで叩く、熱でインクを気体にして染める。ふだん「◯◯プリンタ」と呼ぶのは、この印字方式の違いです。</p></div>
+      <div class="body"><h3><span class="bx">プリンタは<wbr>4つの<wbr>方式が<wbr>ある</span></h3><p>インクを吹きつける、トナーを紙に移す、ピンで叩く、熱でインクを気体にして染める。ふだん「◯◯プリンタ」と呼ぶのは、この印字方式の違いです。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="絵を送るか指示書を送るかの違い">
@@ -312,7 +322,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <rect x="206" y="142" width="40" height="40" rx="4" fill="#fff" stroke="#3f3b3a" stroke-width="2"/><path class="o2" d="M214 154h24M214 162h24M214 170h16"/>
         <rect x="270" y="138" width="100" height="50" rx="12" fill="#DDF3FB" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="320" y="160" text-anchor="middle">プリンタ</text><text class="ts" x="320" y="177" text-anchor="middle">RIPで描く</text>
       </svg></div>
-      <div class="body"><h3>どこで「絵」にするかが違う</h3><p>昔のやり方（Mac の QuickDraw、Windows の GDI）は、パソコンで印刷用の画像を作ってから送るので、重くて粗くなりがちでした。PostScript は「この位置にこのフォントで」という指示書を送り、プリンタ内の <b>RIP</b> が描きます。だから機械が変わっても同じ結果になり、高性能な機械ほどきれいに刷れます。</p></div>
+      <div class="body"><h3><span class="bx">どこで<wbr>「絵」に<wbr>するかが<wbr>違う</span></h3><p>昔のやり方（Mac の QuickDraw、Windows の GDI）は、パソコンで印刷用の画像を作ってから送るので、重くて粗くなりがちでした。PostScript は「この位置にこのフォントで」という指示書を送り、プリンタ内の <b>RIP</b> が描きます。だから機械が変わっても同じ結果になり、高性能な機械ほどきれいに刷れます。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="PostScriptからPDF/X-4までの年表">
@@ -322,7 +332,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g><circle cx="240" cy="100" r="14" fill="#FFD23F" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="240" y="70" text-anchor="middle">2006</text><text class="ts" x="240" y="136" text-anchor="middle">PDF Print Engine</text></g>
         <g><circle cx="330" cy="100" r="18" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><path d="M322 100l6 6 11-12" class="o2" stroke="#D6246E" stroke-width="3"/><text class="tx" x="330" y="70" text-anchor="middle">いま</text><text class="ts" x="330" y="140" text-anchor="middle">PDF/X-4 入稿</text></g>
       </svg></div>
-      <div class="body"><h3>指示書はPostScriptからPDFへ</h3><p>DTP は PostScript から始まりましたが、いまの印刷所では PDF をそのまま処理する RIP（Adobe PDF Print Engine）が主流です。</p><p class="now"><b>NOW</b>入稿は <b>PDF/X-4</b> での書き出しが推奨。透明効果（ドロップシャドウや乗算）を分割せずに渡せます。</p></div>
+      <div class="body"><h3><span class="bx">指示書は<wbr>PostScriptから<wbr>PDFへ</span></h3><p>DTP は PostScript から始まりましたが、いまの印刷所では PDF をそのまま処理する RIP（Adobe PDF Print Engine）が主流です。</p><p class="now"><b>NOW</b>入稿は <b>PDF/X-4</b> での書き出しが推奨。透明効果（ドロップシャドウや乗算）を分割せずに渡せます。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="DTPが仕事の流れを変えた">
@@ -330,14 +340,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o" d="M140 95h50M182 87l10 8-10 8"/>
         <g transform="translate(210 30)"><rect x="0" y="0" width="160" height="104" rx="12" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><rect x="12" y="12" width="136" height="70" rx="6" fill="#DDF3FB"/><rect x="24" y="24" width="50" height="46" rx="4" fill="#FFD23F"/><path class="o2" d="M86 30h48M86 42h48M86 54h36"/><path class="o" d="M60 104l-10 22h60l-10-22"/><text class="ts" x="80" y="152" text-anchor="middle">1台のパソコンで完結</text></g>
       </svg></div>
-      <div class="body"><h3>DTPが印刷の現場を変えた</h3><p>昔は写植、製版など、工程ごとに高価な専用機と専門の職人が必要でした。PostScript と Illustrator・Photoshop・レイアウトソフト、それに対応フォントがそろい、デザイナーが画面で仕上がりを見ながら作れるように。日本では文字数の多さが壁でしたが、和文フォントが増えるにつれて広まりました。</p></div>
+      <div class="body"><h3><span class="bx">DTPが<wbr>印刷の<wbr>現場を<wbr>変えた</span></h3><p>昔は写植、製版など、工程ごとに高価な専用機と専門の職人が必要でした。PostScript と Illustrator・Photoshop・レイアウトソフト、それに対応フォントがそろい、デザイナーが画面で仕上がりを見ながら作れるように。日本では文字数の多さが壁でしたが、和文フォントが増えるにつれて広まりました。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 02 ============ -->
 <section class="vol t-m" id="vol02" data-t="m">
-  <div class="vol-h"><div class="badge">02</div><span class="tag"># 色</span><h2>なぜ印刷はCMYKのインキを使うの？</h2></div>
+  <div class="vol-h"><div class="badge">02</div><span class="tag"># 色</span><h2><span class="bx">なぜ<wbr>印刷は<wbr>CMYKの<wbr>インキを<wbr>使うの？</span></h2></div>
   <p class="short">光（RGB）は重ねると白に、インキ（CMY）は重ねると黒に近づきます。紙に刷るのはインキなので CMY、そこに黒（K）を足した4色です。</p>
   <div class="grid">
     <article class="card">
@@ -349,7 +359,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="tx" x="105" y="190" text-anchor="middle">RGB 光：重ねると白</text>
         <text class="tx" x="295" y="190" text-anchor="middle">CMY インキ：重ねると黒</text>
       </svg></div>
-      <div class="body"><h3>光の三原色とインキの三原色</h3><p>モニタは光そのものなので、赤・緑・青の光を足して色を作ります（加法混色）。紙は光を反射して見える色なので、インキで光を吸い取って色を作ります（減法混色）。黒い物が黒く見えるのは、光をほとんど吸ってしまうからです。</p></div>
+      <div class="body"><h3><span class="bx">光の<wbr>三原色と<wbr>インキの<wbr>三原色</span></h3><p>モニタは光そのものなので、赤・緑・青の光を足して色を作ります（加法混色）。紙は光を反射して見える色なので、インキで光を吸い取って色を作ります（減法混色）。黒い物が黒く見えるのは、光をほとんど吸ってしまうからです。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="CMYを混ぜても濁った茶色になり、Kで黒を補う">
@@ -359,7 +369,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <circle cx="345" cy="80" r="28" fill="#5B4A44" stroke="#3f3b3a" stroke-width="2.5"/><text class="ts" x="345" y="128" text-anchor="middle">にごった茶色</text>
         <rect x="90" y="146" width="220" height="40" rx="20" fill="#3f3b3a"/><text class="tx" x="200" y="172" text-anchor="middle" style="fill:#fff">だから黒インキ K を足す</text>
       </svg></div>
-      <div class="body"><h3>黒（K）を足す理由</h3><p>理屈では CMY を混ぜれば黒になりますが、実際のインキは純粋な色ではないので、にごった茶色にしかなりません。そこで黒インキを足します。K は Black の頭文字ではなく、仕上がりを引き締める「Key（カギ）になる版」から来ています。</p></div>
+      <div class="body"><h3><span class="bx">黒<wbr>（K）を<wbr>足す理由</span></h3><p>理屈では CMY を混ぜれば黒になりますが、実際のインキは純粋な色ではないので、にごった茶色にしかなりません。そこで黒インキを足します。K は Black の頭文字ではなく、仕上がりを引き締める「Key（カギ）になる版」から来ています。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="網点の大きさで濃淡を表す">
@@ -372,7 +382,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g fill="#2EAEE6"><circle cx="80" cy="150" r="4"/><circle cx="96" cy="162" r="5"/></g><g fill="#EC5A99"><circle cx="92" cy="148" r="4"/><circle cx="82" cy="164" r="3"/></g><circle cx="100" cy="152" r="3" fill="#FFD23F"/>
         <text class="tx" x="146" y="158">ルーペで見ると、点の集まり</text><text class="ts" x="146" y="178">約1/175インチより小さいと目には見えない</text>
       </svg></div>
-      <div class="body"><h3>濃淡は「点の大きさ」で出す</h3><p>濃さごとにインキを用意するのは無理なので、インキは1色1濃度のまま、点（<b>網点</b>）の大きさで濃淡を表します。点が十分小さいと、人の目には点ではなく色の濃さに見えます。各色の網点は角度をずらして刷り、半透明のインキが重なって色が混ざります。</p></div>
+      <div class="body"><h3><span class="bx">濃淡は<wbr>「点の<wbr>大きさ」で<wbr>出す</span></h3><p>濃さごとにインキを用意するのは無理なので、インキは1色1濃度のまま、点（<b>網点</b>）の大きさで濃淡を表します。点が十分小さいと、人の目には点ではなく色の濃さに見えます。各色の網点は角度をずらして刷り、半透明のインキが重なって色が混ざります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="RGBの色域とCMYKの色域、特色">
@@ -383,14 +393,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="ts" x="300" y="64">RGBで出せる色</text>
         <rect x="300" y="160" width="80" height="30" rx="15" fill="#D6246E"/><text class="ts" x="340" y="180" text-anchor="middle" style="fill:#fff">特色で刷る</text>
       </svg></div>
-      <div class="body"><h3>CMYKでは出せない色もある</h3><p>モニタで見える鮮やかな緑（例：R50 G255 B0）やオレンジ、蛍光色は、CMYK の範囲（色域）の外。そのまま刷るとくすみます。どうしても必要なら、DIC や TOYO の<b>特色インキ</b>をスポットカラーとして指定します。</p></div>
+      <div class="body"><h3><span class="bx">CMYKでは<wbr>出せない<wbr>色も<wbr>ある</span></h3><p>モニタで見える鮮やかな緑（例：R50 G255 B0）やオレンジ、蛍光色は、CMYK の範囲（色域）の外。そのまま刷るとくすみます。どうしても必要なら、DIC や TOYO の<b>特色インキ</b>をスポットカラーとして指定します。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 03 ============ -->
 <section class="vol t-k" id="vol03" data-t="k">
-  <div class="vol-h"><div class="badge">03</div><span class="tag"># 出力</span><h2>印刷線数と解像度、なにが違うの？</h2></div>
+  <div class="vol-h"><div class="badge">03</div><span class="tag"># 出力</span><h2><span class="bx">印刷線数と<wbr>解像度、<wbr>なにが<wbr>違うの？</span></h2></div>
   <p class="short">写真の解像度は「使うサイズのままで350dpi」が目安。これは印刷の網点の細かさ（175線）の2倍、という決まりから来ています。</p>
   <div class="grid">
     <article class="card">
@@ -405,7 +415,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <text class="tx" x="60" y="150" text-anchor="middle">144dpi</text></g>
         <text class="ts" x="200" y="194" text-anchor="middle">同じ1インチでも、マス目が細かいほどなめらか</text>
       </svg></div>
-      <div class="body"><h3>dpiは「1インチに何マスあるか」</h3><p>dpi・ppi は1インチ（2.54cm）あたりのピクセル数。72dpi なら1マスは1/72インチ、144dpi なら半分の大きさです。数字が大きいほどマスが小さく、曲線のギザギザ（ジャギ）が目立たなくなります。</p></div>
+      <div class="body"><h3><span class="bx">dpiは<wbr>「1インチに<wbr>何マスあるか」</span></h3><p>dpi・ppi は1インチ（2.54cm）あたりのピクセル数。72dpi なら1マスは1/72インチ、144dpi なら半分の大きさです。数字が大きいほどマスが小さく、曲線のギザギザ（ジャギ）が目立たなくなります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="比率を保った拡大と補間による拡大">
@@ -418,7 +428,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="ts" x="320" y="170" text-anchor="middle">20×30cm・400dpi</text>
         <circle cx="320" cy="186" r="9" fill="#EC5A99"/><path d="M316 182l8 8M324 182l-8 8" class="o2" stroke="#fff"/>
       </svg></div>
-      <div class="body"><h3>拡大するときの注意</h3><p>サイズと解像度の比率を保てば画質は落ちません（10×15cm・400dpi → 20×30cm・200dpi）。Photoshop の［イメージ］→［画像解像度］で<b>「再サンプル」をオフ</b>にして変えます。オンのまま拡大すると、ないピクセルを推測で埋める（補間）のでぼやけます。縮小や解像度を下げる方向は、実用上ほぼ問題ありません。</p><p class="now"><b>NOW</b>Photoshop 2026 には AI で解像度を上げる「生成アップスケール」もあります。使ったら必ず原寸で仕上がりを確認しましょう。</p></div>
+      <div class="body"><h3><span class="bx">拡大する<wbr>ときの<wbr>注意</span></h3><p>サイズと解像度の比率を保てば画質は落ちません（10×15cm・400dpi → 20×30cm・200dpi）。Photoshop の［イメージ］→［画像解像度］で<b>「再サンプル」をオフ</b>にして変えます。オンのまま拡大すると、ないピクセルを推測で埋める（補間）のでぼやけます。縮小や解像度を下げる方向は、実用上ほぼ問題ありません。</p><p class="now"><b>NOW</b>Photoshop 2026 には AI で解像度を上げる「生成アップスケール」もあります。使ったら必ず原寸で仕上がりを確認しましょう。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="線数×2のルール">
@@ -427,7 +437,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <rect x="216" y="40" width="150" height="110" rx="18" fill="#2EAEE6" stroke="#3f3b3a" stroke-width="2.5"/><text class="tb" x="291" y="100" text-anchor="middle" style="font-size:30px">350</text><text class="ts" x="291" y="126" text-anchor="middle" style="fill:#3f3b3a">画像解像度（dpi）</text>
         <text class="ts" x="200" y="182" text-anchor="middle">※ 配置サイズが原寸（拡大・縮小なし）のとき</text>
       </svg></div>
-      <div class="body"><h3>「線数の2倍」というルール</h3><p>人の目は約250dpiあればピクセルを見分けられないと言われますが、網点できれいに再現しやすく、計算もしやすいので「線数×2」が目安になりました。ソフトの画面写真のように72dpiでも十分な場合もあれば、低すぎてぼやける場合もあるので、配置サイズで判断します。</p></div>
+      <div class="body"><h3><span class="bx">「線数の<wbr>2倍」と<wbr>いう<wbr>ルール</span></h3><p>人の目は約250dpiあればピクセルを見分けられないと言われますが、網点できれいに再現しやすく、計算もしやすいので「線数×2」が目安になりました。ソフトの画面写真のように72dpiでも十分な場合もあれば、低すぎてぼやける場合もあるので、配置サイズで判断します。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="ドット、網点、線数の関係">
@@ -440,14 +450,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <path class="o2" d="M0 128h110" stroke="#2EAEE6"/><text class="ts" x="122" y="58">網点</text><text class="ts" x="122" y="76">1インチに</text><text class="ts" x="122" y="94">175個</text><text class="ts" x="122" y="112">＝175線</text>
           <text class="ts" x="55" y="146" text-anchor="middle">ドットが集まって網点に</text></g>
       </svg></div>
-      <div class="body"><h3>3つの「細かさ」の違い</h3><ul><li><b>出力解像度（dpi）</b>：出力機が打てる一番小さな点の細かさ</li><li><b>網点</b>：その点を何個も集めて作る、濃淡用の点（ハーフトーンセル）</li><li><b>印刷線数（lpi）</b>：1インチに網点が何個並ぶか</li></ul><p>出力解像度が高いほど、細かい網点となめらかなグラデーションが作れます。</p></div>
+      <div class="body"><h3><span class="bx">3つの<wbr>「細かさ」の<wbr>違い</span></h3><ul><li><b>出力解像度（dpi）</b>：出力機が打てる一番小さな点の細かさ</li><li><b>網点</b>：その点を何個も集めて作る、濃淡用の点（ハーフトーンセル）</li><li><b>印刷線数（lpi）</b>：1インチに網点が何個並ぶか</li></ul><p>出力解像度が高いほど、細かい網点となめらかなグラデーションが作れます。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 04 ============ -->
 <section class="vol t-m" id="vol04" data-t="m">
-  <div class="vol-h"><div class="badge">04</div><span class="tag"># 色</span><h2>画面の色と印刷の色が違う！</h2></div>
+  <div class="vol-h"><div class="badge">04</div><span class="tag"># 色</span><h2><span class="bx">画面の<wbr>色と<wbr>印刷の<wbr>色が<wbr>違う！</span></h2></div>
   <p class="short">カメラ、モニタ、プリンタは、出せる色の範囲がそれぞれ違います。プロファイルという「通訳」を通して色を受け渡すのが、カラーマネジメントです。</p>
   <div class="grid">
     <article class="card">
@@ -457,7 +467,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <ellipse cx="225" cy="105" rx="80" ry="45" fill="#FFF3BF" stroke="#3f3b3a" stroke-width="2" opacity=".9"/>
         <text class="ts" x="320" y="50">人の目</text><text class="ts" x="90" y="78">モニタ</text><text class="tx" x="240" y="112" text-anchor="middle">プリンタ</text>
       </svg></div>
-      <div class="body"><h3>機器ごとに出せる色が違う</h3><p>「赤」と言っても、思い浮かべる赤は人それぞれ。機械も同じで、取り込める色・表示できる色・刷れる色の範囲（<b>カラースペース</b>）がばらばらです。そこで、人の目を基準に色を数値で表す CIE 表色系を土台に、機器の違いを埋めるしくみが作られました。</p></div>
+      <div class="body"><h3><span class="bx">機器ごとに<wbr>出せる<wbr>色が<wbr>違う</span></h3><p>「赤」と言っても、思い浮かべる赤は人それぞれ。機械も同じで、取り込める色・表示できる色・刷れる色の範囲（<b>カラースペース</b>）がばらばらです。そこで、人の目を基準に色を数値で表す CIE 表色系を土台に、機器の違いを埋めるしくみが作られました。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="ICCプロファイルが通訳になる">
@@ -467,7 +477,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o" d="M108 78h44M240 78h52"/>
         <path d="M110 160h180" class="o2 dash"/><text class="ts" x="200" y="186" text-anchor="middle">変換するのは CMM（Adobe なら ACE）</text>
       </svg></div>
-      <div class="body"><h3>プロファイルは色の通訳</h3><p><b>ICC プロファイル</b>は「この機器はこういう色を出す」と書いた説明書。2つのプロファイルを見比べて色を変換するのが <b>CMM</b> で、Adobe のアプリには ACE が入っています。変換で大事なのは、元データの正しいプロファイルで開き、正しい出力先を指定することの2つだけです。</p></div>
+      <div class="body"><h3><span class="bx">プロファイルは<wbr>色の<wbr>通訳</span></h3><p><b>ICC プロファイル</b>は「この機器はこういう色を出す」と書いた説明書。2つのプロファイルを見比べて色を変換するのが <b>CMM</b> で、Adobe のアプリには ACE が入っています。変換で大事なのは、元データの正しいプロファイルで開き、正しい出力先を指定することの2つだけです。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="モニタのキャリブレーション">
@@ -478,7 +488,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o" d="M180 154v18M150 176h100"/>
         <text class="ts" x="128" y="118">測色器で色を測る</text>
       </svg></div>
-      <div class="body"><h3>まずは機器を整える</h3><p>どんなに正しく変換しても、モニタやプリンタの発色がずれていたら意味がありません。発色を基準に合わせる作業が<b>キャリブレーション</b>。目で合わせるツールもOSにありますが、厳密にやるなら測色器を使い、その機器専用のプロファイルを作ります。</p></div>
+      <div class="body"><h3><span class="bx">まずは<wbr>機器を<wbr>整える</span></h3><p>どんなに正しく変換しても、モニタやプリンタの発色がずれていたら意味がありません。発色を基準に合わせる作業が<b>キャリブレーション</b>。目で合わせるツールもOSにありますが、厳密にやるなら測色器を使い、その機器専用のプロファイルを作ります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="いまのカラーマネジメントの流れ">
@@ -489,14 +499,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(286 46)"><rect width="100" height="72" rx="14" fill="#FFF3BF" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="50" y="32" text-anchor="middle">RIP</text><text class="ts" x="50" y="52" text-anchor="middle">機械に合わせ変換</text></g>
         <text class="ts" x="200" y="160" text-anchor="middle">データは1つのまま、本機でも校正機でも同じ色を目指す</text>
       </svg></div>
-      <div class="body"><h3>いまのやり方</h3><p>昔は「RGB のプロファイルは埋め込む、CMYK は埋め込まない」が基本でした。印刷の色の基準（Japan Color、雑誌広告基準カラー JMPA）ができてからは、<b>最終的な刷り先のプロファイルを埋め込む</b>のが推奨。校正用プリンタは、埋め込まれたプロファイルを見て自分の色に自動で変換して出力します。</p><p class="now"><b>NOW</b>Adobe の入稿ガイドでは Japan Color 2011 Coated を基準にしています。カラー設定は Bridge でアプリ間をまとめて同期できます。</p></div>
+      <div class="body"><h3><span class="bx">いまの<wbr>やり方</span></h3><p>昔は「RGB のプロファイルは埋め込む、CMYK は埋め込まない」が基本でした。印刷の色の基準（Japan Color、雑誌広告基準カラー JMPA）ができてからは、<b>最終的な刷り先のプロファイルを埋め込む</b>のが推奨。校正用プリンタは、埋め込まれたプロファイルを見て自分の色に自動で変換して出力します。</p><p class="now"><b>NOW</b>Adobe の入稿ガイドでは Japan Color 2011 Coated を基準にしています。カラー設定は Bridge でアプリ間をまとめて同期できます。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 05 ============ -->
 <section class="vol t-c" id="vol05" data-t="c">
-  <div class="vol-h"><div class="badge">05</div><span class="tag"># 文字</span><h2>フォントのアウトライン化はもう古い？</h2></div>
+  <div class="vol-h"><div class="badge">05</div><span class="tag"># 文字</span><h2><span class="bx">フォントの<wbr>アウトライン化は<wbr>もう<wbr>古い？</span></h2></div>
   <p class="short">いまは OpenType フォントで作って PDF/X-4 で入稿するのが基本。アウトライン化は、印刷所に指定されたときや最後の保険として使います。</p>
   <div class="grid">
     <article class="card">
@@ -506,7 +516,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(232 30)"><rect width="140" height="100" rx="12" fill="#E3F4FB" stroke="#3f3b3a" stroke-width="2.5"/><text x="70" y="66" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:38px;fill:#3f3b3a">文字</text><text class="ts" x="70" y="124" text-anchor="middle">フォントがない印刷所</text></g>
         <rect x="282" y="16" width="76" height="26" rx="13" fill="#D6246E"/><text class="ts" x="320" y="34" text-anchor="middle" style="fill:#fff">別の書体に</text>
       </svg></div>
-      <div class="body"><h3>昔の悩み：フォントがそろわない</h3><p>昔の PostScript フォントは、作る側のパソコンと出力機の両方に同じフォントが必要でした。デザイン会社と印刷会社で環境が違うと、別の書体に置き換わったり、文字組みが崩れたりします。同じ書体でも形式（OCF・CID）が違うだけで詰め方が変わるトラブルもありました。</p></div>
+      <div class="body"><h3><span class="bx">昔の<wbr>悩み：フォントが<wbr>そろわない</span></h3><p>昔の PostScript フォントは、作る側のパソコンと出力機の両方に同じフォントが必要でした。デザイン会社と印刷会社で環境が違うと、別の書体に置き換わったり、文字組みが崩れたりします。同じ書体でも形式（OCF・CID）が違うだけで詰め方が変わるトラブルもありました。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="テキストとアウトライン化した文字の比較">
@@ -515,7 +525,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <g fill="#fff" stroke="#1C8CC0" stroke-width="1.5"><rect x="56" y="34" width="6" height="6"/><rect x="98" y="38" width="6" height="6"/><rect x="50" y="70" width="6" height="6"/><rect x="104" y="74" width="6" height="6"/><rect x="76" y="90" width="6" height="6"/><rect x="66" y="52" width="6" height="6"/></g>
           <text class="ts" x="80" y="146" text-anchor="middle">アウトライン：図形になる</text></g>
       </svg></div>
-      <div class="body"><h3>アウトライン化の良いところ・困るところ</h3><p>文字を図形に変えるので、フォントがない環境でも同じ形で出せます。ただし、</p><ul><li>あとから文字を直せない</li><li>小さい文字をくっきり見せる「ヒント情報」が消える</li><li>レイアウトソフトの長文では組みが崩れやすい</li></ul><p>作業用データはテキストのまま残し、入稿用だけアウトライン化するのが安全です。</p></div>
+      <div class="body"><h3><span class="bx">アウトライン化の<wbr>良い<wbr>ところ・困る<wbr>ところ</span></h3><p>文字を図形に変えるので、フォントがない環境でも同じ形で出せます。ただし、</p><ul><li>あとから文字を直せない</li><li>小さい文字をくっきり見せる「ヒント情報」が消える</li><li>レイアウトソフトの長文では組みが崩れやすい</li></ul><p>作業用データはテキストのまま残し、入稿用だけアウトライン化するのが安全です。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="OpenTypeフォントのダイナミックダウンロード">
@@ -525,21 +535,21 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(266 46)"><rect width="110" height="76" rx="12" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="55" y="36" text-anchor="middle">プリンタ</text><text class="ts" x="55" y="56" text-anchor="middle">フォント不要</text></g>
         <text class="ts" x="200" y="168" text-anchor="middle">使う文字の形だけを、その都度送る</text>
       </svg></div>
-      <div class="body"><h3>OpenTypeで悩みが解決</h3><ul><li>使う文字の形だけを毎回プリンタへ送る（ダイナミックダウンロード）ので、出力機にフォントがいらない</li><li>解像度の制限がなく、高解像度の出力でもきれい</li><li>PDF に埋め込める、アウトライン化もできる</li><li>Unicode ベースで最大約6万5千字、Mac・Windows 共通</li></ul></div>
+      <div class="body"><h3><span class="bx">OpenTypeで<wbr>悩みが<wbr>解決</span></h3><ul><li>使う文字の形だけを毎回プリンタへ送る（ダイナミックダウンロード）ので、出力機にフォントがいらない</li><li>解像度の制限がなく、高解像度の出力でもきれい</li><li>PDF に埋め込める、アウトライン化もできる</li><li>Unicode ベースで最大約6万5千字、Mac・Windows 共通</li></ul></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="いまのフォントの注意点">
         <g transform="translate(30 30)"><rect width="150" height="130" rx="14" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="75" y="34" text-anchor="middle">Type 1</text><text class="ts" x="75" y="54" text-anchor="middle">（旧PostScriptフォント）</text><circle cx="75" cy="84" r="18" fill="#FFE3EF" stroke="#D6246E" stroke-width="3"/><path d="M62 71l26 26" stroke="#D6246E" stroke-width="3" stroke-linecap="round"/><text class="ts" x="75" y="117" text-anchor="middle">2023年から使えない</text></g>
         <g transform="translate(220 30)"><rect width="150" height="130" rx="14" fill="#E3F4FB" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="75" y="34" text-anchor="middle">OpenType</text><text class="ts" x="75" y="54" text-anchor="middle">Adobe Fonts など</text><circle cx="75" cy="84" r="18" fill="#fff" stroke="#1C8CC0" stroke-width="3"/><path d="M66 84l6 6 12-13" class="o2" stroke="#1C8CC0" stroke-width="3"/><text class="ts" x="75" y="117" text-anchor="middle">PDF/X-4で入稿</text></g>
       </svg></div>
-      <div class="body"><h3>いまの注意点</h3><p class="now" style="border:0;padding:0"><b>NOW</b>古い Type 1（PostScript）フォントは、Photoshop 23.0・Illustrator 27.3・InDesign 18.2 以降では使えません。古いデータを開くと「フォントがありません」になるので、OpenType に置き換えます。</p><p>Adobe Fonts で作ったデータは、印刷所によって「アウトライン化」か「PDF/X-4」のどちらかを指定されることがあります。入稿前に印刷所の案内を確認しましょう。</p></div>
+      <div class="body"><h3><span class="bx">いまの<wbr>注意点</span></h3><p class="now" style="border:0;padding:0"><b>NOW</b>古い Type 1（PostScript）フォントは、Photoshop 23.0・Illustrator 27.3・InDesign 18.2 以降では使えません。古いデータを開くと「フォントがありません」になるので、OpenType に置き換えます。</p><p>Adobe Fonts で作ったデータは、印刷所によって「アウトライン化」か「PDF/X-4」のどちらかを指定されることがあります。入稿前に印刷所の案内を確認しましょう。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 06 ============ -->
 <section class="vol t-y" id="vol06" data-t="y">
-  <div class="vol-h"><div class="badge">06</div><span class="tag"># レイアウト・製本</span><h2>黒をオーバープリントするのはなぜ？</h2></div>
+  <div class="vol-h"><div class="badge">06</div><span class="tag"># レイアウト・製本</span><h2><span class="bx">黒を<wbr>オーバープリントするのは<wbr>なぜ？</span></h2></div>
   <p class="short">印刷ではほんの少しのズレが避けられず、色の境目に白いすき間が出ることがあります。黒い小さな文字は、下の色を抜かずに上から重ねて刷る（ノセ）と防げます。</p>
   <div class="grid">
     <article class="card">
@@ -551,7 +561,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g fill="#2EAEE6"><circle cx="44" cy="40" r="5"/><circle cx="36" cy="58" r="4"/></g><text class="ts" x="20" y="30">水</text>
         <path d="M60 104 q10 10 22 0" class="o2" stroke="#3f3b3a"/><text class="ts" x="44" y="130">インキ</text>
       </svg></div>
-      <div class="body"><h3>ふだんの印刷はオフセット</h3><p>本やチラシのほとんどは<b>オフセット印刷</b>。版の絵柄の部分は油（インキ）をはじかず、それ以外は水になじむ性質を使います。先に水、次にインキを付けると、絵柄だけにインキが乗ります。それを一度ゴムの胴に移してから紙に刷るので、「オフセット（移して刷る）」と呼びます。</p><p style="font-size:12.5px;color:var(--muted)">他に、凸版（活版）、凹版（グラビア）、孔版（シルクスクリーン）があります。</p></div>
+      <div class="body"><h3><span class="bx">ふだんの<wbr>印刷は<wbr>オフセット</span></h3><p>本やチラシのほとんどは<b>オフセット印刷</b>。版の絵柄の部分は油（インキ）をはじかず、それ以外は水になじむ性質を使います。先に水、次にインキを付けると、絵柄だけにインキが乗ります。それを一度ゴムの胴に移してから紙に刷るので、「オフセット（移して刷る）」と呼びます。</p><p style="font-size:12.5px;color:var(--muted)">他に、凸版（活版）、凹版（グラビア）、孔版（シルクスクリーン）があります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="刷る順番 K C M Y">
@@ -565,7 +575,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o2" d="M60 140h290"/><path class="o2" d="M342 134l8 6-8 6"/>
         <text class="ts" x="60" y="168">膜がうすく、ねばる</text><text class="ts" x="350" y="168" text-anchor="end">膜があつく、やわらかい</text>
       </svg></div>
-      <div class="body"><h3>刷る順番は K→C→M→Y</h3><p>4色は1色ずつ、乾ききらないうちに重ねて刷ります。先の色がはがれたり混ざったりしないよう、膜がうすくて粘りの強い黒から刷るのが基本。紙全体をベタで塗る場合などは、Y→M→C→K のように順番を変えることもあります。</p><p style="font-size:12.5px;color:var(--muted)">広い面を黒くしたいときは、K100%だけより C30＋K100 などの<b>リッチブラック</b>のほうが深い黒になります。</p></div>
+      <div class="body"><h3><span class="bx">刷る<wbr>順番は<wbr> K→C→M→Y</span></h3><p>4色は1色ずつ、乾ききらないうちに重ねて刷ります。先の色がはがれたり混ざったりしないよう、膜がうすくて粘りの強い黒から刷るのが基本。紙全体をベタで塗る場合などは、Y→M→C→K のように順番を変えることもあります。</p><p style="font-size:12.5px;color:var(--muted)">広い面を黒くしたいときは、K100%だけより C30＋K100 などの<b>リッチブラック</b>のほうが深い黒になります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="ケヌキ、ノセ、トラッピング">
@@ -573,7 +583,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(145 24)"><rect width="110" height="100" rx="8" fill="#EC5A99"/><rect x="36" y="30" width="40" height="40" fill="#3f3b3a"/><text class="tx" x="55" y="128" text-anchor="middle">ノセ</text><text class="ts" x="55" y="146" text-anchor="middle">上から重ねて刷る</text></g>
         <g transform="translate(274 24)"><rect width="110" height="100" rx="8" fill="#EC5A99"/><rect x="33" y="27" width="46" height="46" fill="#9B6FC8"/><rect x="36" y="30" width="40" height="40" fill="#2EAEE6"/><text class="tx" x="55" y="128" text-anchor="middle">トラップ</text><text class="ts" x="55" y="146" text-anchor="middle">境目を少し重ねる</text></g>
       </svg></div>
-      <div class="body"><h3>すき間を防ぐ2つの方法</h3><ul><li><b>ノセ（オーバープリント）</b>：下の色を抜かずに上から刷る。インキは半透明で下の色が透けるので、透けても目立たない<b>K100%の小さい文字</b>に使います</li><li><b>トラッピング</b>：隣り合う色の片方を少し広げて重ねる。淡い色を広げるのがチョーク、濃い色を広げるのがスプレッド</li></ul></div>
+      <div class="body"><h3><span class="bx">すき間を<wbr>防ぐ<wbr>2つの<wbr>方法</span></h3><ul><li><b>ノセ（オーバープリント）</b>：下の色を抜かずに上から刷る。インキは半透明で下の色が透けるので、透けても目立たない<b>K100%の小さい文字</b>に使います</li><li><b>トラッピング</b>：隣り合う色の片方を少し広げて重ねる。淡い色を広げるのがチョーク、濃い色を広げるのがスプレッド</li></ul></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="画面で仕上がりを確認する">
@@ -585,14 +595,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(236 64)"><rect width="70" height="80" rx="4" fill="#F5F5F5" stroke="#3f3b3a" stroke-width="1.5"/><text class="tb" x="35" y="52" text-anchor="middle">K</text><text class="ts" x="35" y="96" text-anchor="middle">K</text></g>
         <text class="ts" x="200" y="190" text-anchor="middle">分版プレビューで版ごとに確認</text>
       </svg></div>
-      <div class="body"><h3>仕上がりは画面で確認</h3><p>オーバープリントは、ふつうの表示では見た目が変わりません。</p><p class="now" style="border:0;padding:0"><b>NOW</b>Illustrator・InDesign では［表示］→［オーバープリントプレビュー］と［ウィンドウ］→［出力］→［分版プレビュー］で確認できます。書き出した PDF は Acrobat Pro の「出力プレビュー」でもチェックできます。</p></div>
+      <div class="body"><h3><span class="bx">仕上がりは<wbr>画面で<wbr>確認</span></h3><p>オーバープリントは、ふつうの表示では見た目が変わりません。</p><p class="now" style="border:0;padding:0"><b>NOW</b>Illustrator・InDesign では［表示］→［オーバープリントプレビュー］と［ウィンドウ］→［出力］→［分版プレビュー］で確認できます。書き出した PDF は Acrobat Pro の「出力プレビュー」でもチェックできます。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 07 ============ -->
 <section class="vol t-y" id="vol07" data-t="y">
-  <div class="vol-h"><div class="badge">07</div><span class="tag"># レイアウト・製本</span><h2>仕上がりより大きい紙で刷るのはなぜ？</h2></div>
+  <div class="vol-h"><div class="badge">07</div><span class="tag"># レイアウト・製本</span><h2><span class="bx">仕上がりより<wbr>大きい<wbr>紙で<wbr>刷るのは<wbr>なぜ？</span></h2></div>
   <p class="short">はみ出させた色（塗り足し）とトンボまで一緒に刷ってから、余分を切り落とすからです。A4の原稿なら、ひと回り大きいB4やA3ノビの紙を使います。</p>
   <div class="grid">
     <article class="card">
@@ -603,7 +613,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o2" d="M290 50h40M290 38h40"/><text class="ts" x="338" y="48">3mm</text>
         <text class="ts" x="20" y="96">ここまで</text><text class="ts" x="20" y="114">色を伸ばす</text><path class="o2" d="M78 104h28"/>
       </svg></div>
-      <div class="body"><h3>塗り足しは3mm</h3><p>紙の端まで色や写真を入れるときは、仕上がり線より<b>3mm外</b>まで伸ばしておきます。断裁がほんの少しずれても、紙の白が見えないようにするためです。忘れると印刷所から差し戻されることもある、大事な処理です。</p></div>
+      <div class="body"><h3><span class="bx">塗り足しは<wbr>3mm</span></h3><p>紙の端まで色や写真を入れるときは、仕上がり線より<b>3mm外</b>まで伸ばしておきます。断裁がほんの少しずれても、紙の白が見えないようにするためです。忘れると印刷所から差し戻されることもある、大事な処理です。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="トンボの種類">
@@ -613,7 +623,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="ts" x="10" y="30">角トンボ</text><text class="ts" x="10" y="46">切る位置</text>
         <text class="ts" x="318" y="96" style="fill:#D6246E">センター</text><text class="ts" x="318" y="112" style="fill:#D6246E">トンボ</text><text class="ts" x="318" y="128">色合わせ用</text>
       </svg></div>
-      <div class="body"><h3>トンボの役割</h3><p>四隅の<b>角トンボ</b>は仕上がりと塗り足しの位置を示し、断裁（化粧裁ち）の目印になります。各辺の中央の<b>センタートンボ</b>は、4色を重ねて刷るときの位置合わせ（見当合わせ）用。印刷所によっては、色の確認用パッチや日付なども一緒に刷ります。</p></div>
+      <div class="body"><h3><span class="bx">トンボの<wbr>役割</span></h3><p>四隅の<b>角トンボ</b>は仕上がりと塗り足しの位置を示し、断裁（化粧裁ち）の目印になります。各辺の中央の<b>センタートンボ</b>は、4色を重ねて刷るときの位置合わせ（見当合わせ）用。印刷所によっては、色の確認用パッチや日付なども一緒に刷ります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="A判の紙のサイズ関係">
@@ -624,7 +634,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="tb" x="97" y="110" text-anchor="middle">A3</text><text class="tx" x="212" y="66" text-anchor="middle">A4</text><text class="tx" x="183" y="146" text-anchor="middle">A5</text><text class="ts" x="241" y="146" text-anchor="middle">A6</text>
         <text class="ts" x="290" y="60">半分に切ると</text><text class="ts" x="290" y="78">数字が1つ増える</text>
       </svg></div>
-      <div class="body"><h3>紙のサイズの決まり</h3><p>A判・B判は JIS の規格。数字が1つ増えるごとに面積が半分になります。紙の厚さは「原紙1,000枚の重さ」で表します（例：110kg）。</p>
+      <div class="body"><h3><span class="bx">紙の<wbr>サイズの<wbr>決まり</span></h3><p>A判・B判は JIS の規格。数字が1つ増えるごとに面積が半分になります。紙の厚さは「原紙1,000枚の重さ」で表します（例：110kg）。</p>
         <table><thead><tr><th></th><th>A判（mm）</th><th>B判（mm）</th></tr></thead><tbody><tr><td>3</td><td>297×420</td><td>364×515</td></tr><tr><td>4</td><td>210×297</td><td>257×364</td></tr><tr><td>5</td><td>148×210</td><td>182×257</td></tr></tbody></table>
       </div>
     </article>
@@ -637,14 +647,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <rect x="14" y="14" width="56" height="40" rx="3" fill="#FFD23F" stroke="#D6246E" stroke-dasharray="3 3"/><rect x="80" y="14" width="56" height="40" rx="3" fill="#FFD23F" stroke="#D6246E" stroke-dasharray="3 3"/><rect x="14" y="66" width="56" height="40" rx="3" fill="#FFD23F" stroke="#D6246E" stroke-dasharray="3 3"/><rect x="80" y="66" width="56" height="40" rx="3" fill="#FFD23F" stroke="#D6246E" stroke-dasharray="3 3"/>
           <text class="ts" x="75" y="142" text-anchor="middle">塗り足しあり：すき間が必要</text></g>
       </svg></div>
-      <div class="body"><h3>面付けでコストが変わる</h3><p>印刷機では、大きな紙に同じ原稿をいくつも並べて刷り、あとで切り分けます（<b>面付け</b>）。塗り足しがあると間にすき間が必要になり、1枚に並べられる数が減って、コストに響くことがあります。</p><p style="font-size:12.5px;color:var(--muted)">校正用にトンボ付きで出すときも同じで、A3の原稿はA3より少し大きい「A3ノビ」の紙が必要です。</p></div>
+      <div class="body"><h3><span class="bx">面付けで<wbr>コストが<wbr>変わる</span></h3><p>印刷機では、大きな紙に同じ原稿をいくつも並べて刷り、あとで切り分けます（<b>面付け</b>）。塗り足しがあると間にすき間が必要になり、1枚に並べられる数が減って、コストに響くことがあります。</p><p style="font-size:12.5px;color:var(--muted)">校正用にトンボ付きで出すときも同じで、A3の原稿はA3より少し大きい「A3ノビ」の紙が必要です。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 08 ============ -->
 <section class="vol t-y" id="vol08" data-t="y">
-  <div class="vol-h"><div class="badge">08</div><span class="tag"># レイアウト・製本</span><h2>版面とマージンってなに？</h2></div>
+  <div class="vol-h"><div class="badge">08</div><span class="tag"># レイアウト・製本</span><h2><span class="bx">版面と<wbr>マージンってなに？</span></h2></div>
   <p class="short">版面（はんづら）は、本文や写真を置く範囲のこと。デザインはまず版面を決めて、その外側を安全な余白にします。</p>
   <div class="grid">
     <article class="card">
@@ -652,7 +662,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(50 20)"><rect width="120" height="160" rx="6" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><rect x="10" y="10" width="100" height="140" rx="3" fill="#FFF3BF"/><path class="o2" d="M20 30h80M20 44h80M20 58h80M20 72h80M20 86h80M20 100h80M20 114h80M20 128h60"/><text class="ts" x="60" y="178" text-anchor="middle">大きい：にぎやか</text></g>
         <g transform="translate(230 20)"><rect width="120" height="160" rx="6" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><rect x="28" y="30" width="64" height="100" rx="3" fill="#FFF3BF"/><path class="o2" d="M36 48h48M36 62h48M36 76h48M36 90h48M36 104h32"/><text class="ts" x="60" y="178" text-anchor="middle">小さい：上品</text></g>
       </svg></div>
-      <div class="body"><h3>版面の大きさで印象が変わる</h3><p>紙に対する版面の割合（版面率）が大きいと、情報がたくさん入ってにぎやかに。小さいと余白が増えて上品に見えます。ページ番号（ノンブル）や柱は版面の外に置くのが一般的。アクセントとしてわざと写真をはみ出させることもあります。</p></div>
+      <div class="body"><h3><span class="bx">版面の<wbr>大きさで<wbr>印象が<wbr>変わる</span></h3><p>紙に対する版面の割合（版面率）が大きいと、情報がたくさん入ってにぎやかに。小さいと余白が増えて上品に見えます。ページ番号（ノンブル）や柱は版面の外に置くのが一般的。アクセントとしてわざと写真をはみ出させることもあります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="断裁のずれで文字が切れる">
@@ -660,7 +670,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(220 30)"><rect width="140" height="100" rx="4" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><text class="tx" x="-6" y="30">山田 花子</text><text class="ts" x="-6" y="52">東京都港区…</text><rect x="-14" y="0" width="14" height="100" fill="var(--paper)"/><path class="o2" d="M0 0v100"/><text class="ts" x="70" y="124" text-anchor="middle">ズレて文字が切れる</text></g>
         <text class="tx" x="200" y="186" text-anchor="middle">最低 5〜8mm（名刺は3〜5mm）あける</text>
       </svg></div>
-      <div class="body"><h3>余白は最低5〜8mm</h3><p>紙は機械の中でつかんで送るので、端には刷れない部分があります。さらに、刷ったあとは何百枚も重ねて一気に切るため、上と下の紙で切れる位置が少しずれます。文字は仕上がり線から<b>5〜8mm</b>（名刺など小さいものは3〜5mm）内側に置きましょう。</p></div>
+      <div class="body"><h3><span class="bx">余白は<wbr>最低5〜8mm</span></h3><p>紙は機械の中でつかんで送るので、端には刷れない部分があります。さらに、刷ったあとは何百枚も重ねて一気に切るため、上と下の紙で切れる位置が少しずれます。文字は仕上がり線から<b>5〜8mm</b>（名刺など小さいものは3〜5mm）内側に置きましょう。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="綴じ側の余白を広くする">
@@ -671,7 +681,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <rect x="172" y="60" width="56" height="92" fill="#FFE3EF" opacity=".8"/><text class="ts" x="200" y="110" text-anchor="middle">のど</text>
         <text class="ts" x="200" y="22" text-anchor="middle">綴じ側（のど）を広めに</text>
       </svg></div>
-      <div class="body"><h3>ページの多い本は「のど」を広く</h3><p>小説のように厚い本は、綴じ側（<b>のど</b>）が開ききらず、余白が狭いと文字が読みにくくなります。のど側の余白を広めにとり、見開きにまたがる写真は、綴じで隠れる部分をずらして配置します。</p></div>
+      <div class="body"><h3><span class="bx">ページの<wbr>多い<wbr>本は<wbr>「の<wbr>ど」を<wbr>広く</span></h3><p>小説のように厚い本は、綴じ側（<b>のど</b>）が開ききらず、余白が狭いと文字が読みにくくなります。のど側の余白を広めにとり、見開きにまたがる写真は、綴じで隠れる部分をずらして配置します。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="版面サイズの計算">
@@ -682,14 +692,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <path class="o2" d="M296 40v120" stroke="#2EAEE6"/><text class="ts" x="304" y="104" style="fill:#1C8CC0">253mm</text>
         <text class="ts" x="20" y="80">左右の余白</text><text class="tx" x="20" y="100">18mm</text><text class="ts" x="20" y="130">天地の余白</text><text class="tx" x="20" y="150">22mm</text>
       </svg></div>
-      <div class="body"><h3>文字中心の本は計算で決める</h3><div class="kv"><div><span>横の長さ</span><b>文字サイズ×1行の字数</b></div><div><span>縦の長さ</span><b>（行数−1）×行送り＋文字サイズ</b></div></div><p style="font-size:13px">例：A4横組み、12Q・行送り20H、58字×51行（1Q＝1H＝0.25mm）なら、横174mm・縦253mm。中央に置けば左右18mm・天地22mmの余白です。</p><p class="now"><b>NOW</b>InDesign 2026 は［新規ドキュメント］で「レイアウトグリッド」を選ぶと字数・行数から自動で版面を作れます。Illustrator は自分で計算してガイドを引きます。</p></div>
+      <div class="body"><h3><span class="bx">文字中心の本は<wbr>計算で<wbr>決める</span></h3><div class="kv"><div><span>横の長さ</span><b>文字サイズ×1行の字数</b></div><div><span>縦の長さ</span><b>（行数−1）×行送り＋文字サイズ</b></div></div><p style="font-size:13px">例：A4横組み、12Q・行送り20H、58字×51行（1Q＝1H＝0.25mm）なら、横174mm・縦253mm。中央に置けば左右18mm・天地22mmの余白です。</p><p class="now"><b>NOW</b>InDesign 2026 は［新規ドキュメント］で「レイアウトグリッド」を選ぶと字数・行数から自動で版面を作れます。Illustrator は自分で計算してガイドを引きます。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 09 ============ -->
 <section class="vol t-y" id="vol09" data-t="y">
-  <div class="vol-h"><div class="badge">09</div><span class="tag"># レイアウト・製本</span><h2>本のページ数はどうやって決まる？</h2></div>
+  <div class="vol-h"><div class="badge">09</div><span class="tag"># レイアウト・製本</span><h2><span class="bx">本の<wbr>ページ数は<wbr>どうやって<wbr>決まる？</span></h2></div>
   <p class="short">大きな紙の表と裏に8〜16ページ分ずつ刷って、折りたたんで本にします。だからページ数はたいてい8か16の倍数になります。</p>
   <div class="grid">
     <article class="card">
@@ -701,7 +711,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(262 74)"><rect width="52" height="52" rx="4" fill="#F5C400" stroke="#3f3b3a" stroke-width="2.5"/><path class="o2 dash" d="M26 0v52"/><text class="ts" x="26" y="100" text-anchor="middle">もう一度</text><text class="tx" x="26" y="120" text-anchor="middle">16P</text></g>
         <text class="ts" x="380" y="40" text-anchor="end">折ったものを「折（おり）」と呼ぶ</text>
       </svg></div>
-      <div class="body"><h3>折るたびにページが倍に</h3><p>紙1枚を半分に折ると4ページ。これが本の最小単位です。90度回してもう一度折ると8ページ、さらに折ると16ページ。印刷は表裏に刷るので、片面に8面並べれば1枚で16ページ分になります。縦組みの本は右綴じ、横組みは左綴じが基本です。</p></div>
+      <div class="body"><h3><span class="bx">折る<wbr>たびに<wbr>ページが<wbr>倍に</span></h3><p>紙1枚を半分に折ると4ページ。これが本の最小単位です。90度回してもう一度折ると8ページ、さらに折ると16ページ。印刷は表裏に刷るので、片面に8面並べれば1枚で16ページ分になります。縦組みの本は右綴じ、横組みは左綴じが基本です。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="平綴じと中綴じの重ね方">
@@ -715,14 +725,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <text class="ts" x="70" y="80" text-anchor="middle" style="font-size:11px">外：1〜8・25〜32</text><text class="ts" x="70" y="96" text-anchor="middle" style="font-size:11px;fill:#9A7A00">内：9〜24</text>
           <text class="ts" x="70" y="134" text-anchor="middle">入れ子にして針金で留める</text></g>
       </svg></div>
-      <div class="body"><h3>綴じ方でページの並びが変わる</h3><p>32ページの本の場合、<b>平綴じ</b>は1〜16ページと17〜32ページの折を順に重ねます。<b>中綴じ</b>は折を開いて入れ子にするので、外側の折に1〜8と25〜32、内側に9〜24が入ります。間違えないよう、折った紙にページ番号を書いた見本（<b>折り丁</b>）で確認します。</p></div>
+      <div class="body"><h3><span class="bx">綴じ方で<wbr>ページの<wbr>並びが<wbr>変わる</span></h3><p>32ページの本の場合、<b>平綴じ</b>は1〜16ページと17〜32ページの折を順に重ねます。<b>中綴じ</b>は折を開いて入れ子にするので、外側の折に1〜8と25〜32、内側に9〜24が入ります。間違えないよう、折った紙にページ番号を書いた見本（<b>折り丁</b>）で確認します。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="上製本と並製本">
         <g transform="translate(40 30)"><rect x="0" y="0" width="120" height="140" rx="6" fill="#F5C400" stroke="#3f3b3a" stroke-width="3"/><rect x="8" y="8" width="104" height="124" rx="3" fill="#fff" stroke="#3f3b3a" stroke-width="1.5"/><rect x="24" y="30" width="72" height="20" rx="4" fill="#FFD23F"/><text class="tx" x="60" y="164" text-anchor="middle">上製本</text></g>
         <g transform="translate(240 40)"><rect x="0" y="0" width="110" height="128" rx="4" fill="#FFE3EF" stroke="#3f3b3a" stroke-width="2.5"/><path class="o2" d="M8 0v128"/><rect x="22" y="24" width="66" height="18" rx="4" fill="#fff"/><text class="tx" x="55" y="154" text-anchor="middle">並製本</text></g>
       </svg></div>
-      <div class="body"><h3>上製本と並製本</h3><ul><li><b>上製本（ハードカバー）</b>：厚紙の表紙でくるむ丈夫な作り。辞書や記念本に。手間とコストはかかる</li><li><b>並製本（ソフトカバー）</b>：雑誌やパンフレットに。安価だが長期保存には弱め</li></ul><p style="font-size:13px">綴じ方は、針金で留める<b>中綴じ・平綴じ</b>、背を接着剤で固める<b>無線綴じ</b>（背に切れ目を入れるアジロ綴じも）、糸で縫う<b>糸綴じ</b>があります。</p></div>
+      <div class="body"><h3><span class="bx">上製本と<wbr>並製本</span></h3><ul><li><b>上製本（ハードカバー）</b>：厚紙の表紙でくるむ丈夫な作り。辞書や記念本に。手間とコストはかかる</li><li><b>並製本（ソフトカバー）</b>：雑誌やパンフレットに。安価だが長期保存には弱め</li></ul><p style="font-size:13px">綴じ方は、針金で留める<b>中綴じ・平綴じ</b>、背を接着剤で固める<b>無線綴じ</b>（背に切れ目を入れるアジロ綴じも）、糸で縫う<b>糸綴じ</b>があります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="中綴じで中のページが飛び出す">
@@ -730,14 +740,14 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
           <path class="o2" d="M120 50h24" stroke="#D6246E"/><text class="ts" x="84" y="40">中ほどが飛び出す</text><text class="tx" x="72" y="130" text-anchor="middle">中綴じ</text><text class="ts" x="72" y="150" text-anchor="middle">小口側の余白を広く</text></g>
         <g transform="translate(230 30)"><rect x="0" y="40" width="130" height="70" rx="4" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><rect x="0" y="40" width="22" height="70" fill="#FFE3EF"/><path d="M11 50v50" stroke="#3f3b3a" stroke-width="2" stroke-dasharray="4 4"/><text class="tx" x="65" y="130" text-anchor="middle">平綴じ（針金）</text><text class="ts" x="65" y="150" text-anchor="middle">綴じ側の余白を広く</text></g>
       </svg></div>
-      <div class="body"><h3>開きやすさを考えて余白をとる</h3><p>ページ数が多いと、綴じ方による開きにくさが目立ちます。<b>中綴じ</b>は紙の厚みで中ほどのページが外へ飛び出すので、開く側（小口）の余白を広めに。<b>針金の平綴じ</b>は綴じしろで奥が見えなくなるので、綴じ側の余白を広めにとります。</p></div>
+      <div class="body"><h3><span class="bx">開きやすさを<wbr>考えて<wbr>余白を<wbr>とる</span></h3><p>ページ数が多いと、綴じ方による開きにくさが目立ちます。<b>中綴じ</b>は紙の厚みで中ほどのページが外へ飛び出すので、開く側（小口）の余白を広めに。<b>針金の平綴じ</b>は綴じしろで奥が見えなくなるので、綴じ側の余白を広めにとります。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 10 ============ -->
 <section class="vol t-c" id="vol10" data-t="c">
-  <div class="vol-h"><div class="badge">10</div><span class="tag"># 文字</span><h2>読みやすい文章はどう組む？</h2></div>
+  <div class="vol-h"><div class="badge">10</div><span class="tag"># 文字</span><h2><span class="bx">読みやすい<wbr>文章は<wbr>どう<wbr>組む？</span></h2></div>
   <p class="short">目立たせて手に取ってもらっても、本文が読みにくいと途中でやめられてしまいます。読む人を疲れさせない字数・大きさ・行間を選びましょう。</p>
   <div class="grid">
     <article class="card">
@@ -746,7 +756,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(124 30)"><rect width="140" height="120" rx="6" fill="#E3F4FB" stroke="#3f3b3a" stroke-width="2.5"/><path class="o2" d="M14 24h112M14 42h112M14 60h112M14 78h112M14 96h80"/><circle cx="126" cy="24" r="4" fill="#1C8CC0"/><text class="ts" x="70" y="146" text-anchor="middle">ちょうどいい</text></g>
         <g transform="translate(284 30)"><rect width="100" height="120" rx="6" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><path class="o2" d="M8 30h170M8 60h170M8 90h120" style="stroke-dasharray:0"/><rect x="100" y="0" width="90" height="120" fill="var(--paper)"/><path d="M178 30 L8 60" stroke="#D6246E" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/><text class="ts" x="50" y="146" text-anchor="middle">長すぎ→</text></g>
       </svg></div>
-      <div class="body"><h3>1行の字数</h3><p>短すぎると改行のたびに目が戻る回数が増え、長すぎると次の行頭を探しにくくなります。どちらも疲れの原因に。</p><div class="kv"><div><span>縦組み</span><b>20〜45字</b></div><div><span>横組み</span><b>15〜35字</b></div></div></div>
+      <div class="body"><h3><span class="bx">1行の<wbr>字数</span></h3><p>短すぎると改行のたびに目が戻る回数が増え、長すぎると次の行頭を探しにくくなります。どちらも疲れの原因に。</p><div class="kv"><div><span>縦組み</span><b>20〜45字</b></div><div><span>横組み</span><b>15〜35字</b></div></div></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="文字サイズと行間">
@@ -761,21 +771,21 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(220 24)"><rect width="150" height="130" rx="14" fill="#E3F4FB" stroke="#3f3b3a" stroke-width="2.5"/><text x="75" y="88" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif;font-weight:500;font-size:64px;fill:#3f3b3a">永</text><text class="ts" x="75" y="122" text-anchor="middle">ゴシック：見出し向き</text></g>
         <text class="ts" x="200" y="186" text-anchor="middle">本文はL〜Rの細め、見出しは太めのウェイト</text>
       </svg></div>
-      <div class="body"><h3>書体とウェイト</h3><p><b>明朝体</b>（欧文ならセリフ体）は線に強弱と「うろこ」があり、長文でも疲れにくい。<b>ゴシック体</b>（サンセリフ体）は線が均一で、元気な印象になります。同じ書体の太さ違い（ファミリー）で本文・小見出し・大見出しを作ると統一感が出ます。小さい文字に太い書体を使うと、刷ったときに潰れやすいので注意。</p></div>
+      <div class="body"><h3><span class="bx">書体と<wbr>ウェイト</span></h3><p><b>明朝体</b>（欧文ならセリフ体）は線に強弱と「うろこ」があり、長文でも疲れにくい。<b>ゴシック体</b>（サンセリフ体）は線が均一で、元気な印象になります。同じ書体の太さ違い（ファミリー）で本文・小見出し・大見出しを作ると統一感が出ます。小さい文字に太い書体を使うと、刷ったときに潰れやすいので注意。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="図版の割合">
         <g transform="translate(30 20)"><rect width="150" height="150" rx="6" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><path class="o2" d="M14 20h122M14 34h122M14 48h122M14 62h122M14 76h122M14 90h122M14 104h122M14 118h122M14 132h80" stroke="#C9BFCF"/><text class="ts" x="75" y="170" text-anchor="middle" style="font-size:11px">文字だけ：読む気が起きにくい</text></g>
         <g transform="translate(220 20)"><rect width="150" height="150" rx="6" fill="#fff" stroke="#3f3b3a" stroke-width="2.5"/><rect x="12" y="12" width="126" height="68" rx="6" fill="#FFD23F"/><circle cx="50" cy="44" r="14" fill="#EC5A99"/><path d="M80 70l20-24 22 24z" fill="#6FD3AA"/><path class="o2" d="M14 96h122M14 110h122M14 124h122M14 138h80" stroke="#C9BFCF"/><text class="ts" x="75" y="170" text-anchor="middle" style="font-size:11px">図版が半分：読みやすい</text></g>
       </svg></div>
-      <div class="body"><h3>図版は紙面の半分くらい</h3><p>写真やイラストがあると、目を引きつけ、読みにくさも和らぎます。広告や雑誌では図版の面積を<b>50%前後</b>にすると読みやすいと言われます。多すぎると情報が入りきらず、幼い印象にも。小説のように図版がない場合は、余白・文字サイズ・行間でぎっしり感を減らします。</p></div>
+      <div class="body"><h3><span class="bx">図版は<wbr>紙面の<wbr>半分くらい</span></h3><p>写真やイラストがあると、目を引きつけ、読みにくさも和らぎます。広告や雑誌では図版の面積を<b>50%前後</b>にすると読みやすいと言われます。多すぎると情報が入りきらず、幼い印象にも。小説のように図版がない場合は、余白・文字サイズ・行間でぎっしり感を減らします。</p></div>
     </article>
   </div>
 </section>
 
 <!-- ============ 11 ============ -->
 <section class="vol t-m" id="vol11" data-t="m">
-  <div class="vol-h"><div class="badge">11</div><span class="tag"># 色</span><h2>インキの沈みってなに？</h2></div>
+  <div class="vol-h"><div class="badge">11</div><span class="tag"># 色</span><h2><span class="bx">インキの<wbr>沈みってなに？</span></h2></div>
   <p class="short">紙がインキを吸い込んで、色が暗く濃く見えること。表面加工のない上質紙などで起きやすいので、色を淡めに指定したり、専用のプロファイルで変換したりして先回りします。</p>
   <div class="grid">
     <article class="card">
@@ -783,7 +793,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(24 40)"><rect x="0" y="40" width="160" height="50" fill="#F1ECF3" stroke="#3f3b3a" stroke-width="2"/><rect x="0" y="28" width="160" height="12" fill="#fff" stroke="#3f3b3a" stroke-width="2"/><rect x="30" y="18" width="100" height="10" rx="3" fill="#EC5A99"/><text class="tx" x="80" y="120" text-anchor="middle">塗工紙</text><text class="ts" x="80" y="138" text-anchor="middle">表面にとどまる</text></g>
         <g transform="translate(216 40)"><path d="M0 40 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 V90 H0Z" fill="#F1ECF3" stroke="#3f3b3a" stroke-width="2"/><path d="M30 34 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 V60 Q80 70 30 60Z" fill="#C2457E" opacity=".7"/><text class="tx" x="80" y="120" text-anchor="middle">非塗工紙</text><text class="ts" x="80" y="138" text-anchor="middle">しみこんで暗く見える</text></g>
       </svg></div>
-      <div class="body"><h3>塗工紙と非塗工紙</h3><ul><li><b>塗工紙</b>（アート紙・コート紙など）：表面に白い顔料を塗った紙。発色が良く写真向き。ツヤのあるグロス系と、落ち着いたマット系がある</li><li><b>非塗工紙</b>（上質紙・新聞・本の本文など）：インキを吸いやすく発色は控えめだが、反射が少なく目にやさしいので文字中心の本に向く</li></ul></div>
+      <div class="body"><h3><span class="bx">塗工紙と<wbr>非塗工紙</span></h3><ul><li><b>塗工紙</b>（アート紙・コート紙など）：表面に白い顔料を塗った紙。発色が良く写真向き。ツヤのあるグロス系と、落ち着いたマット系がある</li><li><b>非塗工紙</b>（上質紙・新聞・本の本文など）：インキを吸いやすく発色は控えめだが、反射が少なく目にやさしいので文字中心の本に向く</li></ul></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="上質紙では色を20%淡く指定する">
@@ -793,7 +803,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(300 30)"><rect width="76" height="80" rx="10" fill="#F9B1D0" stroke="#3f3b3a" stroke-width="2.5"/><text class="ts" x="38" y="104" text-anchor="middle">20%淡く</text></g>
         <text class="tx" x="200" y="170" text-anchor="middle">非塗工紙は 20〜30% 濃く見える</text>
       </svg></div>
-      <div class="body"><h3>上質紙では色を淡めに</h3><p>紙がインキを吸うと、色がくすんで暗く、濃く見えます。これが<b>インキの沈み</b>。非塗工紙は塗工紙より20〜30%濃く見えると言われるので、文字や図の色はイメージより<b>20%ほど淡く</b>指定すると、思った色に近づきます。鮮やかな特色ほど沈みが目立ちます。</p></div>
+      <div class="body"><h3><span class="bx">上質紙では<wbr>色を<wbr>淡めに</span></h3><p>紙がインキを吸うと、色がくすんで暗く、濃く見えます。これが<b>インキの沈み</b>。非塗工紙は塗工紙より20〜30%濃く見えると言われるので、文字や図の色はイメージより<b>20%ほど淡く</b>指定すると、思った色に近づきます。鮮やかな特色ほど沈みが目立ちます。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="紙に合わせてプロファイルを選ぶ">
@@ -803,7 +813,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <g transform="translate(150 70)"><rect width="230" height="44" rx="22" fill="#FFF3BF" stroke="#3f3b3a" stroke-width="2"/><text class="ts" x="115" y="27" text-anchor="middle">上質紙 → Japan Color 2001 Uncoated</text></g>
         <g transform="translate(150 124)"><rect width="230" height="44" rx="22" fill="#F1ECF3" stroke="#3f3b3a" stroke-width="2"/><text class="ts" x="115" y="27" text-anchor="middle">新聞 → Japan Color 2002 Newspaper</text></g>
       </svg></div>
-      <div class="body"><h3>写真は紙に合ったプロファイルで変換</h3><p>写真を RGB から CMYK にするとき、刷る紙に合ったプロファイルを選ぶと、同じ写真でも CMYK の数値が変わり、沈みを見込んだ色になります。Photoshop の［編集］→［プロファイル変換］で変換先を指定します。既存のプロファイルがない場合は、インキの総量やドットゲインを調整して変換する方法もあります。</p></div>
+      <div class="body"><h3><span class="bx">写真は<wbr>紙に<wbr>合った<wbr>プロファイルで<wbr>変換</span></h3><p>写真を RGB から CMYK にするとき、刷る紙に合ったプロファイルを選ぶと、同じ写真でも CMYK の数値が変わり、沈みを見込んだ色になります。Photoshop の［編集］→［プロファイル変換］で変換先を指定します。既存のプロファイルがない場合は、インキの総量やドットゲインを調整して変換する方法もあります。</p></div>
     </article>
     <article class="card">
       <div class="pv"><svg viewBox="0 0 400 200" role="img" aria-label="色域を広げる取り組み">
@@ -811,7 +821,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
         <text class="tx" x="200" y="160" text-anchor="middle">CMYK ＋ オレンジ・グリーンで6色</text>
         <text class="ts" x="200" y="182" text-anchor="middle">または色域の広いプロセスインキ</text>
       </svg></div>
-      <div class="body"><h3>もっと広い色を刷るには</h3><p>CMYK にオレンジとグリーンを足す6色印刷や、ふつうの4色より色域の広いインキ（東洋インキの kaleido、DIC の湧水など）があります。どれも専用のプロファイルで変換するのが前提。鮮やかな特色を確実に出したいときは、本番と同じ紙とインキで色校正をとるのが一番です。</p></div>
+      <div class="body"><h3><span class="bx">もっと<wbr>広い<wbr>色を<wbr>刷るには</span></h3><p>CMYK にオレンジとグリーンを足す6色印刷や、ふつうの4色より色域の広いインキ（東洋インキの kaleido、DIC の湧水など）があります。どれも専用のプロファイルで変換するのが前提。鮮やかな特色を確実に出したいときは、本番と同じ紙とインキで色校正をとるのが一番です。</p></div>
     </article>
   </div>
 </section>
@@ -848,6 +858,7 @@ i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:
       <dt>リッチブラック</dt><dd>K100%に他の色を少し混ぜた深い黒。<a href="#vol06">第6回</a></dd>
     </dl>
 
+    <nav class="pager" aria-label="ほかのノートへ"><p class="pg-n" style="grid-column:1/-1;margin:0">NOTE 01 / 08</p><a class="next" href="type-basics.html"><span class="pg-l">NEXT →</span><span class="pg-en">TYPE BASICS</span><span class="pg-ja">文字・フォントのきほん帳</span></a></nav>
     <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
 
     <p class="refs">参考：沖データ株式会社「いまさら聞けない!? DTP・印刷の基礎知識」第1回〜第11回／アドビ「PDF Printing Guide 2026」／Adobe ヘルプセンター「PostScript Type 1 フォントのサポート終了」。内容は自分の言葉で要約・再構成し、ソフトの情報を2026年版に更新しています。図は説明用のイメージです。</p>
