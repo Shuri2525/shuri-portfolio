@@ -306,6 +306,13 @@ const WORKS_DATA = {
       "tag": "AI / 基礎知識",
       "thumb": "./assets/works/note/03/hero.jpg",
       "link": "./note/ai-basics.html"
+    },
+    {
+      "id": "04",
+      "title": "イラレのショートカット帳",
+      "tag": "Illustrator / ショートカット",
+      "thumb": "./assets/works/note/04/hero.jpg",
+      "link": "./note/illustrator-shortcuts.html"
     }
   ],
 };
@@ -321,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
     web: ["01", "07", "06", "02", "05", "03"],
     dtp: ["03", "04", "02", "05"],
     graphic: ["04", "01"],
-    note: ["01", "02", "03"]
+    note: ["01", "02", "03", "04"]
   };
 
   if (!worksList) {

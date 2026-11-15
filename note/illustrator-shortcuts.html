@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イラレのショートカット帳 | HIDAKA SHURI</title>
+<meta name="description" content="Illustratorのショートカットキー一覧。まず覚えたい13個から、表示・選択・描画・変形・色・文字・パネルまで、MacとWindowsを切り替えて確認できます。">
+<link rel="canonical" href="https://shuri2525.github.io/shuri-portfolio/note/illustrator-shortcuts.html">
+<meta property="og:title" content="ILLUSTRATOR SHORTCUTS | HIDAKA SHURI">
+<meta property="og:description" content="Illustratorのショートカットキー一覧（Mac / Windows）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shuri2525.github.io/shuri-portfolio/note/illustrator-shortcuts.html">
+<meta property="og:image" content="https://shuri2525.github.io/shuri-portfolio/assets/works/note/04/hero.jpg">
+<meta property="og:site_name" content="HIDAKA SHURI PORTFOLIO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../assets/common/logo_3f3b3a.svg">
+<link rel="apple-touch-icon" href="../assets/common/logo_3f3b3a.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@700&display=swap">
+<style>
+/* Layout: HIDAKA SHURI ポートフォリオの下層ページと同じ骨格。左30%に濃色の固定カラム（ロゴ）、右70%に固定ヘッダーと本文。モノトーン＋くすみCMYKを図版だけに */
+:root{
+  --color-dark:#3f3b3a; --color-light:#f5f5f5; --color-white:#ffffff; --color-gray:#6b6766;
+  --c:#1C9AD6; --m:#D6246E; --y:#F2BE00; --y-text:#8F7000; --k:#3f3b3a;
+  --c-l:#E3F4FB; --m-l:#FDE6EF; --y-l:#FFF5CC; --k-l:#ECEAE9;
+  --line:#e2e0df; --accent:#a35d68; --paper:#fafafa;
+  --left-width:30%; --right-width:70%; --header-height:80px;
+  --ls-brand:.3em; --ls-ui:.1em; --ls-body:.05em;
+  --font-en:"Avenir Next","Avenir","Helvetica Neue",sans-serif;
+  --font-jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --muted:#6b6766;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scrollbar-gutter:stable;scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 24px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--color-light);color:var(--color-dark);font-family:var(--font-jp);font-weight:400;letter-spacing:var(--ls-body);line-height:1.9}
+a{color:inherit;text-decoration:none}
+*:focus-visible{outline:2px solid var(--color-dark);outline-offset:3px}
+
+/* 左カラム */
+.side{position:fixed;inset:0 auto 0 0;width:var(--left-width);height:100vh;background:var(--color-dark);display:flex;align-items:center;justify-content:center;z-index:2}
+.side-inner{text-align:center;color:var(--color-light)}
+.side-logo{width:67px;height:99px;display:block;margin:0 auto}
+.side-title{font-family:var(--font-en);margin:24px 0 0;font-size:20px;font-weight:400;letter-spacing:var(--ls-brand)}
+
+/* ヘッダー */
+.site-header{position:fixed;top:0;left:var(--left-width);width:var(--right-width);height:var(--header-height);background:rgba(245,245,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--color-dark);display:flex;align-items:center;z-index:10}
+.site-header nav{width:100%}
+.nav-list{list-style:none;display:flex;justify-content:flex-end;gap:60px;margin:0;padding:0 60px 0 0;width:100%}
+.nav-list a{font-family:var(--font-en);font-size:16px;font-weight:400;letter-spacing:var(--ls-ui);opacity:.72;position:relative;padding-bottom:4px}
+.nav-list a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav-list a:hover{opacity:.92}.nav-list a:hover::after{transform:scaleX(.82)}
+
+/* 本文 */
+.main{margin-left:var(--left-width);width:var(--right-width);min-height:100vh;padding:160px 0 120px;position:relative;overflow-x:clip}
+.inner{max-width:1060px;margin:0 auto;padding:0 48px}
+.page-deco{position:absolute;right:30px;top:380px;width:210px;opacity:.03;pointer-events:none}
+
+.page-label{font-family:var(--font-en);font-size:13px;letter-spacing:.2em;color:var(--color-gray);text-align:center;margin:0 0 10px}
+.page-title{font-family:var(--font-en);font-size:48px;font-weight:500;letter-spacing:.08em;text-align:center;margin:0 0 8px;line-height:1.2}
+.page-sub{font-size:20px;font-weight:400;letter-spacing:.12em;text-align:center;margin:0 0 10px}
+.page-date{font-family:var(--font-en);font-size:13px;letter-spacing:.14em;color:var(--color-gray);text-align:center;margin:0 0 40px}
+.lede{max-width:40em;margin:0 auto 56px;font-size:15px;text-align:center}
+
+.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:16px 24px;margin-bottom:24px}
+.cat-btn{font-family:var(--font-jp);min-width:120px;height:40px;padding:0 20px;border:1px solid var(--color-dark);background:var(--color-light);color:var(--color-dark);font-size:15px;font-weight:400;letter-spacing:var(--ls-ui);border-radius:20px;cursor:pointer;transition:all .3s ease}
+.cat-btn:hover,.cat-btn[aria-pressed="true"]{background:var(--color-dark);color:var(--color-light)}
+.cat-note{text-align:center;font-size:12px;color:var(--color-gray);letter-spacing:.08em;margin:0 0 64px}
+
+/* セクション見出し（ポートフォリオのOUTLINE/DETAIL見出しと同形） */
+.sec-title{font-family:var(--font-en);font-size:28px;font-weight:500;letter-spacing:.12em;text-align:center;margin:0}
+.sec-sub{font-size:14px;font-weight:400;letter-spacing:.12em;color:var(--color-gray);text-align:center;margin:4px 0 32px}
+
+.band{position:relative;background:var(--color-white);padding:56px 0 60px;margin:0 0 96px}
+
+/* 目次 */
+.index{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;counter-reset:none}
+.index a{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:400;transition:opacity .2s}
+.index a:hover{opacity:.6}
+.ix-n{font-family:var(--font-en);font-size:15px;letter-spacing:.1em;color:var(--color-gray)}
+
+/* 数字 */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.num{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 22px 18px;display:flex;flex-direction:column;gap:2px;background:var(--color-white)}
+.num .v{font-family:var(--font-en);font-size:26px;font-weight:500;letter-spacing:.04em;line-height:1.3;font-variant-numeric:tabular-nums}
+.num .l{font-size:14px;font-weight:400;margin-top:4px}
+.num .s{font-size:12px;color:var(--color-gray);line-height:1.6}
+.num a{font-family:var(--font-en);font-size:11px;letter-spacing:.12em;color:var(--color-gray);margin-top:6px;text-decoration:underline;text-underline-offset:3px}
+
+/* 各回 */
+section.vol{margin:0 0 104px}
+.vol-h{display:grid;grid-template-columns:auto 1fr;gap:2px 24px;align-items:end;padding-bottom:18px;border-bottom:1px solid var(--color-dark)}
+.badge{grid-row:span 2;font-family:var(--font-en);font-size:56px;font-weight:400;line-height:.9;letter-spacing:.02em}
+.vol-h .tag{font-size:12px;font-weight:400;letter-spacing:.12em;color:var(--color-gray)}
+.vol-h h2{font-size:22px;font-weight:500;letter-spacing:.08em;line-height:1.5;margin:0}
+.short{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;margin:22px 0 0;font-size:15px;font-weight:400;line-height:1.9}
+.short::before{content:"POINT";font-family:var(--font-en);font-size:12px;letter-spacing:.18em;border:1px solid var(--color-dark);border-radius:999px;padding:2px 12px 1px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 32px;margin-top:32px}
+.card{background:var(--color-white);border-radius:4px;padding:20px 24px 26px;display:flex;flex-direction:column;gap:16px;min-width:0;transition:box-shadow .3s ease}
+.card:hover{box-shadow:0 8px 20px rgba(0,0,0,.06)}
+.pv{background:var(--paper);border-radius:2px;overflow:hidden}
+.pv svg{display:block;width:100%;height:auto}
+.card .body{display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;font-size:16px;font-weight:500;letter-spacing:.06em;line-height:1.5}
+.card p,.card ul{margin:0;font-size:14px;line-height:1.95;letter-spacing:.04em}
+.card ul{padding-left:1.2em}
+.card li{margin-bottom:2px}
+.card b{font-weight:700}
+.now{border-top:1px solid var(--line);padding-top:12px;color:var(--color-dark)!important}
+.now b{font-family:var(--font-en);font-weight:500!important;font-size:10.5px;letter-spacing:.14em;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:1px 9px 0;margin-right:8px;display:inline-block;line-height:1.7}
+.kv{display:grid;gap:4px;font-size:13px}
+.kv div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.kv b{font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);font-weight:400}
+th{color:var(--color-gray);font-weight:400;font-size:11.5px;letter-spacing:.08em}
+
+/* 図版内の文字 */
+.o{fill:none;stroke:#3f3b3a;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.o2{fill:none;stroke:#3f3b3a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dash{stroke-dasharray:6 5}
+.tx{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:14px;fill:#3f3b3a;letter-spacing:0}
+.ts{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:11.5px;fill:#5f5b5a;letter-spacing:0}
+.tb{font-family:"Avenir Next","Avenir","Helvetica Neue","Noto Sans JP",sans-serif;font-weight:500;font-size:22px;fill:#3f3b3a}
+
+/* 用語集 */
+.gloss{column-count:2;column-gap:48px;margin:0}
+.gloss dt{break-after:avoid}
+.gloss dd{break-inside:avoid}
+.gloss dt{font-size:14px;font-weight:500;letter-spacing:.06em;margin-top:18px}
+.gloss dd{margin:2px 0 0;font-size:13px;color:var(--color-gray);line-height:1.8;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.gloss dd a{font-family:var(--font-en);font-size:11px;letter-spacing:.1em;margin-left:6px;text-decoration:underline;text-underline-offset:3px}
+
+.refs{font-size:12px;color:var(--color-gray);line-height:1.9;border-top:1px solid var(--line);padding-top:20px;margin-top:64px}
+.copyright{font-family:var(--font-en);font-size:12px;letter-spacing:.14em;color:var(--color-gray);text-align:center;margin-top:48px}
+
+/* テーマ色（CMYKの4版） */
+i.d-c,i.d-m,i.d-y,i.d-k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:1px;flex:none}
+.d-c{background:var(--c)}.d-m{background:var(--m)}.d-y{background:var(--y)}.d-k{background:var(--k)}
+.t-c{--t:var(--c);--tl:var(--c-l);--tt:var(--c)} .t-m{--t:var(--m);--tl:var(--m-l);--tt:var(--m)} .t-y{--t:var(--y);--tl:var(--y-l);--tt:var(--y-text)} .t-k{--t:var(--k);--tl:var(--k-l);--tt:var(--k)}
+.vol-h{position:relative}
+.vol-h::after{content:"";position:absolute;left:0;bottom:-1px;width:120px;height:4px;background:var(--t)}
+.badge{color:var(--tt)}
+.vol-h .tag{color:var(--tt);font-weight:500}
+.short{background:var(--tl);padding:14px 18px;border-radius:4px}
+.short::before{border-color:var(--tt);color:var(--tt);background:var(--color-white)}
+.vol .card{border-top:3px solid var(--t)}
+.num{border-top:4px solid transparent}
+.num.n-c{border-top-color:var(--c)}.num.n-m{border-top-color:var(--m)}.num.n-y{border-top-color:var(--y)}.num.n-k{border-top-color:var(--k)}
+.ix-n{display:inline-flex;align-items:center}
+.cat-btn i{margin-right:6px}
+.cat-btn[aria-pressed="true"] i.d-k{background:var(--color-light)}
+.inks{display:flex;justify-content:center;gap:6px;margin:0 0 18px}
+.inks span{width:28px;height:6px;border-radius:3px}
+
+/* 章バー（スクロールしても残る） */
+.chap{position:sticky;top:var(--header-height);z-index:8;background:rgba(245,245,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 0 72px}
+.chap-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:1060px;margin:0 auto;padding:10px 48px}
+.chap-row::-webkit-scrollbar{display:none}
+.chap a{flex:none;display:inline-flex;align-items:center;font-size:12.5px;letter-spacing:.06em;padding:4px 12px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:background .2s,border-color .2s}
+.chap a i{margin-right:6px!important}
+.chap a:hover{border-color:var(--color-dark)}
+.chap a.on{background:var(--color-dark);color:var(--color-light)}
+@media (max-width:1024px){.chap-row{padding:8px 20px}}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-en);font-size:13px;letter-spacing:.14em;color:var(--color-gray);margin:0 0 40px;transition:opacity .2s}
+.back-link:hover{opacity:.6}
+.back-wrap{text-align:center;margin-top:72px}
+.back-btn{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:14px 48px;background:var(--color-dark);color:var(--color-light);transition:opacity .2s}
+.back-btn:hover{opacity:.8}
+.back-btn .en{font-family:var(--font-en);font-size:14px;letter-spacing:.14em}
+.back-btn .ja{font-size:11px;letter-spacing:.1em;opacity:.8}
+
+/* ショートカット一覧 */
+.sc-card{padding:8px 24px 22px}
+.sclist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:40px}
+.sc{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+.ks{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.ks>span{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+kbd{font-family:var(--font-en),var(--font-jp);display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 8px;border:1px solid #cfcac8;border-bottom-width:3px;border-radius:6px;background:#fff;font-size:14px;font-weight:500;line-height:1;color:var(--color-dark);white-space:nowrap}
+.vol .sc kbd{border-color:color-mix(in srgb,var(--t) 45%,#cfcac8)}
+.act-k{font-size:12px;color:var(--color-gray);padding:0 2px}
+.ac{font-size:14px;line-height:1.6;letter-spacing:.04em;display:flex;flex-direction:column;min-width:0}
+.ac small{font-size:12px;color:var(--color-gray);letter-spacing:.02em}
+.sc-card .now{margin-top:18px}
+body.os-win .mac,body:not(.os-win) .win{display:none!important}
+.tools{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;margin:0 0 20px}
+.os{display:inline-flex;border:1px solid var(--color-dark);border-radius:999px;overflow:hidden}
+.os button{font-family:var(--font-en);font-size:14px;letter-spacing:.08em;height:40px;min-width:110px;padding:0 18px;border:0;background:var(--color-light);color:var(--color-dark);cursor:pointer}
+.os button[aria-pressed="true"]{background:var(--color-dark);color:var(--color-light)}
+.search{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--color-dark);background:#fff;width:min(360px,100%);color:var(--color-gray)}
+.search input{border:0;outline:0;flex:1;min-width:0;font-family:var(--font-jp);font-size:14px;background:transparent;color:var(--color-dark)}
+.hit{text-align:center;font-size:13px;color:var(--color-gray);margin:0 0 16px}
+.keytab{max-width:640px;margin:0 auto;border-top:1px solid var(--line)}
+.kt-h,.kt-r{display:grid;grid-template-columns:120px 1fr 140px;gap:12px;align-items:center;padding:10px 8px;border-bottom:1px solid var(--line);font-size:14px}
+.kt-h{font-family:var(--font-en);font-size:12px;letter-spacing:.12em;color:var(--color-gray)}
+.kt-r span:last-child,.kt-h span:last-child{text-align:right}
+@media (max-width:1024px){.sclist{grid-template-columns:1fr}}
+@media (max-width:600px){.sc-card{padding:4px 16px 18px}.sc{grid-template-columns:120px 1fr;gap:10px}kbd{min-width:26px;height:27px;padding:0 6px;font-size:13px}.kt-h,.kt-r{grid-template-columns:84px 1fr 96px;font-size:13px}.os button{min-width:96px}}
+[hidden]{display:none!important}
+
+.back-to-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--color-dark);color:var(--color-light);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;text-decoration:none}
+.back-to-top{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:none}
+.back-to-top.is-visible:hover{opacity:.75}
+
+/* タブレット・スマホ：左カラムをたたんで1カラムに */
+@media (max-width:1024px){
+  .side{display:none}
+  .site-header{left:0;width:100%;justify-content:space-between;padding:0 20px}
+  .site-header .mini{display:flex!important}
+  .site-header nav{width:auto}
+  .nav-list{gap:22px;padding:0;width:auto}
+  .nav-list a{font-size:13px}
+  .main{margin-left:0;width:100%;padding-top:128px}
+  .inner{padding:0 20px}
+  .grid{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .index{grid-template-columns:1fr}
+  .gloss{column-count:1}
+  .page-title{font-size:36px}
+  .page-deco{display:none}
+}
+@media (max-width:480px){
+  .nav-list{gap:14px}.nav-list a{font-size:12px}
+  .page-title{font-size:30px}.page-sub{font-size:16px}
+  .badge{font-size:44px}.vol-h h2{font-size:18px}
+  .short{grid-template-columns:1fr;gap:8px}.short::before{justify-self:start}
+  .card{padding:16px 16px 20px}
+  .site-header .mini span{display:none}
+  .num{padding:16px 14px 14px}.num .v{font-size:19px}
+  .back-to-top{bottom:20px;right:16px}
+}
+.site-header .mini{display:none;align-items:center;gap:10px;font-family:var(--font-en);font-size:13px;letter-spacing:.2em}
+.site-header .mini svg{width:18px;height:26px}
+</style>
+</head>
+<body id="top">
+
+<aside class="side">
+  <a href="../index.html" aria-label="TOPへ戻る">
+    <div class="side-inner">
+      <svg class="side-logo" viewBox="0 0 344.1 498.3" aria-hidden="true"><path fill="#f5f5f5" d="M171.9,168.2l-1.6,161.9S6.9,322.4,4.8,494.9l169.3,1.7c20.6-.5,32.2-2.4,47.8-6.7,40-11,120.7-55.4,117.3-162.1,0,0-4.8-158.1-167.3-159.6Z"/><path fill="none" stroke="#f5f5f5" stroke-miterlimit="10" stroke-width="9.4" d="M172.2,334.1l1.6-161.9s163.4,7.6,165.5-164.9l-169.3-1.7c-20.6.5-32.2,2.4-47.8,6.7C82.2,23.3,1.5,67.7,4.9,174.4c0,0,4.8,158.1,167.3,159.6Z"/></svg>
+      <p class="side-title">HIDAKA SHURI</p>
+    </div>
+  </a>
+</aside>
+
+<header class="site-header">
+  <a class="mini" href="../index.html"><svg viewBox="0 0 344.1 498.3" aria-hidden="true"><path fill="#3f3b3a" d="M171.9,168.2l-1.6,161.9S6.9,322.4,4.8,494.9l169.3,1.7c20.6-.5,32.2-2.4,47.8-6.7,40-11,120.7-55.4,117.3-162.1,0,0-4.8-158.1-167.3-159.6Z"/><path fill="none" stroke="#3f3b3a" stroke-miterlimit="10" stroke-width="9.4" d="M172.2,334.1l1.6-161.9s163.4,7.6,165.5-164.9l-169.3-1.7c-20.6.5-32.2,2.4-47.8,6.7C82.2,23.3,1.5,67.7,4.9,174.4c0,0,4.8,158.1,167.3,159.6Z"/></svg><span>HIDAKA SHURI</span></a>
+  <nav aria-label="サイト">
+    <ul class="nav-list">
+      <li><a href="../index.html">TOP</a></li>
+      <li><a href="../works.html">WORKS</a></li>
+      <li><a href="../about.html">ABOUT</a></li>
+      <li><a href="../contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <svg class="page-deco" viewBox="0 0 282.24 328.64" aria-hidden="true"><g fill="none" stroke="#3f3b3a" stroke-linecap="round" stroke-linejoin="round" stroke-width="23.59"><polyline points="117.42 240.51 43.13 240.51 43.13 276.32 146.07 276.32 146.07 316.6 11.79 316.6"/><line x1="176.69" y1="48.95" x2="178.48" y2="316.6"/><line x1="185.36" y1="99.62" x2="207.84" y2="99.62"/><polyline points="239.72 11.79 239.72 193.49"/><polyline points="239.72 223.89 239.72 316.84"/><polyline points="209.1 11.79 209.1 193.49"/><polyline points="209.1 223.89 209.1 316.84"/><polyline points="270.34 134.91 270.34 316.6"/><polyline points="270.34 70.7 270.34 37.51 251.61 37.51"/></g></svg>
+
+  <div class="inner">
+    <a class="back-link js-back" href="../works.html?cat=note">← NOTE 一覧へ戻る</a>
+    <div class="inks" aria-hidden="true"><span style="background:var(--c)"></span><span style="background:var(--m)"></span><span style="background:var(--y)"></span><span style="background:var(--k)"></span></div>
+    <p class="page-label">NOTE</p>
+    <h1 class="page-title">ILLUSTRATOR SHORTCUTS</h1>
+    <p class="page-sub">イラレのショートカット帳</p>
+    <p class="page-date">2026.11.15　# Illustrator　# ショートカット</p>
+    <p class="lede">マウスでメニューを探す時間を、キー1つに。Illustratorでよく使うショートカットを、まず覚えたいものから順に10のグループに分けてまとめました。MacとWindowsは切り替えて表示でき、キーや操作名で検索もできます。Illustrator 30（Creative Cloud 2026年版）の初期設定のキーです。</p>
+  </div>
+
+  <div class="band">
+    <div class="inner">
+      <h2 class="sec-title">INDEX</h2>
+      <p class="sec-sub">目次</p>
+      <ol class="index"><li><a href="#vol01"><span class="ix-n"><i class="d-k"></i>01</span><span>まず覚えたい13個</span></a></li><li><a href="#vol02"><span class="ix-n"><i class="d-k"></i>02</span><span>ファイルと基本操作</span></a></li><li><a href="#vol03"><span class="ix-n"><i class="d-c"></i>03</span><span>画面の表示</span></a></li><li><a href="#vol04"><span class="ix-n"><i class="d-c"></i>04</span><span>選択とツールの切り替え</span></a></li><li><a href="#vol05"><span class="ix-n"><i class="d-m"></i>05</span><span>描く・パスを編集する</span></a></li><li><a href="#vol06"><span class="ix-n"><i class="d-m"></i>06</span><span>コピーと変形</span></a></li><li><a href="#vol07"><span class="ix-n"><i class="d-m"></i>07</span><span>重ね順・グループ・パス</span></a></li><li><a href="#vol08"><span class="ix-n"><i class="d-y"></i>08</span><span>色・塗りと線</span></a></li><li><a href="#vol09"><span class="ix-n"><i class="d-y"></i>09</span><span>文字</span></a></li><li><a href="#vol10"><span class="ix-n"><i class="d-k"></i>10</span><span>パネルを開く</span></a></li><li><a href="#vol11"><span class="ix-n"><i class="d-k"></i>11</span><span>うまく効かないとき</span></a></li></ol>
+    </div>
+  </div>
+
+  <div class="inner">
+    <h2 class="sec-title">KEY POINTS</h2>
+    <p class="sec-sub">覚え方のコツ</p>
+    <div class="nums"><div class="num n-c"><span class="v">頭文字</span><span class="l">ツールのキー</span><span class="s">P＝Pen、T＝Type、R＝Rotate</span><a href="#vol04">04 選択</a></div><div class="num n-c"><span class="v">Space</span><span class="l">押している間だけ</span><span class="s">手のひらツールで画面を移動</span><a href="#vol03">03 表示</a></div><div class="num n-m"><span class="v">＋<span class="mac">⌥</span><span class="win">Alt</span></span><span class="l">逆の操作になる</span><span class="s"><span class="mac">⌘2</span><span class="win">Ctrl+2</span> ロック ↔ <span class="mac">⌥⌘2</span><span class="win">Ctrl+Alt+2</span> 解除</span><a href="#vol07">07 重ね順</a></div><div class="num n-m"><span class="v">＋<span class="mac">⇧</span><span class="win">Shift</span></span><span class="l">もっと強く</span><span class="s"><span class="mac">⌘]</span><span class="win">Ctrl+]</span> 前面へ → <span class="mac">⇧⌘]</span><span class="win">Ctrl+Shift+]</span> 最前面へ</span><a href="#vol07">07 重ね順</a></div><div class="num n-m"><span class="v"><span class="mac">⌘D</span><span class="win">Ctrl+D</span></span><span class="l">くり返し</span><span class="s">直前の移動・変形をもう一度</span><a href="#vol06">06 コピー・変形</a></div><div class="num n-k"><span class="v">英数</span><span class="l">入力モード</span><span class="s">日本語入力オフで押す</span><a href="#vol11">11 困ったら</a></div></div>
+  </div>
+
+  <nav class="chap" aria-label="各回へ移動" style="margin-top:96px"><div class="chap-row"><a href="#vol01" data-n="01"><i class="d-k"></i>01 まずこれ</a><a href="#vol02" data-n="02"><i class="d-k"></i>02 ファイル</a><a href="#vol03" data-n="03"><i class="d-c"></i>03 表示</a><a href="#vol04" data-n="04"><i class="d-c"></i>04 選択</a><a href="#vol05" data-n="05"><i class="d-m"></i>05 描く</a><a href="#vol06" data-n="06"><i class="d-m"></i>06 コピー・変形</a><a href="#vol07" data-n="07"><i class="d-m"></i>07 重ね順</a><a href="#vol08" data-n="08"><i class="d-y"></i>08 色</a><a href="#vol09" data-n="09"><i class="d-y"></i>09 文字</a><a href="#vol10" data-n="10"><i class="d-k"></i>10 パネル</a><a href="#vol11" data-n="11"><i class="d-k"></i>11 困ったら</a></div></nav>
+  <div class="inner">
+    <h2 class="sec-title">CONTENTS</h2>
+    <p class="sec-sub">テーマで絞り込む</p>
+    <div class="tools">
+      <div class="os" role="group" aria-label="OSを切り替える"><button type="button" data-os="mac" aria-pressed="true">Mac</button><button type="button" data-os="win" aria-pressed="false">Windows</button></div>
+      <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input type="search" id="q" placeholder="操作名やキーで探す（例：ロック、⌘G）" aria-label="ショートカットを検索"></label>
+    </div>
+    <p class="hit" id="hit" hidden></p>
+    <div class="cats" role="group" aria-label="テーマで絞り込む">
+      <button class="cat-btn" type="button" id="f-all" data-f="all" aria-pressed="true"># ALL</button>
+      <button class="cat-btn" type="button" id="f-k" data-f="k" aria-pressed="false"><i class="d-k"></i># きほん</button>
+      <button class="cat-btn" type="button" id="f-c" data-f="c" aria-pressed="false"><i class="d-c"></i># 表示・選択</button>
+      <button class="cat-btn" type="button" id="f-m" data-f="m" aria-pressed="false"><i class="d-m"></i># 描く・編集</button>
+      <button class="cat-btn" type="button" id="f-y" data-f="y" aria-pressed="false"><i class="d-y"></i># 色・文字</button>
+    </div>
+    <p class="cat-note">1文字のキーは、日本語入力をオフにしてから押します。キーの記号はページ下の「KEYS」を見てください</p>
+
+    
+<section class="vol t-k" id="vol01" data-t="k"><div class="vol-h"><div class="badge">01</div><span class="tag"># きほん</span><h2>まず覚えたい13個</h2></div><p class="short">毎日の作業でいちばん使うものだけを集めました。ここだけ覚えれば、マウスでメニューを探す時間がぐっと減ります。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="取り消し 何回でも戻れる ⌘ z ctrl z"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>Z</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Z</kbd></span></span><span class="ac">取り消し<small>何回でも戻れる</small></span></li><li class="sc" data-q="やり直し 取り消しを取り消す ⇧ ⌘ z ctrl shift z"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>Z</kbd></span></span><span class="ac">やり直し<small>取り消しを取り消す</small></span></li><li class="sc" data-q="保存 こまめに押すくせを ⌘ s ctrl s"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>S</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>S</kbd></span></span><span class="ac">保存<small>こまめに押すくせを</small></span></li><li class="sc" data-q="選択ツール オブジェクトごと選ぶ（黒い矢印） v v"><span class="ks"><span class="mac"><kbd>V</kbd></span><span class="win"><kbd>V</kbd></span></span><span class="ac">選択ツール<small>オブジェクトごと選ぶ（黒い矢印）</small></span></li><li class="sc" data-q="ダイレクト選択ツール 点やパスを選ぶ（白い矢印） a a"><span class="ks"><span class="mac"><kbd>A</kbd></span><span class="win"><kbd>A</kbd></span></span><span class="ac">ダイレクト選択ツール<small>点やパスを選ぶ（白い矢印）</small></span></li><li class="sc" data-q="手のひらツール 押している間だけ。画面を動かす space space"><span class="ks"><span class="mac"><kbd>Space</kbd></span><span class="win"><kbd>Space</kbd></span></span><span class="ac">手のひらツール<small>押している間だけ。画面を動かす</small></span></li><li class="sc" data-q="拡大表示 縮小は ⌘ − ⌘ + ctrl +"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>+</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>+</kbd></span></span><span class="ac">拡大表示<small>縮小は <span class="mac">⌘ −</span><span class="win">Ctrl+−</span></small></span></li><li class="sc" data-q="アートボードを全体表示 迷子になったらこれ ⌘ 0 ctrl 0"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>0</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>0</kbd></span></span><span class="ac">アートボードを全体表示<small>迷子になったらこれ</small></span></li><li class="sc" data-q="コピー カットは ⌘ x ⌘ c ctrl c"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>C</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>C</kbd></span></span><span class="ac">コピー<small>カットは <span class="mac">⌘ X</span><span class="win">Ctrl+X</span></small></span></li><li class="sc" data-q="前面へペースト 同じ位置の、いちばん上に貼る ⌘ f ctrl f"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>F</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>F</kbd></span></span><span class="ac">前面へペースト<small>同じ位置の、いちばん上に貼る</small></span></li><li class="sc" data-q="複製しながら移動 ⇧も押すとまっすぐ ⌥ @ドラッグ alt @ドラッグ"><span class="ks"><span class="mac"><kbd>⌥</kbd><span class="act-k">ドラッグ</span></span><span class="win"><kbd>Alt</kbd><span class="act-k">ドラッグ</span></span></span><span class="ac">複製しながら移動<small><span class="mac">⇧</span><span class="win">Shift</span>も押すとまっすぐ</small></span></li><li class="sc" data-q="グループ 解除は ⇧ ⌘ g ⌘ g ctrl g"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>G</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>G</kbd></span></span><span class="ac">グループ<small>解除は <span class="mac">⇧ ⌘ G</span><span class="win">Ctrl+Shift+G</span></small></span></li><li class="sc" data-q="変形の繰り返し 直前の移動・コピーをもう一度 ⌘ d ctrl d"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>D</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>D</kbd></span></span><span class="ac">変形の繰り返し<small>直前の移動・コピーをもう一度</small></span></li></ul><p class="now"><b>ヒント</b>まずは「V・A・Space・<span class="mac">⌘Z</span><span class="win">Ctrl+Z</span>」の4つから。手が覚えると、ほかのキーも自然に増えていきます。</p></article></section>
+
+<section class="vol t-k" id="vol02" data-t="k"><div class="vol-h"><div class="badge">02</div><span class="tag"># きほん</span><h2>ファイルと基本操作</h2></div><p class="short">保存や書き出し、設定画面を開くキーです。<span class="mac">⌘</span><span class="win">Ctrl</span>＋1文字が基本で、<span class="mac">⇧</span><span class="win">Shift</span>や<span class="mac">⌥</span><span class="win">Alt</span>を足すと「別の形で」の意味になります。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="新規ドキュメント  ⌘ n ctrl n"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>N</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>N</kbd></span></span><span class="ac">新規ドキュメント</span></li><li class="sc" data-q="開く  ⌘ o ctrl o"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>O</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>O</kbd></span></span><span class="ac">開く</span></li><li class="sc" data-q="閉じる  ⌘ w ctrl w"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>W</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>W</kbd></span></span><span class="ac">閉じる</span></li><li class="sc" data-q="保存  ⌘ s ctrl s"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>S</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>S</kbd></span></span><span class="ac">保存</span></li><li class="sc" data-q="別名で保存 バージョンを分けたいとき ⇧ ⌘ s ctrl shift s"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>S</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>S</kbd></span></span><span class="ac">別名で保存<small>バージョンを分けたいとき</small></span></li><li class="sc" data-q="複製を保存 今のファイルは開いたまま ⌥ ⌘ s ctrl alt s"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>S</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>S</kbd></span></span><span class="ac">複製を保存<small>今のファイルは開いたまま</small></span></li><li class="sc" data-q="スクリーン用に書き出し png・jpg・svgをまとめて ⌥ ⌘ e ctrl alt e"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>E</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>E</kbd></span></span><span class="ac">スクリーン用に書き出し<small>PNG・JPG・SVGをまとめて</small></span></li><li class="sc" data-q="プリント  ⌘ p ctrl p"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>P</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>P</kbd></span></span><span class="ac">プリント</span></li><li class="sc" data-q="パッケージ 入稿用に画像とフォントを集める ⌥ ⇧ ⌘ p ctrl alt shift p"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>P</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>P</kbd></span></span><span class="ac">パッケージ<small>入稿用に画像とフォントを集める</small></span></li><li class="sc" data-q="ドキュメント設定 裁ち落とし・単位など ⌥ ⌘ p ctrl alt p"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>P</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>P</kbd></span></span><span class="ac">ドキュメント設定<small>裁ち落とし・単位など</small></span></li><li class="sc" data-q="環境設定  ⌘ k ctrl k"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>K</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>K</kbd></span></span><span class="ac">環境設定</span></li><li class="sc" data-q="キーボードショートカット 一覧の確認・変更 ⌥ ⇧ ⌘ k ctrl alt shift k"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>K</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>K</kbd></span></span><span class="ac">キーボードショートカット<small>一覧の確認・変更</small></span></li></ul></article></section>
+
+<section class="vol t-c" id="vol03" data-t="c"><div class="vol-h"><div class="badge">03</div><span class="tag"># 表示・選択</span><h2>画面の表示</h2></div><p class="short">拡大・縮小、ガイドや定規の表示です。作業中にいちばん頻繁に押すのがこのグループ。Spaceと<span class="mac">⌘</span><span class="win">Ctrl</span>＋/−で、マウスを持ったまま見たい場所へ移動できます。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="手のひらツール 押している間だけ space space"><span class="ks"><span class="mac"><kbd>Space</kbd></span><span class="win"><kbd>Space</kbd></span></span><span class="ac">手のひらツール<small>押している間だけ</small></span></li><li class="sc" data-q="拡大表示  ⌘ + ctrl +"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>+</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>+</kbd></span></span><span class="ac">拡大表示</span></li><li class="sc" data-q="縮小表示  ⌘ − ctrl −"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>−</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>−</kbd></span></span><span class="ac">縮小表示</span></li><li class="sc" data-q="アートボードを全体表示  ⌘ 0 ctrl 0"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>0</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>0</kbd></span></span><span class="ac">アートボードを全体表示</span></li><li class="sc" data-q="すべてのアートボードを表示  ⌥ ⌘ 0 ctrl alt 0"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>0</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>0</kbd></span></span><span class="ac">すべてのアートボードを表示</span></li><li class="sc" data-q="100％表示 実寸の確認に ⌘ 1 ctrl 1"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>1</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>1</kbd></span></span><span class="ac">100％表示<small>実寸の確認に</small></span></li><li class="sc" data-q="アウトライン表示 もう一度押すとプレビューに戻る ⌘ y ctrl y"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>Y</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Y</kbd></span></span><span class="ac">アウトライン表示<small>もう一度押すとプレビューに戻る</small></span></li><li class="sc" data-q="ピクセルプレビュー web・画面用の確認に ⌥ ⌘ y ctrl alt y"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>Y</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Y</kbd></span></span><span class="ac">ピクセルプレビュー<small>Web・画面用の確認に</small></span></li><li class="sc" data-q="定規の表示・非表示  ⌘ r ctrl r"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>R</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>R</kbd></span></span><span class="ac">定規の表示・非表示</span></li><li class="sc" data-q="ガイドの表示・非表示  ⌘ ; ctrl ;"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>;</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>;</kbd></span></span><span class="ac">ガイドの表示・非表示</span></li><li class="sc" data-q="ガイドをロック  ⌥ ⌘ ; ctrl alt ;"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>;</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>;</kbd></span></span><span class="ac">ガイドをロック</span></li><li class="sc" data-q="ガイドを作成 選んだパスをガイドにする ⌘ 5 ctrl 5"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>5</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>5</kbd></span></span><span class="ac">ガイドを作成<small>選んだパスをガイドにする</small></span></li><li class="sc" data-q="スマートガイド 吸着のオン・オフ ⌘ u ctrl u"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>U</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>U</kbd></span></span><span class="ac">スマートガイド<small>吸着のオン・オフ</small></span></li><li class="sc" data-q="アートボードを隠す  ⇧ ⌘ h ctrl shift h"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>H</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>H</kbd></span></span><span class="ac">アートボードを隠す</span></li><li class="sc" data-q="パネルをすべて隠す もう一度押すと戻る tab tab"><span class="ks"><span class="mac"><kbd>Tab</kbd></span><span class="win"><kbd>Tab</kbd></span></span><span class="ac">パネルをすべて隠す<small>もう一度押すと戻る</small></span></li><li class="sc" data-q="スクリーンモードの切り替え  f f"><span class="ks"><span class="mac"><kbd>F</kbd></span><span class="win"><kbd>F</kbd></span></span><span class="ac">スクリーンモードの切り替え</span></li></ul></article></section>
+
+<section class="vol t-c" id="vol04" data-t="c"><div class="vol-h"><div class="badge">04</div><span class="tag"># 表示・選択</span><h2>選択とツールの切り替え</h2></div><p class="short">ツールのキーは英語の頭文字が多く、P（Pen）、T（Type）、R（Rotate）のように覚えられます。押している間だけ切り替わるキーも便利です。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="選択ツール vは「矢印」の形と覚える v v"><span class="ks"><span class="mac"><kbd>V</kbd></span><span class="win"><kbd>V</kbd></span></span><span class="ac">選択ツール<small>Vは「矢印」の形と覚える</small></span></li><li class="sc" data-q="ダイレクト選択ツール  a a"><span class="ks"><span class="mac"><kbd>A</kbd></span><span class="win"><kbd>A</kbd></span></span><span class="ac">ダイレクト選択ツール</span></li><li class="sc" data-q="直前の選択ツールに一時切り替え 押している間だけ。描きながら選べる ⌘ ctrl"><span class="ks"><span class="mac"><kbd>⌘</kbd></span><span class="win"><kbd>Ctrl</kbd></span></span><span class="ac">直前の選択ツールに一時切り替え<small>押している間だけ。描きながら選べる</small></span></li><li class="sc" data-q="グループ選択 ダイレクト選択ツールのとき ⌥ @クリック alt @クリック"><span class="ks"><span class="mac"><kbd>⌥</kbd><span class="act-k">クリック</span></span><span class="win"><kbd>Alt</kbd><span class="act-k">クリック</span></span></span><span class="ac">グループ選択<small>ダイレクト選択ツールのとき</small></span></li><li class="sc" data-q="選択に追加・解除  ⇧ @クリック shift @クリック"><span class="ks"><span class="mac"><kbd>⇧</kbd><span class="act-k">クリック</span></span><span class="win"><kbd>Shift</kbd><span class="act-k">クリック</span></span></span><span class="ac">選択に追加・解除</span></li><li class="sc" data-q="すべてを選択  ⌘ a ctrl a"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>A</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>A</kbd></span></span><span class="ac">すべてを選択</span></li><li class="sc" data-q="選択を解除  ⇧ ⌘ a ctrl shift a"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>A</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>A</kbd></span></span><span class="ac">選択を解除</span></li><li class="sc" data-q="再選択 直前と同じ選び方でもう一度 ⌘ 6 ctrl 6"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>6</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>6</kbd></span></span><span class="ac">再選択<small>直前と同じ選び方でもう一度</small></span></li><li class="sc" data-q="なげなわツール 点をまとめて囲んで選ぶ q q"><span class="ks"><span class="mac"><kbd>Q</kbd></span><span class="win"><kbd>Q</kbd></span></span><span class="ac">なげなわツール<small>点をまとめて囲んで選ぶ</small></span></li><li class="sc" data-q="自動選択ツール 同じ色のものをまとめて y y"><span class="ks"><span class="mac"><kbd>Y</kbd></span><span class="win"><kbd>Y</kbd></span></span><span class="ac">自動選択ツール<small>同じ色のものをまとめて</small></span></li><li class="sc" data-q="アートボードツール  ⇧ o shift o"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>O</kbd></span><span class="win"><kbd>Shift</kbd><kbd>O</kbd></span></span><span class="ac">アートボードツール</span></li></ul><p class="now"><b>ヒント</b>「選択 > 共通」のメニューは、同じ塗りや同じ線のものを一度に選べます。キーはありませんが、色替えのときにとても便利です。</p></article></section>
+
+<section class="vol t-m" id="vol05" data-t="m"><div class="vol-h"><div class="badge">05</div><span class="tag"># 描く・編集</span><h2>描く・パスを編集する</h2></div><p class="short">図形やパスを描くツールです。描いている途中で<span class="mac">⇧</span><span class="win">Shift</span>・<span class="mac">⌥</span><span class="win">Alt</span>・Spaceを押すと、形をそろえたり、中心から描いたり、位置を動かしたりできます。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="ペンツール  p p"><span class="ks"><span class="mac"><kbd>P</kbd></span><span class="win"><kbd>P</kbd></span></span><span class="ac">ペンツール</span></li><li class="sc" data-q="アンカーポイントの追加ツール  + +"><span class="ks"><span class="mac"><kbd>+</kbd></span><span class="win"><kbd>+</kbd></span></span><span class="ac">アンカーポイントの追加ツール</span></li><li class="sc" data-q="アンカーポイントの削除ツール  − −"><span class="ks"><span class="mac"><kbd>−</kbd></span><span class="win"><kbd>−</kbd></span></span><span class="ac">アンカーポイントの削除ツール</span></li><li class="sc" data-q="アンカーポイントツール 角とカーブの切り替え ⇧ c shift c"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>C</kbd></span><span class="win"><kbd>Shift</kbd><kbd>C</kbd></span></span><span class="ac">アンカーポイントツール<small>角とカーブの切り替え</small></span></li><li class="sc" data-q="曲率ツール クリックだけでなめらかな曲線。キー配列で位置が違う ⇧ ~ shift ~"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>~</kbd></span><span class="win"><kbd>Shift</kbd><kbd>~</kbd></span></span><span class="ac">曲率ツール<small>クリックだけでなめらかな曲線。キー配列で位置が違う</small></span></li><li class="sc" data-q="長方形ツール  m m"><span class="ks"><span class="mac"><kbd>M</kbd></span><span class="win"><kbd>M</kbd></span></span><span class="ac">長方形ツール</span></li><li class="sc" data-q="楕円形ツール  l l"><span class="ks"><span class="mac"><kbd>L</kbd></span><span class="win"><kbd>L</kbd></span></span><span class="ac">楕円形ツール</span></li><li class="sc" data-q="鉛筆ツール  n n"><span class="ks"><span class="mac"><kbd>N</kbd></span><span class="win"><kbd>N</kbd></span></span><span class="ac">鉛筆ツール</span></li><li class="sc" data-q="ブラシツール  b b"><span class="ks"><span class="mac"><kbd>B</kbd></span><span class="win"><kbd>B</kbd></span></span><span class="ac">ブラシツール</span></li><li class="sc" data-q="塗りブラシツール  ⇧ b shift b"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>B</kbd></span><span class="win"><kbd>Shift</kbd><kbd>B</kbd></span></span><span class="ac">塗りブラシツール</span></li><li class="sc" data-q="消しゴムツール  ⇧ e shift e"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>E</kbd></span><span class="win"><kbd>Shift</kbd><kbd>E</kbd></span></span><span class="ac">消しゴムツール</span></li><li class="sc" data-q="はさみツール  c c"><span class="ks"><span class="mac"><kbd>C</kbd></span><span class="win"><kbd>C</kbd></span></span><span class="ac">はさみツール</span></li><li class="sc" data-q="シェイプ形成ツール 重なりを足す・消す ⇧ m shift m"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>M</kbd></span><span class="win"><kbd>Shift</kbd><kbd>M</kbd></span></span><span class="ac">シェイプ形成ツール<small>重なりを足す・消す</small></span></li><li class="sc" data-q="線幅ツール 線の太さを部分的に変える ⇧ w shift w"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>W</kbd></span><span class="win"><kbd>Shift</kbd><kbd>W</kbd></span></span><span class="ac">線幅ツール<small>線の太さを部分的に変える</small></span></li><li class="sc" data-q="正方形・正円／45°ずつ 描いている途中に押す ⇧ @ドラッグ shift @ドラッグ"><span class="ks"><span class="mac"><kbd>⇧</kbd><span class="act-k">ドラッグ</span></span><span class="win"><kbd>Shift</kbd><span class="act-k">ドラッグ</span></span></span><span class="ac">正方形・正円／45°ずつ<small>描いている途中に押す</small></span></li><li class="sc" data-q="中心から描く  ⌥ @ドラッグ alt @ドラッグ"><span class="ks"><span class="mac"><kbd>⌥</kbd><span class="act-k">ドラッグ</span></span><span class="win"><kbd>Alt</kbd><span class="act-k">ドラッグ</span></span></span><span class="ac">中心から描く</span></li><li class="sc" data-q="描きながら位置を動かす ドラッグ中に押す space space"><span class="ks"><span class="mac"><kbd>Space</kbd></span><span class="win"><kbd>Space</kbd></span></span><span class="ac">描きながら位置を動かす<small>ドラッグ中に押す</small></span></li></ul></article></section>
+
+<section class="vol t-m" id="vol06" data-t="m"><div class="vol-h"><div class="badge">06</div><span class="tag"># 描く・編集</span><h2>コピーと変形</h2></div><p class="short">貼り付け方の違いと、移動・回転・拡大縮小のキーです。<span class="mac">⌘D</span><span class="win">Ctrl+D</span>の「変形の繰り返し」と組み合わせると、等間隔の複製があっという間にできます。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="コピー  ⌘ c ctrl c"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>C</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>C</kbd></span></span><span class="ac">コピー</span></li><li class="sc" data-q="カット  ⌘ x ctrl x"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>X</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>X</kbd></span></span><span class="ac">カット</span></li><li class="sc" data-q="ペースト 画面の中央に貼る ⌘ v ctrl v"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>V</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>V</kbd></span></span><span class="ac">ペースト<small>画面の中央に貼る</small></span></li><li class="sc" data-q="前面へペースト 同じ位置の、いちばん上に ⌘ f ctrl f"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>F</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>F</kbd></span></span><span class="ac">前面へペースト<small>同じ位置の、いちばん上に</small></span></li><li class="sc" data-q="背面へペースト 同じ位置の、いちばん下に ⌘ b ctrl b"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>B</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>B</kbd></span></span><span class="ac">背面へペースト<small>同じ位置の、いちばん下に</small></span></li><li class="sc" data-q="同じ位置にペースト  ⇧ ⌘ v ctrl shift v"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>V</kbd></span></span><span class="ac">同じ位置にペースト</span></li><li class="sc" data-q="すべてのアートボードにペースト ノンブルやロゴの配置に ⌥ ⇧ ⌘ v ctrl alt shift v"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>V</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>V</kbd></span></span><span class="ac">すべてのアートボードにペースト<small>ノンブルやロゴの配置に</small></span></li><li class="sc" data-q="複製しながら移動  ⌥ @ドラッグ alt @ドラッグ"><span class="ks"><span class="mac"><kbd>⌥</kbd><span class="act-k">ドラッグ</span></span><span class="win"><kbd>Alt</kbd><span class="act-k">ドラッグ</span></span></span><span class="ac">複製しながら移動</span></li><li class="sc" data-q="変形の繰り返し  ⌘ d ctrl d"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>D</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>D</kbd></span></span><span class="ac">変形の繰り返し</span></li><li class="sc" data-q="少しずつ移動 ⇧を足すと10倍 ↑ ↓ ← → ↑ ↓ ← →"><span class="ks"><span class="mac"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd></span><span class="win"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd></span></span><span class="ac">少しずつ移動<small><span class="mac">⇧</span><span class="win">Shift</span>を足すと10倍</small></span></li><li class="sc" data-q="移動（数値で） 選択ツールのとき ⏎ enter"><span class="ks"><span class="mac"><kbd>⏎</kbd></span><span class="win"><kbd>Enter</kbd></span></span><span class="ac">移動（数値で）<small>選択ツールのとき</small></span></li><li class="sc" data-q="回転ツール  r r"><span class="ks"><span class="mac"><kbd>R</kbd></span><span class="win"><kbd>R</kbd></span></span><span class="ac">回転ツール</span></li><li class="sc" data-q="リフレクトツール  o o"><span class="ks"><span class="mac"><kbd>O</kbd></span><span class="win"><kbd>O</kbd></span></span><span class="ac">リフレクトツール</span></li><li class="sc" data-q="拡大・縮小ツール  s s"><span class="ks"><span class="mac"><kbd>S</kbd></span><span class="win"><kbd>S</kbd></span></span><span class="ac">拡大・縮小ツール</span></li><li class="sc" data-q="自由変形ツール  e e"><span class="ks"><span class="mac"><kbd>E</kbd></span><span class="win"><kbd>E</kbd></span></span><span class="ac">自由変形ツール</span></li><li class="sc" data-q="個別に変形 それぞれの中心で回転・拡大 ⌥ ⇧ ⌘ d ctrl alt shift d"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>D</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd></span></span><span class="ac">個別に変形<small>それぞれの中心で回転・拡大</small></span></li></ul><p class="now"><b>ヒント</b><span class="mac">⌥</span><span class="win">Alt</span> を押しながらドラッグで1つ複製 → <span class="mac">⌘D</span><span class="win">Ctrl+D</span> を何回か押すと、同じ間隔でどんどん並びます。</p></article></section>
+
+<section class="vol t-m" id="vol07" data-t="m"><div class="vol-h"><div class="badge">07</div><span class="tag"># 描く・編集</span><h2>重ね順・グループ・パス</h2></div><p class="short">重なりの順番、ロックや非表示、クリッピングマスクのキーです。<span class="mac">⌥</span><span class="win">Alt</span>を足すと「解除」、<span class="mac">⇧</span><span class="win">Shift</span>を足すと「いちばん端まで」になるものが多くあります。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="前面へ 1つ上へ ⌘ ] ctrl ]"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>]</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>]</kbd></span></span><span class="ac">前面へ<small>1つ上へ</small></span></li><li class="sc" data-q="背面へ 1つ下へ ⌘ [ ctrl ["><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>[</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>[</kbd></span></span><span class="ac">背面へ<small>1つ下へ</small></span></li><li class="sc" data-q="最前面へ  ⇧ ⌘ ] ctrl shift ]"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>]</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>]</kbd></span></span><span class="ac">最前面へ</span></li><li class="sc" data-q="最背面へ  ⇧ ⌘ [ ctrl shift ["><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>[</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>[</kbd></span></span><span class="ac">最背面へ</span></li><li class="sc" data-q="グループ  ⌘ g ctrl g"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>G</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>G</kbd></span></span><span class="ac">グループ</span></li><li class="sc" data-q="グループ解除  ⇧ ⌘ g ctrl shift g"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>G</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>G</kbd></span></span><span class="ac">グループ解除</span></li><li class="sc" data-q="ロック 動かしたくない背景などに ⌘ 2 ctrl 2"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>2</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>2</kbd></span></span><span class="ac">ロック<small>動かしたくない背景などに</small></span></li><li class="sc" data-q="すべてをロック解除  ⌥ ⌘ 2 ctrl alt 2"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>2</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>2</kbd></span></span><span class="ac">すべてをロック解除</span></li><li class="sc" data-q="隠す  ⌘ 3 ctrl 3"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>3</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>3</kbd></span></span><span class="ac">隠す</span></li><li class="sc" data-q="すべてを表示  ⌥ ⌘ 3 ctrl alt 3"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>3</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>3</kbd></span></span><span class="ac">すべてを表示</span></li><li class="sc" data-q="クリッピングマスクを作成 一番上の形で切り抜く ⌘ 7 ctrl 7"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>7</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>7</kbd></span></span><span class="ac">クリッピングマスクを作成<small>一番上の形で切り抜く</small></span></li><li class="sc" data-q="クリッピングマスクを解除  ⌥ ⌘ 7 ctrl alt 7"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>7</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>7</kbd></span></span><span class="ac">クリッピングマスクを解除</span></li><li class="sc" data-q="複合パスを作成 ドーナツ型の穴あきに ⌘ 8 ctrl 8"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>8</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>8</kbd></span></span><span class="ac">複合パスを作成<small>ドーナツ型の穴あきに</small></span></li><li class="sc" data-q="複合パスを解除  ⌥ ⇧ ⌘ 8 ctrl alt shift 8"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>8</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>8</kbd></span></span><span class="ac">複合パスを解除</span></li><li class="sc" data-q="連結 2つの端点をつなぐ ⌘ j ctrl j"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>J</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>J</kbd></span></span><span class="ac">連結<small>2つの端点をつなぐ</small></span></li><li class="sc" data-q="平均 点の位置をそろえる ⌥ ⌘ j ctrl alt j"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>J</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>J</kbd></span></span><span class="ac">平均<small>点の位置をそろえる</small></span></li></ul></article></section>
+
+<section class="vol t-y" id="vol08" data-t="y"><div class="vol-h"><div class="badge">08</div><span class="tag"># 色・文字</span><h2>色・塗りと線</h2></div><p class="short">塗りと線の切り替えや、色をなしにするキーです。1文字のキーが多いので、日本語入力をオフにしてから押します。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="初期設定の塗りと線 白の塗り・黒の線に戻す d d"><span class="ks"><span class="mac"><kbd>D</kbd></span><span class="win"><kbd>D</kbd></span></span><span class="ac">初期設定の塗りと線<small>白の塗り・黒の線に戻す</small></span></li><li class="sc" data-q="塗りと線の切り替え どちらを編集するか x x"><span class="ks"><span class="mac"><kbd>X</kbd></span><span class="win"><kbd>X</kbd></span></span><span class="ac">塗りと線の切り替え<small>どちらを編集するか</small></span></li><li class="sc" data-q="塗りと線を入れ替え  ⇧ x shift x"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>X</kbd></span><span class="win"><kbd>Shift</kbd><kbd>X</kbd></span></span><span class="ac">塗りと線を入れ替え</span></li><li class="sc" data-q="なし 選んでいる方の色をなしに / /"><span class="ks"><span class="mac"><kbd>/</kbd></span><span class="win"><kbd>/</kbd></span></span><span class="ac">なし<small>選んでいる方の色をなしに</small></span></li><li class="sc" data-q="カラー 直前の色に戻す , ,"><span class="ks"><span class="mac"><kbd>,</kbd></span><span class="win"><kbd>,</kbd></span></span><span class="ac">カラー<small>直前の色に戻す</small></span></li><li class="sc" data-q="グラデーション  . ."><span class="ks"><span class="mac"><kbd>.</kbd></span><span class="win"><kbd>.</kbd></span></span><span class="ac">グラデーション</span></li><li class="sc" data-q="スポイトツール 色や書式を写す i i"><span class="ks"><span class="mac"><kbd>I</kbd></span><span class="win"><kbd>I</kbd></span></span><span class="ac">スポイトツール<small>色や書式を写す</small></span></li><li class="sc" data-q="グラデーションツール  g g"><span class="ks"><span class="mac"><kbd>G</kbd></span><span class="win"><kbd>G</kbd></span></span><span class="ac">グラデーションツール</span></li><li class="sc" data-q="ライブペイントツール  k k"><span class="ks"><span class="mac"><kbd>K</kbd></span><span class="win"><kbd>K</kbd></span></span><span class="ac">ライブペイントツール</span></li><li class="sc" data-q="ブレンドツール  w w"><span class="ks"><span class="mac"><kbd>W</kbd></span><span class="win"><kbd>W</kbd></span></span><span class="ac">ブレンドツール</span></li><li class="sc" data-q="ブレンドを作成  ⌥ ⌘ b ctrl alt b"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>B</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>B</kbd></span></span><span class="ac">ブレンドを作成</span></li><li class="sc" data-q="ブレンドを解除  ⌥ ⇧ ⌘ b ctrl alt shift b"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>⌘</kbd><kbd>B</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Shift</kbd><kbd>B</kbd></span></span><span class="ac">ブレンドを解除</span></li></ul><p class="now"><b>ヒント</b>スポイトツール（I）は、色だけでなく文字の書式もまとめて写せます。見出しの書式をそろえるときに便利です。</p></article></section>
+
+<section class="vol t-y" id="vol09" data-t="y"><div class="vol-h"><div class="badge">09</div><span class="tag"># 色・文字</span><h2>文字</h2></div><p class="short">文字の大きさや字間、揃え方を、キーボードだけで調整できます。数値を打ち込むより早く、見ながら微調整できるのが利点です。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="文字ツール  t t"><span class="ks"><span class="mac"><kbd>T</kbd></span><span class="win"><kbd>T</kbd></span></span><span class="ac">文字ツール</span></li><li class="sc" data-q="文字タッチツール 1文字ずつ動かす・回す ⇧ t shift t"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>T</kbd></span><span class="win"><kbd>Shift</kbd><kbd>T</kbd></span></span><span class="ac">文字タッチツール<small>1文字ずつ動かす・回す</small></span></li><li class="sc" data-q="文字の入力を終える そのまま選択ツールの状態に esc esc"><span class="ks"><span class="mac"><kbd>Esc</kbd></span><span class="win"><kbd>Esc</kbd></span></span><span class="ac">文字の入力を終える<small>そのまま選択ツールの状態に</small></span></li><li class="sc" data-q="アウトラインを作成 入稿前に。元データは別に保存 ⇧ ⌘ o ctrl shift o"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>O</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>O</kbd></span></span><span class="ac">アウトラインを作成<small>入稿前に。元データは別に保存</small></span></li><li class="sc" data-q="文字を大きく 小さくは ⇧ ⌘ &lt; ⇧ ⌘ &gt; ctrl shift &gt;"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>&gt;</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>&gt;</kbd></span></span><span class="ac">文字を大きく<small>小さくは <span class="mac">⇧ ⌘ <</span><span class="win">Ctrl+Shift+<</span></small></span></li><li class="sc" data-q="カーニング・トラッキング カーソル位置なら字間、範囲なら全体 ⌥ ← → alt ← →"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>←</kbd><kbd>→</kbd></span><span class="win"><kbd>Alt</kbd><kbd>←</kbd><kbd>→</kbd></span></span><span class="ac">カーニング・トラッキング<small>カーソル位置なら字間、範囲なら全体</small></span></li><li class="sc" data-q="字間を5倍ずつ  ⌥ ⌘ ← → ctrl alt ← →"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>←</kbd><kbd>→</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>←</kbd><kbd>→</kbd></span></span><span class="ac">字間を5倍ずつ</span></li><li class="sc" data-q="行送り  ⌥ ↑ ↓ alt ↑ ↓"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>↑</kbd><kbd>↓</kbd></span><span class="win"><kbd>Alt</kbd><kbd>↑</kbd><kbd>↓</kbd></span></span><span class="ac">行送り</span></li><li class="sc" data-q="ベースラインシフト 文字を上下に少しずらす ⌥ ⇧ ↑ ↓ alt shift ↑ ↓"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>↑</kbd><kbd>↓</kbd></span><span class="win"><kbd>Alt</kbd><kbd>Shift</kbd><kbd>↑</kbd><kbd>↓</kbd></span></span><span class="ac">ベースラインシフト<small>文字を上下に少しずらす</small></span></li><li class="sc" data-q="左揃え  ⇧ ⌘ l ctrl shift l"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>L</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>L</kbd></span></span><span class="ac">左揃え</span></li><li class="sc" data-q="中央揃え  ⇧ ⌘ c ctrl shift c"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>C</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>C</kbd></span></span><span class="ac">中央揃え</span></li><li class="sc" data-q="右揃え  ⇧ ⌘ r ctrl shift r"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>R</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>R</kbd></span></span><span class="ac">右揃え</span></li><li class="sc" data-q="均等配置（最終行左揃え）  ⇧ ⌘ j ctrl shift j"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>J</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>J</kbd></span></span><span class="ac">均等配置（最終行左揃え）</span></li><li class="sc" data-q="文字パネル  ⌘ t ctrl t"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>T</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>T</kbd></span></span><span class="ac">文字パネル</span></li><li class="sc" data-q="段落パネル  ⌥ ⌘ t ctrl alt t"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>T</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>T</kbd></span></span><span class="ac">段落パネル</span></li></ul><p class="now"><b>ヒント</b>矢印キーで変わる量は「環境設定 > 文字」で決められます。初期設定はサイズ2pt、字間20/1000em。</p></article></section>
+
+<section class="vol t-k" id="vol10" data-t="k"><div class="vol-h"><div class="badge">10</div><span class="tag"># きほん</span><h2>パネルを開く</h2></div><p class="short">よく使うパネルを開くキーです。Macでは、Fキーが画面の明るさや音量に使われていることがあるので、fnキーと一緒に押します。</p><article class="card sc-card"><ul class="sclist"><li class="sc" data-q="レイヤー  f7 f7"><span class="ks"><span class="mac"><kbd>F7</kbd></span><span class="win"><kbd>F7</kbd></span></span><span class="ac">レイヤー</span></li><li class="sc" data-q="整列  ⇧ f7 shift f7"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>F7</kbd></span><span class="win"><kbd>Shift</kbd><kbd>F7</kbd></span></span><span class="ac">整列</span></li><li class="sc" data-q="パスファインダー  ⇧ ⌘ f9 ctrl shift f9"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>F9</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>F9</kbd></span></span><span class="ac">パスファインダー</span></li><li class="sc" data-q="線  ⌘ f10 ctrl f10"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>F10</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>F10</kbd></span></span><span class="ac">線</span></li><li class="sc" data-q="グラデーション  ⌘ f9 ctrl f9"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>F9</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>F9</kbd></span></span><span class="ac">グラデーション</span></li><li class="sc" data-q="カラー  f6 f6"><span class="ks"><span class="mac"><kbd>F6</kbd></span><span class="win"><kbd>F6</kbd></span></span><span class="ac">カラー</span></li><li class="sc" data-q="アピアランス  ⇧ f6 shift f6"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>F6</kbd></span><span class="win"><kbd>Shift</kbd><kbd>F6</kbd></span></span><span class="ac">アピアランス</span></li><li class="sc" data-q="変形  ⇧ f8 shift f8"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>F8</kbd></span><span class="win"><kbd>Shift</kbd><kbd>F8</kbd></span></span><span class="ac">変形</span></li><li class="sc" data-q="透明  ⇧ ⌘ f10 ctrl shift f10"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>⌘</kbd><kbd>F10</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>F10</kbd></span></span><span class="ac">透明</span></li><li class="sc" data-q="ブラシ  f5 f5"><span class="ks"><span class="mac"><kbd>F5</kbd></span><span class="win"><kbd>F5</kbd></span></span><span class="ac">ブラシ</span></li><li class="sc" data-q="グラフィックスタイル  ⇧ f5 shift f5"><span class="ks"><span class="mac"><kbd>⇧</kbd><kbd>F5</kbd></span><span class="win"><kbd>Shift</kbd><kbd>F5</kbd></span></span><span class="ac">グラフィックスタイル</span></li><li class="sc" data-q="文字  ⌘ t ctrl t"><span class="ks"><span class="mac"><kbd>⌘</kbd><kbd>T</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>T</kbd></span></span><span class="ac">文字</span></li><li class="sc" data-q="段落  ⌥ ⌘ t ctrl alt t"><span class="ks"><span class="mac"><kbd>⌥</kbd><kbd>⌘</kbd><kbd>T</kbd></span><span class="win"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>T</kbd></span></span><span class="ac">段落</span></li></ul></article></section>
+
+<section class="vol t-k tips" id="vol11" data-t="k"><div class="vol-h"><div class="badge">11</div><span class="tag"># きほん</span><h2>うまく効かないとき</h2></div><p class="short">キーを押しても反応しないときは、たいてい入力モードかOSの設定が原因です。よくある5つと、自分好みに変える方法をまとめました。</p><div class="grid"><article class="card"><div class="body"><h3>1文字のキー（V・P・Tなど）が効かない</h3><p>日本語入力がオンになっています。英数入力に切り替えてから押します（Macは「英数」キー、Windowsは「半角/全角」キー）。</p></div></article><article class="card"><div class="body"><h3>文字を打っている途中でツールが変わらない</h3><p>文字の編集中は、キーがそのまま文字として入力されます。Escで入力を終えてから押します。</p></div></article><article class="card"><div class="body"><h3>Fキーでパネルが開かない（Mac）</h3><p>画面の明るさや音量に割り当てられています。fnキーと一緒に押すか、システム設定の「キーボード」で、F1、F2などを標準のファンクションキーとして使う設定をオンにします。</p></div></article><article class="card"><div class="body"><h3><span class="mac">⌘</span><span class="win">Ctrl</span>＋Spaceでズームできない（Mac）</h3><p>Macでは入力の切り替えやSpotlightに使われています。ズームは <span class="mac">⌘</span><span class="win">Ctrl</span>＋／<span class="mac">⌘−</span><span class="win">Ctrl+−</span> や、ズームツール（Z）を使います。</p></div></article><article class="card"><div class="body"><h3>自分好みに変えたい</h3><p>「編集 > キーボードショートカット」（<span class="mac">⌥⇧⌘K</span><span class="win">Ctrl+Alt+Shift+K</span>）で、ツールやメニューのキーを変えられます。セットとして保存でき、「テキストとして書き出し」で一覧表にもできます。</p></div></article><article class="card"><div class="body"><h3>矢印キーで動く量を変えたい</h3><p>「環境設定 > 一般」の「キー入力」で決めます。初期設定は1pt（mmの設定なら約0.35mm）。<span class="mac">⇧</span><span class="win">Shift</span>を足すとその10倍です。</p></div></article></div></section>
+
+
+    <h2 class="sec-title" id="glossary">KEYS</h2>
+    <p class="sec-sub">キーの記号</p>
+    <div class="keytab"><div class="kt-h"><span>Mac</span><span>名前</span><span>Windows</span></div><div class="kt-r"><span><kbd>⌘</kbd></span><span>command</span><span><kbd>Ctrl</kbd></span></div><div class="kt-r"><span><kbd>⌥</kbd></span><span>option</span><span><kbd>Alt</kbd></span></div><div class="kt-r"><span><kbd>⇧</kbd></span><span>shift</span><span><kbd>Shift</kbd></span></div><div class="kt-r"><span><kbd>⏎</kbd></span><span>return</span><span><kbd>Enter</kbd></span></div><div class="kt-r"><span><kbd>⌫</kbd></span><span>delete</span><span><kbd>Backspace</kbd></span></div><div class="kt-r"><span><kbd>Esc</kbd></span><span>escape</span><span><kbd>Esc</kbd></span></div><div class="kt-r"><span><kbd>Space</kbd></span><span>スペース</span><span><kbd>Space</kbd></span></div><div class="kt-r"><span><kbd>F1〜F12</kbd></span><span>ファンクション（fnと一緒に）</span><span><kbd>F1〜F12</kbd></span></div></div>
+
+    <div class="back-wrap"><a class="back-btn js-back" href="../works.html?cat=note"><span class="en">BACK TO NOTE</span><span class="ja">NOTE 一覧へ戻る</span></a></div>
+
+    <p class="refs">参考：Adobe Illustrator ユーザーガイド「デフォルトのキーボードショートカット」「キーボードショートカットのカスタマイズ」。Illustrator 30（Creative Cloud 2026年版）の初期設定にもとづいています。ショートカットを自分で変えている場合や、キーボードの配列によっては、表示と違うことがあります。</p>
+    <p class="copyright">© 2026 Hidaka Shuri</p>
+  </div>
+</main>
+
+<a class="back-to-top" href="#top" aria-label="ページトップへ"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>
+/* 戻るリンク：スマホ・タブレット（1024px以下）はSP版の一覧へ */
+(function(){
+  if(window.innerWidth<=1024){
+    document.querySelectorAll('.js-back').forEach(function(a){a.setAttribute('href',a.getAttribute('href').replace('works.html','sp/works.html'))});
+  }
+})();
+(function(){
+  var btns=document.querySelectorAll('.cat-btn');
+  var vols=document.querySelectorAll('section.vol');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-f');
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      vols.forEach(function(v){v.hidden=!(f==='all'||v.getAttribute('data-t')===f)});
+    });
+  });
+})();
+(function(){var b=document.querySelector('.back-to-top');function f(){b.classList.toggle('is-visible',window.scrollY>300)}window.addEventListener('scroll',f,{passive:true});f()})();
+(function(){
+  var links={};document.querySelectorAll('.chap a').forEach(function(a){links[a.dataset.n]=a});
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var n=e.target.id.slice(3);Object.values(links).forEach(function(a){a.classList.toggle('on',a.dataset.n===n)});var a=links[n];if(a&&a.scrollIntoView&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:a.offsetLeft-40,behavior:'smooth'})}}})},{rootMargin:'-140px 0px -60% 0px'});
+  document.querySelectorAll('section.vol').forEach(function(s){io.observe(s)});
+})();
+
+/* 図の中の文字が枠より広いときは自動で縮める（端末のフォント差対策） */
+(function(){
+  function fit(){
+    document.querySelectorAll('.pv svg').forEach(function(svg){
+      var S=svg.getBoundingClientRect(); if(!S.width) return;
+      var u=S.width/400, pad=7*u;
+      var shapes=[].slice.call(svg.querySelectorAll('rect,ellipse,circle')).map(function(r){return r.getBoundingClientRect()}).filter(function(b){return b.width>20*u});
+      svg.querySelectorAll('text').forEach(function(t){
+        if(t.dataset.fs){t.style.fontSize=t.dataset.fs}
+        var b=t.getBoundingClientRect(), cx=b.left+b.width/2, cy=b.top+b.height/2, box=null;
+        shapes.forEach(function(r){if(cx>=r.left&&cx<=r.right&&cy>=r.top&&cy<=r.bottom){if(!box||r.width*r.height<box.width*box.height)box=r}});
+        var max=box?box.width-2*pad:S.width-2*pad;
+        if(b.width>max){
+          var fs=parseFloat(getComputedStyle(t).fontSize);
+          if(t.dataset.fs===undefined)t.dataset.fs=t.style.fontSize||'';
+          t.style.fontSize=Math.max(fs*0.6,fs*max/b.width)+'px';
+        }
+      });
+    });
+  }
+  window.addEventListener('load',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+<script>
+/* Mac / Windows 切り替え */
+(function(){
+  var b=document.body,btns=document.querySelectorAll('.os button');
+  function set(os){b.classList.toggle('os-win',os==='win');btns.forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-os')===os?'true':'false')});try{localStorage.setItem('il-os',os)}catch(e){}}
+  var os=null;try{os=localStorage.getItem('il-os')}catch(e){}
+  if(!os)os=/Win/i.test(navigator.userAgent)?'win':'mac';
+  set(os);
+  btns.forEach(function(x){x.addEventListener('click',function(){set(x.getAttribute('data-os'))})});
+})();
+/* 検索 */
+(function(){
+  var q=document.getElementById('q'),hit=document.getElementById('hit');
+  var rows=document.querySelectorAll('.sc'),vols=document.querySelectorAll('section.vol'),cats=document.querySelectorAll('.cat-btn');
+  function norm(s){return s.toLowerCase().replace(/\s+/g,'').replace(/cmd|command/g,'⌘').replace(/opt(ion)?/g,'⌥')}
+  q.addEventListener('input',function(){
+    var v=norm(q.value);
+    if(!v){rows.forEach(function(r){r.hidden=false});vols.forEach(function(s){s.hidden=false});hit.hidden=true;cats.forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-f')==='all'?'true':'false')});return}
+    cats.forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-f')==='all'?'true':'false')});
+    var n=0;
+    rows.forEach(function(r){var ok=norm(r.getAttribute('data-q')).indexOf(v)>-1;r.hidden=!ok;if(ok)n++});
+    vols.forEach(function(s){if(s.classList.contains('tips')){s.hidden=true;return}s.hidden=!s.querySelector('.sc:not([hidden])')});
+    hit.hidden=false;hit.textContent=n?n+'件見つかりました':'見つかりませんでした。別の言葉で試してください';
+  });
+})();
+</script>
+</body>
+</html>
